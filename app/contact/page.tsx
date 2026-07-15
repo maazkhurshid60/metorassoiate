@@ -1,0 +1,159 @@
+import type { Metadata } from "next";
+import { IconPhone, IconMail, IconPin, IconArrow } from "../components/Icons";
+import ContactForm from "../components/ContactForm";
+import { PHONE, PHONE_HREF, EMAIL } from "../lib/site";
+
+export const metadata: Metadata = {
+  title: "Contact Us — Metro Associates | DOT & Infrastructure Staffing",
+  description:
+    "Contact Metro Associates. Reach our recruiting team or visit one of our nine U.S. branch offices — Orlando, Boston, Washington DC, Atlanta, Dallas, Los Angeles, New York, and Hartford.",
+};
+
+const OFFICES = [
+  { name: "Florida Office", city: "Orlando, FL", query: "Orlando, FL", hq: true },
+  { name: "Massachusetts Office", city: "Boston, MA", query: "Boston, MA" },
+  { name: "District of Columbia Office", city: "Washington, DC", query: "Washington, DC" },
+  { name: "Georgia Office", city: "Atlanta, GA", query: "Atlanta, GA" },
+  { name: "Texas Office", city: "Dallas, TX", query: "Dallas, TX" },
+  { name: "California Office", city: "Los Angeles, CA", query: "Los Angeles, CA" },
+  { name: "New York Office", city: "New York City, NY", query: "New York, NY" },
+  { name: "Connecticut Office", city: "Hartford, CT", query: "Hartford, CT" },
+];
+
+const mapSrc = (q: string) =>
+  `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=11&output=embed`;
+
+export default function ContactPage() {
+  return (
+    <main>
+      {/* Hero + form */}
+      <section className="relative overflow-hidden blueprint pt-32 pb-20 sm:pt-36 lg:pt-40">
+        <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
+        <div className="pointer-events-none absolute right-0 top-0 h-[26rem] w-[26rem] rounded-full bg-amber-500/10 blur-[120px]" />
+
+        <div className="container-x relative grid gap-14 lg:grid-cols-[0.85fr_1.15fr]">
+          {/* Left: intro + direct contacts */}
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="h-2 w-2 animate-blink bg-amber-500" />
+              <span className="mono-label text-amber-400">{"//"} Contact Us</span>
+            </div>
+            <h1 className="display mt-6 text-[12vw] leading-[0.92] text-white sm:text-5xl lg:text-[4rem]">
+              Let&apos;s start a{" "}
+              <span className="text-brand-400">conversation</span>
+            </h1>
+            <p className="mt-6 max-w-md text-lg leading-8 text-ink-300 text-pretty">
+              Whether you&apos;re hiring vetted engineering talent or seeking your
+              next role, our team responds within one business day.
+            </p>
+
+            <div className="mt-9 flex flex-col gap-3">
+              <a
+                href={PHONE_HREF}
+                className="group flex items-center gap-4 border border-white/10 bg-navy-900 p-5 transition-colors hover:border-amber-500/40"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center border border-white/12 text-amber-500">
+                  <IconPhone className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="mono-label block text-[9px] text-ink-500">Call us</span>
+                  <span className="text-white group-hover:text-amber-300">{PHONE}</span>
+                </span>
+              </a>
+              <a
+                href={`mailto:${EMAIL}`}
+                className="group flex items-center gap-4 border border-white/10 bg-navy-900 p-5 transition-colors hover:border-amber-500/40"
+              >
+                <span className="inline-flex h-11 w-11 items-center justify-center border border-white/12 text-amber-500">
+                  <IconMail className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="mono-label block text-[9px] text-ink-500">Email us</span>
+                  <span className="text-white group-hover:text-amber-300">{EMAIL}</span>
+                </span>
+              </a>
+              <div className="flex items-center gap-4 border border-white/10 bg-navy-900 p-5">
+                <span className="inline-flex h-11 w-11 items-center justify-center border border-white/12 text-amber-500">
+                  <IconPin className="h-5 w-5" />
+                </span>
+                <span>
+                  <span className="mono-label block text-[9px] text-ink-500">Headquarters</span>
+                  <span className="text-white">Orlando, Florida</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: form */}
+          <div className="border border-white/10 bg-navy-950/60 p-6 backdrop-blur-sm sm:p-8">
+            <h2 className="text-2xl font-bold text-white">Send us a message</h2>
+            <p className="mt-1 text-sm text-ink-400">
+              Fields marked with * are required.
+            </p>
+            <div className="mt-6">
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Branch locations */}
+      <section className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+        <div className="container-x">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="mono-label text-amber-500">{"//"} Nationwide</span>
+            <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
+              Our branch locations
+            </h2>
+            <p className="mt-4 text-ink-300 text-pretty">
+              Nine U.S. offices, with recruiters who know each regional market.
+            </p>
+          </div>
+
+          <div className="reveal-children mt-14 grid gap-6 lg:grid-cols-2">
+            {OFFICES.map((o) => (
+              <div
+                key={o.name}
+                className="corners overflow-hidden border border-white/12 bg-navy-900"
+              >
+                <div className="relative h-56 w-full bg-navy-800">
+                  <iframe
+                    src={mapSrc(o.query)}
+                    title={`${o.name} map — ${o.city}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-full w-full grayscale-[0.35]"
+                  />
+                </div>
+                <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-bold text-white">{o.name}</h3>
+                      {o.hq && (
+                        <span className="mono-label bg-amber-500 px-2 py-0.5 text-[9px] text-navy-950">
+                          HQ
+                        </span>
+                      )}
+                    </div>
+                    <p className="mono-label mt-1 text-[9px] text-ink-400">{o.city}</p>
+                  </div>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                      o.query
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group inline-flex shrink-0 items-center gap-1.5 border border-white/20 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:border-amber-500 hover:text-amber-400"
+                  >
+                    Directions
+                    <IconArrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}

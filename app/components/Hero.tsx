@@ -1,0 +1,134 @@
+import Image from "next/image";
+import { IconArrow, IconCheck, IconStar } from "./Icons";
+
+const HIGHLIGHTS = [
+  "45+ years of placements",
+  "DOT · Infrastructure · AEC",
+  "No fee until hired",
+];
+
+const TICKER = [
+  "Highway Design",
+  "Bridge Engineering",
+  "Transportation Planning",
+  "Construction Inspection",
+  "DOT Compliance",
+  "Program Management",
+  "AEC Consultancies",
+  "Licensed Professionals",
+];
+
+export default function Hero() {
+  return (
+    <section
+      id="top"
+      className="relative isolate flex min-h-[94vh] flex-col justify-center overflow-hidden pt-28"
+    >
+      {/* Full-bleed background image + overlays */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="https://metroassoc.com/wp-content/uploads/2023/04/building.webp"
+          alt="U.S. city skyline — the infrastructure Metro Associates staffs"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* darken left for text legibility, keep skyline visible on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-950/95 via-navy-950/65 to-navy-950/15" />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/15 to-transparent" />
+        {/* blueprint grid on top of photo */}
+        <div className="grid-overlay absolute inset-0 opacity-25" />
+      </div>
+
+      {/* accent glow */}
+      <div className="pointer-events-none absolute -left-40 top-24 -z-10 h-96 w-96 rounded-full bg-amber-500/10 blur-[120px]" />
+
+      <div className="container-x relative w-full pb-14">
+        <div className="max-w-3xl animate-fade-up">
+          <div className="flex items-center gap-3">
+            <span className="h-2 w-2 animate-blink bg-amber-500" />
+            <span className="mono-label text-amber-400">
+              {"//"} Greatness relies on your collaborators
+            </span>
+          </div>
+
+          <h1 className="display mt-6 text-[12.5vw] leading-[0.92] text-white sm:text-6xl lg:text-[5.2rem]">
+            Specialized
+            <br />
+            engineering
+            <br />
+            recruiting.
+          </h1>
+
+          <p className="mt-6 flex items-center gap-3 text-2xl font-bold text-amber-500 sm:text-3xl">
+            <span className="hidden h-px w-10 bg-amber-500 sm:block" />
+            45+ years of results.
+          </p>
+
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-200 text-pretty">
+            Tired of endless searches for the right engineering talent? Metro
+            Associates transforms your hiring process — with results you can
+            count on. We help DOT agencies, infrastructure companies, and AEC
+            consultancies hire qualified, licensed professionals across the
+            United States.
+          </p>
+
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#services"
+              className="group inline-flex items-center justify-center gap-2 bg-amber-500 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
+            >
+              Our Services
+              <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center gap-2 border border-white/25 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white backdrop-blur-sm transition-colors hover:border-amber-500 hover:text-amber-400"
+            >
+              Contact Us
+            </a>
+          </div>
+
+          <ul className="mt-9 flex flex-wrap gap-x-7 gap-y-3">
+            {HIGHLIGHTS.map((item) => (
+              <li key={item} className="flex items-center gap-2 text-sm text-ink-200">
+                <span className="inline-flex h-5 w-5 items-center justify-center bg-amber-500/20 text-amber-400">
+                  <IconCheck className="h-3.5 w-3.5" />
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Floating credibility badge */}
+      <div className="pointer-events-none absolute bottom-28 right-6 z-10 hidden border border-white/15 bg-navy-950/70 px-5 py-4 backdrop-blur-sm lg:block">
+        <div className="flex gap-0.5 text-amber-500">
+          {Array.from({ length: 5 }).map((_, i) => (
+            <IconStar key={i} className="h-3.5 w-3.5" />
+          ))}
+        </div>
+        <p className="mt-2 text-3xl font-extrabold text-white">
+          4<span className="text-lg text-amber-500"> wks</span>
+        </p>
+        <p className="mono-label mt-1 text-[9px] text-ink-400">Avg. time-to-fill</p>
+      </div>
+
+      {/* Specialty ticker */}
+      <div className="relative border-y border-white/10 bg-navy-950/85 py-4 backdrop-blur-sm">
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
+          <div className="flex w-max animate-marquee items-center gap-8 pr-8">
+            {[...TICKER, ...TICKER].map((t, i) => (
+              <span key={i} className="flex items-center gap-8 whitespace-nowrap">
+                <span className="mono-label text-ink-300">{t}</span>
+                <span className="text-amber-500">✦</span>
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
