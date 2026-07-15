@@ -4,7 +4,7 @@ import { IconPhone, IconMail, IconPin } from "./Icons";
 import { CAREERS_URL, APPLY_URL } from "../lib/site";
 
 const NAV = [
-  { label: "About", href: "/#about", external: false },
+  { label: "About", href: "/about", external: false },
   { label: "Why Us", href: "/why-us", external: false },
   { label: "Meet Our Team", href: "/meet-our-team", external: false },
   { label: "Apply Jobs", href: APPLY_URL, external: true },
