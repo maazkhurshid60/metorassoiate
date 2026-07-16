@@ -11,12 +11,12 @@ const VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email";
 
 // Where enquiries are delivered.
-const TO_EMAIL = "zohaibe840@gmail.com";
+const TO_EMAIL = "patrick@metroassoc.com";
 const TO_NAME = "Metro Associates";
 
 // Verified Brevo sender. Override with BREVO_SENDER_EMAIL in production if a
 // different verified sender/domain is preferred.
-const SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL ?? "info@metroassoc.com";
+const SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL ?? "patrick@metroassoc.com";
 const SENDER_NAME = process.env.BREVO_SENDER_NAME ?? "Metro Associates Website";
 
 function esc(s: string): string {
