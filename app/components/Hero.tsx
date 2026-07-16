@@ -111,7 +111,7 @@ export default function Hero() {
           ))}
         </div>
         <p className="mt-2 text-3xl font-extrabold text-white">
-          4<span className="text-lg text-amber-500"> wks</span>
+          2&ndash;4<span className="text-lg text-amber-500"> wks</span>
         </p>
         <p className="mono-label mt-1 text-[9px] text-ink-400">Avg. time-to-fill</p>
       </div>

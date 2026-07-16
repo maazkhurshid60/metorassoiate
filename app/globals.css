@@ -7,28 +7,34 @@
   --font-mono: var(--font-geist-mono);
 
   /* Blueprint / industrial palette */
-  --color-navy-950: #040b18;
-  --color-navy-900: #071324;
-  --color-navy-850: #0a1a30;
-  --color-navy-800: #0e2240;
-  --color-navy-700: #143257;
-  --color-navy-600: #1c4680;
+  --color-navy-950: #061426;
+  --color-navy-900: #0b2138;
+  --color-navy-850: #0f2947;
+  --color-navy-800: #143257;
+  --color-navy-700: #1b4270;
+  --color-navy-600: #245089;
 
   --color-line: rgba(120, 165, 230, 0.14);
   --color-line-strong: rgba(130, 175, 240, 0.28);
 
-  --color-brand-500: #2f6bee;
-  --color-brand-400: #5b8bf5;
-  --color-brand-300: #93b4f9;
+  --color-brand-500: #527cff;
+  --color-brand-400: #7a9bff;
+  --color-brand-300: #a9c0ff;
 
-  --color-amber-500: #f5a524;
-  --color-amber-400: #ffb84d;
-  --color-amber-300: #ffcd7a;
+  --color-amber-500: #f5a91b;
+  --color-amber-400: #ffbe4d;
+  --color-amber-300: #ffd47e;
 
   --color-ink-100: #eaf1fb;
   --color-ink-300: #b7c4da;
   --color-ink-400: #8595b3;
   --color-ink-500: #64748f;
+
+  /* Light section palette — used to break up the dark navy across the page */
+  --color-paper: #f5f6f2;   /* warm off-white — About / company info */
+  --color-mist: #eaf0f7;    /* light blue-gray — roles / services / specialty */
+  --color-slate: #344054;   /* primary body text on light backgrounds */
+  --color-slate-500: #5a6b82; /* muted text on light backgrounds */
 }
 
 :root {
@@ -91,6 +97,15 @@ body {
 .blueprint-fade {
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 45%, transparent 100%);
   mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 45%, transparent 100%);
+}
+
+/* Light blueprint — faint navy grid on a light blue-gray base (for light sections) */
+.blueprint-light {
+  background-color: var(--color-mist);
+  background-image:
+    linear-gradient(rgba(6, 20, 38, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 20, 38, 0.05) 1px, transparent 1px);
+  background-size: 46px 46px;
 }
 
 /* Grid lines only (no fill) — overlays photos */
