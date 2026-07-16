@@ -48,6 +48,11 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
+        <script
+          id="nextivacx-code-snippet"
+          src="https://d3po7etsbw5eiv.cloudfront.net/Simplify360Chat.js?key=NmEwZjA4YjU3MjcxYzg4MWY3YjMwOGI0fDQxNzIzNzA="
+        ></script>
       </body>
     </html>
   );

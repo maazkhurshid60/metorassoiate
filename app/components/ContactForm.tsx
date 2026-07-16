@@ -107,39 +107,36 @@ export default function ContactForm() {
     setStatus("verifying");
     setError("");
     try {
-      const res = await fetch("/api/verify-recaptcha", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify({
+          token,
+          name,
+          email,
+          phone,
+          company,
+          message,
+          sms: sms === "Yes",
+        }),
       });
       const result = await res.json();
       if (!result.success) {
-        setError("reCAPTCHA verification failed. Please try again.");
+        setError(
+          result.error === "recaptcha-failed"
+            ? "reCAPTCHA verification failed. Please try again."
+            : "Sorry — your message couldn't be sent. Please email us directly."
+        );
         resetCaptcha();
         setStatus("idle");
         return;
       }
     } catch {
-      setError("Could not reach the verification service. Please try again.");
+      setError("Could not reach the server. Please try again in a moment.");
       setStatus("idle");
       return;
     }
 
-    const body = [
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Company: ${company}`,
-      `SMS consent: ${sms}`,
-      "",
-      message,
-    ].join("\n");
-
-    const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      `Website enquiry — ${name || "New contact"}`
-    )}&body=${encodeURIComponent(body)}`;
-
-    window.location.href = mailto;
     resetCaptcha();
     setStatus("idle");
     setSent(true);
@@ -152,10 +149,10 @@ export default function ContactForm() {
           <IconCheck className="h-6 w-6" />
         </span>
         <div>
-          <h3 className="text-xl font-bold text-white">Thanks — your message is ready to send.</h3>
+          <h3 className="text-xl font-bold text-white">Thanks — your message has been sent.</h3>
           <p className="mt-2 text-ink-300">
-            Your email client should have opened with the details. If it
-            didn&apos;t, reach us directly at{" "}
+            We&apos;ve received your enquiry and will be in touch shortly. You can
+            also reach us directly at{" "}
             <a href={`mailto:${EMAIL}`} className="text-amber-400 hover:underline">
               {EMAIL}
             </a>{" "}

@@ -45,7 +45,7 @@ export const TEAM: Member[] = [
   },
   {
     name: "Rohonney Jane Crispo",
-    role: "Property Manager",
+    role: "DOT Recruiter",
     photo: `${U}ChatGPT-Image-Apr-4-2026-06_35_14-PM.webp`,
     linkedin: FALLBACK_LINKEDIN,
   },
