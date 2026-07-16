@@ -42,10 +42,11 @@ export default function Team() {
                 alt={lead.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-top grayscale transition-all duration-700 hover:grayscale-0"
+                className="object-cover object-top"
               />
             )}
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-navy-900/20 lg:to-navy-900" />
+            {/* light blend only at the panel edge so the photo shows in full color */}
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-navy-950/40" />
             <span className="mono-label absolute left-5 top-5 text-[10px] text-white/70">
               01 — Lead
             </span>

@@ -21,7 +21,7 @@ const GUARANTEES = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+    <section id="why-us" className="relative border-t border-white/10 section-dark py-24 sm:py-28">
       <div className="container-x">
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           {/* Left: headline + image */}

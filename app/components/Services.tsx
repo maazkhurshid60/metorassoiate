@@ -44,7 +44,7 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="relative overflow-hidden blueprint border-t border-white/10 py-24 sm:py-28"
+      className="relative overflow-hidden blueprint-shade border-t border-white/10 py-24 sm:py-28"
     >
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">

@@ -25,7 +25,7 @@ export default function TeamCard({ m, index }: { m: Member; index: number }) {
               alt={m.name}
               fill
               sizes="(max-width: 768px) 50vw, 22vw"
-              className={`object-cover grayscale transition-all duration-700 ease-out group-hover:scale-[1.06] group-hover:grayscale-0 ${
+              className={`object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06] ${
                 m.objectPos ?? "object-center"
               }`}
             />
@@ -39,8 +39,8 @@ export default function TeamCard({ m, index }: { m: Member; index: number }) {
               </div>
             </div>
           )}
-          {/* bottom fade for name legibility */}
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/25 to-transparent" />
+          {/* minimal bottom fade — only enough to keep the name readable */}
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/5 to-transparent" />
         </div>
 
         <span className="mono-label absolute left-4 top-4 text-[9px] text-white/60">

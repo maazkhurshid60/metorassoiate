@@ -14,7 +14,7 @@ export default function MeetOurTeamPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden blueprint pt-32 pb-16 sm:pt-36 lg:pt-40">
+      <section className="relative overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[26rem] w-[26rem] rounded-full bg-amber-500/10 blur-[120px]" />
 
@@ -36,11 +36,11 @@ export default function MeetOurTeamPage() {
       </section>
 
       {/* Roster */}
-      <section className="relative border-t border-white/10 bg-navy-950 py-20 sm:py-24">
+      <section className="relative border-t border-navy-950/10 bg-paper py-20 sm:py-24">
         <div className="container-x">
-          <div className="mb-10 flex items-end justify-between border-b border-white/10 pb-5">
+          <div className="mb-10 flex items-end justify-between border-b border-navy-950/10 pb-5">
             <span className="mono-label text-amber-500">{"//"} The Roster</span>
-            <span className="mono-label text-[10px] text-ink-500">
+            <span className="mono-label text-[10px] text-slate-500">
               {String(TEAM.length).padStart(2, "0")} specialists
             </span>
           </div>
@@ -51,8 +51,8 @@ export default function MeetOurTeamPage() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="mt-16 flex flex-col items-start justify-between gap-6 border border-white/10 bg-navy-900 p-8 sm:flex-row sm:items-center sm:p-10">
+          {/* CTA — kept dark navy for a strong finish on the light section */}
+          <div className="mt-16 flex flex-col items-start justify-between gap-6 section-dark border border-white/10 p-8 sm:flex-row sm:items-center sm:p-10">
             <div>
               <h2 className="text-2xl font-bold text-white">Work with our team</h2>
               <p className="mt-2 text-ink-300">

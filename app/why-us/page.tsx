@@ -55,7 +55,7 @@ export default function WhyUsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden blueprint pt-32 pb-16 sm:pt-36 lg:pt-40">
+      <section className="relative overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-amber-500/10 blur-[120px]" />
 
@@ -120,38 +120,38 @@ export default function WhyUsPage() {
       </section>
 
       {/* Reasons */}
-      <section className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} What sets us apart</span>
-            <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Six reasons agencies choose us
             </h2>
           </div>
 
-          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-3">
             {REASONS.map(({ icon: Icon, title, body }, i) => (
               <article
                 key={title}
-                className="group relative flex flex-col bg-navy-900 p-8 transition-colors duration-300 hover:bg-navy-850"
+                className="group relative flex flex-col bg-white p-8 transition-colors duration-300 hover:bg-mist"
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center border border-white/12 text-brand-400 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
+                  <span className="inline-flex h-12 w-12 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <span className="mono-label text-2xl font-bold text-white/10 transition-colors group-hover:text-amber-500/40">
+                  <span className="mono-label text-2xl font-bold text-navy-950/10 transition-colors group-hover:text-amber-500/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-white">{title}</h3>
-                <p className="mt-2.5 text-[15px] leading-7 text-ink-400">{body}</p>
+                <h3 className="mt-6 text-xl font-bold text-navy-950">{title}</h3>
+                <p className="mt-2.5 text-[15px] leading-7 text-slate-500">{body}</p>
                 <span className="mt-6 h-0.5 w-8 bg-amber-500 transition-all duration-300 group-hover:w-16" />
               </article>
             ))}
           </div>
 
-          {/* CTA band */}
-          <div className="mt-16 flex flex-col items-start justify-between gap-6 border border-white/10 bg-navy-900 p-8 sm:flex-row sm:items-center sm:p-10">
+          {/* CTA band — kept dark navy for a strong finish on the light section */}
+          <div className="mt-16 flex flex-col items-start justify-between gap-6 section-dark border border-white/10 p-8 sm:flex-row sm:items-center sm:p-10">
             <div>
               <h3 className="text-2xl font-bold text-white">
                 Ready to build your team?

@@ -58,7 +58,7 @@ export default function AboutPage() {
   return (
     <main>
       {/* Hero + intro */}
-      <section className="relative overflow-hidden blueprint pt-32 pb-16 sm:pt-36 lg:pt-40">
+      <section className="relative overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-amber-500/10 blur-[120px]" />
 
@@ -127,30 +127,30 @@ export default function AboutPage() {
       </section>
 
       {/* Core disciplines */}
-      <section className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+      <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} 01 — Core Disciplines</span>
-            <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Where we go{" "}
-              <span className="text-brand-400">deep</span>
+              <span className="text-brand-500">deep</span>
             </h2>
-            <p className="mt-4 text-ink-300 text-pretty">
+            <p className="mt-4 text-slate text-pretty">
               Six engineering markets we recruit for, day in and day out.
             </p>
           </div>
 
-          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-3">
             {DISCIPLINES.map(({ icon: Icon, label }, i) => (
               <article
                 key={label}
-                className="group relative flex items-center gap-5 bg-navy-900 p-7 transition-colors duration-300 hover:bg-navy-850"
+                className="group relative flex items-center gap-5 bg-white p-7 transition-colors duration-300 hover:bg-mist"
               >
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center border border-white/12 text-brand-400 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
+                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
                   <Icon className="h-6 w-6" />
                 </span>
-                <h3 className="text-lg font-bold text-white">{label}</h3>
-                <span className="mono-label absolute right-6 top-6 text-xs text-white/15 transition-colors group-hover:text-amber-500/40">
+                <h3 className="text-lg font-bold text-navy-950">{label}</h3>
+                <span className="mono-label absolute right-6 top-6 text-xs text-navy-950/15 transition-colors group-hover:text-amber-500/50">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </article>
@@ -160,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* Infrastructure expertise + Veteran focus (with flag image) */}
-      <section className="relative border-t border-white/10 blueprint py-24 sm:py-28">
+      <section className="relative border-t border-white/10 blueprint-shade py-24 sm:py-28">
         <div className="container-x">
           <div className="grid items-stretch gap-12 lg:grid-cols-[1fr_0.85fr]">
             <div className="flex flex-col justify-center">
@@ -212,42 +212,42 @@ export default function AboutPage() {
       </section>
 
       {/* Our approach */}
-      <section className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} 03 — Our Approach</span>
-            <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               How we work
             </h2>
           </div>
 
-          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-4">
             {APPROACH.map(({ icon: Icon, title, body }, i) => (
               <article
                 key={title}
-                className="group relative flex flex-col bg-navy-900 p-8 transition-colors duration-300 hover:bg-navy-850"
+                className="group relative flex flex-col bg-white p-8 transition-colors duration-300 hover:bg-mist"
               >
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center border border-white/12 text-brand-400 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
+                  <span className="inline-flex h-12 w-12 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
                     <Icon className="h-6 w-6" />
                   </span>
-                  <span className="mono-label text-2xl font-bold text-white/10 transition-colors group-hover:text-amber-500/40">
+                  <span className="mono-label text-2xl font-bold text-navy-950/10 transition-colors group-hover:text-amber-500/50">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                 </div>
-                <h3 className="mt-6 text-lg font-bold text-white">{title}</h3>
-                <p className="mt-2.5 text-[15px] leading-7 text-ink-400">{body}</p>
+                <h3 className="mt-6 text-lg font-bold text-navy-950">{title}</h3>
+                <p className="mt-2.5 text-[15px] leading-7 text-slate-500">{body}</p>
                 <span className="mt-6 h-0.5 w-8 bg-amber-500 transition-all duration-300 group-hover:w-16" />
               </article>
             ))}
           </div>
 
           {/* Standards strip */}
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border border-white/10 bg-navy-900 p-6">
-            <span className="mono-label text-ink-500">Every candidate vetted for</span>
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border border-navy-950/10 bg-white p-6">
+            <span className="mono-label text-slate-500">Every candidate vetted for</span>
             {["DOT specifications", "FHWA standards", "AASHTO guidelines", "QA/QC protocols", "Safety compliance"].map(
               (s) => (
-                <span key={s} className="inline-flex items-center gap-1.5 text-sm text-ink-200">
+                <span key={s} className="inline-flex items-center gap-1.5 text-sm text-slate">
                   <IconCheck className="h-3.5 w-3.5 text-amber-500" />
                   {s}
                 </span>
@@ -255,8 +255,8 @@ export default function AboutPage() {
             )}
           </div>
 
-          {/* CTA band */}
-          <div className="mt-16 flex flex-col items-start justify-between gap-6 border border-white/10 bg-navy-900 p-8 sm:flex-row sm:items-center sm:p-10">
+          {/* CTA band — kept dark navy for a strong finish on the light section */}
+          <div className="mt-16 flex flex-col items-start justify-between gap-6 section-dark border border-white/10 p-8 sm:flex-row sm:items-center sm:p-10">
             <div>
               <h3 className="text-2xl font-bold text-white">
                 Let&apos;s deliver your next hire

@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <main>
       {/* Hero + form */}
-      <section className="relative overflow-hidden blueprint pt-32 pb-20 sm:pt-36 lg:pt-40">
+      <section className="relative overflow-hidden blueprint-shade pt-32 pb-20 sm:pt-36 lg:pt-40">
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[26rem] w-[26rem] rounded-full bg-amber-500/10 blur-[120px]" />
 
@@ -98,14 +98,14 @@ export default function ContactPage() {
       </section>
 
       {/* Branch locations */}
-      <section className="relative border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="mx-auto max-w-2xl text-center">
             <span className="mono-label text-amber-500">{"//"} Nationwide</span>
-            <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Our branch locations
             </h2>
-            <p className="mt-4 text-ink-300 text-pretty">
+            <p className="mt-4 text-slate text-pretty">
               Nine U.S. offices, with recruiters who know each regional market.
             </p>
           </div>
@@ -114,9 +114,9 @@ export default function ContactPage() {
             {OFFICES.map((o) => (
               <div
                 key={o.name}
-                className="corners overflow-hidden border border-white/12 bg-navy-900"
+                className="corners overflow-hidden border border-navy-950/10 bg-white"
               >
-                <div className="relative h-56 w-full bg-navy-800">
+                <div className="relative h-56 w-full bg-mist">
                   <iframe
                     src={mapSrc(o.query)}
                     title={`${o.name} map — ${o.city}`}
@@ -128,14 +128,14 @@ export default function ContactPage() {
                 <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
                   <div>
                     <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-bold text-white">{o.name}</h3>
+                      <h3 className="text-lg font-bold text-navy-950">{o.name}</h3>
                       {o.hq && (
                         <span className="mono-label bg-amber-500 px-2 py-0.5 text-[9px] text-navy-950">
                           HQ
                         </span>
                       )}
                     </div>
-                    <p className="mono-label mt-1 text-[9px] text-ink-400">{o.city}</p>
+                    <p className="mono-label mt-1 text-[9px] text-slate-500">{o.city}</p>
                   </div>
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -143,7 +143,7 @@ export default function ContactPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group inline-flex shrink-0 items-center gap-1.5 border border-white/20 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:border-amber-500 hover:text-amber-400"
+                    className="group inline-flex shrink-0 items-center gap-1.5 border border-navy-950/20 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-navy-950 transition-colors hover:border-amber-500 hover:text-amber-500"
                   >
                     Directions
                     <IconArrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

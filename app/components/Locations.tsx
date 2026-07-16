@@ -19,7 +19,7 @@ const mapsUrl = (place: string) =>
 
 export default function Locations() {
   return (
-    <section id="locations" className="relative overflow-hidden border-t border-white/10 bg-navy-950 py-24 sm:py-28">
+    <section id="locations" className="relative overflow-hidden border-t border-white/10 section-dark py-24 sm:py-28">
       {/* U.S. coverage map background */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <UsMap className="h-full w-full max-w-6xl opacity-80 [mask-image:radial-gradient(ellipse_80%_75%_at_50%_50%,#000_55%,transparent_92%)]" />

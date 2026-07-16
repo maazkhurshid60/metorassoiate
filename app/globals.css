@@ -6,13 +6,14 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Blueprint / industrial palette */
-  --color-navy-950: #061426;
-  --color-navy-900: #0b2138;
-  --color-navy-850: #0f2947;
-  --color-navy-800: #143257;
-  --color-navy-700: #1b4270;
-  --color-navy-600: #245089;
+  /* Blueprint / industrial palette — lifted off near-black so large dark areas
+     read as a rich blue-navy rather than a flat heavy slab. */
+  --color-navy-950: #0a1d33;
+  --color-navy-900: #0f2748;
+  --color-navy-850: #143257;
+  --color-navy-800: #1a3d68;
+  --color-navy-700: #234d82;
+  --color-navy-600: #2d5c9c;
 
   --color-line: rgba(120, 165, 230, 0.14);
   --color-line-strong: rgba(130, 175, 240, 0.28);
@@ -97,6 +98,25 @@ body {
 .blueprint-fade {
   -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 45%, transparent 100%);
   mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, #000 45%, transparent 100%);
+}
+
+/* Softer dark section — a top glow easing into a deeper base, so dark sections
+   have depth ("shade") instead of reading as one flat slab. */
+.section-dark {
+  background:
+    radial-gradient(90% 60% at 50% -5%, rgba(82, 124, 255, 0.10), transparent 60%),
+    linear-gradient(180deg, var(--color-navy-950) 0%, #06101f 100%);
+}
+
+/* Blueprint grid + the same top glow, for dark sections that keep the grid. */
+.blueprint-shade {
+  background-color: var(--color-navy-950);
+  background-image:
+    radial-gradient(90% 65% at 50% 0%, rgba(82, 124, 255, 0.12), transparent 62%),
+    linear-gradient(var(--color-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
+  background-size: 100% 100%, 46px 46px, 46px 46px;
+  background-repeat: no-repeat, repeat, repeat;
 }
 
 /* Light blueprint — faint navy grid on a light blue-gray base (for light sections) */
