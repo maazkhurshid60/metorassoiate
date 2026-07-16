@@ -38,6 +38,13 @@ export default function MeetOurTeamPage() {
       {/* Roster */}
       <section className="relative border-t border-white/10 bg-navy-950 py-20 sm:py-24">
         <div className="container-x">
+          <div className="mb-10 flex items-end justify-between border-b border-white/10 pb-5">
+            <span className="mono-label text-amber-500">{"//"} The Roster</span>
+            <span className="mono-label text-[10px] text-ink-500">
+              {String(TEAM.length).padStart(2, "0")} specialists
+            </span>
+          </div>
+
           <div className="reveal-children grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
             {TEAM.map((m, i) => (
               <TeamCard key={m.name} m={m} index={i} />
