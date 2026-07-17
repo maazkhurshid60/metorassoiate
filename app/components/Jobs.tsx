@@ -20,16 +20,16 @@ export default function Jobs() {
       id="jobs"
       className="relative overflow-hidden bg-paper border-t border-navy-950/10 py-24 sm:py-28"
     >
-      {/* Engineering-drawing background — faded blueprint photo + light overlay + grid */}
+      {/* Engineering-drawing background — blueprint photo + light overlay + grid */}
       <Image
         src="/blueprints.jpeg"
         alt=""
         fill
         sizes="100vw"
-        className="object-cover opacity-[0.10]"
+        className="object-cover opacity-30"
       />
-      <div className="absolute inset-0 bg-paper/70" />
-      <div className="blueprint-light absolute inset-0 opacity-60" />
+      <div className="absolute inset-0 bg-paper/45" />
+      <div className="blueprint-light absolute inset-0 opacity-50" />
 
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
