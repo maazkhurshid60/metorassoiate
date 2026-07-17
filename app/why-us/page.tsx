@@ -158,7 +158,7 @@ export default function WhyUsPage() {
               </h3>
               <p className="mt-2 text-ink-300">
                 Tell us about the role — we&apos;ll deliver a vetted shortlist,
-                backed by our 90-day guarantee.
+                backed by our placement guarantee.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

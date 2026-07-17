@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Metro Associates — DOT & Infrastructure Staffing and Executive Search",
   description:
-    "Metro Associates is a national staffing and executive search firm for Departments of Transportation and public infrastructure. We place vetted engineers, inspectors, and construction leaders — backed by a 90-day guarantee.",
+    "Metro Associates is a national staffing and executive search firm for Departments of Transportation and public infrastructure. We place vetted engineers, inspectors, and construction leaders — backed by a placement guarantee.",
   keywords: [
     "DOT staffing",
     "transportation recruiting",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Metro Associates — DOT & Infrastructure Staffing",
     description:
-      "Faster engineering hiring, backed by a 90-day guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+      "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
     type: "website",
   },
 };

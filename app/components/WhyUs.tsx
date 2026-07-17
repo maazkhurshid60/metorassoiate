@@ -4,7 +4,7 @@ import { IconShield, IconRefresh, IconGauge } from "./Icons";
 const GUARANTEES = [
   {
     icon: IconShield,
-    title: "90-Day Free Replacement",
+    title: "Free Replacement Guarantee",
     body: "If it's not the right fit, we replace the candidate at no additional cost — no questions asked.",
   },
   {
@@ -29,7 +29,7 @@ export default function WhyUs() {
             <span className="mono-label text-amber-500">{"//"} 04 — Why Metro</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
               Faster hiring, backed by a{" "}
-              <span className="text-amber-500">90-day</span> guarantee
+              <span className="text-amber-500">placement</span> guarantee
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-ink-300 text-pretty">
               We&apos;ve reduced sourcing and hiring time by up to{" "}
