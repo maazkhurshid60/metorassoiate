@@ -45,8 +45,8 @@ export default function WhyUs() {
               </span>
               <div className="relative h-64">
                 <Image
-                  src="https://metroassoc.com/wp-content/uploads/2023/04/building.webp"
-                  alt="City skyline representing the infrastructure Metro Associates staffs"
+                  src="/bridge-dusk.jpeg"
+                  alt="Bridge construction at dusk with a tower crane — infrastructure Metro Associates staffs"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"

@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-export const LOGO_FULL =
-  "https://metroassoc.com/wp-content/uploads/2026/04/cropped-metro-assoc-logo-removebg-preview-1.webp";
+export const LOGO_FULL = "/logo.webp";
 
 type LogoProps = {
   className?: string;

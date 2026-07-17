@@ -17,7 +17,7 @@ const CASES = [
   },
   {
     tag: "Leadership · Product",
-    challenge: "High-impact software leader",
+    challenge: "High-impact leader",
     body: "One Metro candidate secured a full-time leadership role and went on to drive decisions shaping the company's product direction.",
     metric: "Retained",
     metricLabel: "Long-term",

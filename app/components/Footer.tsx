@@ -122,9 +122,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:info@metroassoc.com" className="flex items-start gap-3 text-sm text-ink-300 transition-colors hover:text-amber-400">
+                <a href="mailto:patrick@metroassoc.com" className="flex items-start gap-3 text-sm text-ink-300 transition-colors hover:text-amber-400">
                   <IconMail className="mt-0.5 h-4.5 w-4.5 text-amber-500" />
-                  info@metroassoc.com
+                  patrick@metroassoc.com
                 </a>
               </li>
               <li className="flex items-start gap-3 text-sm text-ink-300">

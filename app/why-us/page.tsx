@@ -22,7 +22,7 @@ const REASONS = [
   {
     icon: IconCompass,
     title: "Engineering Focus",
-    body: "We specialize in civil, structural, transportation, water, MEP, and construction inspection staffing.",
+    body: "We specialize in civil, structural, transportation, water, MEP, inspection and PE's staffing.",
   },
   {
     icon: IconClipboard,
@@ -104,7 +104,7 @@ export default function WhyUsPage() {
                 </span>
                 <div className="relative aspect-4/5">
                   <Image
-                    src="https://metroassoc.com/wp-content/uploads/2023/04/Why-us.webp"
+                    src="/why-us.webp"
                     alt="The Metro Associates recruiting team"
                     fill
                     priority

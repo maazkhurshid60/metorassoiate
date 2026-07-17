@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </span>
                 <div className="relative aspect-4/5">
                   <Image
-                    src="https://metroassoc.com/wp-content/uploads/2023/04/group-people.webp"
+                    src="/about-team.webp"
                     alt="Metro Associates team in a strategy session"
                     fill
                     priority
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 </span>
                 <div className="relative h-full min-h-[26rem]">
                   <Image
-                    src="https://metroassoc.com/wp-content/uploads/2026/03/us_military_flag_crisp_resized.webp"
+                    src="/veteran-flag.webp"
                     alt="U.S. military service members honoring the American flag"
                     fill
                     sizes="(max-width: 1024px) 100vw, 40vw"

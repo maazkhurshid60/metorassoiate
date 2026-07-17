@@ -18,7 +18,7 @@ export default function CTA() {
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-navy-900 text-pretty">
               Tell us about the role. We&apos;ll deliver a vetted shortlist —
-              fast, and fully backed by our 90-day guarantee.
+              fast, and fully backed by our guarantee.
             </p>
 
             <ul className="mt-8 flex flex-col gap-3">
@@ -35,7 +35,7 @@ export default function CTA() {
 
           <div className="flex flex-col gap-3">
             <a
-              href="mailto:info@metroassoc.com?subject=Talent%20Request"
+              href="mailto:patrick@metroassoc.com?subject=Talent%20Request"
               className="group inline-flex items-center justify-between gap-2 bg-navy-950 px-7 py-5 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-navy-900"
             >
               <span className="flex items-center gap-3">

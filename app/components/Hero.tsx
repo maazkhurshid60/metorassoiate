@@ -27,8 +27,8 @@ export default function Hero() {
       {/* Full-bleed background image + overlays */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="https://metroassoc.com/wp-content/uploads/2023/04/building.webp"
-          alt="U.S. city skyline — the infrastructure Metro Associates staffs"
+          src="/interchange-sunset.jpeg"
+          alt="Aerial view of a U.S. highway interchange at sunset — the infrastructure Metro Associates staffs"
           fill
           priority
           sizes="100vw"

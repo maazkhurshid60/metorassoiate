@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { IconPhone, IconMail, IconPin, IconArrow } from "../components/Icons";
 import ContactForm from "../components/ContactForm";
 import { PHONE, PHONE_HREF, EMAIL } from "../lib/site";
@@ -10,18 +11,15 @@ export const metadata: Metadata = {
 };
 
 const OFFICES = [
-  { name: "Florida Office", city: "Orlando, FL", query: "Orlando, FL", hq: true },
-  { name: "Massachusetts Office", city: "Boston, MA", query: "Boston, MA" },
-  { name: "District of Columbia Office", city: "Washington, DC", query: "Washington, DC" },
-  { name: "Georgia Office", city: "Atlanta, GA", query: "Atlanta, GA" },
-  { name: "Texas Office", city: "Dallas, TX", query: "Dallas, TX" },
-  { name: "California Office", city: "Los Angeles, CA", query: "Los Angeles, CA" },
-  { name: "New York Office", city: "New York City, NY", query: "New York, NY" },
-  { name: "Connecticut Office", city: "Hartford, CT", query: "Hartford, CT" },
+  { name: "Florida Office", city: "Orlando, FL", query: "Orlando, FL", map: "/maps/orlando.png", hq: true },
+  { name: "Massachusetts Office", city: "Boston, MA", query: "Boston, MA", map: "/maps/boston.png" },
+  { name: "District of Columbia Office", city: "Washington, DC", query: "Washington, DC", map: "/maps/washington.png" },
+  { name: "Georgia Office", city: "Atlanta, GA", query: "Atlanta, GA", map: "/maps/atlanta.png" },
+  { name: "Texas Office", city: "Dallas, TX", query: "Dallas, TX", map: "/maps/dallas.png" },
+  { name: "California Office", city: "Los Angeles, CA", query: "Los Angeles, CA", map: "/maps/los-angeles.png" },
+  { name: "New York Office", city: "New York City, NY", query: "New York, NY", map: "/maps/new-york.png" },
+  { name: "Connecticut Office", city: "Hartford, CT", query: "Hartford, CT", map: "/maps/hartford.png" },
 ];
-
-const mapSrc = (q: string) =>
-  `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=11&output=embed`;
 
 export default function ContactPage() {
   return (
@@ -117,19 +115,19 @@ export default function ContactPage() {
                 className="corners overflow-hidden border border-navy-950/10 bg-white"
               >
                 <div className="relative h-56 w-full bg-mist">
-                  <iframe
-                    src={mapSrc(o.query)}
-                    title={`${o.name} map — ${o.city}`}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    tabIndex={-1}
-                    aria-hidden="true"
-                    className="pointer-events-none h-full w-full grayscale-[0.35]"
+                  {/* Static map image, self-hosted from /public — no live embed,
+                      so there's no "Open in Maps" link, zoom prompt or Google chrome. */}
+                  <Image
+                    src={o.map}
+                    alt={`Map of ${o.name} — ${o.city}`}
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover grayscale-[0.35]"
                   />
-                  {/* Transparent overlay makes the map display-only: no ctrl+scroll
-                      zoom prompt, no accidental panning or clicks. The "Directions"
-                      button below is the intentional way to open Maps. */}
-                  <span className="absolute inset-0" aria-hidden="true" />
+                  {/* OpenStreetMap data attribution (ODbL). */}
+                  <span className="absolute bottom-1 right-1.5 rounded bg-white/70 px-1 text-[8px] leading-tight text-navy-950/70">
+                    © OpenStreetMap
+                  </span>
                 </div>
                 <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
                   <div>

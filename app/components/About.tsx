@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { IconArrow, IconCheck } from "./Icons";
 import { CAREERS_URL } from "../lib/site";
 import CountUp from "./CountUp";
@@ -72,20 +73,33 @@ export default function About() {
             </div>
           </div>
 
-          {/* Roles we place — kept dark navy for deliberate contrast */}
-          <div className="border border-navy-950/10 bg-navy-950 p-8">
-            <p className="mono-label text-amber-500">Transportation roles we place</p>
-            <ul className="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2">
-              {ROLES.map((r, i) => (
-                <li key={r} className="flex items-center gap-3 text-[15px] text-ink-100">
-                  <span className="mono-label text-[10px] text-ink-500">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
-                  {r}
-                </li>
-              ))}
-            </ul>
+          {/* Roles we place — light-blue engineering-drawing background */}
+          <div className="relative overflow-hidden border border-brand-500/25 bg-mist p-8">
+            {/* faded blueprint photo, tinted light blue */}
+            <Image
+              src="/blueprints.jpeg"
+              alt=""
+              fill
+              sizes="(max-width: 1024px) 100vw, 55vw"
+              className="object-cover opacity-15"
+            />
+            <div className="absolute inset-0 bg-mist/75" />
+            {/* technical-drawing grid in light blue */}
+            <div className="blueprint-light absolute inset-0 opacity-70" />
+            <div className="relative">
+              <p className="mono-label text-brand-600">Transportation roles we place</p>
+              <ul className="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+                {ROLES.map((r, i) => (
+                  <li key={r} className="flex items-center gap-3 text-[15px] font-medium text-navy-950">
+                    <span className="mono-label text-[10px] text-brand-500/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 

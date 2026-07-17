@@ -62,6 +62,7 @@ export default function Team() {
               Metro Associates&apos; engineering recruiting and executive search
               practice — pairing state DOTs, municipalities, and infrastructure
               firms with vetted talent that delivers on publicly funded programs.
+              Specialties include PE&apos;s, MEP, Mechanical, Electrical and P&amp;FP.
             </p>
             <a
               href={lead.linkedin}
