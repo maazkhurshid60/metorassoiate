@@ -145,8 +145,8 @@ export default function Footer() {
             © {new Date().getFullYear()} Metro Associates — All Rights Reserved
           </p>
           <div className="flex gap-6">
-            <a href="#" className="mono-label text-[10px] transition-colors hover:text-amber-400">Privacy Policy</a>
-            <a href="#" className="mono-label text-[10px] transition-colors hover:text-amber-400">Terms</a>
+            <a href="/privacy" className="mono-label text-[10px] transition-colors hover:text-amber-400">Privacy Policy</a>
+            <a href="/terms" className="mono-label text-[10px] transition-colors hover:text-amber-400">Terms</a>
           </div>
         </div>
       </div>
