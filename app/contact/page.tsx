@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { IconPhone, IconMail, IconPin, IconArrow } from "../components/Icons";
+import { IconPhone, IconMail, IconPin } from "../components/Icons";
 import ContactForm from "../components/ContactForm";
 import { PHONE, PHONE_HREF, EMAIL } from "../lib/site";
 
@@ -129,29 +129,16 @@ export default function ContactPage() {
                     © OpenStreetMap
                   </span>
                 </div>
-                <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-lg font-bold text-navy-950">{o.name}</h3>
-                      {o.hq && (
-                        <span className="mono-label bg-amber-500 px-2 py-0.5 text-[9px] text-navy-950">
-                          HQ
-                        </span>
-                      )}
-                    </div>
-                    <p className="mono-label mt-1 text-[9px] text-slate-500">{o.city}</p>
+                <div className="p-6">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-bold text-navy-950">{o.name}</h3>
+                    {o.hq && (
+                      <span className="mono-label bg-amber-500 px-2 py-0.5 text-[9px] text-navy-950">
+                        HQ
+                      </span>
+                    )}
                   </div>
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      o.query
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group inline-flex shrink-0 items-center gap-1.5 border border-navy-950/20 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-navy-950 transition-colors hover:border-amber-500 hover:text-amber-500"
-                  >
-                    Directions
-                    <IconArrow className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                  </a>
+                  <p className="mono-label mt-1 text-[9px] text-slate-500">{o.city}</p>
                 </div>
               </div>
             ))}

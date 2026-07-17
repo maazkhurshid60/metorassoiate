@@ -1,37 +1,16 @@
-import { IconArrow, IconPin } from "./Icons";
+import { IconArrow } from "./Icons";
 import { CAREERS_URL, APPLY_URL } from "../lib/site";
 
-const JOBS = [
-  {
-    role: "Construction Management — VDOT",
-    loc: "Fredericksburg, Virginia",
-    type: "Direct Hire",
-    featured: true,
-  },
-  {
-    role: "Senior Engineer (PE) — CTDOT / RIDOT",
-    loc: "North Haven, Connecticut",
-    type: "Direct Hire",
-    featured: true,
-  },
-  {
-    role: "Bridge & Structural Designer",
-    loc: "Atlanta, Georgia",
-    type: "Direct Hire",
-    featured: false,
-  },
-  {
-    role: "CEI Inspector",
-    loc: "Dallas, Texas",
-    type: "Contract",
-    featured: false,
-  },
-  {
-    role: "Resident Engineer",
-    loc: "Los Angeles, California",
-    type: "Direct Hire",
-    featured: false,
-  },
+// The categories of roles Metro regularly recruits for. These are role TYPES —
+// not specific live postings. Actual current openings live on the Top Echelon
+// job board (CAREERS_URL), which is always up to date.
+const ROLE_TYPES = [
+  "Licensed Professional Engineers (PEs)",
+  "CEI & Construction Inspectors",
+  "Bridge & Structural Designers",
+  "Construction & Project Managers",
+  "Resident & Roadway Engineers",
+  "Senior Infrastructure Leaders",
 ];
 
 export default function Jobs() {
@@ -56,70 +35,45 @@ export default function Jobs() {
           </p>
         </div>
 
-        <div className="mt-14 border border-navy-950/10 bg-white">
-          {/* header row */}
-          <div className="mono-label hidden grid-cols-[1fr_200px_130px_120px] items-center gap-4 bg-navy-950/5 px-6 py-3 text-slate-500 lg:grid">
-            <span>Job Title &amp; Location</span>
-            <span>Job Type</span>
-            <span>Status</span>
-            <span className="text-right">Action</span>
+        <div className="mt-14 border border-navy-950/10 bg-white p-8 sm:p-10">
+          <p className="mono-label text-slate-500">Roles we regularly place</p>
+          <div className="mt-6 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+            {ROLE_TYPES.map((r) => (
+              <div
+                key={r}
+                className="flex items-center gap-3 border-b border-navy-950/10 pb-4 text-[15px] font-medium text-navy-950"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
+                {r}
+              </div>
+            ))}
           </div>
 
-          {JOBS.map((j) => (
+          <p className="mt-8 max-w-2xl text-sm leading-7 text-slate-500">
+            Current openings are posted on our live job board and updated as roles
+            open. Browse everything available today, or send a general application
+            and we&apos;ll reach out when the right match comes up.
+          </p>
+
+          <div className="mt-6 flex flex-wrap gap-4">
             <a
-              key={j.role}
+              href={CAREERS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 bg-amber-500 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
+            >
+              Browse Open Roles
+              <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
+            </a>
+            <a
               href={APPLY_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group grid grid-cols-1 items-center gap-2 border-t border-navy-950/10 bg-white px-6 py-5 transition-colors hover:bg-mist lg:grid-cols-[1fr_200px_130px_120px] lg:gap-4"
+              className="inline-flex items-center gap-2 border border-navy-950/25 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:border-amber-500 hover:text-amber-500"
             >
-              <span>
-                <span className="block text-lg font-bold text-navy-950 group-hover:text-brand-500">
-                  {j.role}
-                </span>
-                <span className="mt-1 flex items-center gap-1.5 text-sm text-slate-500">
-                  <IconPin className="h-4 w-4 text-slate-500" />
-                  {j.loc}
-                </span>
-              </span>
-              <span className="mono-label w-fit border border-navy-950/15 px-2.5 py-1 text-[9px] text-slate">
-                {j.type}
-              </span>
-              <span>
-                {j.featured ? (
-                  <span className="mono-label bg-amber-500 px-2.5 py-1 text-[9px] text-navy-950">
-                    Featured
-                  </span>
-                ) : (
-                  <span className="mono-label text-[9px] text-slate-500">Open</span>
-                )}
-              </span>
-              <span className="flex items-center gap-1.5 text-sm font-bold uppercase tracking-wide text-navy-950 lg:justify-end">
-                Apply
-                <IconArrow className="h-4 w-4 text-amber-500 transition-transform group-hover:translate-x-1" />
-              </span>
+              Submit a General Application
             </a>
-          ))}
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href={CAREERS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-amber-500 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
-          >
-            Explore All 248+ Jobs
-            <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
-          </a>
-          <a
-            href={APPLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-navy-950/25 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:border-amber-500 hover:text-amber-500"
-          >
-            Submit a General Application
-          </a>
+          </div>
         </div>
       </div>
     </section>

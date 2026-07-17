@@ -7,7 +7,6 @@ const METRICS = [
   { value: 1598, suffix: "+", v: "Candidates placed", d: "Matched with precision and professionalism.", live: false },
   { value: 45, suffix: "+", v: "Years of experience", d: "Entry-level roles to C-suite executives.", live: false },
   { value: 157, suffix: "K+", v: "Résumés on file", d: "A deep, vetted national talent network.", live: false },
-  { value: 248, suffix: "+", v: "Open jobs", d: "Active roles across the U.S. right now.", live: true },
 ];
 
 const ROLES = [
@@ -104,7 +103,7 @@ export default function About() {
         </div>
 
         {/* Big metric grid — light credibility band */}
-        <div className="reveal-children mt-16 grid grid-cols-2 gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 lg:grid-cols-4">
+        <div className="reveal-children mt-16 grid grid-cols-2 gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 lg:grid-cols-3">
           {METRICS.map((m) => (
             <div
               key={m.v}
