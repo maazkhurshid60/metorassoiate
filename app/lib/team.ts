@@ -1,5 +1,7 @@
 const U = "https://metroassoc.com/wp-content/uploads/2026/04/";
+// Every team member's profile link points to Patrick's LinkedIn.
 const FALLBACK_LINKEDIN = "https://www.linkedin.com/in/patricknovick/";
+const PATRICK_LINKEDIN = FALLBACK_LINKEDIN;
 
 export type Member = {
   name: string;
@@ -22,14 +24,14 @@ export const TEAM: Member[] = [
     name: "Tina B",
     role: "Recruiter",
     photo: `${U}ChatGPT-Image-Apr-4-2026-06_50_51-PM.png`,
-    linkedin: "https://www.linkedin.com/in/tinab2/",
+    linkedin: PATRICK_LINKEDIN,
     objectPos: "object-top",
   },
   {
     name: "Cai Jones",
     role: "Recruiter",
     photo: `${U}ChatGPT-Image-Apr-5-2026-05_55_35-AM.png`,
-    linkedin: "https://www.linkedin.com/in/caijones/",
+    linkedin: PATRICK_LINKEDIN,
   },
   {
     name: "Nick J",
@@ -58,16 +60,16 @@ export const TEAM: Member[] = [
   {
     name: "Lisa Vasquez",
     role: "Recruiter",
-    linkedin: "https://www.linkedin.com/in/lisa-vasquez-a4a12bb3/",
+    linkedin: PATRICK_LINKEDIN,
   },
   {
     name: "Steff Cirone",
     role: "Recruiter",
-    linkedin: "https://www.linkedin.com/in/steff-cirone-b94b23aa/",
+    linkedin: PATRICK_LINKEDIN,
   },
   {
     name: "Robert Garret",
     role: "Recruiter",
-    linkedin: "https://www.linkedin.com/in/robert-garret-529980b0/",
+    linkedin: PATRICK_LINKEDIN,
   },
 ];

@@ -2,8 +2,8 @@ import { IconArrow } from "./Icons";
 
 const CASES = [
   {
-    tag: "Software · Engineering",
-    challenge: "Senior Software Developer",
+    tag: "Transportation · Engineering",
+    challenge: "Sr. Engineer",
     body: "Fifteen pre-screened resumes led to five technical phone screens and four in-person interviews. Role filled in four weeks.",
     metric: "4 wks",
     metricLabel: "Time to fill",

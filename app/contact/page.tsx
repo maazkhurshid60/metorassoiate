@@ -122,8 +122,14 @@ export default function ContactPage() {
                     title={`${o.name} map — ${o.city}`}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="h-full w-full grayscale-[0.35]"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    className="pointer-events-none h-full w-full grayscale-[0.35]"
                   />
+                  {/* Transparent overlay makes the map display-only: no ctrl+scroll
+                      zoom prompt, no accidental panning or clicks. The "Directions"
+                      button below is the intentional way to open Maps. */}
+                  <span className="absolute inset-0" aria-hidden="true" />
                 </div>
                 <div className="flex flex-col items-start justify-between gap-4 p-6 sm:flex-row sm:items-center">
                   <div>

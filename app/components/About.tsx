@@ -25,6 +25,7 @@ const STANDARDS = [
   "DOT specifications",
   "FHWA standards",
   "AASHTO guidelines",
+  "NETTCP certified",
   "QA/QC protocols",
   "Safety compliance",
 ];
