@@ -27,7 +27,7 @@ export default function Hero() {
       {/* Full-bleed background image + overlays */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/interchange-sunset.jpeg"
+          src="/interchange-sunset.jpg"
           alt="Aerial view of a U.S. highway interchange at sunset — the infrastructure Metro Associates staffs"
           fill
           priority
