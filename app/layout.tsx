@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { SITE_URL } from "./lib/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,6 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Metro Associates — DOT & Infrastructure Staffing and Executive Search",
   description:
     "Metro Associates is a national staffing and executive search firm for Departments of Transportation and public infrastructure. We place vetted engineers, inspectors, and construction leaders — backed by a placement guarantee.",
@@ -26,11 +28,26 @@ export const metadata: Metadata = {
     "civil engineering recruiters",
     "construction inspection staffing",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Metro Associates — DOT & Infrastructure Staffing",
     description:
       "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+    url: SITE_URL,
+    siteName: "Metro Associates",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Metro Associates — DOT & Infrastructure Staffing",
+    description:
+      "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -47,7 +64,7 @@ const jsonLd = {
   worksFor: {
     "@type": "Organization",
     name: "Metro Associates",
-    url: "https://metro.associates",
+    url: SITE_URL,
   },
   knowsAbout: [
     "Executive Recruiting",

@@ -1,3 +1,6 @@
+/** Canonical production origin — no trailing slash. Used for metadataBase, sitemap, robots, and canonical URLs. */
+export const SITE_URL = "https://metroassoc.com";
+
 /** External careers portal (Top Echelon). CAREERS_URL browses all jobs; APPLY_URL is the application form. */
 export const CAREERS_URL =
   "https://careers.topechelon.com/portals/3a7f6fd3-7cf7-447c-a20f-2354eb2031df";
