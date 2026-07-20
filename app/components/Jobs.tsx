@@ -20,13 +20,15 @@ export default function Jobs() {
       id="jobs"
       className="relative overflow-hidden bg-paper border-t border-navy-950/10 py-24 sm:py-28"
     >
-      {/* Engineering-drawing background — blueprint photo + light overlay + grid */}
+      {/* Engineering-drawing background — blueprint photo + light overlay + grid.
+          Masked to feather (bleed) out at the top & bottom edges so it blends
+          into the neighboring sections instead of ending in a hard rectangle. */}
       <Image
         src="/blueprints.jpeg"
         alt=""
         fill
         sizes="100vw"
-        className="object-cover opacity-30"
+        className="object-cover opacity-30 mask-[linear-gradient(to_bottom,#000_0%,#000_60%,transparent_100%)]"
       />
       <div className="absolute inset-0 bg-paper/45" />
       <div className="blueprint-light absolute inset-0 opacity-50" />

@@ -16,6 +16,17 @@ export default function Team() {
       id="team"
       className="relative overflow-hidden border-t border-white/10 blueprint py-24 sm:py-28"
     >
+      {/* Blueprint photo bleeding up from the Careers section below — dark-tinted
+          and masked so it's strongest at the bottom border, fading out upward, so
+          this section and Careers share one continuous blueprint texture. */}
+      <Image
+        src="/blueprints.jpeg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none object-cover opacity-[0.14] mask-[linear-gradient(to_bottom,transparent_35%,#000_100%)]"
+      />
+
       <div className="pointer-events-none absolute -right-40 top-10 h-96 w-96 rounded-full bg-brand-500/15 blur-[130px]" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-80 w-80 rounded-full bg-amber-500/10 blur-[120px]" />
 
