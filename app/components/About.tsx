@@ -32,7 +32,20 @@ const STANDARDS = [
 
 export default function About() {
   return (
-    <section id="about" className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+    <section id="about" className="relative isolate overflow-hidden border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      {/* Faded blueprint backdrop for the whole About section */}
+      <Image
+        src="/fx-gs.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none -z-10 object-cover opacity-[0.30]"
+      />
+      {/* Paper wash — heavier on the left so the heading + body copy stay legible,
+          lighter on the right so the blueprint reads clearly */}
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-paper/80 via-paper/60 to-paper/30" />
+      <div className="pointer-events-none absolute inset-0 -z-10 blueprint-light opacity-30" />
+
       <div className="container-x">
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
@@ -76,7 +89,7 @@ export default function About() {
           <div className="relative overflow-hidden border border-brand-500/25 bg-mist p-8">
             {/* faded blueprint photo, tinted light blue */}
             <Image
-              src="/blueprints.jpeg"
+              src="/fx-gs.webp"
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 55vw"

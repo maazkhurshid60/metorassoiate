@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   IconBridge,
   IconCompass,
@@ -19,8 +20,18 @@ const PROGRAMS = [
 
 export default function Programs() {
   return (
-    <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
-      <div className="container-x">
+    <section className="relative isolate overflow-hidden border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
+      {/* Faded blueprint backdrop */}
+      <Image
+        src="/fx-gs.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none -z-10 object-cover opacity-[0.30]"
+      />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-mist/80 via-mist/60 to-mist/30" />
+
+      <div className="container-x relative">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           {/* What sets us apart */}
           <div>

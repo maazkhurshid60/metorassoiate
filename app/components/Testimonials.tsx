@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { IconStar } from "./Icons";
 
 const TESTIMONIALS = [
@@ -34,8 +35,18 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden blueprint-light border-t border-navy-950/10 py-24 sm:py-28"
+      className="relative isolate overflow-hidden blueprint-light border-t border-navy-950/10 py-24 sm:py-28"
     >
+      {/* Faded blueprint backdrop */}
+      <Image
+        src="/fx-gs.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none -z-10 object-cover opacity-[0.30]"
+      />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-mist/50" />
+
       <div className="container-x relative">
         <div className="mx-auto max-w-2xl text-center">
           <span className="mono-label text-amber-500">{"//"} 09 — Client Feedback</span>

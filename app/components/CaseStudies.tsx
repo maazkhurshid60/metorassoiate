@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { IconArrow } from "./Icons";
 
 const CASES = [
@@ -28,8 +29,19 @@ export default function CaseStudies() {
   return (
     <section
       id="results"
-      className="relative overflow-hidden bg-paper border-t border-navy-950/10 py-24 sm:py-28"
+      className="relative isolate overflow-hidden bg-paper border-t border-navy-950/10 py-24 sm:py-28"
     >
+      {/* Faded blueprint backdrop */}
+      <Image
+        src="/fx-gs.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="pointer-events-none -z-10 object-cover opacity-[0.30]"
+      />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-linear-to-r from-paper/80 via-paper/60 to-paper/30" />
+      <div className="pointer-events-none absolute inset-0 -z-10 blueprint-light opacity-30" />
+
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
