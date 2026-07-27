@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/site";
+import { CITIES } from "./lib/cities";
 
 /**
  * Static list of indexable routes. Update this when adding public pages.
@@ -15,6 +16,12 @@ const routes: Array<{
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/meet-our-team", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/civil-engineering-recruiter", changeFrequency: "monthly", priority: 0.8 },
+  ...CITIES.map((c) => ({
+    path: `/civil-engineering-recruiter/${c.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];
