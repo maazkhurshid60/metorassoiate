@@ -14,7 +14,7 @@ export type Member = {
 /** Real Metro Associates team. Members without a LinkedIn use Patrick's profile. */
 export const TEAM: Member[] = [
   {
-    name: "Patrick N.",
+    name: "Patrick Novick",
     role: "Managing Partner",
     photo: "/team/patrick.webp",
     linkedin: "https://www.linkedin.com/in/patricknovick/",
