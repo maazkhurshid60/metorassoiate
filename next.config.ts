@@ -57,6 +57,11 @@ async function redirects() {
       destination: "/civil-engineering-recruiter/indianapolis-in",
       permanent: true,
     },
+    {
+      source: "/1seo-civil-engineering-recruiter-new-mexico",
+      destination: "/civil-engineering-recruiter/albuquerque-nm",
+      permanent: true,
+    },
 
     // Precise old->new city mappings generated from the city list.
     ...cityRedirects,
