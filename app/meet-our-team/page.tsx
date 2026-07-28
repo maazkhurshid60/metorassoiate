@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { IconArrow } from "../components/Icons";
+import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { TEAM } from "../lib/team";
 import TeamCard from "../components/TeamCard";
 
@@ -14,7 +15,8 @@ export default function MeetOurTeamPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
+      <section className="relative isolate overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
+        <HeaderBackdrop />
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[26rem] w-[26rem] rounded-full bg-amber-500/10 blur-[120px]" />
 

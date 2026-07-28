@@ -9,6 +9,7 @@ import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
   CITIES, getCity, EXPERTISE, ROLES, SALARIES, WHY,
 } from "../../lib/cities";
+import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 
 // Pre-render the fixed set of city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -48,7 +49,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
   return (
     <main>
       {/* Hero */}
-      <section className="relative overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
+      <section className="relative isolate overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
+        <HeaderBackdrop />
         <div className="pointer-events-none absolute -left-40 top-24 h-96 w-96 rounded-full bg-brand-500/20 blur-[110px]" />
         <div className="pointer-events-none absolute right-0 top-0 h-[28rem] w-[28rem] rounded-full bg-amber-500/10 blur-[120px]" />
 
