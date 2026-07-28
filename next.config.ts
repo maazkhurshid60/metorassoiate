@@ -23,13 +23,9 @@ async function redirects() {
   ]);
 
   return [
-    // Canonicalize www -> apex (non-www is the canonical host).
-    {
-      source: "/:path*",
-      has: [{ type: "host" as const, value: "www.metroassoc.com" }],
-      destination: "https://metroassoc.com/:path*",
-      permanent: true,
-    },
+    // NOTE: www<->apex canonicalization is handled at the Vercel domain level,
+    // NOT here. A host-based redirect in this config conflicts with Vercel's
+    // domain redirect and causes an infinite loop (ERR_TOO_MANY_REDIRECTS).
 
     // Legacy standalone pages
     { source: "/contact-us-2", destination: "/contact", permanent: true },
