@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { JsonLd } from "./components/JsonLd";
+import { organizationSchema } from "./lib/seo";
 import { SITE_URL } from "./lib/site";
 
 const geistSans = Geist({
@@ -38,12 +40,14 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: "Metro Associates",
     type: "website",
+    images: [{ url: "/interchange-sunset.jpg", width: 1200, height: 630, alt: "Metro Associates — DOT & infrastructure staffing" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Metro Associates — DOT & Infrastructure Staffing",
     description:
       "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+    images: ["/interchange-sunset.jpg"],
   },
   robots: {
     index: true,
@@ -90,10 +94,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={[organizationSchema(), jsonLd]} />
       </body>
     </html>
   );

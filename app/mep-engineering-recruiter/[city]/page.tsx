@@ -10,6 +10,8 @@ import {
   MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES, MEP_WHY,
 } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
+import { JsonLd } from "../../components/JsonLd";
+import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs } from "../../lib/seo";
 
 // Pre-render the fixed set of MEP city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -46,8 +48,27 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
   const c = getMepCity(slug);
   if (!c) notFound();
 
+  const path = `/mep-engineering-recruiter/${c.slug}`;
+  const faqs = mepFaqs(c);
+  const schemas = [
+    serviceSchema({
+      serviceName: `MEP Engineering Recruiter — ${c.city}, ${c.abbr}`,
+      description: `Specialized MEP engineering staffing and executive search in ${c.city}, ${c.state}. We place licensed mechanical, electrical, and plumbing PEs, project managers, and commissioning specialists.`,
+      path,
+      areaCity: c.city,
+      areaState: c.state,
+    }),
+    breadcrumbSchema([
+      { name: "Home", path: "/" },
+      { name: "MEP Engineering Recruiter", path: "/mep-engineering-recruiter" },
+      { name: `${c.city}, ${c.abbr}`, path },
+    ]),
+    faqSchema(faqs),
+  ];
+
   return (
     <main>
+      <JsonLd data={schemas} />
       {/* Hero */}
       <section className="relative isolate overflow-hidden blueprint-shade pt-32 pb-16 sm:pt-36 lg:pt-40">
         <HeaderBackdrop />
@@ -221,8 +242,28 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
         </div>
       </section>
 
-      {/* Why partner */}
+      {/* FAQ — feeds the FAQ rich result and adds long-tail keyword coverage */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <span className="mono-label text-amber-500">{"//"} FAQ</span>
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+              MEP engineering recruiting in {c.city} — FAQ
+            </h2>
+          </div>
+          <div className="mt-12 divide-y divide-navy-950/10 border-t border-navy-950/10">
+            {faqs.map((f) => (
+              <div key={f.q} className="py-6">
+                <h3 className="text-lg font-bold text-navy-950">{f.q}</h3>
+                <p className="mt-2 leading-7 text-slate-500 text-pretty">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why partner */}
+      <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} Why partner with us</span>
