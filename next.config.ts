@@ -2,13 +2,13 @@ import type { NextConfig } from "next";
 import { CITIES } from "./app/lib/cities";
 
 // 301 redirects for legacy URLs indexed by Google on the previous site, so
-// visitors and crawlers never land on a 404. Precise old→new city mappings
+// visitors and crawlers never land on a 404. Precise old->new city mappings
 // (best for SEO) come first; broad catch-alls send anything else to the
 // relevant hub page.
 async function redirects() {
-  // Old city URLs used two prefixes: "1seo-civil-engineering-recruiter-<slug>"
-  // and "civil-engineering-recruiter-<slug>". Map the ones that match a real
-  // city straight to that city page.
+  // Old city URLs used the prefixes "1seo-civil-engineering-recruiter-<slug>"
+  // and "civil-engineering-recruiter-<slug>". Map the ones whose slug matches a
+  // real city straight to that city page.
   const cityRedirects = CITIES.flatMap((c) => [
     {
       source: `/1seo-civil-engineering-recruiter-${c.slug}`,
@@ -23,6 +23,14 @@ async function redirects() {
   ]);
 
   return [
+    // Canonicalize www -> apex (non-www is the canonical host).
+    {
+      source: "/:path*",
+      has: [{ type: "host" as const, value: "www.metroassoc.com" }],
+      destination: "https://metroassoc.com/:path*",
+      permanent: true,
+    },
+
     // Legacy standalone pages
     { source: "/contact-us-2", destination: "/contact", permanent: true },
     { source: "/contact-us", destination: "/contact", permanent: true },
@@ -31,11 +39,35 @@ async function redirects() {
     { source: "/terms-2", destination: "/terms", permanent: true },
     { source: "/about-us", destination: "/about", permanent: true },
 
-    // Precise old→new city mappings (must precede the catch-alls below)
+    // Explicit aliases: old slugs that don't match our city slug format but
+    // clearly map to a specific city page.
+    {
+      source: "/1seo-civil-engineering-recruiter-new-york",
+      destination: "/civil-engineering-recruiter/new-york-ny",
+      permanent: true,
+    },
+    {
+      source: "/1seo-civil-engineering-recruiter-new-york-city",
+      destination: "/civil-engineering-recruiter/new-york-ny",
+      permanent: true,
+    },
+    {
+      source: "/new-jersey-civil-engineering-recruiter",
+      destination: "/civil-engineering-recruiter/newark-nj",
+      permanent: true,
+    },
+    {
+      source: "/civil-engineering-recruiter-indiana",
+      destination: "/civil-engineering-recruiter/indianapolis-in",
+      permanent: true,
+    },
+
+    // Precise old->new city mappings generated from the city list.
     ...cityRedirects,
 
-    // Catch-all: any remaining old civil URL (states, topic hubs, unknown
-    // cities) → the civil hub page, so nobody hits a 404.
+    // Catch-alls: any remaining old civil URL (states, topic hubs, cities we
+    // don't have a page for) -> the civil hub, so nobody hits a 404.
+    // Covers "civil-engineering-recruiter-<x>" and "1seo-...-<x>" ...
     {
       source: "/1seo-civil-engineering-recruiter-:slug",
       destination: "/civil-engineering-recruiter",
@@ -43,6 +75,12 @@ async function redirects() {
     },
     {
       source: "/civil-engineering-recruiter-:slug",
+      destination: "/civil-engineering-recruiter",
+      permanent: true,
+    },
+    // ... and the "state-first" pattern, e.g. "/north-dakota-civil-engineering-recruiter".
+    {
+      source: "/:state-civil-engineering-recruiter",
       destination: "/civil-engineering-recruiter",
       permanent: true,
     },
