@@ -156,7 +156,7 @@ export default function ContactForm() {
             <a href={`mailto:${EMAIL}`} className="text-amber-400 hover:underline">
               {EMAIL}
             </a>{" "}
-            or +1 239-255-5921.
+            or +1 312-500-1878.
           </p>
         </div>
         <button

@@ -117,9 +117,9 @@ export default function Footer() {
             <h3 className="mono-label text-ink-500">Get in Touch</h3>
             <ul className="mt-5 space-y-4">
               <li>
-                <a href="tel:+12392555921" className="flex items-start gap-3 text-sm text-ink-300 transition-colors hover:text-amber-400">
+                <a href="tel:+13125001878" className="flex items-start gap-3 text-sm text-ink-300 transition-colors hover:text-amber-400">
                   <IconPhone className="mt-0.5 h-4.5 w-4.5 text-amber-500" />
-                  +1 239-255-5921
+                  +1 312-500-1878
                 </a>
               </li>
               <li>

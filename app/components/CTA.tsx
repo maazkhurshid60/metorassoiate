@@ -45,12 +45,12 @@ export default function CTA() {
               <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
             </a>
             <a
-              href="tel:+12392555921"
+              href="tel:+13125001878"
               className="group inline-flex items-center justify-between gap-2 border border-navy-950/40 px-7 py-5 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-navy-950 hover:text-white"
             >
               <span className="flex items-center gap-3">
                 <IconPhone className="h-5 w-5" />
-                +1 239-255-5921
+                +1 312-500-1878
               </span>
               <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
             </a>

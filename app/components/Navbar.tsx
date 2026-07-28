@@ -72,7 +72,7 @@ export default function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <span className="mono-label hidden text-ink-400 2xl:inline">+1 239-255-5921</span>
+          <span className="mono-label hidden text-ink-400 2xl:inline">+1 312-500-1878</span>
           <Link
             href="/contact"
             className="group inline-flex items-center gap-2 bg-amber-500 px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400"
