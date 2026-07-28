@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/site";
 import { CITIES } from "./lib/cities";
+import { MEP_CITIES } from "./lib/mep";
 
 /**
  * Static list of indexable routes. Update this when adding public pages.
@@ -19,6 +20,11 @@ const routes: Array<{
   { path: "/civil-engineering-recruiter", changeFrequency: "monthly", priority: 0.8 },
   ...CITIES.map((c) => ({
     path: `/civil-engineering-recruiter/${c.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
+  ...MEP_CITIES.map((c) => ({
+    path: `/mep-engineering-recruiter/${c.slug}`,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   })),
