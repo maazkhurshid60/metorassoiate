@@ -3,7 +3,8 @@ import { SITE_URL, PHONE, EMAIL } from "./site";
 // Central structured-data (JSON-LD) helpers. Only verifiable facts are emitted
 // — no fabricated addresses, ratings, or reviews (which risk Google penalties).
 
-const LINKEDIN = "https://www.linkedin.com/in/patricknovick/";
+const LINKEDIN = "https://www.linkedin.com/company/94152534/";
+const FACEBOOK = "https://www.facebook.com/MetropoAssociatesLLC/";
 
 // Organization identity reused as the `provider` on every Service schema.
 export const ORG = {
@@ -16,7 +17,7 @@ export const ORG = {
   telephone: PHONE,
   email: EMAIL,
   areaServed: { "@type": "Country", name: "United States" },
-  sameAs: [LINKEDIN],
+  sameAs: [LINKEDIN, FACEBOOK],
   description:
     "National staffing and executive search firm for civil, transportation (DOT), and MEP engineering — placing licensed PEs, inspectors, and construction leaders, backed by a placement guarantee.",
 };
