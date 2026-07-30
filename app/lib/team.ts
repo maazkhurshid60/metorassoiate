@@ -60,9 +60,7 @@ export const TEAM: Member[] = [
   {
     name: "Lisa V.",
     role: "Recruiter",
-    photo: "/team/lisa.jpg",
     linkedin: PATRICK_LINKEDIN,
-    objectPos: "object-top",
   },
   {
     name: "Steff C.",
@@ -72,8 +70,6 @@ export const TEAM: Member[] = [
   {
     name: "Robert G.",
     role: "Recruiter",
-    photo: "/team/robert.jpg",
     linkedin: PATRICK_LINKEDIN,
-    objectPos: "object-top",
   },
 ];
