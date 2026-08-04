@@ -88,6 +88,19 @@ export default function Jobs() {
               Submit a General Application
             </a>
           </div>
+
+          <p className="mt-6 text-sm leading-6 text-slate-500">
+            Don&apos;t see the job you&apos;re looking for?{" "}
+            <a
+              href={APPLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-navy-950 underline decoration-amber-500 decoration-2 underline-offset-4 transition-colors hover:text-amber-500"
+            >
+              Submit your resume for future consideration
+            </a>{" "}
+            and we&apos;ll contact you when a matching role opens.
+          </p>
         </div>
       </div>
     </section>
