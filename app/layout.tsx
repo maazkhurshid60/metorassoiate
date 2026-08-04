@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import ChatWidget from "./components/ChatWidget";
 import { JsonLd } from "./components/JsonLd";
 import { organizationSchema } from "./lib/seo";
 import { SITE_URL } from "./lib/site";
@@ -95,6 +96,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <JsonLd data={[organizationSchema(), jsonLd]} />
+        <ChatWidget />
       </body>
     </html>
   );
