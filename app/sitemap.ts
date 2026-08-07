@@ -29,6 +29,7 @@ const routes: Array<{
     changeFrequency: "monthly" as const,
     priority: 0.7,
   })),
+  { path: "/bridge-structural-recruiter", changeFrequency: "monthly", priority: 0.8 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];

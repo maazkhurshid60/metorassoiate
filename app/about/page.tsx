@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 // for the pattern to follow once a discipline gets its own page.
 const DISCIPLINES = [
   { icon: IconGlobe, label: "Civil & Transportation", href: "/civil-engineering-recruiter" },
-  { icon: IconBridge, label: "Bridge & Structural" },
+  { icon: IconBridge, label: "Bridge & Structural", href: "/bridge-structural-recruiter" },
   { icon: IconLayers, label: "Water & Wastewater" },
   { icon: IconBolt, label: "MEP Engineering", href: "/mep-engineering-recruiter" },
   { icon: IconClipboard, label: "CEI & Inspection" },
