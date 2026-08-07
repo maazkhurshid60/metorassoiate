@@ -15,11 +15,12 @@ import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 
 const TICKER = [
   "Bridge Design",
+  "High-Rise Structures",
   "Structural Analysis",
   "Seismic Retrofit",
+  "Revit & AutoCAD",
   "Load Rating",
   "Fabrication Inspection",
-  "Rehabilitation & Repair",
   "AASHTO LRFD",
   "Licensed Professionals",
 ];
@@ -27,12 +28,12 @@ const TICKER = [
 export const metadata: Metadata = {
   title: "Bridge & Structural Engineering Recruiter — United States | Metro Associates",
   description:
-    "Metro Associates is a national bridge and structural engineering recruiter providing specialized staffing for bridge design, seismic retrofit, and rehabilitation programs across all 50 states. We place licensed PEs, inspection leads, and technical specialists.",
+    "Metro Associates is a national bridge and structural engineering recruiter providing specialized staffing for bridge design, high-rise vertical building structures, seismic retrofit, and rehabilitation programs across all 50 states. We place licensed PEs, Revit and AutoCAD structural designers, inspection leads, and technical specialists.",
   alternates: { canonical: "/bridge-structural-recruiter" },
   openGraph: {
     title: "Bridge & Structural Engineering Recruiter — United States | Metro Associates",
     description:
-      "National engineering staffing for bridge design, seismic retrofit, and structural rehabilitation programs across all 50 states.",
+      "National engineering staffing for bridge design, high-rise vertical building structures, seismic retrofit, and structural rehabilitation programs across all 50 states.",
     url: `${SITE_URL}/bridge-structural-recruiter`,
     siteName: "Metro Associates",
     type: "website",
@@ -41,22 +42,46 @@ export const metadata: Metadata = {
 
 const EXPERTISE = [
   "Bridge Design & Load Rating (AASHTO LRFD)",
+  "High-Rise & Vertical Building Structural Design",
   "Structural Steel & Prestressed Concrete Design",
   "Seismic Retrofit & Resilient Structures",
   "Bridge Inspection & Rehabilitation (NBIS)",
+  "Structural BIM & 3D Modeling (Revit, Tekla, AutoCAD)",
   "Fabrication & Erection Engineering",
-  "Tunnel & Underground Structures",
   "Construction Engineering & Inspection (CEI)",
+];
+
+// What clients actually ask us to screen for, beyond licensure — the
+// specific software and methods a candidate needs to be productive day one.
+const SKILLS = [
+  "AutoCAD",
+  "Revit (Structural)",
+  "Tekla Structures",
+  "MicroStation / OpenBridge",
+  "CSI SAP2000",
+  "CSI ETABS",
+  "RISA-3D",
+  "STAAD.Pro",
+  "AASHTO LRFD Design",
+  "NBIS Bridge Inspection Certification",
+  "Seismic Design (ASCE 7)",
+  "Building Information Modeling (BIM)",
+  "Finite Element Analysis (FEA)",
+  "Steel Connection Design (AISC)",
+  "Post-Tensioned Concrete Design",
+  "PE / SE Licensure",
 ];
 
 const ROLES = [
   "Bridge Design Engineer (PE)",
+  "High-Rise / Vertical Building Structural Engineer",
   "Senior Structural Engineer",
   "Bridge Inspection Team Lead",
   "Seismic / Earthquake Engineer",
   "Load Rating Engineer",
   "Construction Engineer & Inspector (CEI)",
-  "Structural BIM / Detailing Specialist",
+  "Revit / BIM Structural Modeler",
+  "AutoCAD Structural Drafter / Detailer",
   "VP of Bridge & Structural Engineering",
 ];
 
@@ -82,11 +107,11 @@ const WHY = [
   },
   {
     title: "Scalable Staffing Solutions",
-    body: "From a single PE to an entire bridge team for a multi-year program.",
+    body: "From a single PE to an entire bridge or vertical-building structural team for a multi-year program.",
   },
   {
     title: "Codes & Standards Fluency",
-    body: "Fluency in AASHTO LRFD, NBIS inspection standards, and state DOT bridge requirements.",
+    body: "Fluency in AASHTO LRFD, ASCE 7 seismic and wind design, NBIS inspection standards, and state DOT bridge requirements.",
   },
 ];
 
@@ -125,10 +150,11 @@ export default function BridgeStructuralRecruiterPage() {
               <span className="text-brand-400">Engineering Recruiter</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-300 text-pretty">
-              Premier national engineering staffing for bridge design, seismic
-              retrofit, and structural rehabilitation programs across all 50 states.
-              We help firms hire licensed PEs, inspection leads, and technical
-              specialists.
+              Premier national engineering staffing for bridge design, high-rise
+              vertical building structures, seismic retrofit, and structural
+              rehabilitation programs across all 50 states. We help firms hire
+              licensed PEs, Revit and AutoCAD structural designers, inspection
+              leads, and technical specialists.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link href="/contact" className="group inline-flex items-center justify-center gap-2 bg-amber-500 px-7 py-4 text-sm font-bold uppercase tracking-wide text-navy-950 transition-colors hover:bg-amber-400">
@@ -185,8 +211,9 @@ export default function BridgeStructuralRecruiterPage() {
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
                 Metro Associates provides specialized staffing on a national scale,
                 supporting firms working with state DOTs, federal agencies, and
-                private development on bridge design, inspection, and structural
-                rehabilitation programs coast to coast.
+                private development on bridge design, high-rise vertical building
+                structures, inspection, and structural rehabilitation programs
+                coast to coast.
               </p>
             </div>
             <div className="relative overflow-hidden border border-brand-500/25 bg-mist p-8">
@@ -209,8 +236,36 @@ export default function BridgeStructuralRecruiterPage() {
         </div>
       </section>
 
-      {/* Roles + salaries */}
+      {/* Skills & software — the specific tools and certifications we screen
+          candidates against, beyond licensure. */}
       <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <span className="mono-label text-amber-500">{"//"} What we screen for</span>
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+              Skills &amp; software we recruit for
+            </h2>
+            <p className="mt-5 text-slate text-pretty">
+              Beyond licensure, every candidate is evaluated against the specific
+              tools and methods your team actually works in.
+            </p>
+          </div>
+          <div className="mt-10 flex flex-wrap gap-3">
+            {SKILLS.map((s) => (
+              <span
+                key={s}
+                className="inline-flex items-center gap-2 border border-navy-950/10 bg-white px-4 py-2 text-sm font-medium text-navy-950"
+              >
+                <IconCheck className="h-3.5 w-3.5 text-amber-500" />
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Roles + salaries */}
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -242,7 +297,7 @@ export default function BridgeStructuralRecruiterPage() {
       </section>
 
       {/* Why + CTA */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} Why partner with us</span>
