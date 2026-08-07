@@ -887,6 +887,34 @@ export const MEP_EXPERTISE = [
   "Building Commissioning (Cx) & Retro-Commissioning",
 ];
 
+// Tool, certification, and code-fluency skills we screen for — distinct from
+// MEP_EXPERTISE (discipline areas) and MEP_ROLES (job titles). Shared across
+// every MEP city page rather than varying by market: what changes city to
+// city is the *work* (see localPrograms), not which CAD package or code a
+// licensed MEP engineer is expected to know.
+export const MEP_SKILLS = [
+  "Autodesk Revit MEP",
+  "AutoCAD MEP",
+  "Navisworks (BIM coordination & clash detection)",
+  "Trane TRACE 700 / TRACE 3D Plus",
+  "Carrier HAP (Hourly Analysis Program)",
+  "eQUEST / EnergyPlus energy modeling",
+  "ETAP / SKM power systems analysis",
+  "AGi32 lighting design",
+  "Bluebeam Revu",
+  "Autodesk Construction Cloud / BIM 360",
+  "Building automation (Niagara, Siemens, JCI Metasys)",
+  "Professional Engineer (PE) license",
+  "LEED AP / LEED Green Associate",
+  "ASHRAE certification (BEMP / CEM)",
+  "NICET certification (fire protection)",
+  "HVAC load calculations & system design",
+  "Electrical power distribution & short-circuit studies",
+  "Fire protection system design (NFPA 13 / 14)",
+  "Commissioning (Cx) per ASHRAE Guideline 0 / 1",
+  "Code compliance: NEC, IMC, IPC, ASHRAE 90.1",
+];
+
 export const MEP_ROLES = [
   "MEP Project Manager (PE)",
   "Senior Mechanical / HVAC Engineer",

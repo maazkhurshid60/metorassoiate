@@ -7,7 +7,7 @@ import {
 } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES, MEP_WHY,
+  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_SKILLS, MEP_ROLES, MEP_SALARIES, MEP_WHY,
 } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
@@ -179,6 +179,34 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
                 <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
                 {r}
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <span className="mono-label text-amber-500">{"//"} Skills we screen for</span>
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+              MEP skills & software we recruit for in {c.city}
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-slate text-pretty">
+              Every candidate we put forward is screened against the same
+              bar: the CAD/BIM tools, licensure, and code fluency the role
+              actually demands.
+            </p>
+          </div>
+          <div className="mt-12 flex flex-wrap gap-3">
+            {MEP_SKILLS.map((s) => (
+              <span
+                key={s}
+                className="inline-flex items-center gap-2 border border-navy-950/12 bg-white px-4 py-2.5 text-sm font-medium text-navy-950"
+              >
+                <IconCheck className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+                {s}
+              </span>
             ))}
           </div>
         </div>

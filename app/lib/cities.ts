@@ -883,6 +883,33 @@ export const EXPERTISE = [
   "Construction Engineering & Inspection (CEI)",
 ];
 
+// Tool, certification, and code-fluency skills we screen for — distinct from
+// EXPERTISE (discipline areas) and ROLES (job titles). Shared across every
+// civil city page rather than varying by market, matching the same call made
+// for the MEP pages (see MEP_SKILLS in lib/mep.ts).
+export const SKILLS = [
+  "AutoCAD Civil 3D",
+  "Bentley MicroStation / OpenRoads Designer",
+  "Bentley InRoads",
+  "ArcGIS / geospatial analysis",
+  "HEC-RAS hydrology & hydraulics modeling",
+  "HEC-HMS",
+  "Bentley SewerGEMS / WaterGEMS",
+  "Synchro / SimTraffic",
+  "PTV Vissim traffic simulation",
+  "STAAD.Pro / RISA structural analysis",
+  "Pavement design software (e.g. MicroPaver)",
+  "Professional Engineer (PE) license",
+  "Professional Traffic Operations Engineer (PTOE)",
+  "Certified Floodplain Manager (CFM)",
+  "OSHA 30-Hour certification",
+  "NICET certification (construction inspection)",
+  "AASHTO design standards fluency",
+  "FHWA / State DOT design manual fluency",
+  "Erosion & sediment control (SWPPP) design",
+  "Construction engineering & inspection (CEI)",
+];
+
 export const ROLES = [
   "Civil Project Manager (PE)",
   "Senior Transportation Engineer",
