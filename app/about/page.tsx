@@ -23,11 +23,15 @@ export const metadata: Metadata = {
     "About Metro Associates: a specialized engineering recruiting firm focused exclusively on engineering and infrastructure staffing — civil, structural, transportation, water, wastewater, MEP, and construction inspection markets nationwide.",
 };
 
+// `href` is only set for disciplines that have a real landing page to send
+// people to. The rest render as plain (non-clickable) cards rather than
+// linking somewhere that 404s — see /civil-engineering-recruiter/page.tsx
+// for the pattern to follow once a discipline gets its own page.
 const DISCIPLINES = [
-  { icon: IconGlobe, label: "Civil & Transportation" },
+  { icon: IconGlobe, label: "Civil & Transportation", href: "/civil-engineering-recruiter" },
   { icon: IconBridge, label: "Bridge & Structural" },
   { icon: IconLayers, label: "Water & Wastewater" },
-  { icon: IconBolt, label: "MEP Engineering" },
+  { icon: IconBolt, label: "MEP Engineering", href: "/mep-engineering-recruiter" },
   { icon: IconClipboard, label: "CEI & Inspection" },
   { icon: IconCompass, label: "Municipal Engineering" },
 ];
@@ -143,20 +147,33 @@ export default function AboutPage() {
           </div>
 
           <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-3">
-            {DISCIPLINES.map(({ icon: Icon, label }, i) => (
-              <article
-                key={label}
-                className="group relative flex items-center gap-5 bg-white p-7 transition-colors duration-300 hover:bg-mist"
-              >
-                <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
-                  <Icon className="h-6 w-6" />
-                </span>
-                <h3 className="text-lg font-bold text-navy-950">{label}</h3>
-                <span className="mono-label absolute right-6 top-6 text-xs text-navy-950/15 transition-colors group-hover:text-amber-500/50">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-              </article>
-            ))}
+            {DISCIPLINES.map(({ icon: Icon, label, href }, i) => {
+              const cardClass = "group relative flex items-center gap-5 bg-white p-7 transition-colors duration-300 hover:bg-mist";
+              const content = (
+                <>
+                  <span className="inline-flex h-12 w-12 shrink-0 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
+                    <Icon className="h-6 w-6" />
+                  </span>
+                  <h3 className="text-lg font-bold text-navy-950">{label}</h3>
+                  {href ? (
+                    <IconArrow className="ml-auto h-4.5 w-4.5 shrink-0 text-navy-950/15 transition-all group-hover:translate-x-1 group-hover:text-amber-500" />
+                  ) : (
+                    <span className="mono-label absolute right-6 top-6 text-xs text-navy-950/15 transition-colors group-hover:text-amber-500/50">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  )}
+                </>
+              );
+              return href ? (
+                <Link key={label} href={href} className={cardClass}>
+                  {content}
+                </Link>
+              ) : (
+                <article key={label} className={cardClass}>
+                  {content}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

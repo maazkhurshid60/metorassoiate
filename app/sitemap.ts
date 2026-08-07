@@ -23,6 +23,7 @@ const routes: Array<{
     changeFrequency: "monthly" as const,
     priority: 0.7,
   })),
+  { path: "/mep-engineering-recruiter", changeFrequency: "monthly", priority: 0.8 },
   ...MEP_CITIES.map((c) => ({
     path: `/mep-engineering-recruiter/${c.slug}`,
     changeFrequency: "monthly" as const,

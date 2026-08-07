@@ -6,31 +6,33 @@ import {
   IconClipboard, IconPin, IconStar,
 } from "../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
-import { CITIES, EXPERTISE, ROLES, SALARIES, WHY } from "../lib/cities";
+import {
+  MEP_CITIES, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES, MEP_WHY,
+} from "../lib/mep";
 
 // Short phrases for the scrolling ticker bar — same treatment as the
-// homepage hero (components/Hero.tsx), scoped to this page's discipline.
+// civil-engineering-recruiter hero, scoped to this page's discipline.
 const TICKER = [
-  "Highway Design",
-  "Bridge Engineering",
-  "Transportation Planning",
-  "Construction Inspection",
-  "DOT Compliance",
-  "Program Management",
-  "AEC Consultancies",
+  "HVAC Systems Engineering",
+  "Electrical Power Design",
+  "Plumbing & Fire Protection",
+  "Building Automation",
+  "Energy Modeling",
+  "Data Center MEP",
+  "Commissioning (Cx)",
   "Licensed Professionals",
 ];
 
 export const metadata: Metadata = {
-  title: "Civil Engineering Recruiter — United States | Metro Associates",
+  title: "MEP Engineering Recruiter — United States | Metro Associates",
   description:
-    "Metro Associates is a national civil engineering recruiter providing specialized staffing for transportation, infrastructure, and municipal projects across all 50 states. We place licensed PEs, project managers, and technical specialists.",
-  alternates: { canonical: "/civil-engineering-recruiter" },
+    "Metro Associates is a national MEP engineering recruiter providing specialized staffing for mechanical, electrical, and plumbing engineers across data centers, healthcare, life sciences, and commercial buildings in all 50 states.",
+  alternates: { canonical: "/mep-engineering-recruiter" },
   openGraph: {
-    title: "Civil Engineering Recruiter — United States | Metro Associates",
+    title: "MEP Engineering Recruiter — United States | Metro Associates",
     description:
-      "National engineering staffing for transportation, infrastructure, and municipal projects across all 50 states.",
-    url: `${SITE_URL}/civil-engineering-recruiter`,
+      "National MEP staffing for mechanical, electrical, and plumbing engineers across data centers, healthcare, life sciences, and commercial buildings.",
+    url: `${SITE_URL}/mep-engineering-recruiter`,
     siteName: "Metro Associates",
     type: "website",
   },
@@ -38,16 +40,16 @@ export const metadata: Metadata = {
 
 const WHY_ICONS = [IconGlobe, IconShield, IconTarget, IconLayers, IconClipboard];
 
-export default function NationalRecruiterPage() {
+export default function MepNationalRecruiterPage() {
   return (
     <main>
-      {/* Hero — same treatment as the homepage hero (components/Hero.tsx):
-          full-bleed photo, gradient overlays, floating stat badge, ticker. */}
+      {/* Hero — same treatment as the homepage/civil hero: full-bleed photo,
+          gradient overlays, floating stat badge, ticker. */}
       <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-36 lg:pt-40">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/image.png"
-            alt="Aerial view of a multi-level highway interchange — the infrastructure Metro Associates staffs"
+            src="/interchange-sunset.jpg"
+            alt="Aerial view of U.S. infrastructure at sunset — the buildings and facilities Metro Associates staffs"
             fill
             priority
             sizes="100vw"
@@ -66,14 +68,14 @@ export default function NationalRecruiterPage() {
               <span className="mono-label text-amber-400">{"//"} National Engineering Staffing</span>
             </div>
             <h1 className="display mt-6 text-[11vw] leading-[0.95] text-white sm:text-5xl lg:text-[4.6rem]">
-              Civil Engineering Recruiter
+              MEP Engineering Recruiter
               <br />
               <span className="text-brand-400">United States</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-300 text-pretty">
-              Premier national engineering staffing for transportation, infrastructure,
-              and municipal projects across all 50 states. From major metropolitan hubs
-              to rural infrastructure expansions, we help firms hire licensed PEs,
+              Premier national engineering staffing for mechanical, electrical, and
+              plumbing engineers across data centers, healthcare, life sciences, and
+              commercial buildings in all 50 states. We help firms hire licensed PEs,
               project managers, and technical specialists.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -126,13 +128,13 @@ export default function NationalRecruiterPage() {
             <div>
               <span className="mono-label text-amber-500">{"//"} National expertise</span>
               <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-                National civil engineering <span className="text-brand-500">recruiting</span>
+                National MEP engineering <span className="text-brand-500">recruiting</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates provides specialized staffing on a national scale,
-                supporting firms working with state DOTs, federal agencies, and private
-                development. Our reach extends across the Northeast, Southeast, Midwest,
-                Gulf Coast, and Pacific West.
+                Metro Associates provides specialized MEP staffing on a national scale,
+                supporting firms delivering data centers, healthcare facilities, life
+                sciences campuses, and commercial buildings. Our reach extends across
+                the Northeast, Southeast, Midwest, Gulf Coast, and Pacific West.
               </p>
             </div>
             <div className="relative overflow-hidden border border-brand-500/25 bg-mist p-8">
@@ -140,7 +142,7 @@ export default function NationalRecruiterPage() {
               <div className="relative">
                 <p className="mono-label text-brand-600">Recruiting expertise</p>
                 <ul className="mt-6 grid gap-x-6 gap-y-4">
-                  {EXPERTISE.map((e) => (
+                  {MEP_EXPERTISE.map((e) => (
                     <li key={e} className="flex items-start gap-3 text-[15px] font-medium text-navy-950">
                       <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center bg-amber-500/20 text-amber-500">
                         <IconCheck className="h-3.5 w-3.5" />
@@ -161,7 +163,7 @@ export default function NationalRecruiterPage() {
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} Markets we serve</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              Civil engineering recruiting by city
+              MEP engineering recruiting by city
             </h2>
             <p className="mt-5 text-slate text-pretty">
               Explore our specialized recruiting in these metros — with more markets
@@ -169,10 +171,10 @@ export default function NationalRecruiterPage() {
             </p>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CITIES.map((c) => (
+            {MEP_CITIES.map((c) => (
               <Link
                 key={c.slug}
-                href={`/civil-engineering-recruiter/${c.slug}`}
+                href={`/mep-engineering-recruiter/${c.slug}`}
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">
@@ -181,7 +183,7 @@ export default function NationalRecruiterPage() {
                   </span>
                   <span>
                     <span className="block text-[15px] font-bold text-navy-950">{c.city}, {c.abbr}</span>
-                    <span className="mono-label block text-[9px] text-slate-500">{c.dot}</span>
+                    <span className="mono-label block text-[9px] text-slate-500">{c.authority}</span>
                   </span>
                 </span>
                 <IconArrow className="h-4.5 w-4.5 text-amber-500 transition-transform group-hover:translate-x-1" />
@@ -199,7 +201,7 @@ export default function NationalRecruiterPage() {
               <span className="mono-label text-amber-500">{"//"} Roles we place nationwide</span>
               <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">Roles we place</h2>
               <div className="mt-10 grid gap-x-8 gap-y-4 sm:grid-cols-2">
-                {ROLES.map((r, i) => (
+                {MEP_ROLES.map((r, i) => (
                   <div key={r} className="flex items-center gap-3 border-b border-navy-950/10 pb-4 text-[15px] font-medium text-navy-950">
                     <span className="mono-label text-[10px] text-brand-500/70">{String(i + 1).padStart(2, "0")}</span>
                     <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
@@ -211,7 +213,7 @@ export default function NationalRecruiterPage() {
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">
               <p className="mono-label text-slate-500">2026 national compensation trends</p>
               <div className="mt-6 flex flex-col divide-y divide-navy-950/10">
-                {SALARIES.map((s) => (
+                {MEP_SALARIES.map((s) => (
                   <div key={s.role} className="flex items-center justify-between gap-4 py-4">
                     <span className="text-[15px] font-medium text-navy-950">{s.role}</span>
                     <span className="display text-lg text-amber-500 sm:text-xl">{s.range}</span>
@@ -233,7 +235,7 @@ export default function NationalRecruiterPage() {
             </h2>
           </div>
           <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-3">
-            {WHY.map((w, i) => {
+            {MEP_WHY.map((w, i) => {
               const Icon = WHY_ICONS[i % WHY_ICONS.length];
               return (
                 <article key={w.title} className="group flex flex-col bg-white p-8 transition-colors hover:bg-mist">
@@ -249,7 +251,7 @@ export default function NationalRecruiterPage() {
 
           <div className="mt-16 flex flex-col items-start justify-between gap-6 section-dark border border-white/10 p-8 sm:flex-row sm:items-center sm:p-10">
             <div>
-              <h3 className="text-2xl font-bold text-white">Partner with a national civil engineering recruiter</h3>
+              <h3 className="text-2xl font-bold text-white">Partner with a national MEP engineering recruiter</h3>
               <p className="mt-2 text-ink-300">
                 Looking to scale your team or explore new opportunities across the U.S.?
                 Tell us what you need.
