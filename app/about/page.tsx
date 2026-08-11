@@ -30,10 +30,10 @@ export const metadata: Metadata = {
 const DISCIPLINES = [
   { icon: IconGlobe, label: "Civil & Transportation", href: "/civil-engineering-recruiter" },
   { icon: IconBridge, label: "Bridge & Structural", href: "/bridge-structural-recruiter" },
-  { icon: IconLayers, label: "Water & Wastewater" },
+  { icon: IconLayers, label: "Water & Wastewater", href: "/water-wastewater-recruiter" },
   { icon: IconBolt, label: "MEP Engineering", href: "/mep-engineering-recruiter" },
-  { icon: IconClipboard, label: "CEI & Inspection" },
-  { icon: IconCompass, label: "Municipal Engineering" },
+  { icon: IconClipboard, label: "CEI & Inspection", href: "/cei-inspection-recruiter" },
+  { icon: IconCompass, label: "Municipal Engineering", href: "/municipal-engineering-recruiter" },
 ];
 
 const APPROACH = [
