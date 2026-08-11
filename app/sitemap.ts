@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "./lib/site";
 import { CITIES } from "./lib/cities";
 import { MEP_CITIES } from "./lib/mep";
+import { WATER_CITIES } from "./lib/waterWastewater";
+import { CEI_CITIES } from "./lib/ceiInspection";
+import { MUNICIPAL_CITIES } from "./lib/municipalEngineering";
 
 /**
  * Static list of indexable routes. Update this when adding public pages.
@@ -31,8 +34,23 @@ const routes: Array<{
   })),
   { path: "/bridge-structural-recruiter", changeFrequency: "monthly", priority: 0.8 },
   { path: "/water-wastewater-recruiter", changeFrequency: "monthly", priority: 0.8 },
+  ...WATER_CITIES.map((c) => ({
+    path: `/water-wastewater-recruiter/${c.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/cei-inspection-recruiter", changeFrequency: "monthly", priority: 0.8 },
+  ...CEI_CITIES.map((c) => ({
+    path: `/cei-inspection-recruiter/${c.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/municipal-engineering-recruiter", changeFrequency: "monthly", priority: 0.8 },
+  ...MUNICIPAL_CITIES.map((c) => ({
+    path: `/municipal-engineering-recruiter/${c.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
 ];

@@ -2,19 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   IconArrow, IconCheck, IconGlobe, IconShield, IconTarget, IconLayers,
-  IconClipboard, IconStar,
+  IconClipboard, IconStar, IconPin,
 } from "../components/Icons";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
+import { WATER_CITIES } from "../lib/waterWastewater";
 
-/* DEMO PAGE — a single static page, not a per-city buildout like
-   civil-engineering-recruiter/ or mep-engineering-recruiter/, and no hero
-   photo (none of the site's stock images fit this discipline without being
-   misleading, so this uses the same photo-free blueprint hero as the [city]
-   sub-pages instead of forcing a mismatched image). If this direction is
-   approved, the next step is the same treatment civil/MEP got: a
-   lib/waterWastewater.ts city-data file + a [city]/page.tsx, a hero photo,
-   and this file becomes the national hub with a "Cities directory" section. */
+/* National hub — same treatment as civil-engineering-recruiter/ and
+   mep-engineering-recruiter/: this page plus a per-metro [city]/page.tsx for
+   each of WATER_CITIES. No hero photo (none of the site's stock images fit
+   this discipline without being misleading), so this reuses the photo-free
+   blueprint hero the [city] sub-pages use. */
 
 const TICKER = [
   "Treatment Plant Design",
@@ -255,6 +253,42 @@ export default function WaterWastewaterRecruiterPage() {
                 <IconCheck className="h-3.5 w-3.5 text-amber-500" />
                 {s}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cities directory */}
+      <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <span className="mono-label text-amber-500">{"//"} Markets we serve</span>
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+              Water &amp; wastewater recruiting by city
+            </h2>
+            <p className="mt-5 text-slate text-pretty">
+              Explore our specialized recruiting in these metros — with more markets
+              added regularly.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {WATER_CITIES.map((c) => (
+              <Link
+                key={c.slug}
+                href={`/water-wastewater-recruiter/${c.slug}`}
+                className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
+              >
+                <span className="flex items-center gap-3">
+                  <span className="inline-flex h-9 w-9 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
+                    <IconPin className="h-4.5 w-4.5" />
+                  </span>
+                  <span>
+                    <span className="block text-[15px] font-bold text-navy-950">{c.city}, {c.abbr}</span>
+                    <span className="mono-label block text-[9px] text-slate-500">{c.authority}</span>
+                  </span>
+                </span>
+                <IconArrow className="h-4.5 w-4.5 text-amber-500 transition-transform group-hover:translate-x-1" />
+              </Link>
             ))}
           </div>
         </div>

@@ -125,3 +125,72 @@ export function mepFaqs(c: {
     },
   ];
 }
+
+export function waterFaqs(c: {
+  city: string; state: string; abbr: string; region: string; authority: string;
+}): FaqItem[] {
+  return [
+    {
+      q: `Do you place water and wastewater engineers in ${c.city}, ${c.abbr}?`,
+      a: `Yes. Metro Associates is a specialized water and wastewater engineering recruiter serving ${c.city} and ${c.region}, placing licensed PEs, process engineers, and construction inspection specialists on treatment, distribution, and collection-system programs.`,
+    },
+    {
+      q: `What water/wastewater roles do you recruit for in ${c.city}?`,
+      a: `We fill Water/Wastewater Project Engineer (PE), Senior Process Engineer, Water Resources Engineer, Utility/Pipeline Design Engineer, SCADA/Controls Engineer, and Director of Water/Wastewater Engineering roles.`,
+    },
+    {
+      q: `How quickly can you fill a water/wastewater position in ${c.city}?`,
+      a: `With a national pipeline of pre-vetted water and wastewater professionals, we typically deliver a shortlist of qualified ${c.abbr} candidates within days — every placement backed by our guarantee.`,
+    },
+    {
+      q: `Do you recruit for NPDES permitting and utility compliance work?`,
+      a: `Yes. We recruit engineers fluent in NPDES permitting, SCADA and instrumentation, and utility infrastructure rehabilitation, reviewed under ${c.authority} and ${c.state}'s regulatory requirements.`,
+    },
+  ];
+}
+
+export function ceiFaqs(c: {
+  city: string; state: string; abbr: string; region: string; authority: string;
+}): FaqItem[] {
+  return [
+    {
+      q: `Do you place CEI and construction inspectors in ${c.city}, ${c.abbr}?`,
+      a: `Yes. Metro Associates is a specialized CEI (Construction Engineering & Inspection) recruiter serving ${c.city} and ${c.region}, placing certified inspectors, resident engineers, and QA/QC specialists on materials testing, bridge, and roadway inspection programs.`,
+    },
+    {
+      q: `What CEI roles do you recruit for in ${c.city}?`,
+      a: `We fill CEI Inspector, Senior Construction Inspector, Resident Engineer, Materials Testing Technician/QA Manager, Bridge Inspector, and CEI Project Manager roles.`,
+    },
+    {
+      q: `How quickly can you fill a CEI position in ${c.city}?`,
+      a: `With a national pipeline of pre-vetted, certification-verified inspection professionals, we typically deliver a shortlist of qualified ${c.abbr} candidates within days — every placement backed by our guarantee.`,
+    },
+    {
+      q: `Do you verify NICET, ACI, and bridge-inspection certifications?`,
+      a: `Yes. Every candidate's NICET, ACI materials-testing, and NBIS bridge-inspection credentials are confirmed before they reach you, matched against ${c.authority}'s construction and inspection standards.`,
+    },
+  ];
+}
+
+export function municipalFaqs(c: {
+  city: string; state: string; abbr: string; region: string; authority: string;
+}): FaqItem[] {
+  return [
+    {
+      q: `Do you place municipal engineers in ${c.city}, ${c.abbr}?`,
+      a: `Yes. Metro Associates is a specialized municipal engineering recruiter serving ${c.city} and ${c.region}, placing licensed PEs, city engineers, and public works leaders for cities, towns, and the consultants who serve them.`,
+    },
+    {
+      q: `What municipal engineering roles do you recruit for in ${c.city}?`,
+      a: `We fill Municipal Engineer (PE), City/Town Engineer, Public Works Director, Site/Civil Development Engineer, Capital Projects Engineer, and Director of Public Works/Engineering roles.`,
+    },
+    {
+      q: `How quickly can you fill a municipal engineering position in ${c.city}?`,
+      a: `With a national pipeline of pre-vetted municipal engineering professionals, we typically deliver a shortlist of qualified ${c.abbr} candidates within days — every placement backed by our guarantee.`,
+    },
+    {
+      q: `Do you understand municipal procurement and grant-funded hiring timelines?`,
+      a: `Yes. We're fluent in public bidding and procurement processes, capital improvement plan (CIP) cycles, and grant-compliant hiring timelines (SRF, CDBG, ARPA) as administered by ${c.authority}.`,
+    },
+  ];
+}
