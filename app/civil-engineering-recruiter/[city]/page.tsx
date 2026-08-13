@@ -11,7 +11,7 @@ import {
 } from "../../lib/cities";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, civilFaqs } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, civilFaqs, pickVariant } from "../../lib/seo";
 
 // Pre-render the fixed set of city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -50,6 +50,37 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
 
   const path = `/civil-engineering-recruiter/${c.slug}`;
   const faqs = civilFaqs(c);
+  const flagshipProgram = c.localPrograms[0];
+
+  // Several rotating phrasings for the blocks that would otherwise be
+  // byte-identical across all 52 city pages — same underlying claims, worded
+  // differently per city so the page doesn't read as a templated duplicate.
+  const introPara1 = pickVariant(`${c.slug}:intro1`, [
+    `Metro Associates is a leading civil engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms hire licensed Professional Engineers (PE), project managers, and technical specialists who support ${c.dot}, federal agencies, and private development throughout the region.`,
+    `Metro Associates runs a dedicated civil engineering search practice across ${c.city} and ${c.region}, connecting firms with licensed Professional Engineers (PE), project managers, and technical specialists who support ${c.dot}, federal agencies, and private development in the metro.`,
+    `We're a specialized civil engineering recruiter for ${c.city} and ${c.region} — placing licensed Professional Engineers (PE), project managers, and technical specialists on the work that supports ${c.dot}, federal agencies, and private development locally.`,
+  ]);
+  const introPara2 = pickVariant(`${c.slug}:intro2`, [
+    `From major corridors to municipal and resiliency projects, we match vetted talent to the operational, regulatory, and performance demands of publicly funded capital programs.`,
+    `Whether the work is a major corridor, a municipal upgrade, or a resiliency program, we match vetted talent to what the role actually demands — operationally, regulatorily, and technically.`,
+    `We match vetted candidates to the real demands of publicly funded capital programs, from large corridor projects down to municipal and resiliency work.`,
+    flagshipProgram
+      ? `Locally, that has meant staffing everything from ${flagshipProgram.toLowerCase()} to smaller municipal and resiliency work — we match vetted talent to what each program actually demands.`
+      : `From major corridors to municipal and resiliency projects, we match vetted talent to the operational, regulatory, and performance demands of publicly funded capital programs.`,
+  ]);
+  const skillsIntro = pickVariant(`${c.slug}:skillsIntro`, [
+    `Every candidate we put forward is screened against the same bar: the design software, licensure, and code fluency the role actually demands.`,
+    `We screen every candidate against one bar — the design software, licensure, and code fluency the role actually calls for, not a generic checklist.`,
+    `Every submission is held to the same standard: real fluency in the design software, licensure, and codes the role demands, not just a resume match.`,
+  ]);
+  const trendsIntro = pickVariant(`${c.slug}:trendsIntro`, [
+    `In 2026, the ${c.region} market is defined by long-term federal infrastructure funding and a sharp focus on climate resiliency. Remote collaboration has widened the talent pool, but demand for on-site licensed PEs and project leads across ${c.dot} programs remains at an all-time high.`,
+    `Heading into 2026, ${c.city}'s market is shaped by sustained federal infrastructure funding and a growing focus on climate resiliency. The talent pool has widened with remote collaboration, but on-site licensed PEs and project leads for ${c.dot} programs remain in short supply.`,
+    flagshipProgram
+      ? `Work like ${flagshipProgram.toLowerCase()} is a good read on the ${c.city} market heading into 2026: long-term federal infrastructure funding and a sharper focus on climate resiliency, with demand for on-site licensed PEs and ${c.dot} project leads still outpacing supply.`
+      : `In 2026, the ${c.region} market is defined by long-term federal infrastructure funding and a sharp focus on climate resiliency. Remote collaboration has widened the talent pool, but demand for on-site licensed PEs and project leads across ${c.dot} programs remains at an all-time high.`,
+  ]);
+
   const schemas = [
     serviceSchema({
       serviceName: `Civil Engineering Recruiter — ${c.city}, ${c.abbr}`,
@@ -129,16 +160,10 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 Specialized staffing for {c.city} <span className="text-brand-500">infrastructure</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates is a leading civil engineering recruiter providing
-                specialized staffing solutions across {c.city} and {c.region}. We help
-                firms hire licensed Professional Engineers (PE), project managers, and
-                technical specialists who support {c.dot}, federal agencies, and private
-                development throughout the region.
+                {introPara1}
               </p>
               <p className="mt-4 leading-8 text-slate-500 text-pretty">
-                From major corridors to municipal and resiliency projects, we match
-                vetted talent to the operational, regulatory, and performance demands of
-                publicly funded capital programs.
+                {introPara2}
               </p>
             </div>
 
@@ -193,9 +218,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
               Civil engineering skills & software we recruit for in {c.city}
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              Every candidate we put forward is screened against the same
-              bar: the design software, licensure, and code fluency the role
-              actually demands.
+              {skillsIntro}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
@@ -222,11 +245,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 2026 {c.city} civil engineering hiring
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                In 2026, the {c.region} market is defined by long-term federal
-                infrastructure funding and a sharp focus on climate resiliency. Remote
-                collaboration has widened the talent pool, but demand for on-site
-                licensed PEs and project leads across {c.dot} programs remains at an
-                all-time high.
+                {trendsIntro}
               </p>
             </div>
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">

@@ -2,12 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { IconArrow, IconCheck } from "./Icons";
-import { EMAIL, RECAPTCHA_SITE_KEY } from "../lib/site";
+import { EMAIL, TURNSTILE_SITE_KEY } from "../lib/site";
 
 const inputCls =
   "w-full border border-white/12 bg-navy-900 px-4 py-3 text-sm text-white placeholder:text-ink-500 transition-colors focus:border-amber-500 focus:outline-none";
 
-type Grecaptcha = {
+type Turnstile = {
   render: (
     el: HTMLElement,
     opts: {
@@ -17,34 +17,34 @@ type Grecaptcha = {
       "expired-callback"?: () => void;
       "error-callback"?: () => void;
     }
-  ) => number;
-  reset: (widgetId?: number) => void;
+  ) => string;
+  reset: (widgetId?: string) => void;
 };
 
 declare global {
   interface Window {
-    grecaptcha?: Grecaptcha;
+    turnstile?: Turnstile;
   }
 }
 
-const SCRIPT_ID = "recaptcha-v2-api";
+const SCRIPT_ID = "turnstile-api";
 
-/** Load Google's reCAPTCHA script once and resolve when the API is ready. */
-function loadRecaptcha(): Promise<Grecaptcha> {
+/** Load Cloudflare Turnstile's script once and resolve when the API is ready. */
+function loadTurnstile(): Promise<Turnstile> {
   return new Promise((resolve) => {
-    if (window.grecaptcha?.render) return resolve(window.grecaptcha);
+    if (window.turnstile?.render) return resolve(window.turnstile);
 
     if (!document.getElementById(SCRIPT_ID)) {
       const s = document.createElement("script");
       s.id = SCRIPT_ID;
-      s.src = "https://www.google.com/recaptcha/api.js?render=explicit";
+      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
       s.async = true;
       s.defer = true;
       document.head.appendChild(s);
     }
 
     const poll = () => {
-      if (window.grecaptcha?.render) resolve(window.grecaptcha);
+      if (window.turnstile?.render) resolve(window.turnstile);
       else window.setTimeout(poll, 100);
     };
     poll();
@@ -58,14 +58,14 @@ export default function ContactForm() {
   const [error, setError] = useState("");
 
   const boxRef = useRef<HTMLDivElement>(null);
-  const widgetId = useRef<number | null>(null);
+  const widgetId = useRef<string | null>(null);
 
   useEffect(() => {
     let active = true;
-    loadRecaptcha().then((grecaptcha) => {
+    loadTurnstile().then((turnstile) => {
       if (!active || !boxRef.current || widgetId.current !== null) return;
-      widgetId.current = grecaptcha.render(boxRef.current, {
-        sitekey: RECAPTCHA_SITE_KEY,
+      widgetId.current = turnstile.render(boxRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
         theme: "dark",
         callback: (t) => {
           setToken(t);
@@ -82,8 +82,8 @@ export default function ContactForm() {
 
   const resetCaptcha = () => {
     setToken("");
-    if (window.grecaptcha && widgetId.current !== null) {
-      window.grecaptcha.reset(widgetId.current);
+    if (window.turnstile && widgetId.current !== null) {
+      window.turnstile.reset(widgetId.current);
     }
   };
 
@@ -100,7 +100,7 @@ export default function ContactForm() {
     const sms = data.get("sms") ? "Yes" : "No";
 
     if (!token) {
-      setError("Please complete the reCAPTCHA before sending.");
+      setError("Please complete the verification before sending.");
       return;
     }
 
@@ -123,8 +123,8 @@ export default function ContactForm() {
       const result = await res.json();
       if (!result.success) {
         setError(
-          result.error === "recaptcha-failed"
-            ? "reCAPTCHA verification failed. Please try again."
+          result.error === "turnstile-failed"
+            ? "Verification failed. Please try again."
             : "Sorry — your message couldn't be sent. Please email us directly."
         );
         resetCaptcha();
@@ -221,7 +221,7 @@ export default function ContactForm() {
         </span>
       </label>
 
-      {/* Google reCAPTCHA v2 */}
+      {/* Cloudflare Turnstile */}
       <div className="min-h-[78px]">
         <div ref={boxRef} />
       </div>

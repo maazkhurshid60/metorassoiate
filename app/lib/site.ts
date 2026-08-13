@@ -11,5 +11,10 @@ export const PHONE = "+1 312-500-1878";
 export const PHONE_HREF = "tel:+13125001878";
 export const EMAIL = "patrick@metroassoc.com";
 
-/** Google reCAPTCHA v2 site key (public — safe to ship to the browser). */
-export const RECAPTCHA_SITE_KEY = "6LfYZPgsAAAAAFZjd_3pKTl99Uf0u0kVKt2ImxX9";
+/** Cloudflare Turnstile site key (public — safe to ship to the browser).
+ *  This is Cloudflare's published always-passes test key. Swap it for the
+ *  real site key from https://dash.cloudflare.com/?to=/:account/turnstile
+ *  once this domain is registered there, and set the matching
+ *  TURNSTILE_SECRET_KEY env var on the server (see app/api/contact/route.ts). */
+export const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";

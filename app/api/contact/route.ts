@@ -1,13 +1,17 @@
-// Contact form endpoint. Verifies the reCAPTCHA token (single-use — so this must
-// be the ONLY place the token is checked) and then actually delivers the message
-// via Brevo's transactional email API. This guarantees the enquiry reaches the
-// inbox regardless of whether the visitor has an email client configured.
+// Contact form endpoint. Verifies the Cloudflare Turnstile token (single-use —
+// so this must be the ONLY place the token is checked) and then actually
+// delivers the message via Brevo's transactional email API. This guarantees
+// the enquiry reaches the inbox regardless of whether the visitor has an
+// email client configured.
 
-const RECAPTCHA_SECRET =
-  process.env.RECAPTCHA_SECRET_KEY ??
-  "6LfYZPgsAAAAAF8o8Mj3Lx2LmqjsTtefU9iSd_LR";
+// Falls back to Cloudflare's published always-passes test secret. Set
+// TURNSTILE_SECRET_KEY once this domain is registered at
+// https://dash.cloudflare.com/?to=/:account/turnstile (must match the site
+// key in app/lib/site.ts).
+const TURNSTILE_SECRET =
+  process.env.TURNSTILE_SECRET_KEY ?? "1x0000000000000000000000000000000AA";
 
-const VERIFY_URL = "https://www.google.com/recaptcha/api/siteverify";
+const VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email";
 
 // Where enquiries are delivered.
@@ -58,9 +62,9 @@ export async function POST(request: Request) {
     return Response.json({ success: false, error: "missing-fields" }, { status: 400 });
   }
 
-  // 1) Verify reCAPTCHA (bot check). Token is single-use.
+  // 1) Verify Turnstile (bot check). Token is single-use.
   try {
-    const params = new URLSearchParams({ secret: RECAPTCHA_SECRET, response: token });
+    const params = new URLSearchParams({ secret: TURNSTILE_SECRET, response: token });
     const res = await fetch(VERIFY_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -68,10 +72,10 @@ export async function POST(request: Request) {
     });
     const data = (await res.json()) as { success: boolean };
     if (!data.success) {
-      return Response.json({ success: false, error: "recaptcha-failed" }, { status: 400 });
+      return Response.json({ success: false, error: "turnstile-failed" }, { status: 400 });
     }
   } catch {
-    return Response.json({ success: false, error: "recaptcha-unreachable" }, { status: 502 });
+    return Response.json({ success: false, error: "turnstile-unreachable" }, { status: 502 });
   }
 
   // 2) Deliver the message via Brevo.
