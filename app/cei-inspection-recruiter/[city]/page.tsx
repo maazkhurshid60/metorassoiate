@@ -11,7 +11,7 @@ import {
 } from "../../lib/ceiInspection";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, ceiFaqs } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, ceiFaqs, pickVariant } from "../../lib/seo";
 
 // Pre-render the fixed set of CEI & Inspection city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -50,6 +50,30 @@ export default async function CeiCityPage({ params }: { params: Promise<{ city: 
 
   const path = `/cei-inspection-recruiter/${c.slug}`;
   const faqs = ceiFaqs(c);
+  const flagshipProgram = c.localPrograms[0];
+
+  const introPara1 = pickVariant(`${c.slug}:cei:intro1`, [
+    `Metro Associates is a leading CEI recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms hire certified inspectors, resident engineers, and QA/QC specialists across materials testing, bridge inspection, and contract administration — for projects reviewed under ${c.authority} and beyond.`,
+    `Metro Associates runs a dedicated CEI search practice across ${c.city} and ${c.region}, connecting firms with certified inspectors, resident engineers, and QA/QC specialists reviewed under ${c.authority}.`,
+    `We're a specialized CEI recruiter for ${c.city} and ${c.region} — placing certified inspectors, resident engineers, and QA/QC specialists across materials testing, bridge inspection, and contract administration.`,
+  ]);
+  const introPara2 = pickVariant(`${c.slug}:cei:intro2`, [
+    `From highway megaprojects to bridge replacement and transit construction, we match certification-verified talent to the field, safety, and documentation demands of complex construction programs.`,
+    `Whether it's a highway megaproject, a bridge replacement, or transit construction, we match certification-verified talent to what each program's field, safety, and documentation demands actually are.`,
+    flagshipProgram
+      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match certification-verified talent to the field, safety, and documentation demands of that kind of construction program.`
+      : `From highway megaprojects to bridge replacement and transit construction, we match certification-verified talent to the field, safety, and documentation demands of complex construction programs.`,
+  ]);
+  const skillsIntro = pickVariant(`${c.slug}:cei:skillsIntro`, [
+    `Every candidate we put forward is screened against the same bar: the certifications, licensure, and code fluency the role actually demands.`,
+    `We screen every candidate against one bar — the certifications, licensure, and code fluency the role actually calls for, not a generic checklist.`,
+    `Every submission is held to the same standard: real, verified certifications, licensure, and code fluency for the role.`,
+  ]);
+  const trendsIntro = pickVariant(`${c.slug}:cei:trendsIntro`, [
+    `In 2026, the ${c.region} market is defined by federally funded highway and bridge programs and a shortage of certification-verified field staff. Demand for NICET- and NBIS-certified inspectors who can deliver on schedule-critical DOT programs is at an all-time high.`,
+    `Heading into 2026, ${c.city}'s market is shaped by federally funded highway and bridge programs and a shortage of certification-verified field staff. NICET- and NBIS-certified inspectors who can deliver on schedule-critical DOT programs remain in short supply.`,
+  ]);
+
   const schemas = [
     serviceSchema({
       serviceName: `CEI & Construction Inspection Recruiter — ${c.city}, ${c.abbr}`,
@@ -129,16 +153,10 @@ export default async function CeiCityPage({ params }: { params: Promise<{ city: 
                 Specialized staffing for {c.city} <span className="text-brand-500">field inspection</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates is a leading CEI recruiter providing specialized staffing
-                solutions across {c.city} and {c.region}. We help firms hire certified
-                inspectors, resident engineers, and QA/QC specialists across materials
-                testing, bridge inspection, and contract administration — for projects
-                reviewed under {c.authority} and beyond.
+                {introPara1}
               </p>
               <p className="mt-4 leading-8 text-slate-500 text-pretty">
-                From highway megaprojects to bridge replacement and transit construction,
-                we match certification-verified talent to the field, safety, and
-                documentation demands of complex construction programs.
+                {introPara2}
               </p>
             </div>
 
@@ -193,9 +211,7 @@ export default async function CeiCityPage({ params }: { params: Promise<{ city: 
               CEI skills &amp; certifications we recruit for in {c.city}
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              Every candidate we put forward is screened against the same
-              bar: the certifications, licensure, and code fluency the role
-              actually demands.
+              {skillsIntro}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
@@ -222,10 +238,7 @@ export default async function CeiCityPage({ params }: { params: Promise<{ city: 
                 2026 {c.city} CEI &amp; inspection hiring
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                In 2026, the {c.region} market is defined by federally funded highway
-                and bridge programs and a shortage of certification-verified field
-                staff. Demand for NICET- and NBIS-certified inspectors who can deliver
-                on schedule-critical DOT programs is at an all-time high.
+                {trendsIntro}
               </p>
             </div>
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">

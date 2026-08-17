@@ -11,7 +11,7 @@ import {
 } from "../../lib/waterWastewater";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, waterFaqs } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, waterFaqs, pickVariant } from "../../lib/seo";
 
 // Pre-render the fixed set of Water & Wastewater city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -50,6 +50,30 @@ export default async function WaterCityPage({ params }: { params: Promise<{ city
 
   const path = `/water-wastewater-recruiter/${c.slug}`;
   const faqs = waterFaqs(c);
+  const flagshipProgram = c.localPrograms[0];
+
+  const introPara1 = pickVariant(`${c.slug}:water:intro1`, [
+    `Metro Associates is a leading water and wastewater engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms and utilities hire licensed Professional Engineers (PE), process engineers, and construction inspection specialists across treatment, distribution, and collection-system disciplines — for projects reviewed under ${c.authority} and beyond.`,
+    `Metro Associates runs a dedicated water and wastewater search practice across ${c.city} and ${c.region}, connecting firms and utilities with licensed Professional Engineers (PE), process engineers, and construction inspection specialists reviewed under ${c.authority}.`,
+    `We're a specialized water and wastewater engineering recruiter for ${c.city} and ${c.region} — placing licensed Professional Engineers (PE), process engineers, and inspection specialists across treatment, distribution, and collection-system work.`,
+  ]);
+  const introPara2 = pickVariant(`${c.slug}:water:intro2`, [
+    `From treatment plant upgrades to collection-system rehabilitation and stormwater compliance, we match vetted talent to the regulatory, operational, and performance demands of complex water infrastructure programs.`,
+    `Whether it's a treatment plant upgrade, collection-system rehab, or stormwater compliance work, we match vetted talent to what each program actually demands — regulatory, operational, and technical.`,
+    flagshipProgram
+      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match vetted talent to the regulatory, operational, and performance demands of that kind of water infrastructure program.`
+      : `From treatment plant upgrades to collection-system rehabilitation and stormwater compliance, we match vetted talent to the regulatory, operational, and performance demands of complex water infrastructure programs.`,
+  ]);
+  const skillsIntro = pickVariant(`${c.slug}:water:skillsIntro`, [
+    `Every candidate we put forward is screened against the same bar: the modeling software, licensure, and code fluency the role actually demands.`,
+    `We screen every candidate against one bar — the modeling software, licensure, and code fluency the role actually calls for, not a generic checklist.`,
+    `Every submission is held to the same standard: real fluency in the modeling software, licensure, and codes the role demands.`,
+  ]);
+  const trendsIntro = pickVariant(`${c.slug}:water:trendsIntro`, [
+    `In 2026, the ${c.region} market is defined by aging-infrastructure replacement, PFAS and emerging-contaminant compliance, and federally funded resiliency programs. Demand for licensed process engineers and inspection specialists who can deliver permit-compliant, resilient systems is at an all-time high.`,
+    `Heading into 2026, ${c.city}'s market is shaped by aging-infrastructure replacement, PFAS and emerging-contaminant compliance, and federally funded resiliency work. Licensed process engineers and inspection specialists who can deliver permit-compliant, resilient systems remain in short supply.`,
+  ]);
+
   const schemas = [
     serviceSchema({
       serviceName: `Water & Wastewater Engineering Recruiter — ${c.city}, ${c.abbr}`,
@@ -129,16 +153,10 @@ export default async function WaterCityPage({ params }: { params: Promise<{ city
                 Specialized staffing for {c.city} <span className="text-brand-500">water infrastructure</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates is a leading water and wastewater engineering recruiter
-                providing specialized staffing solutions across {c.city} and {c.region}. We help
-                firms and utilities hire licensed Professional Engineers (PE), process engineers,
-                and construction inspection specialists across treatment, distribution, and
-                collection-system disciplines — for projects reviewed under {c.authority} and beyond.
+                {introPara1}
               </p>
               <p className="mt-4 leading-8 text-slate-500 text-pretty">
-                From treatment plant upgrades to collection-system rehabilitation and stormwater
-                compliance, we match vetted talent to the regulatory, operational, and performance
-                demands of complex water infrastructure programs.
+                {introPara2}
               </p>
             </div>
 
@@ -193,9 +211,7 @@ export default async function WaterCityPage({ params }: { params: Promise<{ city
               Water &amp; wastewater skills &amp; software we recruit for in {c.city}
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              Every candidate we put forward is screened against the same
-              bar: the modeling software, licensure, and code fluency the
-              role actually demands.
+              {skillsIntro}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
@@ -222,11 +238,7 @@ export default async function WaterCityPage({ params }: { params: Promise<{ city
                 2026 {c.city} water &amp; wastewater hiring
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                In 2026, the {c.region} market is defined by aging-infrastructure
-                replacement, PFAS and emerging-contaminant compliance, and federally
-                funded resiliency programs. Demand for licensed process engineers and
-                inspection specialists who can deliver permit-compliant, resilient
-                systems is at an all-time high.
+                {trendsIntro}
               </p>
             </div>
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">

@@ -1,6 +1,8 @@
 // Team photos are self-hosted in /public/team (the old metroassoc.com domain is gone).
 // Every team member's profile link points to Patrick's LinkedIn.
-const FALLBACK_LINKEDIN = "https://www.linkedin.com/in/patricknovick/";
+// Exported so jobfolderTeam.ts has the same fallback for a JobFolder
+// recruiter who hasn't filled in a LinkedIn URL.
+export const FALLBACK_LINKEDIN = "https://www.linkedin.com/in/patricknovick/";
 const PATRICK_LINKEDIN = FALLBACK_LINKEDIN;
 
 export type Member = {

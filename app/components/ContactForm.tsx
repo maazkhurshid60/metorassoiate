@@ -2,49 +2,60 @@
 
 import { useEffect, useRef, useState } from "react";
 import { IconArrow, IconCheck } from "./Icons";
-import { EMAIL, TURNSTILE_SITE_KEY } from "../lib/site";
+import { EMAIL, GEETEST_CAPTCHA_ID } from "../lib/site";
 
 const inputCls =
   "w-full border border-white/12 bg-navy-900 px-4 py-3 text-sm text-white placeholder:text-ink-500 transition-colors focus:border-amber-500 focus:outline-none";
 
-type Turnstile = {
-  render: (
-    el: HTMLElement,
-    opts: {
-      sitekey: string;
-      theme?: "light" | "dark";
-      callback?: (token: string) => void;
-      "expired-callback"?: () => void;
-      "error-callback"?: () => void;
-    }
-  ) => string;
-  reset: (widgetId?: string) => void;
+/** The four fields GeeTest's client SDK returns on a solved puzzle — all four
+ *  travel to our API and on to GeeTest's own server-side validate call, which
+ *  is what actually confirms the puzzle was solved (the client result alone
+ *  is not trustworthy). */
+export type GeetestResult = {
+  lot_number: string;
+  captcha_output: string;
+  pass_token: string;
+  gen_time: string;
 };
+
+type GeetestCaptcha = {
+  appendTo: (target: string | HTMLElement) => void;
+  showCaptcha: () => void;
+  onSuccess: (cb: () => void) => void;
+  onError: (cb: (err: { code: string; msg: string }) => void) => void;
+  getValidate: () => GeetestResult | false;
+  reset: () => void;
+};
+
+type InitGeetest4 = (
+  options: { captchaId: string; product?: "float" | "popup" | "bind"; language?: string },
+  callback: (captcha: GeetestCaptcha) => void
+) => void;
 
 declare global {
   interface Window {
-    turnstile?: Turnstile;
+    initGeetest4?: InitGeetest4;
   }
 }
 
-const SCRIPT_ID = "turnstile-api";
+const SCRIPT_ID = "geetest-v4-api";
 
-/** Load Cloudflare Turnstile's script once and resolve when the API is ready. */
-function loadTurnstile(): Promise<Turnstile> {
+/** Load GeeTest v4's script once and resolve when the API is ready. */
+function loadGeetest(): Promise<InitGeetest4> {
   return new Promise((resolve) => {
-    if (window.turnstile?.render) return resolve(window.turnstile);
+    if (window.initGeetest4) return resolve(window.initGeetest4);
 
     if (!document.getElementById(SCRIPT_ID)) {
       const s = document.createElement("script");
       s.id = SCRIPT_ID;
-      s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      s.src = "https://static.geetest.com/v4/gt4.js";
       s.async = true;
       s.defer = true;
       document.head.appendChild(s);
     }
 
     const poll = () => {
-      if (window.turnstile?.render) resolve(window.turnstile);
+      if (window.initGeetest4) resolve(window.initGeetest4);
       else window.setTimeout(poll, 100);
     };
     poll();
@@ -53,26 +64,29 @@ function loadTurnstile(): Promise<Turnstile> {
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
-  const [token, setToken] = useState("");
+  const [captcha, setCaptcha] = useState<GeetestResult | null>(null);
   const [status, setStatus] = useState<"idle" | "verifying">("idle");
   const [error, setError] = useState("");
 
   const boxRef = useRef<HTMLDivElement>(null);
-  const widgetId = useRef<string | null>(null);
+  const captchaRef = useRef<GeetestCaptcha | null>(null);
 
   useEffect(() => {
     let active = true;
-    loadTurnstile().then((turnstile) => {
-      if (!active || !boxRef.current || widgetId.current !== null) return;
-      widgetId.current = turnstile.render(boxRef.current, {
-        sitekey: TURNSTILE_SITE_KEY,
-        theme: "dark",
-        callback: (t) => {
-          setToken(t);
-          setError("");
-        },
-        "expired-callback": () => setToken(""),
-        "error-callback": () => setToken(""),
+    loadGeetest().then((initGeetest4) => {
+      if (!active || !boxRef.current || captchaRef.current) return;
+      initGeetest4({ captchaId: GEETEST_CAPTCHA_ID, product: "float" }, (instance) => {
+        if (!active) return;
+        captchaRef.current = instance;
+        instance.appendTo(boxRef.current!);
+        instance.onSuccess(() => {
+          const result = instance.getValidate();
+          if (result) {
+            setCaptcha(result);
+            setError("");
+          }
+        });
+        instance.onError(() => setCaptcha(null));
       });
     });
     return () => {
@@ -81,10 +95,8 @@ export default function ContactForm() {
   }, []);
 
   const resetCaptcha = () => {
-    setToken("");
-    if (window.turnstile && widgetId.current !== null) {
-      window.turnstile.reset(widgetId.current);
-    }
+    setCaptcha(null);
+    captchaRef.current?.reset();
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -99,7 +111,7 @@ export default function ContactForm() {
     const message = String(data.get("message") ?? "");
     const sms = data.get("sms") ? "Yes" : "No";
 
-    if (!token) {
+    if (!captcha) {
       setError("Please complete the verification before sending.");
       return;
     }
@@ -111,7 +123,7 @@ export default function ContactForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          token,
+          captcha,
           name,
           email,
           phone,
@@ -123,7 +135,7 @@ export default function ContactForm() {
       const result = await res.json();
       if (!result.success) {
         setError(
-          result.error === "turnstile-failed"
+          result.error === "geetest-failed"
             ? "Verification failed. Please try again."
             : "Sorry — your message couldn't be sent. Please email us directly."
         );
@@ -221,8 +233,9 @@ export default function ContactForm() {
         </span>
       </label>
 
-      {/* Cloudflare Turnstile */}
-      <div className="min-h-[78px]">
+      {/* GeeTest v4 — "float" product mode, so this always requires the
+          visitor to actually solve the slider puzzle; nothing auto-passes. */}
+      <div className="min-h-13">
         <div ref={boxRef} />
       </div>
 

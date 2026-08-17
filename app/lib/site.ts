@@ -11,10 +11,15 @@ export const PHONE = "+1 312-500-1878";
 export const PHONE_HREF = "tel:+13125001878";
 export const EMAIL = "patrick@metroassoc.com";
 
-/** Cloudflare Turnstile site key (public — safe to ship to the browser).
- *  This is Cloudflare's published always-passes test key. Swap it for the
- *  real site key from https://dash.cloudflare.com/?to=/:account/turnstile
- *  once this domain is registered there, and set the matching
- *  TURNSTILE_SECRET_KEY env var on the server (see app/api/contact/route.ts). */
-export const TURNSTILE_SITE_KEY =
-  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "1x00000000000000000000AA";
+/** GeeTest v4 CAPTCHA ID (public — safe to ship to the browser). Unlike
+ *  Turnstile, GeeTest has no published test ID, so this is empty until set.
+ *  Get it from https://console.geetest.com (Products > CAPTCHA v4), and set
+ *  the matching GEETEST_CAPTCHA_KEY (secret) env var on the server — see
+ *  app/api/contact/route.ts. */
+export const GEETEST_CAPTCHA_ID = process.env.NEXT_PUBLIC_GEETEST_CAPTCHA_ID ?? "";
+
+/** Base URL of the JobFolder recruiter platform (a separate app), used only
+ *  to pull the recruiters its admin has approved to appear on our "Meet Our
+ *  Team" page — see app/lib/jobfolderTeam.ts. Empty until set, in which case
+ *  the team page just shows the static roster with none added. */
+export const JOBFOLDER_API_URL = process.env.JOBFOLDER_API_URL ?? "";

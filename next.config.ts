@@ -88,6 +88,19 @@ async function redirects() {
   ];
 }
 
+// JobFolder-approved recruiter photos are served from JOBFOLDER_API_URL
+// (app/lib/jobfolderTeam.ts) — next/image needs that host explicitly
+// allowed, and it's only known at build/start time, not statically.
+const jobfolderImagePattern = (() => {
+  if (!process.env.JOBFOLDER_API_URL) return null;
+  try {
+    const u = new URL(process.env.JOBFOLDER_API_URL);
+    return { protocol: u.protocol.replace(":", "") as "http" | "https", hostname: u.hostname };
+  } catch {
+    return null;
+  }
+})();
+
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
@@ -99,6 +112,7 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "metroassoc.com",
       },
+      ...(jobfolderImagePattern ? [jobfolderImagePattern] : []),
     ],
   },
   redirects,

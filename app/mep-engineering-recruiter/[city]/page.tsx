@@ -11,7 +11,7 @@ import {
 } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs, pickVariant } from "../../lib/seo";
 
 // Pre-render the fixed set of MEP city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -50,6 +50,30 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
 
   const path = `/mep-engineering-recruiter/${c.slug}`;
   const faqs = mepFaqs(c);
+  const flagshipProgram = c.localPrograms[0];
+
+  const introPara1 = pickVariant(`${c.slug}:mep:intro1`, [
+    `Metro Associates is a leading MEP engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms hire licensed Professional Engineers (PE), project managers, and commissioning specialists across mechanical, electrical, and plumbing disciplines — for projects reviewed under ${c.authority} and beyond.`,
+    `Metro Associates runs a dedicated MEP engineering search practice across ${c.city} and ${c.region}, connecting firms with licensed Professional Engineers (PE), project managers, and commissioning specialists across mechanical, electrical, and plumbing disciplines reviewed under ${c.authority}.`,
+    `We're a specialized MEP engineering recruiter for ${c.city} and ${c.region} — placing licensed Professional Engineers (PE), project managers, and commissioning specialists on mechanical, electrical, and plumbing work reviewed under ${c.authority}.`,
+  ]);
+  const introPara2 = pickVariant(`${c.slug}:mep:intro2`, [
+    `From high-rise towers to healthcare, data centers, and mission-critical facilities, we match vetted talent to the design, code, and performance demands of complex building programs.`,
+    `Whether it's a high-rise tower, a hospital, or a data center, we match vetted talent to what the building program actually demands — design, code, and performance.`,
+    flagshipProgram
+      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match vetted talent to the design, code, and performance demands of that kind of complex building program.`
+      : `From high-rise towers to healthcare, data centers, and mission-critical facilities, we match vetted talent to the design, code, and performance demands of complex building programs.`,
+  ]);
+  const skillsIntro = pickVariant(`${c.slug}:mep:skillsIntro`, [
+    `Every candidate we put forward is screened against the same bar: the CAD/BIM tools, licensure, and code fluency the role actually demands.`,
+    `We screen every candidate against one bar — the CAD/BIM tools, licensure, and code fluency the role actually calls for, not a generic checklist.`,
+    `Every submission is held to the same standard: real fluency in the CAD/BIM tools, licensure, and codes the role demands.`,
+  ]);
+  const trendsIntro = pickVariant(`${c.slug}:mep:trendsIntro`, [
+    `In 2026, the ${c.region} market is defined by building electrification, aggressive energy codes, and a data-center and life-science construction boom. Demand for licensed mechanical, electrical, and commissioning engineers who can deliver high-performance, code-compliant systems is at an all-time high.`,
+    `Heading into 2026, ${c.city}'s market is shaped by building electrification, tighter energy codes, and a boom in data-center and life-science construction. Licensed mechanical, electrical, and commissioning engineers who can deliver high-performance, code-compliant systems remain in short supply.`,
+  ]);
+
   const schemas = [
     serviceSchema({
       serviceName: `MEP Engineering Recruiter — ${c.city}, ${c.abbr}`,
@@ -129,16 +153,10 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
                 Specialized staffing for {c.city} <span className="text-brand-500">building systems</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates is a leading MEP engineering recruiter providing
-                specialized staffing solutions across {c.city} and {c.region}. We help
-                firms hire licensed Professional Engineers (PE), project managers, and
-                commissioning specialists across mechanical, electrical, and plumbing
-                disciplines — for projects reviewed under {c.authority} and beyond.
+                {introPara1}
               </p>
               <p className="mt-4 leading-8 text-slate-500 text-pretty">
-                From high-rise towers to healthcare, data centers, and mission-critical
-                facilities, we match vetted talent to the design, code, and performance
-                demands of complex building programs.
+                {introPara2}
               </p>
             </div>
 
@@ -193,9 +211,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
               MEP skills & software we recruit for in {c.city}
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              Every candidate we put forward is screened against the same
-              bar: the CAD/BIM tools, licensure, and code fluency the role
-              actually demands.
+              {skillsIntro}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
@@ -222,11 +238,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
                 2026 {c.city} MEP engineering hiring
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                In 2026, the {c.region} market is defined by building electrification,
-                aggressive energy codes, and a data-center and life-science construction
-                boom. Demand for licensed mechanical, electrical, and commissioning
-                engineers who can deliver high-performance, code-compliant systems is at
-                an all-time high.
+                {trendsIntro}
               </p>
             </div>
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">

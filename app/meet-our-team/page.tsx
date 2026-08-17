@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IconArrow } from "../components/Icons";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { TEAM } from "../lib/team";
+import { getJobFolderTeam } from "../lib/jobfolderTeam";
 import TeamCard from "../components/TeamCard";
 
 export const metadata: Metadata = {
@@ -11,7 +12,11 @@ export const metadata: Metadata = {
     "Meet the Metro Associates recruiting team — specialists in engineering, transportation, and DOT staffing. Connect with our recruiters on LinkedIn.",
 };
 
-export default function MeetOurTeamPage() {
+export default async function MeetOurTeamPage() {
+  // Recruiters a JobFolder admin has approved for this page, appended after
+  // the core static roster — see app/lib/jobfolderTeam.ts.
+  const roster = [...TEAM, ...(await getJobFolderTeam())];
+
   return (
     <main>
       {/* Hero */}
@@ -43,12 +48,12 @@ export default function MeetOurTeamPage() {
           <div className="mb-10 flex items-end justify-between border-b border-navy-950/10 pb-5">
             <span className="mono-label text-amber-500">{"//"} The Roster</span>
             <span className="mono-label text-[10px] text-slate-500">
-              {String(TEAM.length).padStart(2, "0")} specialists
+              {String(roster.length).padStart(2, "0")} specialists
             </span>
           </div>
 
           <div className="reveal-children grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-            {TEAM.map((m, i) => (
+            {roster.map((m, i) => (
               <TeamCard key={m.name} m={m} index={i} />
             ))}
           </div>

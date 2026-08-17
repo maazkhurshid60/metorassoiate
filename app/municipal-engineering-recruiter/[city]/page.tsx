@@ -12,7 +12,7 @@ import {
 } from "../../lib/municipalEngineering";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, municipalFaqs } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, municipalFaqs, pickVariant } from "../../lib/seo";
 
 // Pre-render the fixed set of Municipal Engineering city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -51,6 +51,30 @@ export default async function MunicipalCityPage({ params }: { params: Promise<{ 
 
   const path = `/municipal-engineering-recruiter/${c.slug}`;
   const faqs = municipalFaqs(c);
+  const flagshipProgram = c.localPrograms[0];
+
+  const introPara1 = pickVariant(`${c.slug}:municipal:intro1`, [
+    `Metro Associates is a leading municipal engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help cities, towns, and the consultants who serve them hire licensed Professional Engineers (PE), city engineers, and public works leaders — for programs administered by ${c.authority} and beyond.`,
+    `Metro Associates runs a dedicated municipal engineering search practice across ${c.city} and ${c.region}, connecting cities, towns, and consultants with licensed Professional Engineers (PE), city engineers, and public works leaders under ${c.authority}.`,
+    `We're a specialized municipal engineering recruiter for ${c.city} and ${c.region} — placing licensed Professional Engineers (PE), city engineers, and public works leaders for local government and the consultants who serve it.`,
+  ]);
+  const introPara2 = pickVariant(`${c.slug}:municipal:intro2`, [
+    `From capital improvement programs to site-development review and municipal utilities, we match vetted talent to the public-process, funding, and performance demands of local government engineering.`,
+    `Whether it's a capital improvement program, site-development review, or municipal utilities work, we match vetted talent to what local government engineering actually demands — process, funding, and performance.`,
+    flagshipProgram
+      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match vetted talent to the public-process, funding, and performance demands of that kind of local government program.`
+      : `From capital improvement programs to site-development review and municipal utilities, we match vetted talent to the public-process, funding, and performance demands of local government engineering.`,
+  ]);
+  const skillsIntro = pickVariant(`${c.slug}:municipal:skillsIntro`, [
+    `Every candidate we put forward is screened against the same bar: the design software, licensure, and public-process fluency the role actually demands.`,
+    `We screen every candidate against one bar — the design software, licensure, and public-process fluency the role actually calls for, not a generic checklist.`,
+    `Every submission is held to the same standard: real fluency in the design software, licensure, and public process the role demands.`,
+  ]);
+  const trendsIntro = pickVariant(`${c.slug}:municipal:trendsIntro`, [
+    `In 2026, the ${c.region} market is defined by bond- and grant-funded capital programs and a wave of retirements across public works departments. Demand for licensed municipal engineers who can run a capital improvement plan end to end is at an all-time high.`,
+    `Heading into 2026, ${c.city}'s market is shaped by bond- and grant-funded capital programs and a wave of retirements across public works departments. Licensed municipal engineers who can run a capital improvement plan end to end remain in short supply.`,
+  ]);
+
   const schemas = [
     serviceSchema({
       serviceName: `Municipal Engineering Recruiter — ${c.city}, ${c.abbr}`,
@@ -130,16 +154,10 @@ export default async function MunicipalCityPage({ params }: { params: Promise<{ 
                 Specialized staffing for {c.city} <span className="text-brand-500">public infrastructure</span>
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                Metro Associates is a leading municipal engineering recruiter providing
-                specialized staffing solutions across {c.city} and {c.region}. We help
-                cities, towns, and the consultants who serve them hire licensed
-                Professional Engineers (PE), city engineers, and public works leaders —
-                for programs administered by {c.authority} and beyond.
+                {introPara1}
               </p>
               <p className="mt-4 leading-8 text-slate-500 text-pretty">
-                From capital improvement programs to site-development review and
-                municipal utilities, we match vetted talent to the public-process,
-                funding, and performance demands of local government engineering.
+                {introPara2}
               </p>
             </div>
 
@@ -194,9 +212,7 @@ export default async function MunicipalCityPage({ params }: { params: Promise<{ 
               Municipal skills &amp; software we recruit for in {c.city}
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              Every candidate we put forward is screened against the same
-              bar: the design software, licensure, and public-process fluency
-              the role actually demands.
+              {skillsIntro}
             </p>
           </div>
           <div className="mt-12 flex flex-wrap gap-3">
@@ -223,10 +239,7 @@ export default async function MunicipalCityPage({ params }: { params: Promise<{ 
                 2026 {c.city} municipal engineering hiring
               </h2>
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-                In 2026, the {c.region} market is defined by bond- and grant-funded
-                capital programs and a wave of retirements across public works
-                departments. Demand for licensed municipal engineers who can run a
-                capital improvement plan end to end is at an all-time high.
+                {trendsIntro}
               </p>
             </div>
             <div className="border border-navy-950/10 bg-white p-8 sm:p-10">

@@ -276,6 +276,8 @@ export default function CeiInspectionRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/cei-inspection-recruiter/${c.slug}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">
