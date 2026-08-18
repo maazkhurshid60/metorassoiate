@@ -21,9 +21,10 @@ export async function getJobFolderTeam(): Promise<Member[]> {
 
   try {
     const res = await fetch(`${JOBFOLDER_API_URL}/api/team`, {
-      // Public roster, changes rarely — matches the cache window the
-      // JobFolder endpoint itself sends.
-      next: { revalidate: 60 },
+      // Kept in step with TEAM_REVALIDATE_SECONDS (../meet-our-team/page.tsx)
+      // and JobFolder's own Cache-Control on /api/team — see the comment
+      // there on what happens when these drift out of sync.
+      next: { revalidate: 30 },
     });
     if (!res.ok) return [];
 

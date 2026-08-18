@@ -12,6 +12,15 @@ export const metadata: Metadata = {
     "Meet the Metro Associates recruiting team — specialists in engineering, transportation, and DOT staffing. Connect with our recruiters on LinkedIn.",
 };
 
+/* Pinned explicitly rather than left to infer from the getJobFolderTeam()
+   fetch's `next.revalidate`: with only the fetch specifying a window, this
+   page's own stale-while-revalidate period picked up JobFolder's /api/team
+   Cache-Control instead (observed as a 5-minute staleness after toggling a
+   recruiter off — the page kept serving them long after JobFolder itself had
+   already stopped listing them). Keep this equal to the fetch's revalidate
+   and to JobFolder's Cache-Control max-age. */
+export const revalidate = 30;
+
 export default async function MeetOurTeamPage() {
   // Recruiters a JobFolder admin has approved for this page, appended after
   // the core static roster — see app/lib/jobfolderTeam.ts.
