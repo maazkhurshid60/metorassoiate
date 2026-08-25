@@ -47,6 +47,18 @@ export default function About() {
       <div className="pointer-events-none absolute inset-0 -z-10 blueprint-light opacity-30" />
 
       <div className="container-x">
+        <div className="relative mb-14 overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
+          <video
+            controls
+            playsInline
+            preload="metadata"
+            poster="/fx-gs.webp"
+            className="aspect-video w-full"
+          >
+            <source src="/patrick-intro.mp4" type="video/mp4" />
+          </video>
+        </div>
+
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
             <span className="mono-label text-amber-500">{"//"} 01 — About Us</span>
