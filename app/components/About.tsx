@@ -48,15 +48,15 @@ export default function About() {
 
       <div className="container-x">
         <div className="relative mb-14 overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
-          <video
-            controls
-            playsInline
-            preload="metadata"
-            poster="/fx-gs.webp"
-            className="aspect-video w-full"
-          >
-            <source src="/patrick-intro.mp4" type="video/mp4" />
-          </video>
+          <iframe
+            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7498076119125065728"
+            height="744"
+            width="100%"
+            frameBorder="0"
+            allowFullScreen
+            title="Preconstruction Manager job opening — LinkedIn post"
+            className="block"
+          />
         </div>
 
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
