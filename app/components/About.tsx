@@ -10,7 +10,7 @@ const METRICS = [
 ];
 
 const ROLES = [
-  "Transportation Engineers",
+  "Professional Engineers (PE)",
   "Bridge & Structural Designers",
   "Roadway & Traffic Engineers",
   "CEI Inspectors",
@@ -22,6 +22,7 @@ const ROLES = [
 ];
 
 const STANDARDS = [
+  "PE licensed",
   "DOT specifications",
   "FHWA standards",
   "AASHTO guidelines",
@@ -63,22 +64,22 @@ export default function About() {
           <div>
             <span className="mono-label text-amber-500">{"//"} 01 — About Us</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              DOT-focused staffing &amp;{" "}
+              Engineering staffing &amp;{" "}
               <span className="text-brand-500">executive search</span>
             </h2>
             <p className="mt-6 text-lg leading-8 text-slate text-pretty">
               Metro Associates is a nationally recognized engineering recruiting
-              firm specializing in DOT staffing and executive search. We support
-              state Departments of Transportation, municipal public works
-              agencies, engineering consultancies, and federally funded
-              infrastructure programs across the United States.
+              firm specializing in staffing Professional Engineers and technical
+              talent across every discipline. We support DOT and infrastructure
+              agencies, municipal public works, engineering consultancies, and
+              private-sector employers across the United States.
             </p>
             <p className="mt-4 leading-8 text-slate-500 text-pretty">
               With more than four decades of combined experience, our recruiters
               — including former engineers and military-trained talent
-              specialists — deliver transportation professionals who understand
-              the operational, regulatory, and performance demands of publicly
-              funded capital projects.
+              specialists — deliver licensed engineers and technical
+              specialists who understand the operational, regulatory, and
+              performance demands of today&apos;s capital projects.
             </p>
 
             <div className="mt-7">
@@ -111,7 +112,7 @@ export default function About() {
             {/* technical-drawing grid in light blue */}
             <div className="blueprint-light absolute inset-0 opacity-70" />
             <div className="relative">
-              <p className="mono-label text-brand-600">Transportation roles we place</p>
+              <p className="mono-label text-brand-600">Engineering roles we place</p>
               <ul className="mt-6 grid gap-x-6 gap-y-4 sm:grid-cols-2">
                 {ROLES.map((r, i) => (
                   <li key={r} className="flex items-center gap-3 text-[15px] font-medium text-navy-950">

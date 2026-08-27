@@ -1,18 +1,18 @@
 import Image from "next/image";
 import { IconArrow, IconCheck, IconStar } from "./Icons";
+import { CAREERS_URL } from "../lib/site";
 
 const HIGHLIGHTS = [
   "45+ years of placements",
-  "DOT · Infrastructure · AEC",
   "No fee until hired",
 ];
 
 const TICKER = [
-  "Highway Design",
+  "Professional Engineers",
   "Bridge Engineering",
-  "Transportation Planning",
+  "Civil & Structural Engineering",
   "Construction Inspection",
-  "DOT Compliance",
+  "All Engineering Disciplines",
   "Program Management",
   "AEC Consultancies",
   "Licensed Professionals",
@@ -46,6 +46,24 @@ export default function Hero() {
 
       <div className="container-x relative w-full pb-14">
         <div className="max-w-3xl animate-fade-up">
+          <a
+            href={CAREERS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group mb-6 inline-flex items-center gap-3 border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 backdrop-blur-sm transition-colors hover:border-amber-500 hover:bg-amber-500/20"
+          >
+            <span className="relative flex h-2 w-2 shrink-0">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-500 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
+            </span>
+            <span className="mono-label text-amber-400">Now Hiring</span>
+            <span className="hidden h-3 w-px bg-amber-500/30 sm:block" />
+            <span className="text-xs font-bold text-white sm:text-sm">
+              10 Professional Engineers — All Disciplines
+            </span>
+            <IconArrow className="h-3.5 w-3.5 shrink-0 text-amber-500 transition-transform group-hover:translate-x-1" />
+          </a>
+
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 animate-blink bg-amber-500" />
             <span className="mono-label text-amber-400">
@@ -69,9 +87,9 @@ export default function Hero() {
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-200 text-pretty">
             Tired of endless searches for the right engineering talent? Metro
             Associates transforms your hiring process — with results you can
-            count on. We help DOT agencies, infrastructure companies, and AEC
-            consultancies hire qualified, licensed professionals across the
-            United States.
+            count on. We help companies across the United States hire
+            qualified, experienced technical, engineering, and licensed
+            professionals.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

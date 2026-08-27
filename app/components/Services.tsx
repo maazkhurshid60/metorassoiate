@@ -55,9 +55,10 @@ export default function Services() {
             </h2>
           </div>
           <p className="max-w-md text-ink-300 text-pretty">
-            From highway design to DOT compliance, we deliver dependable talent
-            that supports safety, regulatory standards, and the delivery of state
-            and federally funded programs.
+            From Professional Engineers to specialized technical talent, we
+            deliver dependable staffing across every engineering discipline —
+            supporting safety, regulatory standards, and project delivery for
+            public and private employers alike.
           </p>
         </div>
 
