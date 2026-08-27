@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about", external: false },
   { label: "Why Us", href: "/why-us", external: false },
   { label: "Meet Our Team", href: "/meet-our-team", external: false },
+  { label: "Videos", href: "/videos", external: false },
   { label: "Apply Jobs", href: APPLY_URL, external: true },
   { label: "View All Jobs", href: CAREERS_URL, external: true },
 ];
