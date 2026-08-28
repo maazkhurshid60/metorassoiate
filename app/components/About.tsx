@@ -48,14 +48,14 @@ export default function About() {
       <div className="pointer-events-none absolute inset-0 -z-10 blueprint-light opacity-30" />
 
       <div className="container-x">
-        <div className="relative mb-14 overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
+        <div className="relative mb-14 aspect-video overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
           <iframe
-            src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7498076119125065728"
-            height="744"
+            src="https://www.youtube.com/embed/3ORE7EmXdiA"
             width="100%"
-            frameBorder="0"
+            height="100%"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
-            title="Preconstruction Manager job opening — LinkedIn post"
+            title="Metro Associates — intro video"
             className="block"
           />
         </div>
