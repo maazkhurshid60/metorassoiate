@@ -1,13 +1,19 @@
-// Contact form endpoint. Verifies the GeeTest v4 puzzle result (single-use —
-// so this must be the ONLY place it's checked) and then actually delivers the
-// message via Brevo's transactional email API. This guarantees the enquiry
-// reaches the inbox regardless of whether the visitor has an email client
-// configured.
+// Contact form endpoint. Verifies the GeeTest v4 puzzle result when a
+// project is configured (single-use — so this must be the ONLY place it's
+// checked), then actually delivers the message via Brevo's transactional
+// email API. This guarantees the enquiry reaches the inbox regardless of
+// whether the visitor has an email client configured.
+
+import { realEnvValue } from "../../lib/site";
 
 // Set once a CAPTCHA v4 project exists at https://console.geetest.com — must
 // match the CAPTCHA ID in app/lib/site.ts (NEXT_PUBLIC_GEETEST_CAPTCHA_ID).
-const GEETEST_CAPTCHA_ID = process.env.NEXT_PUBLIC_GEETEST_CAPTCHA_ID ?? "";
-const GEETEST_CAPTCHA_KEY = process.env.GEETEST_CAPTCHA_KEY ?? "";
+// Empty (including a leftover PASTE_YOUR_..._HERE placeholder) means no bot
+// check runs at all — see the skip below — rather than every submission
+// failing against an invalid captcha_id.
+const GEETEST_CAPTCHA_ID = realEnvValue(process.env.NEXT_PUBLIC_GEETEST_CAPTCHA_ID);
+const GEETEST_CAPTCHA_KEY = realEnvValue(process.env.GEETEST_CAPTCHA_KEY);
+const CAPTCHA_CONFIGURED = Boolean(GEETEST_CAPTCHA_ID && GEETEST_CAPTCHA_KEY);
 
 const BREVO_URL = "https://api.brevo.com/v3/smtp/email";
 
@@ -62,43 +68,43 @@ export async function POST(request: Request) {
   const message = (body.message ?? "").toString().trim().slice(0, 5000);
   const sms = body.sms ? "Yes" : "No";
 
-  if (!lotNumber || !captchaOutput || !passToken || !genTime) {
-    return Response.json({ success: false, error: "missing-token" }, { status: 400 });
-  }
   if (!name || !email || !message) {
     return Response.json({ success: false, error: "missing-fields" }, { status: 400 });
   }
-  if (!GEETEST_CAPTCHA_ID || !GEETEST_CAPTCHA_KEY) {
-    return Response.json({ success: false, error: "captcha-not-configured" }, { status: 500 });
-  }
 
-  // 1) Verify the GeeTest puzzle (bot check). lot_number/pass_token are
-  // single-use, and sign_token proves this request actually came from our
-  // server (the client never sees GEETEST_CAPTCHA_KEY).
-  try {
-    const { createHmac } = await import("node:crypto");
-    const signToken = createHmac("sha256", GEETEST_CAPTCHA_KEY).update(lotNumber).digest("hex");
-    const params = new URLSearchParams({
-      lot_number: lotNumber,
-      captcha_output: captchaOutput,
-      pass_token: passToken,
-      gen_time: genTime,
-      sign_token: signToken,
-    });
-    const res = await fetch(
-      `https://gcaptcha4.geetest.com/validate?captcha_id=${encodeURIComponent(GEETEST_CAPTCHA_ID)}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: params.toString(),
-      }
-    );
-    const data = (await res.json()) as { result?: string };
-    if (data.result !== "success") {
-      return Response.json({ success: false, error: "geetest-failed" }, { status: 400 });
+  // 1) Verify the GeeTest puzzle (bot check) — only when a real project is
+  // configured. Left unconfigured (see CAPTCHA_CONFIGURED above), every
+  // submission would otherwise fail here against an invalid captcha_id, so
+  // this step is skipped entirely rather than rejecting real enquiries.
+  if (CAPTCHA_CONFIGURED) {
+    if (!lotNumber || !captchaOutput || !passToken || !genTime) {
+      return Response.json({ success: false, error: "missing-token" }, { status: 400 });
     }
-  } catch {
-    return Response.json({ success: false, error: "geetest-unreachable" }, { status: 502 });
+    try {
+      const { createHmac } = await import("node:crypto");
+      const signToken = createHmac("sha256", GEETEST_CAPTCHA_KEY).update(lotNumber).digest("hex");
+      const params = new URLSearchParams({
+        lot_number: lotNumber,
+        captcha_output: captchaOutput,
+        pass_token: passToken,
+        gen_time: genTime,
+        sign_token: signToken,
+      });
+      const res = await fetch(
+        `https://gcaptcha4.geetest.com/validate?captcha_id=${encodeURIComponent(GEETEST_CAPTCHA_ID)}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: params.toString(),
+        }
+      );
+      const data = (await res.json()) as { result?: string };
+      if (data.result !== "success") {
+        return Response.json({ success: false, error: "geetest-failed" }, { status: 400 });
+      }
+    } catch {
+      return Response.json({ success: false, error: "geetest-unreachable" }, { status: 502 });
+    }
   }
 
   // 2) Deliver the message via Brevo.

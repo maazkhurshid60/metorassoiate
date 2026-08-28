@@ -71,7 +71,13 @@ export default function ContactForm() {
   const boxRef = useRef<HTMLDivElement>(null);
   const captchaRef = useRef<GeetestCaptcha | null>(null);
 
+  // No GeeTest project configured yet — don't even try to load/render the
+  // widget (an invalid captchaId just shows a broken-looking placeholder),
+  // and don't gate submission on a captcha result that can never arrive.
+  const captchaConfigured = Boolean(GEETEST_CAPTCHA_ID);
+
   useEffect(() => {
+    if (!captchaConfigured) return;
     let active = true;
     loadGeetest().then((initGeetest4) => {
       if (!active || !boxRef.current || captchaRef.current) return;
@@ -92,7 +98,7 @@ export default function ContactForm() {
     return () => {
       active = false;
     };
-  }, []);
+  }, [captchaConfigured]);
 
   const resetCaptcha = () => {
     setCaptcha(null);
@@ -111,7 +117,7 @@ export default function ContactForm() {
     const message = String(data.get("message") ?? "");
     const sms = data.get("sms") ? "Yes" : "No";
 
-    if (!captcha) {
+    if (captchaConfigured && !captcha) {
       setError("Please complete the verification before sending.");
       return;
     }
@@ -234,10 +240,14 @@ export default function ContactForm() {
       </label>
 
       {/* GeeTest v4 — "float" product mode, so this always requires the
-          visitor to actually solve the slider puzzle; nothing auto-passes. */}
-      <div className="min-h-13">
-        <div ref={boxRef} />
-      </div>
+          visitor to actually solve the slider puzzle; nothing auto-passes.
+          Omitted entirely (not just hidden) while no CaptchaId is set — see
+          GEETEST_CAPTCHA_ID in app/lib/site.ts. */}
+      {captchaConfigured && (
+        <div className="min-h-13">
+          <div ref={boxRef} />
+        </div>
+      )}
 
       {error && (
         <p className="mono-label text-[11px] text-red-400" role="alert">
