@@ -6,6 +6,7 @@ import {
   IconClipboard, IconStar,
 } from "../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
+import OtherSpecialties from "../components/OtherSpecialties";
 
 /* DEMO PAGE — a single static page, not a per-city buildout like
    civil-engineering-recruiter/ or mep-engineering-recruiter/. If this
@@ -348,6 +349,8 @@ export default function BridgeStructuralRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <OtherSpecialties exclude="bridge-structural-recruiter" />
     </main>
   );
 }

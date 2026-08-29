@@ -7,6 +7,7 @@ import {
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import { CEI_CITIES } from "../lib/ceiInspection";
+import OtherSpecialties from "../components/OtherSpecialties";
 
 /* National hub — same treatment as civil-engineering-recruiter/ and
    mep-engineering-recruiter/: this page plus a per-metro [city]/page.tsx for
@@ -380,6 +381,8 @@ export default function CeiInspectionRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <OtherSpecialties exclude="cei-inspection-recruiter" />
     </main>
   );
 }

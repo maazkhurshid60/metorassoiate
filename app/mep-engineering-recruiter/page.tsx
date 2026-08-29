@@ -9,6 +9,7 @@ import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import {
   MEP_CITIES, MEP_EXPERTISE, MEP_SKILLS, MEP_ROLES, MEP_SALARIES, MEP_WHY,
 } from "../lib/mep";
+import OtherSpecialties from "../components/OtherSpecialties";
 
 // Short phrases for the scrolling ticker bar — same treatment as the
 // civil-engineering-recruiter hero, scoped to this page's discipline.
@@ -307,6 +308,8 @@ export default function MepNationalRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <OtherSpecialties exclude="mep-engineering-recruiter" />
     </main>
   );
 }
