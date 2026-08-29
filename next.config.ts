@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { CITIES } from "./app/lib/cities";
+import { CAREERS_URL } from "./app/lib/site";
 
 // 301 redirects for legacy URLs indexed by Google on the previous site, so
 // visitors and crawlers never land on a 404. Precise old->new city mappings
@@ -34,6 +35,17 @@ async function redirects() {
     { source: "/privacy-policy", destination: "/privacy", permanent: true },
     { source: "/terms-2", destination: "/terms", permanent: true },
     { source: "/about-us", destination: "/about", permanent: true },
+    { source: "/home", destination: "/", permanent: true },
+
+    // Old WordPress job listing/posting URLs -> the external careers portal,
+    // since this site no longer hosts job pages itself.
+    { source: "/jobs", destination: CAREERS_URL, permanent: true },
+    { source: "/jobs/:slug*", destination: CAREERS_URL, permanent: true },
+
+    // Orphaned old WP pages/posts with no equivalent on the new site.
+    { source: "/elementor-5338", destination: "/", permanent: true },
+    { source: "/innovation-through-diversity-inclusion", destination: "/", permanent: true },
+    { source: "/innovation-through-diversity-inclusion11", destination: "/", permanent: true },
 
     // Explicit aliases: old slugs that don't match our city slug format but
     // clearly map to a specific city page.
