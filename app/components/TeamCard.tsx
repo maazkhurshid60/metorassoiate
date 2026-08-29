@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Member } from "../lib/team";
+import { IconGlobe } from "./Icons";
 
 const LINKEDIN_PATH =
   "M6.94 8.5H3.56V21h3.38V8.5ZM5.25 3a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM21 21h-3.38v-6.5c0-1.55-.55-2.6-1.94-2.6-1.06 0-1.69.71-1.97 1.4-.1.25-.13.6-.13.94V21H10.2s.05-11.5 0-12.5h3.38v1.77c.45-.69 1.25-1.68 3.05-1.68 2.23 0 3.9 1.46 3.9 4.6V21Z";
@@ -47,17 +48,30 @@ export default function TeamCard({ m, index }: { m: Member; index: number }) {
           {String(index + 1).padStart(2, "0")}
         </span>
 
-        <a
-          href={m.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${m.name} on LinkedIn`}
-          className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center border border-white/20 bg-navy-950/60 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-amber-500 hover:bg-amber-500 hover:text-navy-950"
-        >
-          <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
-            <path d={LINKEDIN_PATH} />
-          </svg>
-        </a>
+        <div className="absolute right-4 top-4 flex items-center gap-2">
+          {m.website && (
+            <a
+              href={m.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${m.name}'s website`}
+              className="inline-flex h-9 w-9 items-center justify-center border border-white/20 bg-navy-950/60 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-amber-500 hover:bg-amber-500 hover:text-navy-950"
+            >
+              <IconGlobe className="h-[18px] w-[18px]" />
+            </a>
+          )}
+          <a
+            href={m.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${m.name} on LinkedIn`}
+            className="inline-flex h-9 w-9 items-center justify-center border border-white/20 bg-navy-950/60 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-amber-500 hover:bg-amber-500 hover:text-navy-950"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="h-[18px] w-[18px]">
+              <path d={LINKEDIN_PATH} />
+            </svg>
+          </a>
+        </div>
 
         <div className="absolute inset-x-0 bottom-0 p-5">
           <h3 className="text-lg font-bold leading-tight text-white">{m.name}</h3>

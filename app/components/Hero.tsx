@@ -5,6 +5,8 @@ import { CAREERS_URL } from "../lib/site";
 const HIGHLIGHTS = [
   "45+ years of placements",
   "No fee until hired",
+  "Always remain 100% free for Job Seekers!",
+  "Focus strictly on engineering, architecture, and construction",
 ];
 
 const TICKER = [

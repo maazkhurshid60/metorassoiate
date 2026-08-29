@@ -10,6 +10,7 @@ export type Member = {
   role: string;
   photo?: string;
   linkedin: string;
+  website?: string;
   objectPos?: string;
 };
 
@@ -20,6 +21,7 @@ export const TEAM: Member[] = [
     role: "Managing Partner",
     photo: "/team/patrick.webp",
     linkedin: "https://www.linkedin.com/in/patricknovick/",
+    website: "https://patricknovick.com",
     objectPos: "object-top",
   },
   {
@@ -40,6 +42,7 @@ export const TEAM: Member[] = [
     role: "Recruiter",
     photo: "/team/nick.webp",
     linkedin: FALLBACK_LINKEDIN,
+    website: "https://nickjain.org",
   },
   {
     name: "Cadee J.",
