@@ -1,5 +1,8 @@
-/** Canonical production origin — no trailing slash. Used for metadataBase, sitemap, robots, and canonical URLs. */
-export const SITE_URL = "https://metroassoc.com";
+/** Canonical production origin — no trailing slash. Used for metadataBase, sitemap, robots, and canonical URLs.
+ *  Must be the "www" host: Vercel's domain config 308s the apex to www, so an
+ *  apex SITE_URL made every sitemap/canonical URL redirect on first fetch —
+ *  the cause of Search Console's "Page with redirect" pile-up. */
+export const SITE_URL = "https://www.metroassoc.com";
 
 /** External careers portal (Top Echelon). CAREERS_URL browses all jobs; APPLY_URL is the application form. */
 export const CAREERS_URL =
