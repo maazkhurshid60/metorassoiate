@@ -29,6 +29,14 @@ export const metadata: Metadata = {
   title: "Bridge & Structural Engineering Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national bridge and structural engineering recruiter providing specialized staffing for bridge design, high-rise vertical building structures, seismic retrofit, and rehabilitation programs across all 50 states. We place licensed PEs, Revit and AutoCAD structural designers, inspection leads, and technical specialists.",
+  keywords: [
+    "bridge engineering recruiter",
+    "structural engineering recruiter",
+    "bridge design staffing agency",
+    "high-rise structural engineer recruiter",
+    "seismic retrofit engineer recruiter",
+    "AASHTO bridge engineer jobs",
+  ],
   alternates: { canonical: "/bridge-structural-recruiter" },
   openGraph: {
     title: "Bridge & Structural Engineering Recruiter — United States | Metro Associates",

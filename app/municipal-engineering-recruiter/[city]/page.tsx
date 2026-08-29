@@ -28,9 +28,17 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const title = `Municipal Engineering Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
   const description = `Metro Associates is a specialized municipal engineering recruiter serving ${c.city}, ${c.state}. We place licensed PEs, city engineers, and public works leaders across ${c.region}.`;
   const path = `/municipal-engineering-recruiter/${c.slug}`;
+  const keywords = [
+    `municipal engineering recruiter ${c.city}`,
+    `municipal engineer staffing ${c.city} ${c.abbr}`,
+    `public works engineer recruiter ${c.city}`,
+    `city engineer recruiter ${c.city}`,
+    `municipal engineer jobs ${c.city}`,
+  ];
   return {
     title,
     description,
+    keywords,
     alternates: { canonical: path },
     openGraph: {
       title,

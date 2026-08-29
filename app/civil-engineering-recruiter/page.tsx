@@ -25,6 +25,16 @@ export const metadata: Metadata = {
   title: "Civil Engineering Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national civil engineering recruiter providing specialized staffing for transportation, infrastructure, and municipal projects across all 50 states. We place licensed PEs, project managers, and technical specialists.",
+  keywords: [
+    "civil engineering recruiter",
+    "civil engineering staffing agency",
+    "transportation engineer recruiter",
+    "DOT staffing agency",
+    "bridge engineer recruiter",
+    "infrastructure staffing",
+    "construction inspection staffing",
+    "civil engineer jobs",
+  ],
   alternates: { canonical: "/civil-engineering-recruiter" },
   openGraph: {
     title: "Civil Engineering Recruiter — United States | Metro Associates",
@@ -173,8 +183,6 @@ export default function NationalRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/civil-engineering-recruiter/${c.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">

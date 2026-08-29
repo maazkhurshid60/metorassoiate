@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "CEI & Construction Inspection Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national CEI (Construction Engineering & Inspection) recruiter providing specialized staffing for materials testing, bridge and roadway inspection, resident engineering, and construction contract administration across all 50 states. We place certified inspectors, resident engineers, and QA/QC specialists.",
+  keywords: [
+    "CEI recruiter",
+    "construction inspection recruiter",
+    "construction engineering inspection staffing",
+    "bridge inspector recruiter",
+    "resident engineer recruiter",
+    "materials testing staffing",
+    "QA QC inspector recruiter",
+    "NICET certified inspector jobs",
+  ],
   alternates: { canonical: "/cei-inspection-recruiter" },
   openGraph: {
     title: "CEI & Construction Inspection Recruiter — United States | Metro Associates",
@@ -276,8 +286,6 @@ export default function CeiInspectionRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/cei-inspection-recruiter/${c.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">

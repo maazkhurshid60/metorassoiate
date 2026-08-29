@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "Water & Wastewater Engineering Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national water and wastewater engineering recruiter providing specialized staffing for treatment plant design, distribution and collection systems, stormwater management, and utility rehabilitation programs across all 50 states. We place licensed PEs, process engineers, and inspection specialists.",
+  keywords: [
+    "water engineering recruiter",
+    "wastewater engineering recruiter",
+    "water treatment staffing agency",
+    "water resources engineer recruiter",
+    "NPDES compliance staffing",
+    "utility engineer recruiter",
+    "process engineer recruiter",
+    "water engineer jobs",
+  ],
   alternates: { canonical: "/water-wastewater-recruiter" },
   openGraph: {
     title: "Water & Wastewater Engineering Recruiter — United States | Metro Associates",
@@ -276,8 +286,6 @@ export default function WaterWastewaterRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/water-wastewater-recruiter/${c.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">

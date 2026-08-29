@@ -29,6 +29,16 @@ export const metadata: Metadata = {
   title: "Municipal Engineering Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national municipal engineering recruiter providing specialized staffing for public works, capital improvement planning, site/civil development, and municipal utility programs across all 50 states. We place licensed PEs, city engineers, and public works leaders.",
+  keywords: [
+    "municipal engineering recruiter",
+    "municipal engineer staffing agency",
+    "public works engineer recruiter",
+    "city engineer recruiter",
+    "capital improvement planning staffing",
+    "site civil development recruiter",
+    "public works director recruiter",
+    "municipal engineer jobs",
+  ],
   alternates: { canonical: "/municipal-engineering-recruiter" },
   openGraph: {
     title: "Municipal Engineering Recruiter — United States | Metro Associates",
@@ -273,8 +283,6 @@ export default function MunicipalEngineeringRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/municipal-engineering-recruiter/${c.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">

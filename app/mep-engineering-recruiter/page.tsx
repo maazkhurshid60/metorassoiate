@@ -27,6 +27,16 @@ export const metadata: Metadata = {
   title: "MEP Engineering Recruiter — United States | Metro Associates",
   description:
     "Metro Associates is a national MEP engineering recruiter providing specialized staffing for mechanical, electrical, and plumbing engineers across data centers, healthcare, life sciences, and commercial buildings in all 50 states.",
+  keywords: [
+    "MEP engineering recruiter",
+    "MEP staffing agency",
+    "mechanical electrical plumbing recruiter",
+    "HVAC engineer recruiter",
+    "data center MEP staffing",
+    "commissioning engineer recruiter",
+    "electrical engineer recruiter",
+    "MEP engineer jobs",
+  ],
   alternates: { canonical: "/mep-engineering-recruiter" },
   openGraph: {
     title: "MEP Engineering Recruiter — United States | Metro Associates",
@@ -175,8 +185,6 @@ export default function MepNationalRecruiterPage() {
               <Link
                 key={c.slug}
                 href={`/mep-engineering-recruiter/${c.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="group flex items-center justify-between gap-3 border border-navy-950/10 bg-white p-5 transition-colors hover:border-amber-500 hover:bg-mist"
               >
                 <span className="flex items-center gap-3">
