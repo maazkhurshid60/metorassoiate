@@ -26,6 +26,17 @@ export function organizationSchema() {
   return { "@context": "https://schema.org", ...ORG };
 }
 
+export function websiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: "Metro Associates",
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 // Per-location professional service (drives local/rich results for "<discipline>
 // recruiter <city>" queries).
 export function serviceSchema(opts: {

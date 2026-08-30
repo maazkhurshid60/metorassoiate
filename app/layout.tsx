@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ChatWidget from "./components/ChatWidget";
 import { JsonLd } from "./components/JsonLd";
-import { organizationSchema } from "./lib/seo";
+import { organizationSchema, websiteSchema } from "./lib/seo";
 import { SITE_URL } from "./lib/site";
 
 const geistSans = Geist({
@@ -95,7 +95,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <JsonLd data={[organizationSchema(), jsonLd]} />
+        <JsonLd data={[organizationSchema(), websiteSchema(), jsonLd]} />
         <ChatWidget />
       </body>
     </html>
