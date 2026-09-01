@@ -2,6 +2,7 @@ import Image from "next/image";
 import { IconArrow, IconCheck } from "./Icons";
 import { CAREERS_URL } from "../lib/site";
 import CountUp from "./CountUp";
+import YouTubeFacade from "./YouTubeFacade";
 
 const METRICS = [
   { value: 1598, suffix: "+", v: "Candidates placed", d: "Matched with precision and professionalism.", live: false },
@@ -49,15 +50,7 @@ export default function About() {
 
       <div className="container-x">
         <div className="relative mb-14 aspect-video overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
-          <iframe
-            src="https://www.youtube.com/embed/3ORE7EmXdiA"
-            width="100%"
-            height="100%"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            title="Metro Associates — intro video"
-            className="block"
-          />
+          <YouTubeFacade videoId="3ORE7EmXdiA" title="Metro Associates — intro video" />
         </div>
 
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
