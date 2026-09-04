@@ -146,7 +146,25 @@ export default function Footer() {
           <p className="mono-label text-[10px]">
             © {new Date().getFullYear()} Metro Associates — All Rights Reserved
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
+            {/* The firm holds an A+ BBB rating and nothing on the site said
+                so — a trust signal a staffing buyer looks for, sitting
+                unused. Worded as "A+ Rated", never "Accredited": the rating
+                and the accreditation are separate things, and Metro has the
+                first but not the second. Links to the profile so the claim
+                is checkable rather than asserted. */}
+            <a
+              href="https://www.bbb.org/us/fl/altamonte-springs/profile/employment-agencies/metro-associates-engineering-of-fl-llc-0733-90259297"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mono-label flex items-center gap-1.5 text-[10px] transition-colors hover:text-amber-400"
+            >
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden>
+                <path d="M10 2.2l6.2 2.6v4.6c0 3.6-2.5 6.6-6.2 8.4-3.7-1.8-6.2-4.8-6.2-8.4V4.8L10 2.2Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                <path d="M7.2 10.1l2 2 3.6-3.9" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              BBB A+ Rated
+            </a>
             <a href="/privacy" className="mono-label text-[10px] transition-colors hover:text-amber-400">Privacy Policy</a>
             <a href="/terms" className="mono-label text-[10px] transition-colors hover:text-amber-400">Terms</a>
           </div>

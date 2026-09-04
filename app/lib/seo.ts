@@ -6,6 +6,24 @@ import { SITE_URL, PHONE, EMAIL } from "./site";
 const LINKEDIN = "https://www.linkedin.com/company/94152534/";
 const FACEBOOK = "https://www.facebook.com/MetropoAssociatesLLC/";
 
+/* Third-party profiles, listed so Google can join them to this entity — the
+ * mechanism by which an off-site reputation (the BBB rating below) counts
+ * towards the business rather than floating unattached.
+ *
+ * Both were confirmed to be this company before being added, per the rule at
+ * the top of this file: the BBB profile names Patrick Novick as Managing
+ * Member, and the Glassdoor entry matches on Orlando FL, founded 2014, and
+ * staffing. Profiles that merely share the name are deliberately absent —
+ * "Metro Associates" is not a distinctive string, and pointing sameAs at
+ * another company's page is worse than listing nothing.
+ *
+ * Known to exist but NOT listed, because they couldn't be confirmed as this
+ * company: a second Glassdoor employer id (E1015125) and two Indeed company
+ * pages. Those are duplicate listings that need claiming and merging from
+ * inside those accounts anyway. */
+const BBB = "https://www.bbb.org/us/fl/altamonte-springs/profile/employment-agencies/metro-associates-engineering-of-fl-llc-0733-90259297";
+const GLASSDOOR = "https://www.glassdoor.com/Overview/Working-at-Metro-Associates-MA-EI_IE8899812.11,30.htm";
+
 // Organization identity reused as the `provider` on every Service schema.
 export const ORG = {
   "@type": "EmploymentAgency",
@@ -17,7 +35,11 @@ export const ORG = {
   telephone: PHONE,
   email: EMAIL,
   areaServed: { "@type": "Country", name: "United States" },
-  sameAs: [LINKEDIN, FACEBOOK],
+  sameAs: [LINKEDIN, FACEBOOK, BBB, GLASSDOOR],
+  /* No `aggregateRating` here, deliberately. Google discounts and can
+     penalise self-serving rating markup — a business rating itself. The BBB
+     grade is surfaced in the footer as a linked claim a visitor can check
+     instead, which is what it's actually worth. */
   description:
     "National staffing and executive search firm for civil, transportation (DOT), and MEP engineering — placing licensed PEs, inspectors, and construction leaders, backed by a placement guarantee.",
 };
