@@ -38,3 +38,36 @@ export const GEETEST_CAPTCHA_ID = realEnvValue(process.env.NEXT_PUBLIC_GEETEST_C
  *  Team" page — see app/lib/jobfolderTeam.ts. Empty until set, in which case
  *  the team page just shows the static roster with none added. */
 export const JOBFOLDER_API_URL = process.env.JOBFOLDER_API_URL ?? "";
+
+/* The metros Metro Associates staffs from, as published on /contact.
+ *
+ * Single source for two consumers that had drifted apart: the office grid on
+ * the contact page, and `areaServed` in the Organization schema — which
+ * previously said only "United States" while the site itself named eight
+ * metros.
+ *
+ * City-level on purpose. No street addresses are published anywhere, and
+ * that is the correct model rather than an omission: this is a national
+ * service-area business, and the two addresses on file are a residential one
+ * and a mail suite. Publishing the first is a privacy problem; the second
+ * breaks Google's rules on virtual offices and gets profiles suspended.
+ */
+export type OfficeMetro = {
+  office: string;
+  city: string;
+  state: string;
+  map: string;
+  /** The head office. Exactly one entry sets this. */
+  hq?: boolean;
+};
+
+export const OFFICE_METROS: OfficeMetro[] = [
+  { office: "Florida Office", city: "Orlando", state: "FL", map: "/maps/orlando.png", hq: true },
+  { office: "Massachusetts Office", city: "Boston", state: "MA", map: "/maps/boston.png" },
+  { office: "District of Columbia Office", city: "Washington", state: "DC", map: "/maps/washington.png" },
+  { office: "Georgia Office", city: "Atlanta", state: "GA", map: "/maps/atlanta.png" },
+  { office: "Texas Office", city: "Dallas", state: "TX", map: "/maps/dallas.png" },
+  { office: "California Office", city: "Los Angeles", state: "CA", map: "/maps/los-angeles.png" },
+  { office: "New York Office", city: "New York City", state: "NY", map: "/maps/new-york.png" },
+  { office: "Connecticut Office", city: "Hartford", state: "CT", map: "/maps/hartford.png" },
+];

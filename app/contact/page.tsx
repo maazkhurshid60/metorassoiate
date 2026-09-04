@@ -3,24 +3,26 @@ import Image from "next/image";
 import { IconPhone, IconMail, IconPin } from "../components/Icons";
 import ContactForm from "../components/ContactForm";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
-import { PHONE, PHONE_HREF, EMAIL } from "../lib/site";
+import { PHONE, PHONE_HREF, EMAIL, OFFICE_METROS } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Contact Us — Metro Associates | DOT & Infrastructure Staffing",
   description:
-    "Contact Metro Associates. Reach our recruiting team or visit one of our nine U.S. branch offices — Orlando, Boston, Washington DC, Atlanta, Dallas, Los Angeles, New York, and Hartford.",
+    // Eight, matching the eight offices actually listed on this page. It read
+    // "nine" while showing and naming eight, which is the kind of small
+    // inaccuracy a buyer checking the firm out will notice.
+    "Contact Metro Associates. Reach our recruiting team or visit one of our eight U.S. branch offices — Orlando, Boston, Washington DC, Atlanta, Dallas, Los Angeles, New York, and Hartford.",
 };
 
-const OFFICES = [
-  { name: "Florida Office", city: "Orlando, FL", query: "Orlando, FL", map: "/maps/orlando.png", hq: true },
-  { name: "Massachusetts Office", city: "Boston, MA", query: "Boston, MA", map: "/maps/boston.png" },
-  { name: "District of Columbia Office", city: "Washington, DC", query: "Washington, DC", map: "/maps/washington.png" },
-  { name: "Georgia Office", city: "Atlanta, GA", query: "Atlanta, GA", map: "/maps/atlanta.png" },
-  { name: "Texas Office", city: "Dallas, TX", query: "Dallas, TX", map: "/maps/dallas.png" },
-  { name: "California Office", city: "Los Angeles, CA", query: "Los Angeles, CA", map: "/maps/los-angeles.png" },
-  { name: "New York Office", city: "New York City, NY", query: "New York, NY", map: "/maps/new-york.png" },
-  { name: "Connecticut Office", city: "Hartford, CT", query: "Hartford, CT", map: "/maps/hartford.png" },
-];
+/* Derived from the canonical list in lib/site.ts, which the Organization
+   schema's areaServed also reads. They were separate, and the schema had
+   fallen behind to just "United States" while this page named eight metros. */
+const OFFICES = OFFICE_METROS.map((o) => ({
+  name: o.office,
+  city: `${o.city}, ${o.state}`,
+  map: o.map,
+  hq: o.hq ?? false,
+}));
 
 export default function ContactPage() {
   return (

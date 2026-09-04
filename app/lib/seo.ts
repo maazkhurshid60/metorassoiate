@@ -1,4 +1,4 @@
-import { SITE_URL, PHONE, EMAIL } from "./site";
+import { SITE_URL, PHONE, EMAIL, OFFICE_METROS } from "./site";
 
 // Central structured-data (JSON-LD) helpers. Only verifiable facts are emitted
 // — no fabricated addresses, ratings, or reviews (which risk Google penalties).
@@ -34,7 +34,26 @@ export const ORG = {
   image: `${SITE_URL}/interchange-sunset.jpg`,
   telephone: PHONE,
   email: EMAIL,
-  areaServed: { "@type": "Country", name: "United States" },
+  /* Deliberately no `address`.
+   *
+   * This is a national service-area business — nine desks placing across the
+   * US — not a storefront, and Schema.org/Google both expect a service-area
+   * business to describe where it *serves* rather than assert a location it
+   * doesn't trade from. The two addresses on file would each make things
+   * worse: one is residential (a privacy exposure that can't be undone once
+   * indexed), the other a mail suite (Google suspends Business Profiles that
+   * use virtual offices). Omitting it is the accurate model, not a gap.
+   *
+   * The country stays first as the honest headline; the metros the site
+   * itself publishes on /contact follow, so the entity's actual footprint is
+   * machine-readable and the city landing pages have something to anchor to. */
+  areaServed: [
+    { "@type": "Country", name: "United States" },
+    ...OFFICE_METROS.map((o) => ({
+      "@type": "City" as const,
+      name: `${o.city}, ${o.state}`,
+    })),
+  ],
   sameAs: [LINKEDIN, FACEBOOK, BBB, GLASSDOOR],
   /* No `aggregateRating` here, deliberately. Google discounts and can
      penalise self-serving rating markup — a business rating itself. The BBB
