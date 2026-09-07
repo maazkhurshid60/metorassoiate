@@ -82,6 +82,10 @@ export default function ClientAwards({
           </Link>
           .
         </p>
+
+        <p className="mt-3 max-w-3xl text-xs leading-relaxed text-slate-500">
+          Each logo is the trademark of the organisation that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them — our clients are the entrants.
+        </p>
       </div>
     </section>
   );

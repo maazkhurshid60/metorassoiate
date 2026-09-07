@@ -40,3 +40,32 @@ programs differ in what they allow:
 If permission for a given mark can't be evidenced, leave `logo` unset. The
 typographic tile is Metro's own artwork: no licence, no implied endorsement,
 and the wall still reads as a wall.
+
+## What is in here now
+
+Ten organisation logos, each taken from that organisation's own website
+(ENR's came from Wikimedia Commons — enr.com refuses scripted requests):
+
+| File | Organisation | Source |
+|---|---|---|
+| `acec.png` | ACEC | acec.org |
+| `enr.png` | Engineering News-Record | Wikimedia Commons |
+| `asce.svg` | ASCE | asce.org |
+| `aashto.svg` | AASHTO | transportation.org |
+| `aisc.webp` | AISC | aisc.org |
+| `ashrae.png` | ASHRAE | ashrae.org |
+| `ies.png` | IES / Illumination Awards | ia.ies.org |
+| `cse.svg` | Consulting-Specifying Engineer | csemag.com |
+| `wef.png` | Water Environment Federation | wef.org |
+| `usgbc.svg` | USGBC | usgbc.org |
+
+**Missing: APWA and NECA.** Both sites sit behind a WAF that returns 403 to
+anything scripted, and working around that is not something to do for a
+logo. Ask them for a media kit, or save the file from a browser and drop it
+in here as `apwa.png` / `neca.png` plus one `logo:` line each. Until then
+those two show the typographic tile, which is why the tile exists.
+
+Each mark is displayed beside a link to the program that organisation runs,
+under a notice naming the owner and disclaiming affiliation. Keep that
+notice: it is what separates naming a program from implying a relationship
+with it.

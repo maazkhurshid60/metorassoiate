@@ -12,12 +12,14 @@
  *   1. No claim that Metro or any named client won anything. If the client
  *      gives us verified wins, those belong here as facts with a year — a
  *      real win beats a list of programs every time.
- *   2. A logo goes in `logo` only once we hold permission to show it, and a
- *      WINNER badge only if the client actually won that year. ENR and ACEC
- *      license their winner marks to winners; using one uninvited is both a
- *      trademark problem and a false impression. Programs with no file fall
- *      back to a typographic tile built from `abbr`, which is our own
- *      artwork and carries no licence at all.
+ *   2. `logo` holds the ORGANISATION's own mark, taken from that
+ *      organisation's own site, shown beside a link to the program it runs
+ *      and under a notice naming the owner and disclaiming affiliation —
+ *      nominative use, which is what keeps it defensible. A WINNER badge is
+ *      a different thing entirely and must never appear here: ENR and ACEC
+ *      license those to actual winners, and Metro cannot win an engineering
+ *      award. Programs with no file fall back to a typographic tile built
+ *      from `abbr`, which is our own artwork and carries no licence at all.
  *   3. Every URL is the organisation's own award page, checked before it
  *      was added. Several of these hosts return 403 to scripted requests
  *      (Cloudflare) — that is bot filtering, not a dead link.
@@ -54,6 +56,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Engineering Excellence Awards",
     org: "ACEC",
     abbr: "ACEC",
+    logo: "/awards/acec.png",
     url: "https://www.acec.org/awards/engineering-excellence-awards/",
     what: "The engineering profession's flagship project competition, judged on innovation, complexity and social value. Categories include Building/Technology Systems, Energy, Water and Transportation.",
     reach: "State → national",
@@ -63,6 +66,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "ACEC state & metro member organizations",
     org: "ACEC",
     abbr: "ACEC",
+    logo: "/awards/acec.png",
     url: "https://www.acec.org/member-center/get-involved/mo-state-sites/",
     what: "National entries must come up through one of 51 state and metropolitan organizations, so every state runs its own Engineering Excellence competition first.",
     reach: "All 50 states + DC",
@@ -72,6 +76,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Best Projects & Best of the Best",
     org: "ENR",
     abbr: "ENR",
+    logo: "/awards/enr.png",
     url: "https://www.enr.com/bestprojects/",
     what: "Regional project awards across every state, DC and Puerto Rico — including Specialty Construction, Energy/Industrial, Health Care and Excellence in Sustainability. Regional winners advance to the national round.",
     reach: "Regional → national",
@@ -81,6 +86,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Outstanding Civil Engineering Achievement (OCEA)",
     org: "ASCE",
     abbr: "ASCE",
+    logo: "/awards/asce.svg",
     url: "https://www.asce.org/career-growth/awards-and-honors/outstanding-civil-engineering-achievement-award",
     what: "Running since 1960, ASCE's top project honour for civil engineering skill and contribution to society.",
     reach: "National",
@@ -90,6 +96,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "America's Transportation Awards",
     org: "AASHTO",
     abbr: "AASHTO",
+    logo: "/awards/aashto.svg",
     url: "https://americastransportationawards.org/",
     what: "State DOT projects judged on quality of life, operations excellence, innovation and safety — regional rounds feed a national Top 12.",
     reach: "Regional → national",
@@ -103,6 +110,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Prize Bridge Awards",
     org: "AISC / NSBA",
     abbr: "AISC",
+    logo: "/awards/aisc.webp",
     url: "https://www.aisc.org/bridges/awards/prize-bridge-awards/",
     what: "The steel industry's highest design honour for bridges, awarded since 1928.",
     reach: "National",
@@ -125,6 +133,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Technology Awards",
     org: "ASHRAE",
     abbr: "ASHRAE",
+    logo: "/awards/ashrae.png",
     url: "https://www.ashrae.org/membership/honors-and-awards/technology-awards-program",
     what: "HVAC and building-systems performance in real, occupied buildings — commercial, health care, education, industrial and residential categories.",
     reach: "Chapter → region → society",
@@ -134,6 +143,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Illumination Awards",
     org: "IES",
     abbr: "IES",
+    logo: "/awards/ies.png",
     url: "https://ia.ies.org/",
     what: "Lighting design and controls — interior, outdoor, energy & environmental, and control innovation.",
     reach: "Section → international",
@@ -152,6 +162,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "MEP Giants",
     org: "Consulting-Specifying Engineer",
     abbr: "CSE",
+    logo: "/awards/cse.svg",
     url: "https://www.csemag.com/events-and-awards/mep-giants/",
     what: "The annual ranking of North America's 100 largest MEP and fire-protection engineering firms.",
     reach: "North America",
@@ -161,6 +172,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "40 Under 40",
     org: "Consulting-Specifying Engineer",
     abbr: "CSE",
+    logo: "/awards/cse.svg",
     url: "https://www.csemag.com/events-and-awards/40-under-40/",
     what: "Individual recognition for mechanical, electrical, commissioning, fire/life-safety and energy engineers under 40 — worth knowing about when you're hiring one.",
     reach: "National",
@@ -170,6 +182,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "WEF awards & utility recognition",
     org: "Water Environment Federation",
     abbr: "WEF",
+    logo: "/awards/wef.png",
     url: "https://www.wef.org/membership--community/awards-recognition/service-awards/",
     what: "More than 30 categories across collection systems, treatment innovation, plant operations and Utility of the Future Today.",
     reach: "Member association → national",
@@ -179,6 +192,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     name: "Local Leadership Awards",
     org: "USGBC",
     abbr: "USGBC",
+    logo: "/awards/usgbc.svg",
     url: "https://www.usgbc.org/local-engagements/awards",
     what: "LEED and high-performance building work, recognised at project and individual level.",
     reach: "State & regional",

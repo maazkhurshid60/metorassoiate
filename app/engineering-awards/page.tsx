@@ -116,6 +116,14 @@ export default function EngineeringAwardsPage() {
                 </a>
               ))}
             </div>
+            {/* The sentence that makes showing someone else's mark honest:
+                it says who owns it and what it isn't claiming. Nominative
+                use — naming a program by its own mark — stands or falls on
+                exactly this being unmissable, so it sits under the wall
+                rather than in a footer nobody reads. */}
+            <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-slate-500">
+              Each logo is the trademark of the organisation that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them — our clients are the entrants.
+            </p>
           </div>
         </section>
 
