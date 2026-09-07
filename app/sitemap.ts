@@ -17,6 +17,9 @@ const routes: Array<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/why-us", changeFrequency: "monthly", priority: 0.8 },
+  // High priority: "what does <role> pay" is a query with real volume, and
+  // this is the only page on the site that answers it in one place.
+  { path: "/index_themall_awards", changeFrequency: "monthly", priority: 0.85 },
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/meet-our-team", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
