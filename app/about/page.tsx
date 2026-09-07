@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
+import YouTubeFacade from "../components/YouTubeFacade";
 import Link from "next/link";
 import {
   IconGlobe,
@@ -128,6 +129,31 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company video. Kept separate from the homepage clip, which is a
+          role-specific outreach piece — this one introduces the firm, which
+          is what someone on /about came for. */}
+      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+        <div className="container-x">
+          <div className="max-w-2xl">
+            <span className="mono-label text-amber-500">{"//"} Watch</span>
+            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+              Engineering talent &amp;{" "}
+              <span className="text-brand-500">infrastructure expertise</span>
+            </h2>
+            <p className="mt-4 text-slate text-pretty">
+              A short introduction to how we recruit, and the kind of work our
+              engineers deliver.
+            </p>
+          </div>
+          <div className="relative mt-12 aspect-video overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
+            <YouTubeFacade
+              videoId="k-xlidu5mug"
+              title="Metro Associates — engineering talent & infrastructure expertise"
+            />
           </div>
         </div>
       </section>

@@ -263,6 +263,12 @@ export default function SalaryGuidePage() {
                   <IconArrow className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
+                  href="/engineering-awards"
+                  className="inline-flex items-center gap-2 border border-white/20 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-amber-500 hover:text-amber-400"
+                >
+                  Client awards
+                </Link>
+                <Link
                   href="/why-us"
                   className="inline-flex items-center gap-2 border border-white/20 px-7 py-4 text-sm font-bold uppercase tracking-wide text-white transition-colors hover:border-amber-500 hover:text-amber-400"
                 >

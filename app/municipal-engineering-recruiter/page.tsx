@@ -8,6 +8,7 @@ import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import { MUNICIPAL_CITIES } from "../lib/municipalEngineering";
 import OtherSpecialties from "../components/OtherSpecialties";
+import ClientAwards from "../components/ClientAwards";
 
 /* National hub — same treatment as civil-engineering-recruiter/ and
    mep-engineering-recruiter/: this page plus a per-metro [city]/page.tsx for
@@ -378,6 +379,8 @@ export default function MunicipalEngineeringRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <ClientAwards discipline="municipal-engineering-recruiter" />
 
       <OtherSpecialties exclude="municipal-engineering-recruiter" />
     </main>

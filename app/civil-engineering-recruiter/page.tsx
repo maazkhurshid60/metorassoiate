@@ -8,6 +8,7 @@ import {
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import { CITIES, EXPERTISE, SKILLS, ROLES, SALARIES, WHY } from "../lib/cities";
 import OtherSpecialties from "../components/OtherSpecialties";
+import ClientAwards from "../components/ClientAwards";
 
 // Short phrases for the scrolling ticker bar — same treatment as the
 // homepage hero (components/Hero.tsx), scoped to this page's discipline.
@@ -306,6 +307,8 @@ export default function NationalRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <ClientAwards discipline="civil-engineering-recruiter" />
 
       <OtherSpecialties exclude="civil-engineering-recruiter" />
     </main>

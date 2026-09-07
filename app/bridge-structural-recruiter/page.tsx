@@ -8,6 +8,7 @@ import {
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import { BRIDGE_SALARIES as SALARIES } from "../lib/bridgeStructural";
 import OtherSpecialties from "../components/OtherSpecialties";
+import ClientAwards from "../components/ClientAwards";
 
 /* DEMO PAGE — a single static page, not a per-city buildout like
    civil-engineering-recruiter/ or mep-engineering-recruiter/. If this
@@ -344,6 +345,8 @@ export default function BridgeStructuralRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <ClientAwards discipline="bridge-structural-recruiter" />
 
       <OtherSpecialties exclude="bridge-structural-recruiter" />
     </main>

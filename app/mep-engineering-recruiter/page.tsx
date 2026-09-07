@@ -10,6 +10,7 @@ import {
   MEP_CITIES, MEP_EXPERTISE, MEP_SKILLS, MEP_ROLES, MEP_SALARIES, MEP_WHY,
 } from "../lib/mep";
 import OtherSpecialties from "../components/OtherSpecialties";
+import ClientAwards from "../components/ClientAwards";
 
 // Short phrases for the scrolling ticker bar — same treatment as the
 // civil-engineering-recruiter hero, scoped to this page's discipline.
@@ -308,6 +309,8 @@ export default function MepNationalRecruiterPage() {
           </div>
         </div>
       </section>
+
+      <ClientAwards discipline="mep-engineering-recruiter" />
 
       <OtherSpecialties exclude="mep-engineering-recruiter" />
     </main>
