@@ -23,6 +23,31 @@ async function redirects() {
     },
   ]);
 
+  /* The old site also had state-level pages — "/civil-engineering-recruiter-
+     connecticut", "/north-dakota-civil-engineering-recruiter". The catch-alls
+     at the bottom would sweep those to the hub, which answers a narrower
+     question than the visitor asked. Sending each state to the city page we
+     actually have there keeps them on a page about the place they searched
+     for, and keeps whatever equity the old URL still carries pointed at a
+     specific page rather than diluted across the hub.
+
+     Generated from CITIES rather than hand-listed: the first city we list in
+     a state is its primary market, and a new city page starts answering its
+     state's old URLs without anyone remembering to add a line here. */
+  const primaryCityByState = new Map<string, string>();
+  for (const c of CITIES) {
+    const key = c.state.toLowerCase().replace(/[^a-z]+/g, "-");
+    if (!primaryCityByState.has(key)) primaryCityByState.set(key, c.slug);
+  }
+  const stateRedirects = [...primaryCityByState].flatMap(([state, slug]) => {
+    const destination = `/civil-engineering-recruiter/${slug}`;
+    return [
+      { source: `/civil-engineering-recruiter-${state}`, destination, permanent: true },
+      { source: `/${state}-civil-engineering-recruiter`, destination, permanent: true },
+      { source: `/1seo-civil-engineering-recruiter-${state}`, destination, permanent: true },
+    ];
+  });
+
   return [
     // NOTE: www<->apex canonicalization is handled at the Vercel domain level,
     // NOT here. A host-based redirect in this config conflicts with Vercel's
@@ -47,36 +72,19 @@ async function redirects() {
     { source: "/innovation-through-diversity-inclusion", destination: "/", permanent: true },
     { source: "/innovation-through-diversity-inclusion11", destination: "/", permanent: true },
 
-    // Explicit aliases: old slugs that don't match our city slug format but
-    // clearly map to a specific city page.
-    {
-      source: "/1seo-civil-engineering-recruiter-new-york",
-      destination: "/civil-engineering-recruiter/new-york-ny",
-      permanent: true,
-    },
+    // Explicit alias for the one old slug that is neither a city slug nor a
+    // state name. The rest that used to sit here are generated above.
     {
       source: "/1seo-civil-engineering-recruiter-new-york-city",
       destination: "/civil-engineering-recruiter/new-york-ny",
       permanent: true,
     },
-    {
-      source: "/new-jersey-civil-engineering-recruiter",
-      destination: "/civil-engineering-recruiter/newark-nj",
-      permanent: true,
-    },
-    {
-      source: "/civil-engineering-recruiter-indiana",
-      destination: "/civil-engineering-recruiter/indianapolis-in",
-      permanent: true,
-    },
-    {
-      source: "/1seo-civil-engineering-recruiter-new-mexico",
-      destination: "/civil-engineering-recruiter/albuquerque-nm",
-      permanent: true,
-    },
 
-    // Precise old->new city mappings generated from the city list.
+    // Precise old->new mappings generated from the city list: cities first,
+    // then states, so "/civil-engineering-recruiter-texas" can't shadow a
+    // city that happens to share a name with its state.
     ...cityRedirects,
+    ...stateRedirects,
 
     // Catch-alls: any remaining old civil URL (states, topic hubs, cities we
     // don't have a page for) -> the civil hub, so nobody hits a 404.
