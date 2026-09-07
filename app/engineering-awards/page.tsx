@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { IconArrow, IconStar } from "../components/Icons";
-import { AWARD_PROGRAMS, ACEC_STATES, ACEC_METRO, ENR_REGIONS } from "../lib/awards";
+import { IconArrow } from "../components/Icons";
+import AwardMark from "../components/AwardMark";
+import { AWARD_PROGRAMS, AWARD_ORGS, ACEC_STATES, ACEC_METRO, ENR_REGIONS } from "../lib/awards";
 import { SITE_URL } from "../lib/site";
 import { ORG } from "../lib/seo";
 
@@ -96,6 +97,28 @@ export default function EngineeringAwardsPage() {
           </div>
         </section>
 
+        {/* The wall. Marks are our own typographic tiles until we hold
+            permission for each organisation's own file — see public/awards. */}
+        <section className="relative border-t border-navy-950/10 blueprint-light py-14">
+          <div className="container-x">
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+              {AWARD_ORGS.map((o) => (
+                <a
+                  key={o.abbr}
+                  href={o.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={o.org}
+                  title={o.org}
+                  className="transition-opacity hover:opacity-70"
+                >
+                  <AwardMark abbr={o.abbr} org={o.org} logo={o.logo} size="lg" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* National & cross-discipline programs */}
         <section className="relative border-t border-navy-950/10 bg-paper py-20 sm:py-24">
           <div className="container-x">
@@ -121,8 +144,8 @@ export default function EngineeringAwardsPage() {
                   rel="noopener noreferrer"
                   className="group flex flex-col gap-3 border border-navy-950/10 bg-white p-6 transition-colors hover:border-amber-500 hover:bg-mist"
                 >
-                  <span className="flex items-center gap-2.5">
-                    <IconStar className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+                  <span className="flex items-center gap-3">
+                    <AwardMark abbr={a.abbr} org={a.org} logo={a.logo} size="sm" />
                     <span className="mono-label text-[10px] text-slate-500">{a.org}</span>
                   </span>
                   <span className="flex items-start justify-between gap-4">

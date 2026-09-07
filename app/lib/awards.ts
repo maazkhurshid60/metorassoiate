@@ -12,9 +12,12 @@
  *   1. No claim that Metro or any named client won anything. If the client
  *      gives us verified wins, those belong here as facts with a year — a
  *      real win beats a list of programs every time.
- *   2. No award logos or winner badges. ENR, ACEC and others license those
- *      to actual winners; using one uninvited is both a trademark problem
- *      and a false impression.
+ *   2. A logo goes in `logo` only once we hold permission to show it, and a
+ *      WINNER badge only if the client actually won that year. ENR and ACEC
+ *      license their winner marks to winners; using one uninvited is both a
+ *      trademark problem and a false impression. Programs with no file fall
+ *      back to a typographic tile built from `abbr`, which is our own
+ *      artwork and carries no licence at all.
  *   3. Every URL is the organisation's own award page, checked before it
  *      was added. Several of these hosts return 403 to scripted requests
  *      (Cloudflare) — that is bot filtering, not a dead link.
@@ -31,6 +34,12 @@ export type Discipline =
 export type AwardProgram = {
   name: string;
   org: string;
+  /** Short mark for the logo tile — the acronym the industry actually says. */
+  abbr: string;
+  /** Path under /public/awards to the organisation's own logo file, once we
+      hold permission to display it. Absent = the typographic tile is used
+      instead, which is never a licensing problem. See public/awards/README. */
+  logo?: string;
   url: string;
   /** One line: what the program actually recognises. */
   what: string;
@@ -44,6 +53,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Engineering Excellence Awards",
     org: "ACEC",
+    abbr: "ACEC",
     url: "https://www.acec.org/awards/engineering-excellence-awards/",
     what: "The engineering profession's flagship project competition, judged on innovation, complexity and social value. Categories include Building/Technology Systems, Energy, Water and Transportation.",
     reach: "State → national",
@@ -52,6 +62,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "ACEC state & metro member organizations",
     org: "ACEC",
+    abbr: "ACEC",
     url: "https://www.acec.org/member-center/get-involved/mo-state-sites/",
     what: "National entries must come up through one of 51 state and metropolitan organizations, so every state runs its own Engineering Excellence competition first.",
     reach: "All 50 states + DC",
@@ -60,6 +71,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Best Projects & Best of the Best",
     org: "ENR",
+    abbr: "ENR",
     url: "https://www.enr.com/bestprojects/",
     what: "Regional project awards across every state, DC and Puerto Rico — including Specialty Construction, Energy/Industrial, Health Care and Excellence in Sustainability. Regional winners advance to the national round.",
     reach: "Regional → national",
@@ -68,6 +80,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Outstanding Civil Engineering Achievement (OCEA)",
     org: "ASCE",
+    abbr: "ASCE",
     url: "https://www.asce.org/career-growth/awards-and-honors/outstanding-civil-engineering-achievement-award",
     what: "Running since 1960, ASCE's top project honour for civil engineering skill and contribution to society.",
     reach: "National",
@@ -76,6 +89,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "America's Transportation Awards",
     org: "AASHTO",
+    abbr: "AASHTO",
     url: "https://americastransportationawards.org/",
     what: "State DOT projects judged on quality of life, operations excellence, innovation and safety — regional rounds feed a national Top 12.",
     reach: "Regional → national",
@@ -88,6 +102,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Prize Bridge Awards",
     org: "AISC / NSBA",
+    abbr: "AISC",
     url: "https://www.aisc.org/bridges/awards/prize-bridge-awards/",
     what: "The steel industry's highest design honour for bridges, awarded since 1928.",
     reach: "National",
@@ -96,6 +111,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Public Works Project of the Year",
     org: "APWA",
+    abbr: "APWA",
     url: "https://www.apwa.org/award/public-works-project-of-the-year-award/",
     what: "Recognises the agency, the consulting engineer and the contractor together, in four cost divisions and five categories.",
     reach: "Chapter → national",
@@ -108,6 +124,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Technology Awards",
     org: "ASHRAE",
+    abbr: "ASHRAE",
     url: "https://www.ashrae.org/membership/honors-and-awards/technology-awards-program",
     what: "HVAC and building-systems performance in real, occupied buildings — commercial, health care, education, industrial and residential categories.",
     reach: "Chapter → region → society",
@@ -116,6 +133,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Illumination Awards",
     org: "IES",
+    abbr: "IES",
     url: "https://ia.ies.org/",
     what: "Lighting design and controls — interior, outdoor, energy & environmental, and control innovation.",
     reach: "Section → international",
@@ -124,6 +142,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Project Excellence Awards",
     org: "NECA",
+    abbr: "NECA",
     url: "https://www.necanet.org/about-neca/membership/awards-recognition",
     what: "Electrical construction across 13 categories, from design-build and health care to substations and EV infrastructure.",
     reach: "National",
@@ -132,6 +151,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "MEP Giants",
     org: "Consulting-Specifying Engineer",
+    abbr: "CSE",
     url: "https://www.csemag.com/events-and-awards/mep-giants/",
     what: "The annual ranking of North America's 100 largest MEP and fire-protection engineering firms.",
     reach: "North America",
@@ -140,6 +160,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "40 Under 40",
     org: "Consulting-Specifying Engineer",
+    abbr: "CSE",
     url: "https://www.csemag.com/events-and-awards/40-under-40/",
     what: "Individual recognition for mechanical, electrical, commissioning, fire/life-safety and energy engineers under 40 — worth knowing about when you're hiring one.",
     reach: "National",
@@ -148,6 +169,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "WEF awards & utility recognition",
     org: "Water Environment Federation",
+    abbr: "WEF",
     url: "https://www.wef.org/membership--community/awards-recognition/service-awards/",
     what: "More than 30 categories across collection systems, treatment innovation, plant operations and Utility of the Future Today.",
     reach: "Member association → national",
@@ -156,6 +178,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
   {
     name: "Local Leadership Awards",
     org: "USGBC",
+    abbr: "USGBC",
     url: "https://www.usgbc.org/local-engagements/awards",
     what: "LEED and high-performance building work, recognised at project and individual level.",
     reach: "State & regional",
@@ -202,3 +225,17 @@ export const ENR_REGIONS: string[] = [
   "Midwest", "Texas & Louisiana", "Southeast", "MidAtlantic",
   "New York/New Jersey", "New England",
 ];
+
+/* One entry per organisation, in the order they first appear — the logo wall
+   on /engineering-awards. Derived rather than hand-listed so a new program
+   can't leave the wall out of date. */
+export const AWARD_ORGS: { org: string; abbr: string; logo?: string; url: string }[] =
+  AWARD_PROGRAMS.reduce<{ org: string; abbr: string; logo?: string; url: string }[]>(
+    (acc, a) => {
+      if (!acc.some((o) => o.abbr === a.abbr)) {
+        acc.push({ org: a.org, abbr: a.abbr, ...(a.logo ? { logo: a.logo } : {}), url: a.url });
+      }
+      return acc;
+    },
+    [],
+  );

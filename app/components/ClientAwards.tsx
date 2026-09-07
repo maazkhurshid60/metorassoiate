@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { IconArrow, IconStar } from "./Icons";
+import { IconArrow } from "./Icons";
+import AwardMark from "./AwardMark";
 import { awardsFor, type Discipline } from "../lib/awards";
 
 /* Near the bottom of every discipline hub: the award programs the firms we
@@ -56,8 +57,8 @@ export default function ClientAwards({
               rel="noopener noreferrer"
               className="group flex flex-col gap-3 border border-navy-950/10 bg-white p-6 transition-colors hover:border-amber-500 hover:bg-mist"
             >
-              <span className="flex items-center gap-2.5">
-                <IconStar className="h-3.5 w-3.5 shrink-0 text-amber-500" />
+              <span className="flex items-center gap-3">
+                <AwardMark abbr={a.abbr} org={a.org} logo={a.logo} size="sm" />
                 <span className="mono-label text-[10px] text-slate-500">{a.org}</span>
               </span>
               <span className="flex items-start justify-between gap-4">
