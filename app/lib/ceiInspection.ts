@@ -926,8 +926,12 @@ export const CEI_ROLES = [
 ];
 
 export const CEI_SALARIES = [
+  { role: "Inspector Aide / Field Technician", range: "$42,000 – $58,000" },
   { role: "CEI Inspector (Entry)", range: "$55,000 – $75,000" },
+  { role: "Materials Technician (ACI / NICET)", range: "$60,000 – $85,000" },
+  { role: "Bridge Inspector (NBIS Team Leader)", range: "$80,000 – $115,000" },
   { role: "Senior Inspector / Resident Engineer", range: "$85,000 – $120,000" },
+  { role: "CEI Office Engineer / Contract Administrator", range: "$95,000 – $130,000" },
   { role: "CEI Project Manager", range: "$115,000 – $155,000+" },
   { role: "Director of CEI Services", range: "$150,000 – $210,000+" },
 ];

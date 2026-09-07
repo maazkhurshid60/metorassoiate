@@ -923,8 +923,12 @@ export const ROLES = [
 ];
 
 export const SALARIES = [
+  { role: "Civil Designer / CAD Technician", range: "$55,000 – $78,000" },
   { role: "Civil Engineer (EIT)", range: "$70,000 – $95,000" },
+  { role: "Project Engineer (Pre-PE)", range: "$82,000 – $108,000" },
+  { role: "Traffic & ITS Engineer (PE)", range: "$100,000 – $140,000" },
   { role: "Licensed PE (Mid-Level)", range: "$105,000 – $150,000" },
+  { role: "Geotechnical Engineer (PE)", range: "$108,000 – $152,000" },
   { role: "Senior Project Manager", range: "$140,000 – $190,000+" },
   { role: "Regional Director", range: "$175,000 – $250,000+" },
 ];

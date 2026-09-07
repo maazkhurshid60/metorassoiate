@@ -6,6 +6,7 @@ import {
   IconClipboard, IconStar,
 } from "../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
+import { BRIDGE_SALARIES as SALARIES } from "../lib/bridgeStructural";
 import OtherSpecialties from "../components/OtherSpecialties";
 
 /* DEMO PAGE — a single static page, not a per-city buildout like
@@ -94,12 +95,6 @@ const ROLES = [
   "VP of Bridge & Structural Engineering",
 ];
 
-const SALARIES = [
-  { role: "Structural Engineer (EIT)", range: "$72,000 – $98,000" },
-  { role: "Licensed Bridge PE (Mid-Level)", range: "$110,000 – $158,000" },
-  { role: "Senior Bridge Project Manager", range: "$150,000 – $200,000+" },
-  { role: "Director of Structural Engineering", range: "$185,000 – $260,000+" },
-];
 
 const WHY = [
   {

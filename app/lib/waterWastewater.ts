@@ -926,8 +926,12 @@ export const WATER_ROLES = [
 ];
 
 export const WATER_SALARIES = [
+  { role: "Process Designer / CAD Technician", range: "$58,000 – $80,000" },
   { role: "Water/Wastewater Engineer (EIT)", range: "$68,000 – $92,000" },
+  { role: "Treatment Process Engineer", range: "$90,000 – $130,000" },
+  { role: "Plant Operations & Maintenance Manager", range: "$95,000 – $135,000" },
   { role: "Licensed PE (Mid-Level)", range: "$100,000 – $145,000" },
+  { role: "Collection & Conveyance Engineer (PE)", range: "$105,000 – $145,000" },
   { role: "Senior Project Manager", range: "$140,000 – $185,000+" },
   { role: "Director of Water/Wastewater Engineering", range: "$175,000 – $245,000+" },
 ];

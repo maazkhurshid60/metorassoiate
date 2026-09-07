@@ -927,8 +927,12 @@ export const MUNICIPAL_ROLES = [
 ];
 
 export const MUNICIPAL_SALARIES = [
+  { role: "Engineering Technician / Public Works Inspector", range: "$52,000 – $72,000" },
   { role: "Municipal Engineer (EIT)", range: "$65,000 – $88,000" },
+  { role: "Stormwater / MS4 Program Engineer", range: "$85,000 – $120,000" },
+  { role: "Assistant City Engineer", range: "$95,000 – $132,000" },
   { role: "Licensed PE / City Engineer (Mid-Level)", range: "$98,000 – $140,000" },
+  { role: "Capital Improvement Program Manager", range: "$110,000 – $150,000" },
   { role: "Public Works Director", range: "$135,000 – $175,000+" },
   { role: "Director of Engineering (Municipality)", range: "$160,000 – $210,000+" },
 ];

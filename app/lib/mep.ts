@@ -928,8 +928,12 @@ export const MEP_ROLES = [
 ];
 
 export const MEP_SALARIES = [
+  { role: "MEP Designer / Revit Modeler", range: "$60,000 – $88,000" },
   { role: "Mechanical / Electrical Engineer (EIT)", range: "$70,000 – $95,000" },
+  { role: "Commissioning (Cx) Engineer", range: "$85,000 – $125,000" },
+  { role: "Fire Protection Engineer (PE)", range: "$100,000 – $145,000" },
   { role: "Licensed MEP PE (Mid-Level)", range: "$105,000 – $155,000" },
+  { role: "Data Center Electrical Engineer (PE)", range: "$125,000 – $175,000" },
   { role: "Senior MEP Project Manager", range: "$145,000 – $195,000+" },
   { role: "Director of MEP Engineering", range: "$180,000 – $260,000+" },
 ];
