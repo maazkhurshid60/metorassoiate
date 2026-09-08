@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
+import CityWiderMarket from "../../components/CityWiderMarket";
 import {
   IconArrow, IconCheck, IconClipboard,
 } from "../../components/Icons";
@@ -254,6 +255,8 @@ export default async function CeiCityPage({ params }: { params: Promise<{ city: 
           </div>
         </div>
       </section>
+
+      <CityWiderMarket hub="cei-inspection-recruiter" city={c} />
 
       {/* FAQ — feeds the FAQ rich result and adds long-tail keyword coverage */}
       <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">

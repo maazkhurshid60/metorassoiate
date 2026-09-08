@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
+import CityWiderMarket from "../../components/CityWiderMarket";
 import {
   IconArrow, IconCheck, IconBridge,
 } from "../../components/Icons";
@@ -346,6 +347,8 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
           </div>
         </section>
       )}
+
+      <CityWiderMarket hub="civil-engineering-recruiter" city={c} />
 
       {/* FAQ — feeds the FAQ rich result and adds long-tail keyword coverage */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">

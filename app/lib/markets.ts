@@ -25,6 +25,12 @@
  * the same across all five data files), so a cross-hub link is always valid.
  */
 
+import { CITIES } from "./cities";
+import { MEP_CITIES } from "./mep";
+import { WATER_CITIES } from "./waterWastewater";
+import { CEI_CITIES } from "./ceiInspection";
+import { MUNICIPAL_CITIES } from "./municipalEngineering";
+
 /** The six discipline hubs, by URL segment. */
 export const HUBS = [
   { segment: "civil-engineering-recruiter", label: "Civil engineering", short: "Civil" },
@@ -89,4 +95,52 @@ export function siblingDisciplines(currentHub: HubSegment, slug: string) {
     ...h,
     href: `/${h.segment}/${slug}`,
   }));
+}
+
+
+/* Every hub already carries five verified, city-specific programme entries
+   per city — 25 per metro across the five files — and each page was showing
+   only its own five. The other twenty were sitting unused in the repo while
+   the pages padded themselves with hub boilerplate instead.
+
+   This surfaces them: on the MEP page for Boston, what the civil, water, CEI
+   and municipal practices are seeing in Boston. It is real content, already
+   written and checked, genuinely specific to the city, and different on
+   every hub — the opposite of the blocks that were removed. It also gives an
+   engineer looking at one discipline a picture of the wider market, which is
+   a fair reason for it to be on the page at all. */
+const HUB_DATA: Record<HubSegment, { slug: string; localPrograms: string[] }[]> = {
+  "civil-engineering-recruiter": CITIES,
+  "mep-engineering-recruiter": MEP_CITIES,
+  "water-wastewater-recruiter": WATER_CITIES,
+  "cei-inspection-recruiter": CEI_CITIES,
+  "municipal-engineering-recruiter": MUNICIPAL_CITIES,
+};
+
+export type OtherHubPrograms = {
+  segment: HubSegment;
+  label: string;
+  short: string;
+  href: string;
+  programs: string[];
+};
+
+/** What the other disciplines are working on in this city. */
+export function otherHubPrograms(
+  currentHub: HubSegment,
+  slug: string,
+  perHub = 3,
+): OtherHubPrograms[] {
+  return HUBS.filter((h) => h.segment !== currentHub)
+    .map((h) => {
+      const city = HUB_DATA[h.segment].find((x) => x.slug === slug);
+      return {
+        segment: h.segment,
+        label: h.label,
+        short: h.short,
+        href: `/${h.segment}/${slug}`,
+        programs: city ? city.localPrograms.slice(0, perHub) : [],
+      };
+    })
+    .filter((h) => h.programs.length > 0);
 }

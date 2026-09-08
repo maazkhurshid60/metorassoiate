@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
+import CityWiderMarket from "../../components/CityWiderMarket";
 import {
   IconArrow, IconCheck, IconBolt,
 } from "../../components/Icons";
@@ -254,6 +255,8 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
           </div>
         </div>
       </section>
+
+      <CityWiderMarket hub="mep-engineering-recruiter" city={c} />
 
       {/* FAQ — feeds the FAQ rich result and adds long-tail keyword coverage */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
