@@ -5,6 +5,7 @@ import { MEP_CITIES } from "./lib/mep";
 import { WATER_CITIES } from "./lib/waterWastewater";
 import { CEI_CITIES } from "./lib/ceiInspection";
 import { MUNICIPAL_CITIES } from "./lib/municipalEngineering";
+import { AWARD_PROGRAMS } from "./lib/awards";
 
 /**
  * Static list of indexable routes. Update this when adding public pages.
@@ -23,6 +24,14 @@ const routes: Array<{
   // The award programs our clients compete in — the only page on the site
   // carrying that vocabulary, and the state-by-state list lives here.
   { path: "/engineering-awards", changeFrequency: "monthly", priority: 0.8 },
+  // One page per program. Higher than a city page because nothing else on
+  // the site — or on most of the industry's sites — sets out the entry route
+  // and what the award means to a hiring manager in one place.
+  ...AWARD_PROGRAMS.map((a) => ({
+    path: `/engineering-awards/${a.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  })),
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/meet-our-team", changeFrequency: "monthly", priority: 0.8 },
   // TikTok job-ad clips. Indexable and linked, but it was missing from this

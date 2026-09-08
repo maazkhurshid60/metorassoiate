@@ -14,7 +14,16 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "PerplexityBot", allow: "/" },
       { userAgent: "Bingbot", allow: "/" },
     ],
-    sitemap: [`${SITE_URL}/sitemap.xml`, `${SITE_URL}/sitemap-priority.xml`],
+    /* Three, on purpose. sitemap.xml is the whole site; the other two are
+       batches submitted separately in Search Console so their indexed/
+       submitted ratios can be read on their own rather than averaged into
+       the full set. A URL appearing in more than one is fine — Google
+       reports per sitemap. */
+    sitemap: [
+      `${SITE_URL}/sitemap.xml`,
+      `${SITE_URL}/sitemap-priority.xml`,
+      `${SITE_URL}/sitemap-awards.xml`,
+    ],
     host: SITE_URL,
   };
 }

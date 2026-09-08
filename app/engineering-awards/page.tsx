@@ -112,7 +112,7 @@ export default function EngineeringAwardsPage() {
                   title={o.org}
                   className="transition-opacity hover:opacity-70"
                 >
-                  <AwardMark abbr={o.abbr} org={o.org} logo={o.logo} size="lg" />
+                  <AwardMark abbr={o.abbr} org={o.org} logo={o.logo} onDark={o.onDark} size="lg" />
                 </a>
               ))}
             </div>
@@ -145,15 +145,13 @@ export default function EngineeringAwardsPage() {
 
             <div className="mt-12 grid gap-4 lg:grid-cols-2">
               {AWARD_PROGRAMS.map((a) => (
-                <a
-                  key={`${a.org}-${a.name}`}
-                  href={a.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  key={a.slug}
+                  href={`/engineering-awards/${a.slug}`}
                   className="group flex flex-col gap-3 border border-navy-950/10 bg-white p-6 transition-colors hover:border-amber-500 hover:bg-mist"
                 >
                   <span className="flex items-center gap-3">
-                    <AwardMark abbr={a.abbr} org={a.org} logo={a.logo} size="sm" />
+                    <AwardMark abbr={a.abbr} org={a.org} logo={a.logo} onDark={a.onDark} size="sm" />
                     <span className="mono-label text-[10px] text-slate-500">{a.org}</span>
                   </span>
                   <span className="flex items-start justify-between gap-4">
@@ -172,7 +170,7 @@ export default function EngineeringAwardsPage() {
                         : a.disciplines.map((d) => DISCIPLINE_LABELS[d]).join(" · ")}
                     </span>
                   </span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>

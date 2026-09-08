@@ -20,11 +20,14 @@ export default function AwardMark({
   abbr,
   org,
   logo,
+  onDark,
   size = "md",
 }: {
   abbr: string;
   org: string;
   logo?: string;
+  /** The file is a reverse (white) variant — see the note below. */
+  onDark?: boolean;
   size?: "sm" | "md" | "lg";
 }) {
   const box =
@@ -32,9 +35,18 @@ export default function AwardMark({
   const type =
     size === "lg" ? "text-2xl" : size === "sm" ? "text-sm" : "text-lg";
 
+  /* Some organisations publish only the reverse cut of their mark, which is
+     white and vanishes on the white tile — AASHTO's file is 73 paths all
+     fill="white"; AISC's averages RGB(246,246,246) across its opaque pixels.
+     Both rendered as empty boxes on the awards wall. The fix is the tile,
+     not the file: recolouring someone's trademark to suit our background is
+     exactly what nominative use does not allow, whereas putting the reverse
+     mark on a dark ground shows it the way it was drawn to be shown. */
+  const ground = onDark && logo ? "bg-navy-950" : "bg-white";
+
   return (
     <span
-      className={`${box} inline-flex shrink-0 items-center justify-center border border-l-2 border-navy-950/15 border-l-amber-500 bg-white px-2.5 py-1.5`}
+      className={`${box} ${ground} inline-flex shrink-0 items-center justify-center border border-l-2 border-navy-950/15 border-l-amber-500 px-2.5 py-1.5`}
     >
       {logo ? (
         // eslint-disable-next-line @next/next/no-img-element
