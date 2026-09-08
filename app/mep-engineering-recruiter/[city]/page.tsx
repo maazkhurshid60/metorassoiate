@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RelatedMarkets from "../../components/RelatedMarkets";
 import {
-  IconArrow, IconCheck, IconGlobe, IconShield, IconTarget, IconLayers,
-  IconClipboard, IconBolt,
+  IconArrow, IconCheck, IconBolt,
 } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_SKILLS, MEP_ROLES, MEP_SALARIES, MEP_WHY,
-} from "../../lib/mep";
+  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES, } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
 import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs, pickVariant } from "../../lib/seo";
@@ -48,9 +47,6 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
-
-const WHY_ICONS = [IconGlobe, IconShield, IconTarget, IconLayers, IconClipboard];
-
 export default async function MepCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getMepCity(slug);
@@ -71,11 +67,6 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
     flagshipProgram
       ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match vetted talent to the design, code, and performance demands of that kind of complex building program.`
       : `From high-rise towers to healthcare, data centers, and mission-critical facilities, we match vetted talent to the design, code, and performance demands of complex building programs.`,
-  ]);
-  const skillsIntro = pickVariant(`${c.slug}:mep:skillsIntro`, [
-    `Every candidate we put forward is screened against the same bar: the CAD/BIM tools, licensure, and code fluency the role actually demands.`,
-    `We screen every candidate against one bar — the CAD/BIM tools, licensure, and code fluency the role actually calls for, not a generic checklist.`,
-    `Every submission is held to the same standard: real fluency in the CAD/BIM tools, licensure, and codes the role demands.`,
   ]);
   const trendsIntro = pickVariant(`${c.slug}:mep:trendsIntro`, [
     `In 2026, the ${c.region} market is defined by building electrification, aggressive energy codes, and a data-center and life-science construction boom. Demand for licensed mechanical, electrical, and commissioning engineers who can deliver high-performance, code-compliant systems is at an all-time high.`,
@@ -210,32 +201,6 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
         </div>
       </section>
 
-      {/* Skills */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
-        <div className="container-x">
-          <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} Skills we screen for</span>
-            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              MEP skills & software we recruit for in {c.city}
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-              {skillsIntro}
-            </p>
-          </div>
-          <div className="mt-12 flex flex-wrap gap-3">
-            {MEP_SKILLS.map((s) => (
-              <span
-                key={s}
-                className="inline-flex items-center gap-2 border border-navy-950/12 bg-white px-4 py-2.5 text-sm font-medium text-navy-950"
-              >
-                <IconCheck className="h-3.5 w-3.5 shrink-0 text-amber-500" />
-                {s}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 2026 hiring trends + salaries */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
@@ -310,30 +275,11 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
         </div>
       </section>
 
-      {/* Why partner */}
+      {/* Closing CTA and related markets. The "why partner with us"
+          grid that used to head this section was the same 88 words on
+          all fifty city pages and is still on the hub page. */}
       <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
         <div className="container-x">
-          <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} Why partner with us</span>
-            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              Why {c.city} firms partner with Metro Associates
-            </h2>
-          </div>
-          <div className="reveal-children mt-14 grid gap-px overflow-hidden border border-navy-950/10 bg-navy-950/10 sm:grid-cols-2 lg:grid-cols-3">
-            {MEP_WHY.map((w, i) => {
-              const Icon = WHY_ICONS[i % WHY_ICONS.length];
-              return (
-                <article key={w.title} className="group flex flex-col bg-white p-8 transition-colors hover:bg-mist">
-                  <span className="inline-flex h-12 w-12 items-center justify-center border border-navy-950/12 text-brand-500 transition-colors group-hover:border-amber-500 group-hover:text-amber-500">
-                    <Icon className="h-6 w-6" />
-                  </span>
-                  <h3 className="mt-6 text-xl font-bold text-navy-950">{w.title}</h3>
-                  <p className="mt-2.5 text-[15px] leading-7 text-slate-500">{w.body}</p>
-                </article>
-              );
-            })}
-          </div>
-
           {/* CTA band */}
           <div className="mt-16 flex flex-col items-start justify-between gap-6 section-dark border border-white/10 p-8 sm:flex-row sm:items-center sm:p-10">
             <div>
@@ -365,23 +311,17 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
             </div>
           </div>
 
-          {/* Other markets — internal links for SEO/crawlability */}
-          {MEP_CITIES.length > 1 && (
-            <div className="mt-14">
-              <p className="mono-label text-slate-500">Other markets we serve</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {MEP_CITIES.filter((x) => x.slug !== c.slug).map((x) => (
-                  <Link
-                    key={x.slug}
-                    href={`/mep-engineering-recruiter/${x.slug}`}
-                    className="border border-navy-950/12 bg-white px-3 py-1.5 text-xs font-medium text-navy-950 transition-colors hover:border-amber-500 hover:text-amber-600"
-                  >
-                    {x.city}, {x.abbr}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Nearby markets in this discipline, and this market in the
+              other disciplines. Replaces a link to all 49 sibling
+              cities, which was identical on every page of the hub and
+              pointed the page's internal signal everywhere at once.
+              See app/lib/markets.ts for the measurement. */}
+          <RelatedMarkets
+            hub="mep-engineering-recruiter"
+            hubLabel="MEP engineering"
+            all={MEP_CITIES}
+            current={c}
+          />
         </div>
       </section>
     </main>
