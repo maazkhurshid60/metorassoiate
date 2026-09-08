@@ -25,6 +25,9 @@ const routes: Array<{
   { path: "/engineering-awards", changeFrequency: "monthly", priority: 0.8 },
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/meet-our-team", changeFrequency: "monthly", priority: 0.8 },
+  // TikTok job-ad clips. Indexable and linked, but it was missing from this
+  // list, so the only way Google could find it was by following a link.
+  { path: "/videos", changeFrequency: "weekly", priority: 0.6 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/civil-engineering-recruiter", changeFrequency: "monthly", priority: 0.8 },
   ...CITIES.map((c) => ({
