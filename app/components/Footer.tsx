@@ -13,13 +13,29 @@ const NAV = [
   { label: "View All Jobs", href: CAREERS_URL, external: true },
 ];
 
-const SERVICES = [
-  "Highway Design",
-  "Bridge Engineering",
-  "Transportation Planning",
-  "Construction Inspection",
-  "DOT Compliance",
-  "Executive Search",
+/* The six discipline hubs, linked for real.
+ *
+ * This block used to print six service NAMES, every one of them pointing at
+ * "/#services" — an anchor on the homepage. So the hub pages, and the 250
+ * city pages hanging off them, had no link anywhere in the site chrome. The
+ * homepage linked to none of them either; seventeen internal links on it and
+ * not one to a discipline.
+ *
+ * Search Console showed the consequence exactly: 163 URLs sitting in
+ * "Discovered - currently not indexed" with Last crawled "N/A" — including
+ * the /mep-engineering-recruiter, /cei-inspection-recruiter,
+ * /water-wastewater-recruiter and /bridge-structural-recruiter hubs
+ * themselves. Google knew the URLs from the sitemap and had never fetched
+ * one, because nothing on the site said they mattered.
+ *
+ * A sitemap is a hint. Internal links are the argument. */
+const DISCIPLINES = [
+  { label: "Civil Engineering", href: "/civil-engineering-recruiter" },
+  { label: "MEP Engineering", href: "/mep-engineering-recruiter" },
+  { label: "Bridge & Structural", href: "/bridge-structural-recruiter" },
+  { label: "Water & Wastewater", href: "/water-wastewater-recruiter" },
+  { label: "CEI & Inspection", href: "/cei-inspection-recruiter" },
+  { label: "Municipal Engineering", href: "/municipal-engineering-recruiter" },
 ];
 
 const LOCATIONS = [
@@ -104,12 +120,12 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mono-label text-ink-500">Services</h3>
+            <h3 className="mono-label text-ink-500">What we recruit for</h3>
             <ul className="mt-5 space-y-2.5">
-              {SERVICES.map((s) => (
-                <li key={s}>
-                  <Link href="/#services" className="text-sm text-ink-300 transition-colors hover:text-amber-400">
-                    {s}
+              {DISCIPLINES.map((d) => (
+                <li key={d.href}>
+                  <Link href={d.href} className="text-sm text-ink-300 transition-colors hover:text-amber-400">
+                    {d.label}
                   </Link>
                 </li>
               ))}
