@@ -147,6 +147,14 @@ export function faqSchema(faqs: FaqItem[]) {
 
 export function civilFaqs(c: {
   city: string; state: string; abbr: string; region: string; dot: string;
+  /* Optional deep-market fields (see lib/cities). Where a metro has them,
+     they produce FAQ answers that are genuinely about that place rather than
+     the same four answers with the city name swapped — which is both better
+     for the reader and the difference between a page Google indexes and one
+     it files as a duplicate. */
+  agencies?: string[];
+  licensure?: string;
+  hiringFocus?: { role: string; why: string }[];
 }): FaqItem[] {
   const placeAnswer = pickVariant(`${c.city}:civil:1`, [
     `Yes. Metro Associates is a specialized civil engineering recruiter serving ${c.city} and ${c.region}. We place licensed Professional Engineers (PEs), project managers, and technical specialists on transportation, bridge, water, and construction programs across the metro.`,
@@ -169,9 +177,44 @@ export function civilFaqs(c: {
     `Yes — NCEES comity and multi-state PE licensure are part of how we screen. We recruit specifically for ${c.dot}, federal agencies, and publicly funded capital programs across ${c.state}.`,
     `Yes. Candidates are screened against ${c.dot}'s and ${c.state}'s licensure requirements, with fluency in NCEES comity for engineers holding PE licenses in multiple states.`,
   ]);
+  /* Written from the metro's own research, so these four vary by substance
+     rather than by phrasing. Appended rather than replacing the general
+     answers above: the generic questions are still the ones most people
+     arrive asking. */
+  const local: FaqItem[] = [];
+
+  if (c.hiringFocus && c.hiringFocus.length > 0) {
+    local.push({
+      q: `Which civil engineering roles are hardest to fill in ${c.city}?`,
+      a:
+        `${c.hiringFocus.map((h) => h.role).join(", ")}. ` +
+        `${c.hiringFocus[0].why} These are the searches where a national pipeline ` +
+        `matters most, because the local market alone rarely clears them.`,
+    });
+  }
+
+  if (c.agencies && c.agencies.length > 0) {
+    local.push({
+      q: `Which agencies run civil engineering work in ${c.city}?`,
+      a:
+        `Most publicly funded work in the metro is let by ${c.agencies.slice(0, -1).join(", ")} and ` +
+        `${c.agencies[c.agencies.length - 1]}. We screen for experience on those programs specifically, ` +
+        `because prior work under an owner is what shortens a candidate's ramp-up on the next project ` +
+        `for them.`,
+    });
+  }
+
+  if (c.licensure) {
+    local.push({
+      q: `What licensure does a civil engineer need to work in ${c.state}?`,
+      a: c.licensure,
+    });
+  }
+
   return [
     { q: `Do you place civil engineers in ${c.city}, ${c.abbr}?`, a: placeAnswer },
     { q: `What civil engineering roles do you recruit for in ${c.city}?`, a: rolesAnswer },
+    ...local,
     { q: `How quickly can you fill a civil engineering position in ${c.city}?`, a: speedAnswer },
     { q: `Do you recruit licensed PEs for ${c.dot} and public infrastructure projects?`, a: dotAnswer },
   ];
