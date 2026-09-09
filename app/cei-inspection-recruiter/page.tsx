@@ -28,9 +28,9 @@ const TICKER = [
 ];
 
 export const metadata: Metadata = {
-  title: "CEI & Construction Inspection Recruiter — United States | Metro Associates",
+  title: "CEI & Inspection Recruiters | Metro Associates",
   description:
-    "Metro Associates is a national CEI (Construction Engineering & Inspection) recruiter providing specialized staffing for materials testing, bridge and roadway inspection, resident engineering, and construction contract administration across all 50 states. We place certified inspectors, resident engineers, and QA/QC specialists.",
+    "National CEI recruiters placing resident engineers, DOT-qualified inspectors and construction engineering inspection staff on public programs.",
   keywords: [
     "CEI recruiter",
     "construction inspection recruiter",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/cei-inspection-recruiter" },
   openGraph: {
-    title: "CEI & Construction Inspection Recruiter — United States | Metro Associates",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     description:
-      "National staffing for materials testing, bridge and roadway inspection, resident engineering, and construction contract administration across all 50 states.",
+      "National CEI recruiters placing resident engineers, DOT-qualified inspectors and construction engineering inspection staff on public programs.",
     url: `${SITE_URL}/cei-inspection-recruiter`,
     siteName: "Metro Associates",
     type: "website",
@@ -107,23 +107,23 @@ const SALARIES = [
 
 const WHY = [
   {
-    title: "National Talent Pipeline",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     body: "Access to a vast database of 50,000+ pre-vetted engineering professionals.",
   },
   {
-    title: "Certification-Verified Talent",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     body: "NICET, ACI, DOT, and bridge-inspection credentials confirmed before a candidate reaches you.",
   },
   {
-    title: "Passive Candidate Acquisition",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     body: "Our recruiters reach high-performers who are not actively on job boards.",
   },
   {
-    title: "Scalable Staffing Solutions",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     body: "From a single inspector to an entire CEI field team for a multi-year DOT program.",
   },
   {
-    title: "Codes & Standards Fluency",
+    title: "CEI & Inspection Recruiters | Metro Associates",
     body: "Fluency in AASHTO, NBIS bridge-inspection standards, and state DOT construction specifications.",
   },
 ];

@@ -5,7 +5,7 @@ import { IconArrow } from "../components/Icons";
 export const metadata: Metadata = {
   title: "Privacy Policy — Metro Associates",
   description:
-    "How Metro Associates, LLC collects, uses, discloses, stores, and safeguards your personal information across our website, communications, and recruiting services.",
+    "How Metro Associates, LLC collects, uses, stores and safeguards your personal information across our website and recruiting services.",
 };
 
 // Small presentational helpers so the long policy stays readable and consistent.

@@ -23,7 +23,7 @@ import { ORG } from "../lib/seo";
 export const metadata: Metadata = {
   title: "Engineering Awards by State | Metro Associates",
   description:
-    "The engineering award programs our client firms compete in — ACEC Engineering Excellence in all 50 states and DC, ENR Best Projects, ASHRAE Technology Awards, ASCE OCEA, AISC Prize Bridge, APWA Project of the Year, IES, NECA and WEF.",
+    "The award programs our client firms compete in — ACEC Engineering Excellence, ENR Best Projects, ASHRAE, ASCE, AISC, APWA and more, with entry routes.",
   keywords: [
     "engineering excellence awards",
     "ACEC awards by state",

@@ -24,9 +24,9 @@ const TICKER = [
 ];
 
 export const metadata: Metadata = {
-  title: "Civil Engineering Recruiter — United States | Metro Associates",
+  title: "Civil Engineering Recruiters, Nationwide | Metro Associates",
   description:
-    "Metro Associates is a national civil engineering recruiter providing specialized staffing for transportation, infrastructure, and municipal projects across all 50 states. We place licensed PEs, project managers, and technical specialists.",
+    "National civil engineering recruiters. We place licensed PEs, project managers and technical leads on state DOT, federal and private capital programs.",
   keywords: [
     "civil engineering recruiter",
     "civil engineering staffing agency",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/civil-engineering-recruiter" },
   openGraph: {
-    title: "Civil Engineering Recruiter — United States | Metro Associates",
+    title: "Civil Engineering Recruiters, Nationwide | Metro Associates",
     description:
-      "National engineering staffing for transportation, infrastructure, and municipal projects across all 50 states.",
+      "National civil engineering recruiters. We place licensed PEs, project managers and technical leads on state DOT, federal and private capital programs.",
     url: `${SITE_URL}/civil-engineering-recruiter`,
     siteName: "Metro Associates",
     type: "website",

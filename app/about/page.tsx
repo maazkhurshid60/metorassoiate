@@ -19,9 +19,9 @@ import {
 import { APPLY_URL } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "About — Metro Associates | Specialized Engineering Recruiting Firm",
+  title: "About Metro Associates | Engineering Recruiters",
   description:
-    "About Metro Associates: a specialized engineering recruiting firm focused exclusively on engineering and infrastructure staffing — civil, structural, transportation, water, wastewater, MEP, and construction inspection markets nationwide.",
+    "Who we are, how we recruit, and why engineering firms and public agencies use us to fill licensed and technical roles across the United States.",
 };
 
 // `href` is only set for disciplines that have a real landing page to send

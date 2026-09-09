@@ -14,9 +14,9 @@ import {
 import { CAREERS_URL } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Why Us — Metro Associates | Engineering Recruiting for DOT & Infrastructure",
+  title: "Why Metro Associates | Engineering Recruiting",
   description:
-    "Why Metro Associates: engineering recruiting built for infrastructure and DOT markets — engineering focus, DOT & municipal expertise, passive talent access, precision matching, veteran pipeline, and long-term partnerships.",
+    "What we do differently: a vetted national pipeline, multi-state licensure fluency, and recruiters who understand DOT and infrastructure delivery.",
 };
 
 const REASONS = [

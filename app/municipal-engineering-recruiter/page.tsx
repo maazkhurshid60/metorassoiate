@@ -28,9 +28,9 @@ const TICKER = [
 ];
 
 export const metadata: Metadata = {
-  title: "Municipal Engineering Recruiter — United States | Metro Associates",
+  title: "Municipal Engineering Recruiters | Metro Associates",
   description:
-    "Metro Associates is a national municipal engineering recruiter providing specialized staffing for public works, capital improvement planning, site/civil development, and municipal utility programs across all 50 states. We place licensed PEs, city engineers, and public works leaders.",
+    "National municipal engineering recruiters. City and county engineers, public works leadership and capital programme managers for local agencies.",
   keywords: [
     "municipal engineering recruiter",
     "municipal engineer staffing agency",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/municipal-engineering-recruiter" },
   openGraph: {
-    title: "Municipal Engineering Recruiter — United States | Metro Associates",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     description:
-      "National engineering staffing for public works, capital improvement planning, site/civil development, and municipal utility programs across all 50 states.",
+      "National municipal engineering recruiters. City and county engineers, public works leadership and capital programme managers for local agencies.",
     url: `${SITE_URL}/municipal-engineering-recruiter`,
     siteName: "Metro Associates",
     type: "website",
@@ -104,23 +104,23 @@ const SALARIES = [
 
 const WHY = [
   {
-    title: "National Talent Pipeline",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     body: "Access to a vast database of 50,000+ pre-vetted engineering professionals.",
   },
   {
-    title: "Multi-State Licensing Expertise",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     body: "We understand NCEES comity and the complexities of multi-state PE licensure.",
   },
   {
-    title: "Passive Candidate Acquisition",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     body: "Our recruiters reach high-performers who are not actively on job boards.",
   },
   {
-    title: "Scalable Staffing Solutions",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     body: "From a single city engineer to an entire public works department build-out.",
   },
   {
-    title: "Public-Sector Process Fluency",
+    title: "Municipal Engineering Recruiters | Metro Associates",
     body: "Fluency in municipal procurement, capital-plan funding cycles, and grant-compliant hiring timelines.",
   },
 ];

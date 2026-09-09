@@ -28,9 +28,9 @@ const TICKER = [
 ];
 
 export const metadata: Metadata = {
-  title: "Water & Wastewater Engineering Recruiter — United States | Metro Associates",
+  title: "Water & Wastewater Recruiters | Metro Associates",
   description:
-    "Metro Associates is a national water and wastewater engineering recruiter providing specialized staffing for treatment plant design, distribution and collection systems, stormwater management, and utility rehabilitation programs across all 50 states. We place licensed PEs, process engineers, and inspection specialists.",
+    "National water and wastewater engineering recruiters. Process engineers and plant specialists for treatment, collection and distribution programs.",
   keywords: [
     "water engineering recruiter",
     "wastewater engineering recruiter",
@@ -43,9 +43,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "/water-wastewater-recruiter" },
   openGraph: {
-    title: "Water & Wastewater Engineering Recruiter — United States | Metro Associates",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     description:
-      "National engineering staffing for treatment plant design, water distribution and collection systems, stormwater management, and utility rehabilitation programs across all 50 states.",
+      "National water and wastewater engineering recruiters. Process engineers and plant specialists for treatment, collection and distribution programs.",
     url: `${SITE_URL}/water-wastewater-recruiter`,
     siteName: "Metro Associates",
     type: "website",
@@ -107,23 +107,23 @@ const SALARIES = [
 
 const WHY = [
   {
-    title: "National Talent Pipeline",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     body: "Access to a vast database of 50,000+ pre-vetted engineering professionals.",
   },
   {
-    title: "Multi-State Licensing Expertise",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     body: "We understand NCEES comity and the complexities of multi-state PE licensure.",
   },
   {
-    title: "Passive Candidate Acquisition",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     body: "Our recruiters reach high-performers who are not actively on job boards.",
   },
   {
-    title: "Scalable Staffing Solutions",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     body: "From a single PE to an entire treatment-plant design team for a multi-year program.",
   },
   {
-    title: "Regulatory & Codes Fluency",
+    title: "Water & Wastewater Recruiters | Metro Associates",
     body: "Fluency in Clean Water Act / NPDES permitting, state DEP/DEQ requirements, and SRF-funded project compliance.",
   },
 ];

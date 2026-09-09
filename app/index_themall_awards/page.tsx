@@ -89,7 +89,7 @@ const anchorOf = (slug: string) => `band-${slug}`;
 export const metadata: Metadata = {
   // Kept under ~60 characters so Google shows it whole rather than truncating.
   title: `Engineering Salary Guide — ${TOTAL_ROLES} US Roles | Metro Associates`,
-  description: `What engineering and infrastructure roles pay across the United States — ${TOTAL_ROLES} titles spanning civil, bridge/structural, CEI inspection, MEP, municipal and water/wastewater, with ranges by seniority.`,
+  description: `US pay ranges for ${TOTAL_ROLES} engineering titles — civil, bridge, CEI inspection, MEP, municipal and water/wastewater, by seniority.`,
   keywords: [
     "engineering salary guide",
     "civil engineer salary",

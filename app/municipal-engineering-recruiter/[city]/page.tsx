@@ -4,15 +4,14 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconCompass,
-} from "../../components/Icons";
+  IconArrow, IconCheck, IconCompass } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
   MUNICIPAL_CITIES, getMunicipalCity, MUNICIPAL_EXPERTISE, MUNICIPAL_ROLES,
-  MUNICIPAL_SALARIES, } from "../../lib/municipalEngineering";
+  MUNICIPAL_SALARIES } from "../../lib/municipalEngineering";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, municipalFaqs, pickVariant } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, municipalFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
 
 // Pre-render the fixed set of Municipal Engineering city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -25,8 +24,22 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const c = getMunicipalCity(slug);
   if (!c) return {};
-  const title = `Municipal Engineering Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
-  const description = `Metro Associates is a specialized municipal engineering recruiter serving ${c.city}, ${c.state}. We place licensed PEs, city engineers, and public works leaders across ${c.region}.`;
+  const title = fitTitle(`Municipal Engineering Recruiters in ${c.city}, ${c.abbr}`);
+
+  /* The city's own authority is the part that makes this line about this
+     city rather than a template with a name substituted in. It goes in the
+     last clause so fitDescription drops it, rather than truncating
+     mid-sentence, when the authority's name is a long one. */
+  const description = fitDescription([
+    pickVariant(`${c.slug}:desc`, [
+      `Municipal engineering recruiting in ${c.city}, ${c.state}.`,
+      `Specialist municipal engineering recruiters for ${c.city}, ${c.state}.`,
+      `Hiring municipal engineers in ${c.city}, ${c.state}.`,
+    ]),
+    `Experience with programs at ${c.authority}.`,
+    `We place city and county engineers.`,
+  ]);
+
   const path = `/municipal-engineering-recruiter/${c.slug}`;
   const keywords = [
     `municipal engineering recruiter ${c.city}`,
@@ -49,6 +62,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
+
 export default async function MunicipalCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getMunicipalCity(slug);

@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconBolt,
-} from "../../components/Icons";
+  IconArrow, IconCheck, IconBolt } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  WATER_CITIES, getWaterCity, WATER_EXPERTISE, WATER_ROLES, WATER_SALARIES, } from "../../lib/waterWastewater";
+  WATER_CITIES, getWaterCity, WATER_EXPERTISE, WATER_ROLES, WATER_SALARIES } from "../../lib/waterWastewater";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, waterFaqs, pickVariant } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, waterFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
 
 // Pre-render the fixed set of Water & Wastewater city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -24,8 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const c = getWaterCity(slug);
   if (!c) return {};
-  const title = `Water & Wastewater Engineering Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
-  const description = `Metro Associates is a specialized water and wastewater engineering recruiter serving ${c.city}, ${c.state}. We place licensed PEs, process engineers, and construction inspection specialists across ${c.region}.`;
+  const title = fitTitle(`Water & Wastewater Recruiters in ${c.city}, ${c.abbr}`);
+
+  /* The city's own authority is the part that makes this line about this
+     city rather than a template with a name substituted in. It goes in the
+     last clause so fitDescription drops it, rather than truncating
+     mid-sentence, when the authority's name is a long one. */
+  const description = fitDescription([
+    pickVariant(`${c.slug}:desc`, [
+      `Water and wastewater recruiting in ${c.city}, ${c.state}.`,
+      `Specialist water and wastewater recruiters for ${c.city}, ${c.state}.`,
+      `Hiring water and wastewater engineers in ${c.city}, ${c.state}.`,
+    ]),
+    `Experience with programs at ${c.authority}.`,
+    `We place process engineers and treatment specialists.`,
+  ]);
+
   const path = `/water-wastewater-recruiter/${c.slug}`;
   const keywords = [
     `water engineering recruiter ${c.city}`,
@@ -48,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
+
 export default async function WaterCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getWaterCity(slug);

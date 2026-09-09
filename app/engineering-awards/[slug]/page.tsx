@@ -5,6 +5,7 @@ import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import AwardMark from "../../components/AwardMark";
 import { AWARD_PROGRAMS, awardBySlug, type AwardProgram } from "../../lib/awards";
 import { SITE_URL } from "../../lib/site";
+import { pickTitle, fitDescription } from "../../lib/seo";
 
 /* One page per award program.
  *
@@ -48,11 +49,24 @@ export async function generateMetadata({
   if (!a) return {};
 
   /* Not "<Award name>" on its own — that is the awarding body's term and we
-     lose it. The qualifier is the part we can actually rank for. */
-  const title = `${a.name} (${a.abbr}) — who enters, and what it signals`;
+     lose it; the qualifier is the part we can actually rank for. But the
+     award names run long ("Outstanding Civil Engineering Achievement
+     (OCEA)"), and the earlier two-branch version still produced 81-character
+     titles that search results cut off. Candidates in priority order, first
+     one that fits wins. */
   return {
-    title: title.length > 60 ? `${a.abbr} ${a.name} — what it signals in hiring` : title,
-    description: `How the ${a.org} ${a.name} works — who enters, the route from local to national, and what it tells you about an engineer's experience. From Metro Associates' engineering recruiters.`,
+    title: pickTitle([
+      `${a.name} (${a.abbr}) — who enters, and what it signals`,
+      `${a.name} — what it signals in hiring`,
+      `${a.name} — a hiring guide`,
+      `${a.name} (${a.abbr})`,
+      a.name,
+    ]),
+    description: fitDescription([
+      `How the ${a.org} ${a.name} works.`,
+      `Who enters, the route from local to national,`,
+      `and what it tells you about an engineer's experience.`,
+    ]),
     alternates: { canonical: `${SITE_URL}/engineering-awards/${a.slug}` },
   };
 }

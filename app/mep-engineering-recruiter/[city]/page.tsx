@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconBolt,
-} from "../../components/Icons";
+  IconArrow, IconCheck, IconBolt } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES, } from "../../lib/mep";
+  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs, pickVariant } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
 
 // Pre-render the fixed set of MEP city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -24,8 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const c = getMepCity(slug);
   if (!c) return {};
-  const title = `MEP Engineering Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
-  const description = `Metro Associates is a specialized MEP engineering recruiter serving ${c.city}, ${c.state}. We place licensed mechanical, electrical, and plumbing PEs, project managers, and commissioning specialists across ${c.region}.`;
+  const title = fitTitle(`MEP Engineering Recruiters in ${c.city}, ${c.abbr}`);
+
+  /* The city's own authority is the part that makes this line about this
+     city rather than a template with a name substituted in. It goes in the
+     last clause so fitDescription drops it, rather than truncating
+     mid-sentence, when the authority's name is a long one. */
+  const description = fitDescription([
+    pickVariant(`${c.slug}:desc`, [
+      `MEP engineering recruiting in ${c.city}, ${c.state}.`,
+      `Specialist MEP recruiters for ${c.city}, ${c.state}.`,
+      `Hiring MEP engineers in ${c.city}, ${c.state}.`,
+    ]),
+    `Experience with projects reviewed under ${c.authority}.`,
+    `We place mechanical, electrical and plumbing PEs.`,
+  ]);
+
   const path = `/mep-engineering-recruiter/${c.slug}`;
   const keywords = [
     `MEP engineering recruiter ${c.city}`,
@@ -48,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
+
 export default async function MepCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getMepCity(slug);

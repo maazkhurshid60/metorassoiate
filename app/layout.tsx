@@ -20,9 +20,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Metro Associates — DOT & Infrastructure Staffing and Executive Search",
+  title: "Metro Associates | DOT & Infrastructure Recruiters",
   description:
-    "Metro Associates is a national staffing and executive search firm for Departments of Transportation and public infrastructure. We place vetted engineers, inspectors, and construction leaders — backed by a placement guarantee.",
+    "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
   keywords: [
     "DOT staffing",
     "transportation recruiting",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Metro Associates — DOT & Infrastructure Staffing",
     description:
-      "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+      "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
     url: SITE_URL,
     siteName: "Metro Associates",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Metro Associates — DOT & Infrastructure Staffing",
     description:
-      "Faster engineering hiring, backed by a placement guarantee. Specialized placement for Departments of Transportation and public infrastructure agencies.",
+      "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
     images: ["/interchange-sunset.jpg"],
   },
   robots: {
@@ -62,7 +62,7 @@ const jsonLd = {
   name: "Patrick Novick",
   jobTitle: "Professional Recruiter",
   description:
-    "Elite professional recruiter with 35+ years of experience placing talent at Fortune 100/500 companies across government, defense, and commercial sectors.",
+    "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
   url: "https://patricknovick.com",
   telephone: "(312) 500-1878",
   email: "patrick@patricknovick.com",

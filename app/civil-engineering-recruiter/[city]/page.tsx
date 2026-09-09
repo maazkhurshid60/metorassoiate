@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconBridge,
-} from "../../components/Icons";
+  IconArrow, IconCheck, IconBridge } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  CITIES, getCity, EXPERTISE, ROLES, SALARIES, } from "../../lib/cities";
+  CITIES, getCity, EXPERTISE, ROLES, SALARIES } from "../../lib/cities";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, civilFaqs, pickVariant } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, civilFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
 
 // Pre-render the fixed set of city pages; unknown slugs 404 (no arbitrary pages).
 export const dynamicParams = false;
@@ -24,8 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const c = getCity(slug);
   if (!c) return {};
-  const title = `Civil Engineering Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
-  const description = `Metro Associates is a specialized civil engineering recruiter serving ${c.city}, ${c.state}. We place licensed PEs, project managers, and technical specialists across ${c.dot} and infrastructure programs throughout ${c.region}.`;
+  const title = fitTitle(`Civil Engineering Recruiters in ${c.city}, ${c.abbr}`);
+
+  /* The city's own authority is the part that makes this line about this
+     city rather than a template with a name substituted in. It goes in the
+     last clause so fitDescription drops it, rather than truncating
+     mid-sentence, when the authority's name is a long one. */
+  const description = fitDescription([
+    pickVariant(`${c.slug}:desc`, [
+      `Civil engineering recruiting in ${c.city}, ${c.state}.`,
+      `Specialist civil engineering recruiters for ${c.city}, ${c.state}.`,
+      `Hiring civil engineers in ${c.city}, ${c.state}.`,
+    ]),
+    `Experience with programs at ${c.dot}.`,
+    `We place licensed PEs and project managers.`,
+  ]);
+
   const path = `/civil-engineering-recruiter/${c.slug}`;
   const keywords = [
     `civil engineering recruiter ${c.city}`,
@@ -48,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
+
 export default async function CityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getCity(slug);

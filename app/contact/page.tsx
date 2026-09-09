@@ -6,12 +6,12 @@ import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { PHONE, PHONE_HREF, EMAIL, OFFICE_METROS } from "../lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact Us — Metro Associates | DOT & Infrastructure Staffing",
+  title: "Contact Metro Associates | Engineering Recruiters",
   description:
     // Eight, matching the eight offices actually listed on this page. It read
     // "nine" while showing and naming eight, which is the kind of small
     // inaccuracy a buyer checking the firm out will notice.
-    "Contact Metro Associates. Reach our recruiting team or visit one of our eight U.S. branch offices — Orlando, Boston, Washington DC, Atlanta, Dallas, Los Angeles, New York, and Hartford.",
+    "Talk to an engineering recruiter about a role you need filled, or your own next move. Eight US offices, placements nationwide.",
 };
 
 /* Derived from the canonical list in lib/site.ts, which the Organization

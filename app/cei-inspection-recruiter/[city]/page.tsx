@@ -4,14 +4,13 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconClipboard,
-} from "../../components/Icons";
+  IconArrow, IconCheck, IconClipboard } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  CEI_CITIES, getCeiCity, CEI_EXPERTISE, CEI_ROLES, CEI_SALARIES, } from "../../lib/ceiInspection";
+  CEI_CITIES, getCeiCity, CEI_EXPERTISE, CEI_ROLES, CEI_SALARIES } from "../../lib/ceiInspection";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { serviceSchema, breadcrumbSchema, faqSchema, ceiFaqs, pickVariant } from "../../lib/seo";
+import { serviceSchema, breadcrumbSchema, faqSchema, ceiFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
 
 // Pre-render the fixed set of CEI & Inspection city pages; unknown slugs 404.
 export const dynamicParams = false;
@@ -24,8 +23,22 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
   const { city: slug } = await params;
   const c = getCeiCity(slug);
   if (!c) return {};
-  const title = `CEI & Construction Inspection Recruiter — ${c.city}, ${c.abbr} | Metro Associates`;
-  const description = `Metro Associates is a specialized CEI (Construction Engineering & Inspection) recruiter serving ${c.city}, ${c.state}. We place certified inspectors, resident engineers, and QA/QC specialists across ${c.region}.`;
+  const title = fitTitle(`CEI Inspection Recruiters in ${c.city}, ${c.abbr}`);
+
+  /* The city's own authority is the part that makes this line about this
+     city rather than a template with a name substituted in. It goes in the
+     last clause so fitDescription drops it, rather than truncating
+     mid-sentence, when the authority's name is a long one. */
+  const description = fitDescription([
+    pickVariant(`${c.slug}:desc`, [
+      `CEI and construction inspection recruiting in ${c.city}, ${c.state}.`,
+      `Specialist CEI recruiters for ${c.city}, ${c.state}.`,
+      `Hiring construction inspection staff in ${c.city}, ${c.state}.`,
+    ]),
+    `Experience with work for ${c.authority}.`,
+    `We place resident engineers and inspectors.`,
+  ]);
+
   const path = `/cei-inspection-recruiter/${c.slug}`;
   const keywords = [
     `CEI recruiter ${c.city}`,
@@ -48,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
     },
   };
 }
+
 export default async function CeiCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;
   const c = getCeiCity(slug);

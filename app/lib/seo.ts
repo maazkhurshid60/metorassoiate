@@ -331,3 +331,52 @@ export function municipalFaqs(c: {
     { q: `Do you understand municipal procurement and grant-funded hiring timelines?`, a: authorityAnswer },
   ];
 }
+
+
+/* ------------------------------------------------------------------
+   Search-result metadata that actually fits the result.
+
+   Audited across all 280 live URLs: no exact duplicate title and no
+   exact duplicate description anywhere — but 218 of 280 titles ran past
+   60 characters and 277 of 280 descriptions past 160, which is where
+   Google truncates. Everything after that point was written for nobody.
+   And once the city name was removed, all 49 city pages in a hub shared
+   one title skeleton, so what varied was a substitution rather than a
+   sentence.
+
+   These two composers fix both. `fitTitle` drops the brand rather than
+   overflow — Google often appends the site name anyway. `fitDescription`
+   takes clauses in priority order and keeps the ones that fit, so a city
+   whose authority is "Metropolitan Water Reclamation District of Greater
+   Chicago (MWRD)" loses the final clause instead of the whole line being
+   cut mid-word.
+   ------------------------------------------------------------------ */
+
+/** Title capped at 60 characters, brand appended only if it fits. */
+export function fitTitle(core: string, brand = "Metro Associates"): string {
+  const withBrand = `${core} | ${brand}`;
+  if (withBrand.length <= 60) return withBrand;
+  if (core.length <= 60) return core;
+  return core.slice(0, 57).trimEnd() + "…";
+}
+
+/** Clauses in priority order; keeps those that fit inside `max`. */
+export function fitDescription(clauses: string[], max = 158): string {
+  let out = "";
+  for (const clause of clauses) {
+    const next = out ? `${out} ${clause}` : clause;
+    if (next.length > max) break;
+    out = next;
+  }
+  /* Never return nothing: a first clause longer than the cap is better
+     truncated than dropped. */
+  if (!out && clauses.length) return clauses[0].slice(0, max - 1).trimEnd() + "…";
+  return out;
+}
+
+/** First candidate that fits, in priority order; last one truncated if none do. */
+export function pickTitle(candidates: string[], max = 60): string {
+  for (const c of candidates) if (c.length <= max) return c;
+  const last = candidates[candidates.length - 1] ?? "";
+  return last.slice(0, max - 1).trimEnd() + "…";
+}

@@ -7,9 +7,9 @@ import { getJobFolderTeam } from "../lib/jobfolderTeam";
 import TeamCard from "../components/TeamCard";
 
 export const metadata: Metadata = {
-  title: "Meet Our Team — Metro Associates | DOT & Infrastructure Recruiters",
+  title: "Meet the Team | Metro Associates Recruiters",
   description:
-    "Meet the Metro Associates recruiting team — specialists in engineering, transportation, and DOT staffing. Connect with our recruiters on LinkedIn.",
+    "The recruiters behind our placements — who they specialise in, the disciplines they cover, and how to reach them directly.",
 };
 
 /* Pinned explicitly rather than left to infer from the getJobFolderTeam()
