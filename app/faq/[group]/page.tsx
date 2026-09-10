@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
-import { breadcrumbSchema, faqSchema, pickTitle, fitDescription } from "../../lib/seo";
+import { breadcrumbSchema, faqSchema, faqSlugs, pickTitle, fitDescription } from "../../lib/seo";
+import { SITE_URL } from "../../lib/site";
 import { FAQ_GROUPS, faqGroup, FAQ_TOTAL } from "../../lib/hubFaqs";
 
 /* One page per group of questions.
@@ -54,13 +55,15 @@ export default async function FaqGroupPage({
   if (!g) notFound();
 
   const others = FAQ_GROUPS.filter((x) => x.id !== g.id);
+  const slugs = faqSlugs(g.faqs);
+  const pageUrl = `${SITE_URL}/faq/${g.id}`;
 
   return (
     <>
       <HeaderBackdrop />
       <JsonLd
         data={[
-          faqSchema(g.faqs),
+          faqSchema(g.faqs, pageUrl),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "FAQ", path: "/faq" },
@@ -105,24 +108,74 @@ export default async function FaqGroupPage({
           </div>
         </section>
 
+        {/* Glossary layout.
+
+            The index is the point of it. Every question is a numbered entry
+            with its own anchor, so a question can be linked to directly
+            rather than by sending someone to the top of a page holding eight
+            answers and asking them to scan. That matters twice over here:
+            the /faq index links straight to the answer instead of the page,
+            and the schema gives each question the same anchor as its @id, so
+            a retrieval crawler citing one of these lands the reader on it.
+
+            Not a <dl>, despite being a glossary. The HTML spec forbids
+            heading content inside <dt>, and these questions are worth more as
+            real <h2>s than the definition-list element is worth: heading
+            structure is how both search engines and the retrieval crawlers
+            this content targets segment a page, and how a screen reader user
+            skips between entries. The glossary is in the index, the anchors
+            and the layout rather than in the tag name. */}
         <section className="border-t border-navy-950/10 bg-paper py-16 sm:py-20">
           <div className="container-x">
-            <div className="divide-y divide-navy-950/10 border-t border-navy-950/10">
-              {g.faqs.map((f) => (
-                <details key={f.q} className="group py-6" open>
-                  <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                    <h2 className="text-xl font-bold leading-snug text-navy-950">{f.q}</h2>
-                    <span
-                      aria-hidden
-                      className="mt-1 shrink-0 text-amber-500 transition-transform group-open:rotate-45"
-                    >
-                      +
+            <nav
+              aria-label="Questions on this page"
+              className="border border-navy-950/10 bg-white p-6 sm:p-8"
+            >
+              <p className="mono-label text-slate-500">
+                {`On this page, ${g.faqs.length} questions`}
+              </p>
+              <ol className="mt-5 grid gap-x-10 gap-y-3 sm:grid-cols-2">
+                {g.faqs.map((f, i) => (
+                  <li key={f.q} className="flex items-start gap-3">
+                    <span className="mono-label mt-[3px] shrink-0 text-[10px] text-brand-500/70">
+                      {String(i + 1).padStart(2, "0")}
                     </span>
-                  </summary>
-                  <p className="mt-3 max-w-3xl text-[16px] leading-8 text-slate-500 text-pretty">
+                    <a
+                      href={`#${slugs[i]}`}
+                      className="text-[15px] font-medium leading-7 text-navy-950 underline-offset-4 transition-colors hover:text-amber-600 hover:underline"
+                    >
+                      {f.q}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+
+            <div className="mt-14 divide-y divide-navy-950/10 border-t border-navy-950/10">
+              {g.faqs.map((f, i) => (
+                <article key={f.q} className="group py-8">
+                  <div className="flex items-start gap-3">
+                    <span className="mono-label mt-[7px] shrink-0 text-[10px] text-brand-500/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h2
+                      id={slugs[i]}
+                      className="scroll-mt-28 text-xl font-bold leading-snug text-navy-950"
+                    >
+                      {f.q}
+                      <a
+                        href={`#${slugs[i]}`}
+                        aria-label={`Permalink to: ${f.q}`}
+                        className="ml-2 align-middle text-amber-500 opacity-0 transition-opacity focus:opacity-100 group-hover:opacity-100"
+                      >
+                        #
+                      </a>
+                    </h2>
+                  </div>
+                  <p className="mt-3 max-w-3xl pl-8 text-[16px] leading-8 text-slate-500 text-pretty">
                     {f.a}
                   </p>
-                </details>
+                </article>
               ))}
             </div>
           </div>

@@ -136,12 +136,60 @@ export function pickVariant<T>(seed: string, variants: readonly T[]): T {
 
 export interface FaqItem { q: string; a: string }
 
-export function faqSchema(faqs: FaqItem[]) {
+/* A stable anchor for one question.
+ *
+ * Derived from the question text rather than stored, so adding a question
+ * cannot leave a hand-written id behind, and so the slug is legible in a URL
+ * an assistant or a colleague pastes: /faq/civil-engineering#how-does-pe-
+ * licensure-transfer-between-states. Trailing words are dropped past a limit
+ * because the whole question is often a sentence, but enough of the opening
+ * survives to identify the entry.
+ */
+export function faqSlug(q: string, max = 9): string {
+  return q
+    .toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, max)
+    .join("-");
+}
+
+/* Slugs for a whole group, guaranteed unique within it.
+ *
+ * Two questions in one group can open with the same nine words; a numeric
+ * suffix keeps the second one addressable rather than silently stealing the
+ * first one's anchor.
+ */
+export function faqSlugs(faqs: FaqItem[]): string[] {
+  const seen = new Map<string, number>();
+  return faqs.map((f) => {
+    const base = faqSlug(f.q);
+    const n = seen.get(base) ?? 0;
+    seen.set(base, n + 1);
+    return n === 0 ? base : `${base}-${n + 1}`;
+  });
+}
+
+/* pageUrl gives every question its own @id and url.
+ *
+ * Google stopped showing FAQ rich results in May 2026, so this markup exists
+ * for the retrieval crawlers behind AI answers. Those cite a URL. Without a
+ * per-question anchor the best any of them can offer is the top of a page
+ * holding eight answers, which is a worse citation and a worse landing for
+ * the reader who follows it.
+ */
+export function faqSchema(faqs: FaqItem[], pageUrl?: string) {
+  const slugs = faqSlugs(faqs);
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
+    ...(pageUrl ? { "@id": pageUrl, url: pageUrl } : {}),
+    mainEntity: faqs.map((f, i) => ({
       "@type": "Question",
+      ...(pageUrl
+        ? { "@id": `${pageUrl}#${slugs[i]}`, url: `${pageUrl}#${slugs[i]}` }
+        : {}),
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
     })),

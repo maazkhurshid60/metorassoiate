@@ -1,5 +1,9 @@
+import { faqSlugs } from "../lib/seo";
 import Link from "next/link";
 import { GENERAL_FAQS, FAQ_GROUPS, FAQ_TOTAL } from "../lib/hubFaqs";
+
+/* Same derivation the FAQ pages use, so these land on the answer itself. */
+const GENERAL_SLUGS = faqSlugs(GENERAL_FAQS);
 
 /**
  * The homepage FAQ block.
@@ -65,10 +69,10 @@ export default function HomeFaqs() {
           </div>
 
           <ul className="divide-y divide-navy-950/10 border-t border-navy-950/10">
-            {GENERAL_FAQS.map((f) => (
+            {GENERAL_FAQS.map((f, i) => (
               <li key={f.q}>
                 <Link
-                  href="/faq/working-with-metro-associates"
+                  href={`/faq/working-with-metro-associates#${GENERAL_SLUGS[i]}`}
                   className="group flex items-baseline justify-between gap-6 py-5"
                 >
                   <span className="text-[17px] font-bold leading-snug text-navy-950 group-hover:text-amber-600">

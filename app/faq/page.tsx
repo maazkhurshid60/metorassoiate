@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { JsonLd } from "../components/JsonLd";
-import { breadcrumbSchema, fitTitle, fitDescription } from "../lib/seo";
+import { breadcrumbSchema, faqSlugs, fitTitle, fitDescription } from "../lib/seo";
 import { FAQ_GROUPS, FAQ_TOTAL } from "../lib/hubFaqs";
 
 /* The index of every question the site answers.
@@ -35,6 +35,13 @@ export const metadata: Metadata = {
 };
 
 export default function FaqPage() {
+  /* Anchors for every question, so this index links to the answer rather
+     than to the top of the page holding it. Same derivation the group pages
+     use, so the two cannot drift apart. */
+  const slugs = Object.fromEntries(
+    FAQ_GROUPS.map((g) => [g.id, faqSlugs(g.faqs)]),
+  ) as Record<string, string[]>;
+
   return (
     <>
       <HeaderBackdrop />
@@ -108,10 +115,10 @@ export default function FaqPage() {
               </div>
 
               <ul className="mt-8 divide-y divide-navy-950/10 border-t border-navy-950/10">
-                {g.faqs.map((f) => (
+                {g.faqs.map((f, j) => (
                   <li key={f.q}>
                     <Link
-                      href={`/faq/${g.id}`}
+                      href={`/faq/${g.id}#${slugs[g.id][j]}`}
                       className="group flex items-baseline justify-between gap-6 py-4 transition-colors"
                     >
                       <span className="text-[17px] font-semibold leading-snug text-navy-950 group-hover:text-amber-600">

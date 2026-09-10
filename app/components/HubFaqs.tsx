@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { faqSlugs } from "../lib/seo";
 import { faqGroup, type FaqGroupId } from "../lib/hubFaqs";
 
 /**
@@ -29,6 +30,8 @@ export default function HubFaqs({
   const g = faqGroup(group);
   if (!g?.faqs.length) return null;
 
+  const slugs = faqSlugs(g.faqs);
+
   return (
     <section className="relative border-t border-navy-950/10 bg-paper py-20 sm:py-24">
       <div className="container-x">
@@ -39,10 +42,10 @@ export default function HubFaqs({
         </div>
 
         <ul className="mt-9 divide-y divide-navy-950/10 border-t border-navy-950/10">
-          {g.faqs.map((f) => (
+          {g.faqs.map((f, i) => (
             <li key={f.q}>
               <Link
-                href={`/faq/${g.id}`}
+                href={`/faq/${g.id}#${slugs[i]}`}
                 className="group flex items-baseline justify-between gap-6 py-4"
               >
                 <span className="text-[17px] font-semibold leading-snug text-navy-950 group-hover:text-amber-600">
