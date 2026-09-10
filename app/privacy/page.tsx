@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IconArrow } from "../components/Icons";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Metro Associates",
+  title: "Privacy Policy | Metro Associates",
   description:
     "How Metro Associates, LLC collects, uses, stores and safeguards your personal information across our website and recruiting services.",
 };

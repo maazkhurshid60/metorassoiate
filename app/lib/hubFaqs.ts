@@ -58,15 +58,15 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "How does a PE licence transfer between states?",
-      a: "It does not transfer automatically — there is no national licence. Every state board licenses independently and grants what is called comity licensure to engineers already licensed elsewhere, on its own terms. An NCEES Record holds your exams, education and references in one place and is what most boards want to see. Budget weeks, not days, and check the destination board before accepting a role that needs a seal.",
+      a: "It does not transfer automatically. There is no national licence. Every state board licenses independently and grants what is called comity licensure to engineers already licensed elsewhere, on its own terms. An NCEES Record holds your exams, education and references in one place and is what most boards want to see. Budget weeks, not days, and check the destination board before accepting a role that needs a seal.",
     },
     {
       q: "What is the difference between consulting-side and DOT-side civil work?",
-      a: "Consulting firms design and deliver; the state DOT owns the asset, sets the standards and reviews the work. Engineers move between the two, but the day-to-day differs sharply — consulting runs on billable utilisation and multiple concurrent clients, agency work on programme delivery and public accountability. A candidate who has only done one often needs a run-up to the other.",
+      a: "Consulting firms design and deliver; the state DOT owns the asset, sets the standards and reviews the work. Engineers move between the two, but the day-to-day differs sharply, consulting runs on billable utilisation and multiple concurrent clients, agency work on programme delivery and public accountability. A candidate who has only done one often needs a run-up to the other.",
     },
     {
       q: "Which civil engineering roles are hardest to fill?",
-      a: "In our experience the bottleneck is rarely graduates — it is the five-to-fifteen-year band holding a PE plus a specific agency's project history. Water resources, geotechnical and traffic/ITS are consistently thinner than general site design, because each needs experience that cannot be picked up quickly on the job.",
+      a: "In our experience the bottleneck is rarely graduates. It is the five-to-fifteen-year band holding a PE plus a specific agency's project history. Water resources, geotechnical and traffic/ITS are consistently thinner than general site design, because each needs experience that cannot be picked up quickly on the job.",
     },
     {
       q: "What project awards do civil engineering firms compete for?",
@@ -85,7 +85,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What is the difference between an MEP designer and an MEP engineer?",
-      a: "A designer models and documents the system — typically in Revit — while the engineer performs the load calculations, selects equipment, and carries the code responsibility for the result. The pay gap between them is real: our bands start designers at $60,000–$88,000 against $70,000–$95,000 for an engineer at EIT level, widening sharply once the PE arrives.",
+      a: "A designer models and documents the system, typically in Revit, while the engineer performs the load calculations, selects equipment, and carries the code responsibility for the result. The pay gap between them is real: our bands start designers at $60,000–$88,000 against $70,000–$95,000 for an engineer at EIT level, widening sharply once the PE arrives.",
     },
     {
       q: "Why do MEP job specs name a local code authority?",
@@ -93,7 +93,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What is commissioning, and why is it recruited separately?",
-      a: "Commissioning verifies that installed systems actually perform as designed, after construction and often into occupancy. It is a distinct discipline from design — the skill is testing, measurement and fault-finding rather than modelling — so it is recruited as its own role, usually as a commissioning engineer or CxA.",
+      a: "Commissioning verifies that installed systems actually perform as designed, after construction and often into occupancy. It is a distinct discipline from design. The skill is testing, measurement and fault-finding rather than modelling, so it is recruited as its own role, usually as a commissioning engineer or CxA.",
     },
     {
       q: "What awards recognise MEP engineering work?",
@@ -104,7 +104,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "bridge-structural-recruiter": [
     {
       q: "Do structural engineers need a PE or an SE licence?",
-      a: "A PE covers most structural practice. A separate SE licence exists, and a handful of states require it for particular structures — significant buildings, or bridges above a threshold — so the answer genuinely depends on where the work is and what is being designed. Junior roles are commonly open to EITs; senior positions that seal drawings are not.",
+      a: "A PE covers most structural practice. A separate SE licence exists, and a handful of states require it for particular structures, significant buildings, or bridges above a threshold, so the answer genuinely depends on where the work is and what is being designed. Junior roles are commonly open to EITs; senior positions that seal drawings are not.",
     },
     {
       q: "What is the difference between bridge design and bridge inspection?",
@@ -116,7 +116,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "Why is steel bridge experience recruited so specifically?",
-      a: "Because steel, concrete and movable spans are genuinely different design problems, and the national pool for each is small. It is one of the few specialisms where a named project is a better filter than a job title — which is why the AISC/NSBA Prize Bridge Awards, running since 1928, are a useful shorthand for who has actually done the work.",
+      a: "Because steel, concrete and movable spans are genuinely different design problems, and the national pool for each is small. It is one of the few specialisms where a named project is a better filter than a job title, which is why the AISC/NSBA Prize Bridge Awards, running since 1928, are a useful shorthand for who has actually done the work.",
     },
     {
       q: "What software do structural and bridge employers ask for?",
@@ -131,7 +131,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "water-wastewater-recruiter": [
     {
       q: "What does a water or wastewater engineer earn?",
-      a: "Process engineers and treatment designers track the civil PE bands closely — roughly $70,000–$95,000 at EIT, $105,000–$150,000 for a mid-level licensed PE, and $140,000–$190,000+ for senior project managers running plant programmes. Plant process experience carries a premium over collection and distribution work at the same seniority, because it is harder to acquire.",
+      a: "Process engineers and treatment designers track the civil PE bands closely, roughly $70,000–$95,000 at EIT, $105,000–$150,000 for a mid-level licensed PE, and $140,000–$190,000+ for senior project managers running plant programmes. Plant process experience carries a premium over collection and distribution work at the same seniority, because it is harder to acquire.",
     },
     {
       q: "What is the difference between a water engineer and a plant operator?",
@@ -143,11 +143,11 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What does PFAS work mean for water engineering hiring?",
-      a: "Emerging-contaminant compliance has become its own strand of work — monitoring, treatment selection and permitting — and it draws on process chemistry knowledge that plant design alone does not build. It is a good example of demand appearing faster than the talent pool, which is why it shows up in job specs by name.",
+      a: "Emerging-contaminant compliance has become its own strand of work: monitoring, treatment selection and permitting. It draws on process chemistry knowledge that plant design alone does not build. It is a good example of demand appearing faster than the talent pool, which is why it shows up in job specs by name.",
     },
     {
       q: "What is the difference between collection systems and treatment work?",
-      a: "Collection and distribution is pipe network engineering — hydraulic modelling, pump stations, rehabilitation of buried assets. Treatment is process engineering inside a plant. Firms recruit them separately, and a strong candidate in one is not automatically a candidate in the other.",
+      a: "Collection and distribution is pipe network engineering, hydraulic modelling, pump stations, rehabilitation of buried assets. Treatment is process engineering inside a plant. Firms recruit them separately, and a strong candidate in one is not automatically a candidate in the other.",
     },
     {
       q: "What recognition exists for water and wastewater projects?",
@@ -158,15 +158,15 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "cei-inspection-recruiter": [
     {
       q: "What does CEI stand for, and what does the work involve?",
-      a: "Construction Engineering and Inspection — the owner's side of a construction project. CEI staff verify that what gets built matches the approved plans and specifications, document quantities and pay applications, and keep the record that supports payment and claims. It is field work with a heavy documentation burden, distinct from design.",
+      a: "Construction Engineering and Inspection. The owner's side of a construction project. CEI staff verify that what gets built matches the approved plans and specifications, document quantities and pay applications, and keep the record that supports payment and claims. It is field work with a heavy documentation burden, distinct from design.",
     },
     {
       q: "What certifications do construction inspectors need?",
-      a: "NICET certification is the common baseline, graded by level, and most state DOTs run their own qualification programmes for specific inspection types — concrete, asphalt, earthwork, structures. Those are agency-specific, which is why a spec asks for a particular state's certification rather than inspection experience in general.",
+      a: "NICET certification is the common baseline, graded by level, and most state DOTs run their own qualification programmes for specific inspection types, concrete, asphalt, earthwork, structures. Those are agency-specific, which is why a spec asks for a particular state's certification rather than inspection experience in general.",
     },
     {
       q: "What is the difference between an inspector and a resident engineer?",
-      a: "The inspector observes and documents specific work. The resident engineer runs the site for the owner — managing the inspection team, holding the contractual relationship with the contractor, and making the calls that get escalated. It is a step up in responsibility rather than a different specialism, and it usually expects a PE.",
+      a: "The inspector observes and documents specific work. The resident engineer runs the site for the owner, managing the inspection team, holding the contractual relationship with the contractor, and making the calls that get escalated. It is a step up in responsibility rather than a different specialism, and it usually expects a PE.",
     },
     {
       q: "Why do CEI roles name a specific DOT district?",
@@ -185,7 +185,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "municipal-engineering-recruiter": [
     {
       q: "What does a municipal engineer do?",
-      a: "Municipal engineering is the public agency's own engineering function — streets, utilities, stormwater, water and sewer, plan review and the capital improvement programme. The work spans several disciplines shallowly rather than one deeply, and much of it is managing consultants rather than producing drawings.",
+      a: "Municipal engineering is the public agency's own engineering function, streets, utilities, stormwater, water and sewer, plan review and the capital improvement programme. The work spans several disciplines shallowly rather than one deeply, and much of it is managing consultants rather than producing drawings.",
     },
     {
       q: "What does a city engineer earn compared with consulting?",
@@ -197,11 +197,11 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "Who owns municipal engineering work in a given city?",
-      a: "The department name varies and it matters when applying — New York's is the Department of Design and Construction, Los Angeles's is the Bureau of Engineering, Houston's is Public Works. Our city pages name the responsible body for each of the fifty metros we cover.",
+      a: "The department name varies and it matters when applying, New York's is the Department of Design and Construction, Los Angeles's is the Bureau of Engineering, Houston's is Public Works. Our city pages name the responsible body for each of the fifty metros we cover.",
     },
     {
       q: "What does public works experience actually signal to an employer?",
-      a: "That the engineer can work inside a public agency's constraints — procurement rules, council timelines, public meetings and funding cycles — rather than around them. Consulting firms bidding municipal work value it precisely because it is hard to teach and it determines whether a project stays on schedule.",
+      a: "That the engineer can work inside a public agency's constraints (procurement rules, council timelines, public meetings and funding cycles) rather than around them. Consulting firms bidding municipal work value it precisely because it is hard to teach and it determines whether a project stays on schedule.",
     },
     {
       q: "What awards recognise municipal and public works projects?",
@@ -239,11 +239,11 @@ export const SALARY_FAQS: FaqItem[] = [
   },
   {
     q: "Can I get an engineering job with an FE or EIT but no PE?",
-    a: "Yes — every discipline here publishes an EIT band, which exists precisely because firms hire at that level and expect to carry someone to licensure. Civil and MEP start at $70,000–$95,000, bridge at $72,000–$98,000, water at $68,000–$92,000, municipal at $65,000–$88,000. The question to ask an employer is who will supervise your experience toward the PE, not whether the role exists.",
+    a: "Yes, every discipline here publishes an EIT band, which exists precisely because firms hire at that level and expect to carry someone to licensure. Civil and MEP start at $70,000–$95,000, bridge at $72,000–$98,000, water at $68,000–$92,000, municipal at $65,000–$88,000. The question to ask an employer is who will supervise your experience toward the PE, not whether the role exists.",
   },
   {
     q: "Do public-sector engineering salaries match consulting?",
-    a: "Close in the middle, further apart at the top. A licensed municipal engineer or city engineer sits at $98,000–$140,000 against $105,000–$150,000 for a mid-level civil PE in consulting — a gap of under $10,000. But a public works director runs $135,000–$175,000+ where a consulting regional director reaches $175,000–$250,000+. Pension, defined hours and stability sit on the other side of that difference.",
+    a: "Close in the middle, further apart at the top. A licensed municipal engineer or city engineer sits at $98,000–$140,000 against $105,000–$150,000 for a mid-level civil PE in consulting, a gap of under $10,000. But a public works director runs $135,000–$175,000+ where a consulting regional director reaches $175,000–$250,000+. Pension, defined hours and stability sit on the other side of that difference.",
   },
   {
     q: "What do construction inspectors earn compared with designers?",
@@ -251,11 +251,11 @@ export const SALARY_FAQS: FaqItem[] = [
   },
   {
     q: "Are these salary ranges national or local?",
-    a: "National. They are directional bands for the United States as a whole, and metro cost of living moves them more than any other single factor — the same title can differ by tens of thousands between a coastal metro and an inland one. Treat them as the shape of a pay curve rather than an offer for a specific city.",
+    a: "National. They are directional bands for the United States as a whole, and metro cost of living moves them more than any other single factor. The same title can differ by tens of thousands between a coastal metro and an inland one. Treat them as the shape of a pay curve rather than an offer for a specific city.",
   },
   {
     q: "What raises an engineering salary fastest?",
-    a: "On our own numbers, three things, in order: the PE licence, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism — load rating, seismic analysis, treatment process, mission-critical electrical — each of which carries its own band above the general one in its discipline.",
+    a: "On our own numbers, three things, in order: the PE licence, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism (load rating, seismic analysis, treatment process, mission-critical electrical), each of which carries its own band above the general one in its discipline.",
   },
 ];
 
@@ -273,7 +273,7 @@ export const SALARY_FAQS: FaqItem[] = [
 export const GENERAL_FAQS: FaqItem[] = [
   {
     q: "What kinds of engineers does Metro Associates recruit?",
-    a: "Six disciplines, each with its own practice: civil, MEP, bridge and structural, water and wastewater, CEI and inspection, and municipal engineering. Within those we place everyone from EIT-level designers to licensed PEs, project managers and directors. If a search sits across two of those — and infrastructure work often does — it is run by both desks rather than handed to whoever picked up the phone.",
+    a: "Six disciplines, each with its own practice: civil, MEP, bridge and structural, water and wastewater, CEI and inspection, and municipal engineering. Within those we place everyone from EIT-level designers to licensed PEs, project managers and directors. If a search sits across two of those, and infrastructure work often does, it is run by both desks rather than handed to whoever picked up the phone.",
   },
   {
     q: "Where in the United States do you recruit?",
@@ -285,7 +285,7 @@ export const GENERAL_FAQS: FaqItem[] = [
   },
   {
     q: "Do candidates pay Metro Associates anything?",
-    a: "No. Recruiting fees are paid by the employer, never by the engineer. A candidate should never be asked for a fee to be represented, to be submitted, or to be placed — by us or by anyone else in this industry.",
+    a: "No. Recruiting fees are paid by the employer, never by the engineer. A candidate should never be asked for a fee to be represented, to be submitted, or to be placed, by us or by anyone else in this industry.",
   },
   {
     q: "How does a search normally start?",

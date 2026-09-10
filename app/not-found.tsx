@@ -22,7 +22,7 @@ export default function NotFound() {
         <div className="max-w-2xl animate-fade-up">
           <div className="flex items-center gap-3">
             <span className="h-2 w-2 animate-blink bg-amber-500" />
-            <span className="mono-label text-amber-400">{"//"} Error 404 — Page not found</span>
+            <span className="mono-label text-amber-400">{"//"} Error 404 / Page not found</span>
           </div>
 
           <h1 className="display mt-6 text-[26vw] leading-[0.9] text-white sm:text-[11rem]">

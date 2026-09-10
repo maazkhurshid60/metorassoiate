@@ -3,7 +3,7 @@ import { WATER_CITIES, getWaterCity } from "../../lib/waterWastewater";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Water & Wastewater Engineering Recruiter — Metro Associates";
+export const alt = "Water & Wastewater Engineering Recruiter, Metro Associates";
 
 export function generateStaticParams() {
   return WATER_CITIES.map((c) => ({ city: c.slug }));

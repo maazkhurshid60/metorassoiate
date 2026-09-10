@@ -153,7 +153,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     what: "Regional project awards across every state, DC and Puerto Rico, judged in 18 categories from airport/transit to sports/entertainment, plus special awards for safety and sustainability. Regional winners advance to the national round.",
     reach: "Regional → national",
     disciplines: "all",
-    whoEnters: "Any member of the project team — owner, designer or contractor — can submit, and entries name the whole team.",
+    whoEnters: "Any member of the project team (owner, designer or contractor) can submit, and entries name the whole team.",
     route: [
       "Enter in one of ENR's five regional editions",
       "An independent jury of design and construction leaders judges each region against five criteria, safety, innovation and teamwork among them",
@@ -171,7 +171,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Excellence in Safety (special award)",
       "Excellence in Sustainability (special award)",
     ],
-    hiringSignal: "ENR is read across the industry, so a Best Projects win is the award most likely to be recognised by someone outside the winning discipline. For a candidate it is also the easiest credential to verify — the citations are public and name the firms involved.",
+    hiringSignal: "ENR is read across the industry, so a Best Projects win is the award most likely to be recognized by someone outside the winning discipline. For a candidate it is also the easiest credential to verify. The citations are public and name the firms involved.",
     roles: [
       "Construction Manager",
       "Resident Engineer",
@@ -196,9 +196,9 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "One project named the year's Outstanding Civil Engineering Achievement",
     ],
     categories: [
-      "Judged as a whole rather than by category — on contribution to society, engineering skill and resourcefulness",
+      "Judged as a whole rather than by category, on contribution to society, engineering skill and resourcefulness",
     ],
-    hiringSignal: "OCEA goes to one project a year nationally, so the pool of people who have worked on a winner is genuinely small. Treat it as a strong signal, and verify it — it is specific enough to check.",
+    hiringSignal: "OCEA goes to one project a year nationally, so the pool of people who have worked on a winner is genuinely small. Treat it as a strong signal, and verify it. It is specific enough to check.",
     roles: [
       "Principal Civil Engineer",
       "Structural Lead",
@@ -212,7 +212,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     abbr: "AASHTO",
     logo: "/awards/aashto.svg",
     url: "https://americastransportationawards.org/",
-    what: "State DOT projects judged on quality of life, operations excellence, innovation and safety — regional rounds feed a national Top 12.",
+    what: "State DOT projects judged on quality of life, operations excellence, innovation and safety, regional rounds feed a national Top 12.",
     reach: "Regional → national",
     disciplines: [
       "civil-engineering-recruiter",
@@ -233,7 +233,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Best Use of Innovation",
       "Safety",
     ],
-    hiringSignal: "This one is about who a candidate has worked for as much as what they built. Someone whose project went up through a state DOT knows how that agency reviews, approves and pays — which is most of what makes a DOT hire productive in the first six months.",
+    hiringSignal: "This one is about who a candidate has worked for as much as what they built. Someone whose project went up through a state DOT knows how that agency reviews, approves and pays, which is most of what makes a DOT hire productive in the first six months.",
     roles: [
       "Transportation Engineer",
       "CEI Inspector",
@@ -257,7 +257,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Entry submitted to AISC/NSBA for a completed American steel bridge",
       "Judged against others in its category, which are defined by bridge size and function",
       "Prize Bridge and merit awards announced",
-      "Every eligible project also runs for Bridge of the Year — three finalists present at the World Steel Bridge Symposium and the audience votes",
+      "Every eligible project also runs for Bridge of the Year, three finalists present at the World Steel Bridge Symposium and the audience votes",
     ],
     categories: [
       "Long Span",
@@ -267,7 +267,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Reconstruction",
       "Special Purpose",
     ],
-    hiringSignal: "Running since 1928, which makes it the oldest credential on this list. Steel bridge design is a narrow specialism with a small national talent pool — a Prize Bridge project on a CV is one of the few reliable ways to identify someone who has actually done it rather than adjacent work.",
+    hiringSignal: "Running since 1928, which makes it the oldest credential on this list. Steel bridge design is a narrow specialism with a small national talent pool, a Prize Bridge project on a CV is one of the few reliable ways to identify someone who has actually done it rather than adjacent work.",
     roles: [
       "Bridge Design Engineer",
       "Structural Engineer",
@@ -287,7 +287,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "civil-engineering-recruiter",
       "cei-inspection-recruiter",
     ],
-    whoEnters: "Entered jointly — the agency that owns the work, the consulting engineer and the contractor are all recognised together. The project has to be developed, owned and maintained by a public agency, and substantially complete and in use within the two calendar years before nomination. A separate award runs for small cities and rural communities.",
+    whoEnters: "Entered jointly. The agency that owns the work, the consulting engineer and the contractor are all recognized together. The project has to be developed, owned and maintained by a public agency, and substantially complete and in use within the two calendar years before nomination. A separate award runs for small cities and rural communities.",
     route: [
       "Enter through an APWA chapter",
       "Chapter winners advance to national judging",
@@ -316,10 +316,10 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     abbr: "ASHRAE",
     logo: "/awards/ashrae.png",
     url: "https://www.ashrae.org/membership/honors-and-awards/technology-awards-program",
-    what: "HVAC and building-systems performance in real, occupied buildings — commercial, health care, education, industrial and residential categories.",
+    what: "HVAC and building-systems performance in real, occupied buildings, commercial, health care, education, industrial and residential categories.",
     reach: "Chapter → region → society",
     disciplines: ["mep-engineering-recruiter"],
-    whoEnters: "The primary entrant must be a current ASHRAE member who had a significant role in the project, and the building must have been in successful operation for at least a year at the time of entry — so entries report measured performance, not a design-stage model.",
+    whoEnters: "The primary entrant must be a current ASHRAE member who had a significant role in the project, and the building must have been in successful operation for at least a year at the time of entry, so entries report measured performance, not a design-stage model.",
     route: [
       "Enter at ASHRAE chapter level",
       "Chapter winners advance to the region",
@@ -333,7 +333,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Public Assembly",
       "Residential",
     ],
-    hiringSignal: "The measured-performance requirement is what makes this one useful. An ASHRAE Technology Award means the building was instrumented and the numbers held up after occupancy — so the engineer behind it has had to answer for real performance, not a design-stage energy model.",
+    hiringSignal: "The measured-performance requirement is what makes this one useful. An ASHRAE Technology Award means the building was instrumented and the numbers held up after occupancy, so the engineer behind it has had to answer for real performance, not a design-stage energy model.",
     roles: [
       "Senior MEP Engineer",
       "Mechanical Design Engineer",
@@ -348,7 +348,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     abbr: "IES",
     logo: "/awards/ies.png",
     url: "https://ia.ies.org/",
-    what: "Lighting design and controls — interior, outdoor, energy & environmental, and control innovation.",
+    what: "Lighting design and controls, interior, outdoor, energy & environmental, and control innovation.",
     reach: "Section → international",
     disciplines: ["mep-engineering-recruiter"],
     whoEnters: "Lighting designers, architects and engineers submit completed installations.",
@@ -363,7 +363,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Energy and Environmental Design",
       "Control Innovation",
     ],
-    hiringSignal: "Lighting design sits between the electrical engineer and the architect, and few CVs make clear which side of that line someone actually works on. An Illumination Award does — it is given for design intent, not for the electrical installation.",
+    hiringSignal: "Lighting design sits between the electrical engineer and the architect, and few CVs make clear which side of that line someone actually works on. An Illumination Award does. It is given for design intent, not for the electrical installation.",
     roles: [
       "Lighting Designer",
       "Electrical Engineer",
@@ -410,13 +410,13 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     what: "The annual ranking of North America's 100 largest MEP and fire-protection engineering firms.",
     reach: "North America",
     disciplines: ["mep-engineering-recruiter"],
-    whoEnters: "MEP and fire-protection engineering firms submit their own figures during the annual survey. The list is ordered by MEP design revenue specifically, not by total firm revenue — which is why a large multidisciplinary firm can rank below a smaller specialist one.",
+    whoEnters: "MEP and fire-protection engineering firms submit their own figures during the annual survey. The list is ordered by MEP design revenue specifically, not by total firm revenue, which is why a large multidisciplinary firm can rank below a smaller specialist one.",
     route: [
       "Firm submits its figures during the annual survey window",
       "Consulting-Specifying Engineer publishes the ranked list of 100",
     ],
     categories: [
-      "A ranking rather than a judged award — ordered by MEP engineering revenue",
+      "A ranking rather than a judged award, ordered by MEP engineering revenue",
     ],
     hiringSignal: "Not an award at all, and worth saying so plainly: it is a size ranking. It is on this page because it is the fastest way to see which firms are large enough to have the department a candidate says they ran, and which are not.",
     roles: [
@@ -432,7 +432,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     abbr: "CSE",
     logo: "/awards/cse.svg",
     url: "https://www.csemag.com/events-and-awards/40-under-40/",
-    what: "Individual recognition for mechanical, electrical, commissioning, fire/life-safety and energy engineers under 40 — worth knowing about when you're hiring one.",
+    what: "Individual recognition for mechanical, electrical, commissioning, fire/life-safety and energy engineers under 40, worth knowing about when you're hiring one.",
     reach: "National",
     disciplines: ["mep-engineering-recruiter"],
     whoEnters: "Individuals under 40, nominated by a colleague or employer, in mechanical, electrical, commissioning, fire/life-safety or energy engineering.",
@@ -448,7 +448,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "Fire and Life Safety",
       "Energy",
     ],
-    hiringSignal: "The only individual award on this page, and therefore the only one that names the person rather than the project. Each published class is a shortlist of MEP engineers who were already visible enough to be nominated — which is exactly the group that is hardest to reach through a job advert.",
+    hiringSignal: "The only individual award on this page, and therefore the only one that names the person rather than the project. Each published class is a shortlist of MEP engineers who were already visible enough to be nominated, which is exactly the group that is hardest to reach through a job advert.",
     roles: [
       "Senior MEP Engineer",
       "Mechanical Engineer",
@@ -501,7 +501,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
       "municipal-engineering-recruiter",
       "water-wastewater-recruiter",
     ],
-    whoEnters: "Nominated within a USGBC community — projects, organisations and individuals are all eligible depending on the category.",
+    whoEnters: "Nominated within a USGBC community, projects, organizations and individuals are all eligible depending on the category.",
     route: [
       "Nomination within the local USGBC community",
       "Selection at state or regional level",

@@ -41,7 +41,7 @@ const APPROACH = [
   {
     icon: IconTarget,
     title: "Targeted Engineering Recruiting",
-    body: "We pursue the exact technical profile a role requires — not resume volume.",
+    body: "We pursue the exact technical profile a role requires, not resume volume.",
   },
   {
     icon: IconShield,
@@ -74,7 +74,7 @@ export default function AboutPage() {
             <div className="animate-fade-up">
               <div className="flex items-center gap-3">
                 <span className="h-2 w-2 animate-blink bg-amber-500" />
-                <span className="mono-label text-amber-400">{"//"} About Us — Over 45 Years</span>
+                <span className="mono-label text-amber-400">{"//"} About Us / Over 45 Years</span>
               </div>
               <h1 className="display mt-6 text-[12vw] leading-[0.92] text-white sm:text-6xl lg:text-[4.6rem]">
                 About Metro
@@ -86,7 +86,7 @@ export default function AboutPage() {
                   A specialized engineering recruiting firm.
                 </span>{" "}
                 Metro Associates focuses exclusively on engineering and
-                infrastructure staffing — supporting civil, structural,
+                infrastructure staffing, supporting civil, structural,
                 transportation, water, wastewater, MEP, and construction
                 inspection markets nationwide.
               </p>
@@ -114,7 +114,7 @@ export default function AboutPage() {
             <div className="relative animate-fade-up [animation-delay:120ms]">
               <div className="corners relative overflow-hidden border border-white/12 bg-navy-900">
                 <span className="mono-label absolute left-4 top-4 z-10 text-[9px] text-white/70">
-                  FIG. A — THE FIRM
+                  FIG. A / THE FIRM
                 </span>
                 <div className="relative aspect-4/5">
                   <Image
@@ -152,7 +152,7 @@ export default function AboutPage() {
           <div className="relative mt-12 aspect-video overflow-hidden border border-navy-950/15 bg-navy-950 shadow-[0_30px_80px_rgba(11,20,38,0.25)]">
             <YouTubeFacade
               videoId="k-xlidu5mug"
-              title="Metro Associates — engineering talent & infrastructure expertise"
+              title="Metro Associates | engineering talent & infrastructure expertise"
             />
           </div>
         </div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
       <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 01 — Core Disciplines</span>
+            <span className="mono-label text-amber-500">{"//"} 01 / Core Disciplines</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Where we go{" "}
               <span className="text-brand-500">deep</span>
@@ -210,13 +210,13 @@ export default function AboutPage() {
           <div className="grid items-stretch gap-12 lg:grid-cols-[1fr_0.85fr]">
             <div className="flex flex-col justify-center">
               <div>
-                <span className="mono-label text-amber-500">{"//"} 02 — Infrastructure Expertise</span>
+                <span className="mono-label text-amber-500">{"//"} 02 / Infrastructure Expertise</span>
                 <h2 className="display mt-5 text-3xl text-white sm:text-4xl">
                   Built for publicly funded programs
                 </h2>
                 <p className="mt-5 max-w-xl text-lg leading-8 text-ink-300 text-pretty">
                   We support firms delivering DOT, municipal, and federally
-                  funded infrastructure programs — including transportation
+                  funded infrastructure programs, including transportation
                   modernization, bridge rehabilitation, and utility upgrades.
                 </p>
               </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-5 max-w-xl text-lg leading-8 text-ink-300 text-pretty">
                   We assist military veterans transitioning into engineering and
-                  infrastructure careers — aligning proven leadership experience
+                  infrastructure careers, aligning proven leadership experience
                   with demanding technical roles.
                 </p>
               </div>
@@ -238,7 +238,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="corners relative h-full overflow-hidden border border-white/12 bg-navy-900">
                 <span className="mono-label absolute left-4 top-4 z-10 text-[9px] text-white/70">
-                  FIG. B — VETERAN TALENT
+                  FIG. B / VETERAN TALENT
                 </span>
                 <div className="relative h-full min-h-[26rem]">
                   <Image
@@ -260,7 +260,7 @@ export default function AboutPage() {
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 03 — Our Approach</span>
+            <span className="mono-label text-amber-500">{"//"} 03 / Our Approach</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               How we work
             </h2>

@@ -44,7 +44,7 @@ export const MEP_CITIES: MepCity[] = [
     region: "the Pacific West",
     authority: "LADBS",
     marketNote:
-      "Across the LA basin, we place mechanical, electrical, and plumbing engineers on the studio, hospital, and high-rise projects driving one of the country's largest MEP markets — plus a Title 24 code that keeps electrification front and center.",
+      "Across the LA basin, we place mechanical, electrical, and plumbing engineers on the studio, hospital, and high-rise projects driving one of the country's largest MEP markets, plus a Title 24 code that keeps electrification front and center.",
     localPrograms: [
       "Title 24 electrification & decarbonization retrofits",
       "Studio, soundstage, and entertainment-campus MEP",

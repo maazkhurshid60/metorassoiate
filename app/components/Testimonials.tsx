@@ -49,7 +49,7 @@ export default function Testimonials() {
 
       <div className="container-x relative">
         <div className="mx-auto max-w-2xl text-center">
-          <span className="mono-label text-amber-500">{"//"} 09 — Client Feedback</span>
+          <span className="mono-label text-amber-500">{"//"} 09 / Client Feedback</span>
           <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
             Trusted by hiring leaders
           </h2>

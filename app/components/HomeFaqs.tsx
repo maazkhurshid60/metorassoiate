@@ -26,13 +26,13 @@ export default function HomeFaqs() {
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
-            <span className="mono-label text-amber-500">{"//"} 09 — Questions</span>
+            <span className="mono-label text-amber-500">{"//"} 09 / Questions</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               The things people ask us first
             </h2>
             <p className="mt-6 max-w-md text-lg leading-8 text-slate text-pretty">
               What we cover, where we work, and who pays. The discipline-specific
-              questions — licensure, pay bands, certifications — are answered in
+              questions (licensure, pay bands, certifications) are answered in
               full on our FAQ.
             </p>
             <Link

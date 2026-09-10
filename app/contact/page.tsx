@@ -123,7 +123,7 @@ export default function ContactPage() {
                       so there's no "Open in Maps" link, zoom prompt or Google chrome. */}
                   <Image
                     src={o.map}
-                    alt={`Map of ${o.name} — ${o.city}`}
+                    alt={`Map of ${o.name}: ${o.city}`}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover grayscale-[0.35]"

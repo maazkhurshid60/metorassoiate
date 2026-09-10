@@ -16,7 +16,7 @@ const DIFFERENTIATORS = [
   {
     icon: IconLayers,
     title: "Six disciplines, not one general desk",
-    body: "Civil, MEP, bridge and structural, water and wastewater, CEI and municipal each have their own practice — so the person calling you knows the difference between a load rating and a load calculation.",
+    body: "Civil, MEP, bridge and structural, water and wastewater, CEI and municipal each have their own practice, so the person calling you knows the difference between a load rating and a load calculation.",
   },
   {
     icon: IconClipboard,
@@ -37,14 +37,14 @@ export default function WhyUs() {
         <div className="grid gap-14 lg:grid-cols-2 lg:items-center">
           {/* Left: headline + image */}
           <div>
-            <span className="mono-label text-amber-500">{"//"} 04 — Why Metro</span>
+            <span className="mono-label text-amber-500">{"//"} 04 / Why Metro</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
               Faster hiring, because{" "}
               <span className="text-amber-500">engineering</span> is all we do
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-ink-300 text-pretty">
               We&apos;ve reduced sourcing and hiring time by up to{" "}
-              <span className="font-semibold text-white">40%</span> — without
+              <span className="font-semibold text-white">40%</span>, without
               compromising on candidate quality. Our team-based approach speeds up
               screening and reference checks while every placement is closely
               monitored for performance.
@@ -52,12 +52,12 @@ export default function WhyUs() {
 
             <div className="corners relative mt-9 overflow-hidden border border-white/12">
               <span className="mono-label absolute left-4 top-4 z-10 text-[9px] text-white/70">
-                FIG. 3 — U.S. INFRASTRUCTURE
+                FIG. 3 / U.S. INFRASTRUCTURE
               </span>
               <div className="relative h-64">
                 <Image
                   src="/bridge-dusk.jpeg"
-                  alt="Bridge construction at dusk with a tower crane — infrastructure Metro Associates staffs"
+                  alt="Bridge construction at dusk with a tower crane: infrastructure Metro Associates staffs"
                   fill
                   sizes="(max-width: 1024px) 100vw, 45vw"
                   className="object-cover"

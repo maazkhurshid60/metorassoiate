@@ -17,7 +17,7 @@ export default function CTA() {
               Ready to place your next great hire?
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-navy-900 text-pretty">
-              Tell us about the role. We&apos;ll deliver a vetted shortlist —
+              Tell us about the role. We&apos;ll deliver a vetted shortlist:
               fast, and matched to the discipline and licence the role actually needs.
             </p>
 

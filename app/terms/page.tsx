@@ -3,7 +3,7 @@ import Link from "next/link";
 import { IconArrow } from "../components/Icons";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions — Metro Associates",
+  title: "Terms & Conditions | Metro Associates",
   description:
     "The terms and conditions governing your use of the Metro Associates, LLC website, communications, and recruiting, staffing, and consulting services.",
 };
@@ -133,7 +133,7 @@ export default function TermsPage() {
 
             <H2>7. Intellectual Property</H2>
             <P>
-              All content on this website — including text, graphics, logos, images, and design — is
+              All content on this website, including text, graphics, logos, images, and design, is
               the property of Metro Associates or its licensors and is protected by intellectual
               property laws. You may not copy, reproduce, distribute, or create derivative works from
               our content without our prior written permission.

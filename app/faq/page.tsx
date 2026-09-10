@@ -63,7 +63,7 @@ export default function FaqPage() {
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 text-pretty">
               {`${FAQ_TOTAL} questions on licensure, pay, disciplines and how a search actually
-              runs — the ones we are asked most often by engineers and by the firms
+              runs, the ones we are asked most often by engineers and by the firms
               hiring them. Each has its own page.`}
             </p>
 

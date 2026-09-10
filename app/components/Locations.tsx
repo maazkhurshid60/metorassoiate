@@ -25,7 +25,7 @@ export default function Locations() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 08 — Coverage · United States</span>
+            <span className="mono-label text-amber-500">{"//"} 08 / Coverage · United States</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
               Local expertise, coast to coast
             </h2>

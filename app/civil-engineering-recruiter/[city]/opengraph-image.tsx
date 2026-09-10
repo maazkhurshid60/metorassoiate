@@ -3,7 +3,7 @@ import { CITIES, getCity } from "../../lib/cities";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Civil Engineering Recruiter — Metro Associates";
+export const alt = "Civil Engineering Recruiter, Metro Associates";
 
 // Pre-render one OG image per city (matches the page's static params).
 export function generateStaticParams() {

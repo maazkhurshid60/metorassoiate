@@ -3,7 +3,7 @@ import { MUNICIPAL_CITIES, getMunicipalCity } from "../../lib/municipalEngineeri
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "Municipal Engineering Recruiter — Metro Associates";
+export const alt = "Municipal Engineering Recruiter, Metro Associates";
 
 export function generateStaticParams() {
   return MUNICIPAL_CITIES.map((c) => ({ city: c.slug }));

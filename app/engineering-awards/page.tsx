@@ -23,7 +23,7 @@ import { ORG } from "../lib/seo";
 export const metadata: Metadata = {
   title: "Engineering Awards by State | Metro Associates",
   description:
-    "The award programs our client firms compete in — ACEC Engineering Excellence, ENR Best Projects, ASHRAE, ASCE, AISC, APWA and more, with entry routes.",
+    "The award programs our client firms compete in, ACEC Engineering Excellence, ENR Best Projects, ASHRAE, ASCE, AISC, APWA and more, with entry routes.",
   keywords: [
     "engineering excellence awards",
     "ACEC awards by state",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/engineering-awards` },
   openGraph: {
-    title: "Engineering Awards by State — ACEC, ENR, ASHRAE and more",
+    title: "Engineering Awards by State | ACEC, ENR, ASHRAE and more",
     description:
       "The award programs the engineering firms we staff compete in, national and state by state.",
     url: `${SITE_URL}/engineering-awards`,
@@ -89,8 +89,8 @@ export default function EngineeringAwardsPage() {
               <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-300 text-pretty">
                 We staff the firms whose projects go up for these programs, and the
                 engineers we place are the ones who deliver them. Metro
-                doesn&rsquo;t enter — a recruiting firm isn&rsquo;t eligible for an
-                engineering award — but knowing what these juries reward is part of
+                doesn&rsquo;t enter, a recruiting firm isn&rsquo;t eligible for an
+                engineering award, but knowing what these juries reward is part of
                 knowing which résumé is actually strong.
               </p>
             </div>
@@ -122,7 +122,7 @@ export default function EngineeringAwardsPage() {
                 exactly this being unmissable, so it sits under the wall
                 rather than in a footer nobody reads. */}
             <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-relaxed text-slate-500">
-              Each logo is the trademark of the organisation that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them — our clients are the entrants.
+              Each logo is the trademark of the organization that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them; our clients are the entrants.
             </p>
           </div>
         </section>
@@ -187,7 +187,7 @@ export default function EngineeringAwardsPage() {
               <p className="mt-4 text-lg leading-8 text-slate text-pretty">
                 ACEC requires national entries to come up through one of its 51
                 state and metropolitan member organizations, so each of these runs
-                its own Engineering Excellence competition first — with categories
+                its own Engineering Excellence competition first, with categories
                 including Building/Technology Systems, Energy, Water, Transportation
                 and Structural. Winning at state level is the route to the national
                 Grand Conceptor.

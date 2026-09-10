@@ -33,14 +33,14 @@ export default function Team() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 06 — Meet Our Team</span>
+            <span className="mono-label text-amber-500">{"//"} 06 / Meet Our Team</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
               The recruiters behind the results
             </h2>
           </div>
           <p className="max-w-md text-ink-300 text-pretty">
             Specialists who understand engineering, transportation, and the
-            regulatory landscape — because they&apos;ve lived it.
+            regulatory landscape, because they&apos;ve lived it.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function Team() {
             {/* light blend only at the panel edge so the photo shows in full color */}
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/30 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-navy-950/40" />
             <span className="mono-label absolute left-5 top-5 text-[10px] text-white/70">
-              01 — Lead
+              01, Lead
             </span>
           </div>
 
@@ -71,7 +71,7 @@ export default function Team() {
             <p className="max-w-xl text-[15px] leading-8 text-ink-300 text-pretty sm:text-base">
               With more than four decades of combined experience, Patrick leads
               Metro Associates&apos; engineering recruiting and executive search
-              practice — pairing state DOTs, municipalities, and infrastructure
+              practice, pairing state DOTs, municipalities, and infrastructure
               firms with vetted talent that delivers on publicly funded programs.
               Specialties include PE&apos;s, MEP, Mechanical, Electrical and P&amp;FP.
             </p>

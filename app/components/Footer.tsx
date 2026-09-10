@@ -69,7 +69,7 @@ export default function Footer() {
             <Logo />
             <p className="mt-6 max-w-xs text-sm leading-7 text-ink-400">
               A national staffing and executive search firm focused on
-              Departments of Transportation and public infrastructure — placing
+              Departments of Transportation and public infrastructure, placing
               engineers, inspectors, and construction leaders nationwide for 45+
               years.
             </p>
@@ -150,7 +150,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3 text-sm text-ink-300">
                 <IconPin className="mt-0.5 h-4.5 w-4.5 text-amber-500" />
-                HQ — Orlando, Florida
+                HQ: Orlando, Florida
               </li>
             </ul>
             <p className="mono-label mt-6 text-[9px] leading-5 text-ink-500">
@@ -163,7 +163,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="container-x flex flex-col items-center justify-between gap-3 py-6 text-sm text-ink-500 sm:flex-row">
           <p className="mono-label text-[10px]">
-            © {new Date().getFullYear()} Metro Associates — All Rights Reserved
+            © {new Date().getFullYear()} Metro Associates. All Rights Reserved
           </p>
           <div className="flex items-center gap-6">
             {/* The firm holds an A+ BBB rating and nothing on the site said

@@ -3,7 +3,7 @@ import { MEP_CITIES, getMepCity } from "../../lib/mep";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "MEP Engineering Recruiter — Metro Associates";
+export const alt = "MEP Engineering Recruiter, Metro Associates";
 
 export function generateStaticParams() {
   return MEP_CITIES.map((c) => ({ city: c.slug }));

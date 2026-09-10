@@ -63,7 +63,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the Midwest",
     authority: "Chicago Department of Water Management",
     marketNote:
-      "Chicago is in the middle of replacing roughly 400,000 lead service lines — the largest municipal lead-line replacement program in the nation — alongside CDOT's ongoing protected-bikeway build-out.",
+      "Chicago is in the middle of replacing roughly 400,000 lead service lines, the largest municipal lead-line replacement program in the nation, alongside CDOT's ongoing protected-bikeway build-out.",
     localPrograms: [
       "Citywide lead service line replacement program",
       "CDOT protected bike lane & complete streets",
@@ -114,7 +114,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the Mid-Atlantic",
     authority: "Philadelphia Water Department / Streets Department",
     marketNote:
-      "Philadelphia's Green City, Clean Waters program — a 25-year, multi-billion-dollar green stormwater infrastructure plan to control combined sewer overflows — remains one of the largest municipal environmental infrastructure commitments in the country.",
+      "Philadelphia's Green City, Clean Waters program, a 25-year, multi-billion-dollar green stormwater infrastructure plan to control combined sewer overflows, remains one of the largest municipal environmental infrastructure commitments in the country.",
     localPrograms: [
       "Green City, Clean Waters stormwater program",
       "Combined sewer overflow capital upgrades",
@@ -165,7 +165,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "South Florida",
     authority: "City of Miami Office of Capital Improvements",
     marketNote:
-      "The Miami Forever Bond is funding a wave of sea-level-rise resiliency work — stormwater pump stations, seawalls, and drainage upgrades — as the city adapts its municipal infrastructure to South Florida's flooding risk.",
+      "The Miami Forever Bond is funding a wave of sea-level-rise resiliency work: stormwater pump stations, seawalls, and drainage upgrades, as the city adapts its municipal infrastructure to South Florida's flooding risk.",
     localPrograms: [
       "Miami Forever Bond resiliency capital program",
       "Stormwater pump station & seawall projects",
@@ -182,7 +182,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the Pacific Northwest",
     authority: "Seattle Department of Transportation (SDOT)",
     marketNote:
-      "Seattle is executing the voter-approved Move Seattle levy while Seattle Public Utilities works through the massive Ship Canal combined sewer overflow tunnel — two of the largest municipal capital projects in the Pacific Northwest.",
+      "Seattle is executing the voter-approved Move Seattle levy while Seattle Public Utilities works through the massive Ship Canal combined sewer overflow tunnel, two of the largest municipal capital projects in the Pacific Northwest.",
     localPrograms: [
       "Move Seattle levy bridge & street program",
       "Ship Canal combined sewer overflow tunnel",
@@ -488,7 +488,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the South Central US",
     authority: "City of Oklahoma City Public Works Department",
     marketNote:
-      "MAPS 4, Oklahoma City's voter-approved sales-tax capital program, is funding streets, sidewalks, parks, and public facilities citywide — one of the most sweeping municipal capital plans in the South Central US.",
+      "MAPS 4, Oklahoma City's voter-approved sales-tax capital program, is funding streets, sidewalks, parks, and public facilities citywide, one of the most sweeping municipal capital plans in the South Central US.",
     localPrograms: [
       "MAPS 4 capital infrastructure program",
       "Street & sidewalk reconstruction program",
@@ -539,7 +539,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the Bay Area",
     authority: "San Francisco Public Works",
     marketNote:
-      "The Sewer System Improvement Program is a multi-decade, multi-billion-dollar rebuild of San Francisco's combined sewer and stormwater infrastructure — one of the largest municipal capital programs on the West Coast.",
+      "The Sewer System Improvement Program is a multi-decade, multi-billion-dollar rebuild of San Francisco's combined sewer and stormwater infrastructure, one of the largest municipal capital programs on the West Coast.",
     localPrograms: [
       "Sewer System Improvement Program capital projects",
       "Vision Zero complete streets implementation",
@@ -658,7 +658,7 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
     region: "the Ohio Valley",
     authority: "City of Cincinnati Department of Transportation and Engineering (DOTE)",
     marketNote:
-      "MSD's Lick Run watershed project turned a piped urban creek into daylighted green infrastructure — a nationally recognized model for controlling combined sewer overflow that continues to expand across the city.",
+      "MSD's Lick Run watershed project turned a piped urban creek into daylighted green infrastructure, a nationally recognized model for controlling combined sewer overflow that continues to expand across the city.",
     localPrograms: [
       "Greater Cincinnati MSD consent-decree overflow program",
       "Lick Run watershed green-infrastructure project",

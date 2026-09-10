@@ -132,7 +132,7 @@ export default function BridgeStructuralRecruiterPage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/image2.png"
-            alt="A suspension bridge at sunset — the structures Metro Associates staffs"
+            alt="A suspension bridge at sunset: the structures Metro Associates staffs"
             fill
             priority
             sizes="100vw"
@@ -350,7 +350,7 @@ export default function BridgeStructuralRecruiterPage() {
       <ClientAwards discipline="bridge-structural-recruiter" />
 
       <OtherSpecialties exclude="bridge-structural-recruiter" />
-      <HubFaqs group="bridge-structural" heading="Bridge & structural recruiting — common questions" />
+      <HubFaqs group="bridge-structural" heading="Bridge & structural recruiting: common questions" />
 
     </main>
   );

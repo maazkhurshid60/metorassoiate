@@ -64,7 +64,7 @@ export const CITIES: City[] = [
       "NYC DDC",
     ],
     marketDetail: [
-      "New York is a rehabilitation market before it is a greenfield one. Engineers here spend their careers on assets that already exist — East River crossings, elevated highway structures, a water and sewer network a century old in places, and a subway that has to keep carrying passengers while it is rebuilt around them. That shapes who gets hired: staging, maintenance of traffic and constructability judgement are worth as much as design throughput, because almost nothing is built on an empty site.",
+      "New York is a rehabilitation market before it is a greenfield one. Engineers here spend their careers on assets that already exist, East River crossings, elevated highway structures, a water and sewer network a century old in places, and a subway that has to keep carrying passengers while it is rebuilt around them. That shapes who gets hired: staging, maintenance of traffic and constructability judgement are worth as much as design throughput, because almost nothing is built on an empty site.",
       "The second driver is water. Combined-sewer overflow obligations, shoreline protection along the coast, and the upstate supply system keep hydraulic and resiliency engineers in demand on a cycle of their own, independent of whatever the highway programme is doing in a given year.",
     ],
     hiringFocus: [
@@ -112,7 +112,7 @@ export const CITIES: City[] = [
       { role: "Construction managers for work under traffic", why: "Freeway rehabilitation across the basin is staged around closures, which is a scheduling discipline as much as an engineering one." },
     ],
     licensure:
-      "California is one of the few states where a civil PE from elsewhere cannot simply transfer in: the state adds its own Seismic Principles and Engineering Surveying examinations on top of the national PE, and comity applicants still have to sit them. It is worth planning around when recruiting out of state — an otherwise ideal candidate may be months away from being able to seal drawings. Consultant work additionally runs through Caltrans and county prequalification.",
+      "California is one of the few states where a civil PE from elsewhere cannot simply transfer in: the state adds its own Seismic Principles and Engineering Surveying examinations on top of the national PE, and comity applicants still have to sit them. It is worth planning around when recruiting out of state, an otherwise ideal candidate may be months away from being able to seal drawings. Consultant work additionally runs through Caltrans and county prequalification.",
   },
   {
     slug: "chicago-il",
@@ -139,11 +139,11 @@ export const CITIES: City[] = [
       "Metropolitan Water Reclamation District",
     ],
     marketDetail: [
-      "Chicago's civil work is dominated by an ageing expressway and bridge inventory that has to be rebuilt in place, and by the density of freight rail crossing the region — the largest rail hub in the country. Grade separation, structure clearance and railroad coordination come up here in a way they simply do not in most metros, and engineers who have negotiated with the railroads carry a premium.",
+      "Chicago's civil work is dominated by an ageing expressway and bridge inventory that has to be rebuilt in place, and by the density of freight rail crossing the region. The largest rail hub in the country. Grade separation, structure clearance and railroad coordination come up here in a way they simply do not in most metros, and engineers who have negotiated with the railroads carry a premium.",
       "Underneath that sits the deep-tunnel stormwater system and a combined-sewer network serving a flat, heavily paved basin. Hydraulic engineers work at a scale of conveyance few regions match, and urban flooding keeps the work on the books regardless of what the transport programme is doing.",
     ],
     hiringFocus: [
-      { role: "Structural engineers holding an Illinois SE", why: "Illinois issues a Structural Engineer licence separate from the PE, so structural leads on many projects need the SE specifically — a licensing detail that catches out-of-state hires." },
+      { role: "Structural engineers holding an Illinois SE", why: "Illinois issues a Structural Engineer licence separate from the PE, so structural leads on many projects need the SE specifically, a licensing detail that catches out-of-state hires." },
       { role: "Rail & grade-separation engineers", why: "Freight density makes railroad coordination a routine part of roadway projects here, and the experience does not transfer from most other markets." },
       { role: "Hydraulic & stormwater engineers", why: "A flat basin, combined sewers and the deep-tunnel system keep conveyance design continuously in demand." },
       { role: "Construction inspection staff fluent in IDOT documentation", why: "State-funded work carries documentation standards inspectors are expected to know before they arrive on site." },
@@ -176,7 +176,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Drainage is the Houston market. The metro sits flat, drains slowly and floods on a schedule the region plans around, so detention design, channel conveyance and hydrologic and hydraulic modelling are core competencies rather than a specialism bolted onto roadway work. Engineers who can build and defend an H&H model in a review meeting are the ones firms compete for.",
-      "The second engine is industrial. The ship-channel petrochemical corridor and port infrastructure generate civil and structural work with a different rhythm from public transport programmes — owner-driven, schedule-led, and largely indifferent to the state highway funding cycle.",
+      "The second engine is industrial. The ship-channel petrochemical corridor and port infrastructure generate civil and structural work with a different rhythm from public transport programmes, owner-driven, schedule-led, and largely indifferent to the state highway funding cycle.",
     ],
     hiringFocus: [
       { role: "Hydrologic & hydraulic modelling engineers", why: "Flood-control work is model-led, and defending a hydraulic model is the scarcest skill in the metro." },
@@ -250,7 +250,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Philadelphia is a bridge market. The regional inventory is old, dense and heavily used, and corridor reconstruction along I-95 has kept structural design, staging and inspection teams occupied for years at a stretch. Engineers here are used to rebuilding structures over live traffic and active rail, which is a different discipline from designing a new crossing on open ground.",
-      "The distinctive civil work is stormwater. The city's green stormwater infrastructure programme is among the most developed in the country, and it has created a local specialism — fitting bioretention, permeable surfaces and inlet modifications into constrained streets — that transfers well and is hard to hire in from elsewhere.",
+      "The distinctive civil work is stormwater. The city's green stormwater infrastructure programme is among the most developed in the country, and it has created a local specialism (fitting bioretention, permeable surfaces and inlet modifications into constrained streets) that transfers well and is hard to hire in from elsewhere.",
     ],
     hiringFocus: [
       { role: "Bridge design & inspection engineers", why: "An old, dense structure inventory means rehabilitation and inspection continue regardless of the new-build programme." },
@@ -259,7 +259,7 @@ export const CITIES: City[] = [
       { role: "Rail & transit structural engineers", why: "Transit rebuilding needs structural assessment of assets that have to stay in service throughout." },
     ],
     licensure:
-      "Pennsylvania registration transfers by comity for most PEs, but the practical gate for consultant work is PennDOT's ECMS prequalification — firms and staff are qualified by work code, so a candidate's ECMS history tells a hiring manager immediately which project types they can be billed against.",
+      "Pennsylvania registration transfers by comity for most PEs, but the practical gate for consultant work is PennDOT's ECMS prequalification, firms and staff are qualified by work code, so a candidate's ECMS history tells a hiring manager immediately which project types they can be billed against.",
   },
   {
     slug: "dallas-tx",
@@ -324,7 +324,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Atlanta's highway work is concentrated in managed lanes and interchange reconstruction on the interstates converging on the city, which means large, long-duration corridor projects and the staging discipline that goes with rebuilding roads that cannot be closed.",
-      "The quieter but steadier market is sewer. Consent-decree-driven capacity and rehabilitation programmes across the metro counties have kept collection-system engineers working for years, and that work is obligation-led rather than growth-led — it continues through downturns.",
+      "The quieter but steadier market is sewer. Consent-decree-driven capacity and rehabilitation programmes across the metro counties have kept collection-system engineers working for years, and that work is obligation-led rather than growth-led. It continues through downturns.",
     ],
     hiringFocus: [
       { role: "Managed lane & interchange designers", why: "The region's mobility programme is built around complex interchanges rebuilt under traffic." },
@@ -398,7 +398,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Geotechnics drives the Puget Sound market. Soft soils, liquefaction risk, steep slopes and deep foundations sit under nearly every structural decision, and seismic demand is high enough that retrofit and resilient design are routine rather than exceptional. Engineers who can read a geotechnical report and design to it are worth more here than their years suggest.",
-      "The distinctive civil programme is fish passage. Replacing culverts that block salmon migration has created sustained hydraulic and structural work across the state, with a design vocabulary — stream simulation, channel-spanning structures — that barely exists in other markets and is therefore hard to hire in.",
+      "The distinctive civil programme is fish passage. Replacing culverts that block salmon migration has created sustained hydraulic and structural work across the state, with a design vocabulary (stream simulation, channel-spanning structures) that barely exists in other markets and is therefore hard to hire in.",
     ],
     hiringFocus: [
       { role: "Geotechnical & seismic engineers", why: "Soft soils and high seismic demand make geotechnical judgement a constraint on nearly every project." },
@@ -472,7 +472,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Boston builds in a dense, historic city on ground that was largely made by filling tidal flats. Deep excavation next to buildings founded on timber piles, groundwater levels that have to be maintained rather than simply drawn down, and constrained sites make geotechnical and support-of-excavation expertise unusually valuable here.",
-      "The bridge programme has pushed accelerated construction hard: prefabricated elements, weekend closures, slide-in replacements. Engineers who have designed for that kind of delivery — where the schedule constrains the detailing — are a distinct group from those who have only done conventional staged construction.",
+      "The bridge programme has pushed accelerated construction hard: prefabricated elements, weekend closures, slide-in replacements. Engineers who have designed for that kind of delivery, where the schedule constrains the detailing, are a distinct group from those who have only done conventional staged construction.",
     ],
     hiringFocus: [
       { role: "Bridge engineers with accelerated construction experience", why: "Weekend and prefabricated replacements are standard here, and they constrain design in ways conventional staging does not." },

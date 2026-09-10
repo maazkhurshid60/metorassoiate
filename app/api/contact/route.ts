@@ -118,8 +118,8 @@ export async function POST(request: Request) {
       <tr><td><strong>New website enquiry</strong></td></tr>
       <tr><td style="padding-top:10px"><strong>Name:</strong> ${esc(name)}</td></tr>
       <tr><td><strong>Email:</strong> ${esc(email)}</td></tr>
-      <tr><td><strong>Phone:</strong> ${esc(phone) || "—"}</td></tr>
-      <tr><td><strong>Company / Agency:</strong> ${esc(company) || "—"}</td></tr>
+      <tr><td><strong>Phone:</strong> ${esc(phone) || "Not provided"}</td></tr>
+      <tr><td><strong>Company / Agency:</strong> ${esc(company) || "Not provided"}</td></tr>
       <tr><td><strong>SMS consent:</strong> ${sms}</td></tr>
       <tr><td style="padding-top:14px;white-space:pre-wrap">${esc(message)}</td></tr>
     </table>`;
@@ -128,7 +128,7 @@ export async function POST(request: Request) {
     sender: { email: SENDER_EMAIL, name: SENDER_NAME },
     to: [{ email: TO_EMAIL, name: TO_NAME }],
     replyTo: { email, name: name || email },
-    subject: `Website enquiry — ${name || "New contact"}`,
+    subject: `Website enquiry: ${name || "New contact"}`,
     htmlContent: html,
   };
 

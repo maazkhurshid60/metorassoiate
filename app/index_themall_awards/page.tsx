@@ -89,8 +89,8 @@ const anchorOf = (slug: string) => `band-${slug}`;
 
 export const metadata: Metadata = {
   // Kept under ~60 characters so Google shows it whole rather than truncating.
-  title: `Engineering Salary Guide — ${TOTAL_ROLES} US Roles | Metro Associates`,
-  description: `US pay ranges for ${TOTAL_ROLES} engineering titles — civil, bridge, CEI inspection, MEP, municipal and water/wastewater, by seniority.`,
+  title: `Engineering Salary Guide | ${TOTAL_ROLES} US Roles | Metro Associates`,
+  description: `US pay ranges for ${TOTAL_ROLES} engineering titles: civil, bridge, CEI inspection, MEP, municipal and water/wastewater, by seniority.`,
   keywords: [
     "engineering salary guide",
     "civil engineer salary",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/index_themall_awards` },
   openGraph: {
-    title: "Engineering Salary Guide — US Pay Ranges by Role",
+    title: "Engineering Salary Guide | US Pay Ranges by Role",
     description: `${TOTAL_ROLES} engineering and infrastructure titles with US compensation ranges by seniority.`,
     url: `${SITE_URL}/index_themall_awards`,
     type: "website",
@@ -152,7 +152,7 @@ export default function SalaryGuidePage() {
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-300 text-pretty">
                 {TOTAL_ROLES} titles across the {GROUPS.length} disciplines we recruit for,
-                with the ranges we see firms actually paying — from CAD technician and
+                with the ranges we see firms actually paying, from CAD technician and
                 entry-level EIT through director. Bands reflect base salary on permanent,
                 direct-hire roles and move with market, licensure and location.
               </p>
@@ -279,7 +279,7 @@ export default function SalaryGuidePage() {
             </div>
           </div>
         </section>
-        <HubFaqs group="engineering-pay" heading="Engineering pay — common questions" />
+        <HubFaqs group="engineering-pay" heading="Engineering pay: common questions" />
 
     </main>
 
@@ -293,7 +293,7 @@ export default function SalaryGuidePage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "CollectionPage",
-            name: "Engineering Salary Guide — US Pay Ranges by Role",
+            name: "Engineering Salary Guide, US Pay Ranges by Role",
             url: `${SITE_URL}/index_themall_awards`,
             provider: { "@id": ORG["@id"] },
             mainEntity: {

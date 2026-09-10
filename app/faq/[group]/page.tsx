@@ -35,8 +35,8 @@ export async function generateMetadata({
   if (!g) return {};
   return {
     title: pickTitle([
-      `${g.title} recruiting — FAQ | Metro Associates`,
-      `${g.title} — recruiting FAQ`,
+      `${g.title} recruiting, FAQ | Metro Associates`,
+      `${g.title}, recruiting FAQ`,
       `${g.title} FAQ`,
     ]),
     description: fitDescription([g.blurb, `${g.faqs.length} questions answered.`]),
@@ -90,7 +90,7 @@ export default async function FaqGroupPage({
             </nav>
 
             <h1 className="display mt-6 max-w-3xl text-4xl leading-[1.05] text-white sm:text-5xl">
-              {`${g.title} — questions`}
+              {`${g.title}, questions`}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/70 text-pretty">{g.blurb}</p>
 

@@ -38,7 +38,7 @@ const REASONS = [
   {
     icon: IconGauge,
     title: "Precision Matching",
-    body: "Technical alignment, licensure validation, and long-term fit — not resume volume.",
+    body: "Technical alignment, licensure validation, and long-term fit, not resume volume.",
   },
   {
     icon: IconShield,
@@ -48,7 +48,7 @@ const REASONS = [
   {
     icon: IconUsers,
     title: "Long-Term Partnerships",
-    body: "We operate as an extension of your hiring strategy — not just a staffing vendor.",
+    body: "We operate as an extension of your hiring strategy, not just a staffing vendor.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function WhyUsPage() {
                 <span className="text-brand-400">Associates</span>
               </h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-ink-300 text-pretty">
-                Engineering recruiting built for infrastructure and DOT markets —
+                Engineering recruiting built for infrastructure and DOT markets,
                 with the depth, discretion, and precision that publicly funded
                 programs demand.
               </p>
@@ -102,7 +102,7 @@ export default function WhyUsPage() {
             <div className="relative animate-fade-up [animation-delay:120ms]">
               <div className="corners relative overflow-hidden border border-white/12 bg-navy-900">
                 <span className="mono-label absolute left-4 top-4 z-10 text-[9px] text-white/70">
-                  FIG. A — OUR TEAM
+                  FIG. A / OUR TEAM
                 </span>
                 <div className="relative aspect-4/5">
                   <Image
@@ -159,7 +159,7 @@ export default function WhyUsPage() {
                 Ready to build your team?
               </h3>
               <p className="mt-2 text-ink-300">
-                Tell us about the role — we&apos;ll deliver a vetted shortlist,
+                Tell us about the role. We&apos;ll deliver a vetted shortlist,
                 backed by our placement guarantee.
               </p>
             </div>

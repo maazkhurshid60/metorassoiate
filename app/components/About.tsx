@@ -54,13 +54,13 @@ export default function About() {
               changing the introduction means changing it in both places. */}
           <YouTubeFacade
             videoId="k-xlidu5mug"
-            title="Metro Associates — engineering talent & infrastructure expertise"
+            title="Metro Associates | engineering talent & infrastructure expertise"
           />
         </div>
 
         <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <span className="mono-label text-amber-500">{"//"} 01 — About Us</span>
+            <span className="mono-label text-amber-500">{"//"} 01 / About Us</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Engineering staffing &amp;{" "}
               <span className="text-brand-500">executive search</span>
@@ -74,8 +74,8 @@ export default function About() {
             </p>
             <p className="mt-4 leading-8 text-slate-500 text-pretty">
               With more than four decades of combined experience, our recruiters
-              — including former engineers and military-trained talent
-              specialists — deliver licensed engineers and technical
+             , including former engineers and military-trained talent
+              specialists, deliver licensed engineers and technical
               specialists who understand the operational, regulatory, and
               performance demands of today&apos;s capital projects.
             </p>

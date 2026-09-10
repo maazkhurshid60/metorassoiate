@@ -12,7 +12,7 @@ export default function Logo({ className = "" }: LogoProps) {
     <span className={`inline-flex items-center ${className}`}>
       <Image
         src={LOGO_FULL}
-        alt="Metro Associates — Your Prominent Placement Company"
+        alt="Metro Associates: Your Prominent Placement Company"
         width={220}
         height={62}
         className="h-11 w-auto sm:h-12"

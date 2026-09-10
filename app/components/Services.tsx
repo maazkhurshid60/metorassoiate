@@ -16,7 +16,7 @@ const SERVICES = [
   {
     icon: IconTarget,
     title: "Top Talent",
-    body: "We specialize in getting top talent from your competitors — senior technical and intelligence recruiter professionals.",
+    body: "We specialize in getting top talent from your competitors, senior technical and intelligence recruiter professionals.",
   },
   {
     icon: IconGlobe,
@@ -26,7 +26,7 @@ const SERVICES = [
   {
     icon: IconSpark,
     title: "Innovation",
-    body: "Priority attention whenever you need us — with diversity and inclusion behind every innovation we bring.",
+    body: "Priority attention whenever you need us, with diversity and inclusion behind every innovation we bring.",
   },
   {
     icon: IconLayers,
@@ -49,14 +49,14 @@ export default function Services() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 02 — Capabilities</span>
+            <span className="mono-label text-amber-500">{"//"} 02 / Capabilities</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
               Quality services, engineered
             </h2>
           </div>
           <p className="max-w-md text-ink-300 text-pretty">
             From Professional Engineers to specialized technical talent, we
-            deliver dependable staffing across every engineering discipline —
+            deliver dependable staffing across every engineering discipline,
             supporting safety, regulatory standards, and project delivery for
             public and private employers alike.
           </p>

@@ -56,9 +56,9 @@ export async function generateMetadata({
      one that fits wins. */
   return {
     title: pickTitle([
-      `${a.name} (${a.abbr}) — who enters, and what it signals`,
-      `${a.name} — what it signals in hiring`,
-      `${a.name} — a hiring guide`,
+      `${a.name} (${a.abbr}), who enters, and what it signals`,
+      `${a.name}, what it signals in hiring`,
+      `${a.name}, a hiring guide`,
       `${a.name} (${a.abbr})`,
       a.name,
     ]),
@@ -198,7 +198,7 @@ export default async function AwardDetailPage({
 
               <h3 className="display mt-10 text-xl text-navy-950">Categories include</h3>
               <p className="mt-2 text-sm text-slate-500">
-                A sample, not the full list — these programs restructure their categories
+                A sample, not the full list, these programs restructure their categories
                 between years. {a.org} publishes the current one.
               </p>
               <ul className="mt-5 flex flex-wrap gap-2">
@@ -318,7 +318,7 @@ export default async function AwardDetailPage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: `${a.name} — who enters and what it signals`,
+            headline: `${a.name}, who enters and what it signals`,
             about: {
               "@type": "Thing",
               name: a.name,

@@ -36,7 +36,7 @@ export default function Jobs() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 07 — Open Roles</span>
+            <span className="mono-label text-amber-500">{"//"} 07 / Open Roles</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Careers in engineering &amp; infrastructure
             </h2>
@@ -44,7 +44,7 @@ export default function Jobs() {
           <p className="max-w-md text-slate text-pretty">
             Advance your career with a recruiting partner that understands
             engineering. We place licensed PEs, CEI inspectors, project managers,
-            and senior infrastructure leaders — working confidentially to protect
+            and senior infrastructure leaders, working confidentially to protect
             your interests at every step.
           </p>
         </div>

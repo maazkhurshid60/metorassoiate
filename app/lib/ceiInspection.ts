@@ -198,7 +198,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "the Mountain West",
     authority: "CDOT Region 1",
     marketNote:
-      "CDOT's Central 70 project — which lowered and covered a stretch of I-70 through Elyria-Swansea — remains the region's signature CEI program, alongside RTD's continued rail-corridor expansion.",
+      "CDOT's Central 70 project, which lowered and covered a stretch of I-70 through Elyria-Swansea, remains the region's signature CEI program, alongside RTD's continued rail-corridor expansion.",
     localPrograms: [
       "I-70 Central cover-park inspection",
       "RTD rail corridor resident engineering",
@@ -215,7 +215,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "New England",
     authority: "MassDOT Highway Division / MBTA",
     marketNote:
-      "MassDOT's Allston Multimodal Project — realigning I-90 along the Charles River — is one of the most complex active CEI programs in New England, running alongside a backlog of MBTA bridge rehabilitation work.",
+      "MassDOT's Allston Multimodal Project, realigning I-90 along the Charles River, is one of the most complex active CEI programs in New England, running alongside a backlog of MBTA bridge rehabilitation work.",
     localPrograms: [
       "Allston Multimodal I-90 inspection",
       "MBTA bridge rehabilitation oversight",
@@ -385,7 +385,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "the Midwest",
     authority: "INDOT Greenfield District",
     marketNote:
-      "INDOT's I-65/I-70 North Split reconstruction — one of the largest interchange rebuilds in state history — anchors an Indianapolis CEI market also staffing Eli Lilly's expanding LEAP innovation district.",
+      "INDOT's I-65/I-70 North Split reconstruction, one of the largest interchange rebuilds in state history, anchors an Indianapolis CEI market also staffing Eli Lilly's expanding LEAP innovation district.",
     localPrograms: [
       "I-65/I-70 North Split inspection",
       "LEAP innovation district utility inspection",
@@ -470,7 +470,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "the Ohio Valley",
     authority: "KYTC District 5",
     marketNote:
-      "The Kennedy Interchange — Louisville's notorious 'Spaghetti Junction' where I-64, I-65, and I-71 converge — remains a focal point for KYTC resident engineering, alongside continued UPS Worldport expansion inspection.",
+      "The Kennedy Interchange, Louisville's notorious 'Spaghetti Junction' where I-64, I-65, and I-71 converge, remains a focal point for KYTC resident engineering, alongside continued UPS Worldport expansion inspection.",
     localPrograms: [
       "Kennedy Interchange resident engineering",
       "UPS Worldport site utility inspection",
@@ -504,7 +504,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "the Lowcountry",
     authority: "SCDOT District 6",
     marketNote:
-      "SCDOT's I-526 Lowcountry Corridor extension and the continued deepening of Charleston Harbor — now the deepest port on the East Coast — have made marine and highway CEI work equally in demand here.",
+      "SCDOT's I-526 Lowcountry Corridor extension and the continued deepening of Charleston Harbor, now the deepest port on the East Coast, have made marine and highway CEI work equally in demand here.",
     localPrograms: [
       "I-526 Lowcountry Corridor inspection",
       "Charleston Harbor deepening materials testing",
@@ -589,7 +589,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "Central Texas",
     authority: "TxDOT Austin District",
     marketNote:
-      "TxDOT's I-35 Capital Express Central project — which will cap and widen the freeway through downtown Austin — is among the largest active CEI programs in Central Texas, alongside the infrastructure supporting Tesla's and Samsung's expansions.",
+      "TxDOT's I-35 Capital Express Central project, which will cap and widen the freeway through downtown Austin, is among the largest active CEI programs in Central Texas, alongside the infrastructure supporting Tesla's and Samsung's expansions.",
     localPrograms: [
       "I-35 Capital Express Central inspection",
       "Samsung fab site utility inspection",
@@ -657,7 +657,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "the Ohio Valley",
     authority: "ODOT District 8 / OKI Regional Council",
     marketNote:
-      "The $3.6 billion Brent Spence Bridge Corridor project — twinning the interstate bridge that carries I-71/I-75 across the Ohio River — is the defining CEI program in Cincinnati and one of the largest in the Ohio Valley.",
+      "The $3.6 billion Brent Spence Bridge Corridor project, twinning the interstate bridge that carries I-71/I-75 across the Ohio River, is the defining CEI program in Cincinnati and one of the largest in the Ohio Valley.",
     localPrograms: [
       "Brent Spence Bridge Corridor inspection",
       "I-75 thru-the-valley materials testing",
@@ -742,7 +742,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "New England",
     authority: "ConnDOT District 1",
     marketNote:
-      "ConnDOT's I-84 Hartford viaduct replacement — one of the largest highway reconstructions in state history — anchors a Hartford CEI market otherwise built around steady insurance-corridor infrastructure maintenance.",
+      "ConnDOT's I-84 Hartford viaduct replacement, one of the largest highway reconstructions in state history, anchors a Hartford CEI market otherwise built around steady insurance-corridor infrastructure maintenance.",
     localPrograms: [
       "I-84 viaduct replacement inspection",
       "Charter Oak Bridge materials testing",
@@ -861,7 +861,7 @@ export const CEI_CITIES: CeiCity[] = [
     region: "Western New York",
     authority: "NYSDOT Region 5",
     marketNote:
-      "NYSDOT's Kensington Expressway restoration — capping a stretch of the highway to reconnect the historic Humboldt Parkway — and the removal of the Route 5 Skyway are reshaping Buffalo's CEI market around urban-highway reconstruction.",
+      "NYSDOT's Kensington Expressway restoration, capping a stretch of the highway to reconnect the historic Humboldt Parkway, and the removal of the Route 5 Skyway are reshaping Buffalo's CEI market around urban-highway reconstruction.",
     localPrograms: [
       "Kensington Expressway restoration inspection",
       "Route 5 Skyway removal oversight",

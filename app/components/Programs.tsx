@@ -35,7 +35,7 @@ export default function Programs() {
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           {/* What sets us apart */}
           <div>
-            <span className="mono-label text-amber-500">{"//"} 03 — Programs &amp; Approach</span>
+            <span className="mono-label text-amber-500">{"//"} 03 / Programs &amp; Approach</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               What sets Metro{" "}
               <span className="text-brand-500">apart</span>
@@ -46,7 +46,7 @@ export default function Programs() {
               knowledge of infrastructure operations and regulatory environments.
             </p>
             <p className="mt-4 leading-8 text-slate-500 text-pretty">
-              We understand the real pace of transportation programs — from
+              We understand the real pace of transportation programs, from
               design-bid-build and design-build delivery to emergency response
               projects and long-term asset management. The result: agencies stay
               on schedule, manage budgets responsibly, and deliver projects the
@@ -63,7 +63,7 @@ export default function Programs() {
               </div>
               <p className="mt-3 text-sm leading-7 text-slate">
                 We&apos;re committed to diversity, inclusion, and workforce
-                resilience — actively recruiting from varied backgrounds,
+                resilience, actively recruiting from varied backgrounds,
                 including veterans with engineering and leadership experience, to
                 help agencies build teams that reflect the communities they serve.
               </p>

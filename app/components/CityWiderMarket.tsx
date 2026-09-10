@@ -36,7 +36,7 @@ export default function CityWiderMarket({
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate text-pretty">
             Our other practices are working the same metro. The programs below are
-            what they are staffing in {city.city} right now — useful context if your
+            what they are staffing in {city.city} right now, useful context if your
             project sits across more than one discipline, which most of them do.
           </p>
         </div>

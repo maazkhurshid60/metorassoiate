@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 
 export const metadata: Metadata = {
-  title: "Videos — Metro Associates | DOT & Infrastructure Staffing",
+  title: "Videos | Metro Associates | DOT & Infrastructure Staffing",
   description: "Watch our latest job openings and hiring updates from Metro Associates.",
 };
 

@@ -143,7 +143,7 @@ export default function ContactForm() {
         setError(
           result.error === "geetest-failed"
             ? "Verification failed. Please try again."
-            : "Sorry — your message couldn't be sent. Please email us directly."
+            : "Sorry, your message couldn't be sent. Please email us directly."
         );
         resetCaptcha();
         setStatus("idle");
@@ -167,7 +167,7 @@ export default function ContactForm() {
           <IconCheck className="h-6 w-6" />
         </span>
         <div>
-          <h3 className="text-xl font-bold text-white">Thanks — your message has been sent.</h3>
+          <h3 className="text-xl font-bold text-white">Thanks, your message has been sent.</h3>
           <p className="mt-2 text-ink-300">
             We&apos;ve received your enquiry and will be in touch shortly. You can
             also reach us directly at{" "}

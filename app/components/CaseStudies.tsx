@@ -12,7 +12,7 @@ const CASES = [
   {
     tag: "Executive · Finance",
     challenge: "GM with a finance background",
-    body: "Forty phone screens, six interviews scheduled. The client hired the General Manager — plus a second candidate from the same slate.",
+    body: "Forty phone screens, six interviews scheduled. The client hired the General Manager, plus a second candidate from the same slate.",
     metric: "2 hires",
     metricLabel: "One search",
   },
@@ -45,7 +45,7 @@ export default function CaseStudies() {
       <div className="container-x relative">
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} 05 — Field Results</span>
+            <span className="mono-label text-amber-500">{"//"} 05 / Field Results</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
               Real searches, real outcomes
             </h2>

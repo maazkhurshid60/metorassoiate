@@ -35,17 +35,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Metro Associates — DOT & Infrastructure Staffing",
+    title: "Metro Associates | DOT & Infrastructure Staffing",
     description:
       "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
     url: SITE_URL,
     siteName: "Metro Associates",
     type: "website",
-    images: [{ url: "/interchange-sunset.jpg", width: 1200, height: 630, alt: "Metro Associates — DOT & infrastructure staffing" }],
+    images: [{ url: "/interchange-sunset.jpg", width: 1200, height: 630, alt: "Metro Associates, DOT & infrastructure staffing" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Metro Associates — DOT & Infrastructure Staffing",
+    title: "Metro Associates | DOT & Infrastructure Staffing",
     description:
       "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
     images: ["/interchange-sunset.jpg"],

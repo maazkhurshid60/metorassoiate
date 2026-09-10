@@ -45,7 +45,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the Pacific West",
     authority: "LA Sanitation & Environment (LASAN)",
     marketNote:
-      "Following the 2021 Hyperion plant failure, Los Angeles committed to Operation NEXT — full water recycling of the Hyperion plant's effluent by the mid-2030s — driving one of the largest potable-reuse engineering programs in the nation.",
+      "Following the 2021 Hyperion plant failure, Los Angeles committed to Operation NEXT, full water recycling of the Hyperion plant's effluent by the mid-2030s, driving one of the largest potable-reuse engineering programs in the nation.",
     localPrograms: [
       "Operation NEXT potable reuse & advanced treatment",
       "Hyperion Water Reclamation Plant modernization",
@@ -113,7 +113,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the Mid-Atlantic",
     authority: "Philadelphia Water Department (PWD)",
     marketNote:
-      "Philadelphia's Green City, Clean Waters program, a 25-year EPA-approved green-infrastructure alternative to a traditional CSO consent decree, has made PWD a national model — and a steady source of stormwater and green-infrastructure design work.",
+      "Philadelphia's Green City, Clean Waters program, a 25-year EPA-approved green-infrastructure alternative to a traditional CSO consent decree, has made PWD a national model, and a steady source of stormwater and green-infrastructure design work.",
     localPrograms: [
       "Green City, Clean Waters green stormwater infrastructure",
       "Northeast & Southwest WPCP upgrades",
@@ -181,7 +181,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the Pacific Northwest",
     authority: "King County Wastewater Treatment Division / Seattle Public Utilities",
     marketNote:
-      "The newly completed Ship Canal Water Quality Project — a 2.7-mile deep storage tunnel — anchors Seattle's ongoing combined sewer overflow control program alongside King County's regional plant upgrades.",
+      "The newly completed Ship Canal Water Quality Project, a 2.7-mile deep storage tunnel, anchors Seattle's ongoing combined sewer overflow control program alongside King County's regional plant upgrades.",
     localPrograms: [
       "Ship Canal Water Quality Project tunnel operations",
       "West Point Treatment Plant upgrades",
@@ -521,7 +521,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the Northeast",
     authority: "Newark Department of Water and Sewer Utilities",
     marketNote:
-      "After a widely publicized lead-in-water crisis, Newark completed one of the fastest full lead service line replacement programs in U.S. history — a model now referenced nationally as EPA's new Lead and Copper Rule Improvements take effect.",
+      "After a widely publicized lead-in-water crisis, Newark completed one of the fastest full lead service line replacement programs in U.S. history, a model now referenced nationally as EPA's new Lead and Copper Rule Improvements take effect.",
     localPrograms: [
       "Lead service line replacement program (post-crisis model)",
       "Pequannock watershed treatment upgrades",
@@ -691,7 +691,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the Gateway region",
     authority: "Metropolitan St. Louis Sewer District (MSD)",
     marketNote:
-      "MSD's Project Clear is a 23-year, $6+ billion federal consent decree program — among the largest in the country — rebuilding combined and sanitary sewers across the St. Louis region.",
+      "MSD's Project Clear is a 23-year, $6+ billion federal consent decree program, among the largest in the country, rebuilding combined and sanitary sewers across the St. Louis region.",
     localPrograms: [
       "Project Clear consent decree tunnel & sewer program",
       "Bissell Point & Lemay WWTP upgrades",
@@ -725,7 +725,7 @@ export const WATER_CITIES: WaterCity[] = [
     region: "the National Capital region",
     authority: "DC Water",
     marketNote:
-      "DC Water's Clean Rivers Project, a $2.7 billion tunnel program feeding into Blue Plains — the world's largest advanced wastewater treatment plant — anchors one of the most technically demanding water-infrastructure markets in the country.",
+      "DC Water's Clean Rivers Project, a $2.7 billion tunnel program feeding into Blue Plains (the world's largest advanced wastewater treatment plant), anchors one of the most technically demanding water-infrastructure markets in the country.",
     localPrograms: [
       "DC Clean Rivers Project deep tunnel system",
       "Blue Plains Advanced Wastewater Treatment Plant upgrades",

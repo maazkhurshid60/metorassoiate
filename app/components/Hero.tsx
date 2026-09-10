@@ -30,7 +30,7 @@ export default function Hero() {
       <div className="absolute inset-0 -z-10">
         <Image
           src="/interchange-sunset.jpg"
-          alt="Aerial view of a U.S. highway interchange at sunset — the infrastructure Metro Associates staffs"
+          alt="Aerial view of a U.S. highway interchange at sunset: the infrastructure Metro Associates staffs"
           fill
           priority
           sizes="100vw"
@@ -61,7 +61,7 @@ export default function Hero() {
             <span className="mono-label text-amber-400">Now Hiring</span>
             <span className="hidden h-3 w-px bg-amber-500/30 sm:block" />
             <span className="text-xs font-bold text-white sm:text-sm">
-              10 Professional Engineers — All Disciplines
+              10 Professional Engineers / All Disciplines
             </span>
             <IconArrow className="h-3.5 w-3.5 shrink-0 text-amber-500 transition-transform group-hover:translate-x-1" />
           </a>
@@ -88,7 +88,7 @@ export default function Hero() {
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-ink-200 text-pretty">
             Tired of endless searches for the right engineering talent? Metro
-            Associates transforms your hiring process — with results you can
+            Associates transforms your hiring process, with results you can
             count on. We help companies across the United States hire
             qualified, experienced technical, engineering, and licensed
             professionals.

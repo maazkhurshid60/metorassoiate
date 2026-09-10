@@ -41,7 +41,7 @@ export default function ClientAwards({
             The awards our clients&rsquo; <span className="text-brand-500">work wins</span>
           </h2>
           <p className="mt-6 text-lg leading-8 text-slate text-pretty">
-            We recruit for firms whose projects are entered — and recognised — in
+            We recruit for firms whose projects are entered, and recognized, in
             the programs below. Metro doesn&rsquo;t enter them; a recruiting firm
             isn&rsquo;t eligible. We place the engineers who deliver the work that
             does, which is why we track what these juries reward.
@@ -84,7 +84,7 @@ export default function ClientAwards({
         </p>
 
         <p className="mt-3 max-w-3xl text-xs leading-relaxed text-slate-500">
-          Each logo is the trademark of the organisation that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them — our clients are the entrants.
+          Each logo is the trademark of the organization that runs the program, shown to identify it. Metro Associates is not affiliated with, endorsed by, or a winner of any of them; our clients are the entrants.
         </p>
       </div>
     </section>

@@ -9,7 +9,7 @@ import TeamCard from "../components/TeamCard";
 export const metadata: Metadata = {
   title: "Meet the Team | Metro Associates Recruiters",
   description:
-    "The recruiters behind our placements — who they specialise in, the disciplines they cover, and how to reach them directly.",
+    "The recruiters behind our placements, who they specialise in, the disciplines they cover, and how to reach them directly.",
 };
 
 /* Pinned explicitly rather than left to infer from the getJobFolderTeam()
@@ -46,7 +46,7 @@ export default async function MeetOurTeamPage() {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-ink-300 text-pretty">
             Our recruiters include former engineers and military-trained talent
             specialists who understand engineering, transportation, and the
-            regulatory landscape — because they&apos;ve lived it.
+            regulatory landscape, because they&apos;ve lived it.
           </p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default async function MeetOurTeamPage() {
             <div>
               <h2 className="text-2xl font-bold text-white">Work with our team</h2>
               <p className="mt-2 text-ink-300">
-                Tell us about the role — we&apos;ll put the right specialist on
+                Tell us about the role. We&apos;ll put the right specialist on
                 your search.
               </p>
             </div>

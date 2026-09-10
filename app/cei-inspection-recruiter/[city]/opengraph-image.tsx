@@ -3,7 +3,7 @@ import { CEI_CITIES, getCeiCity } from "../../lib/ceiInspection";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "CEI & Construction Inspection Recruiter — Metro Associates";
+export const alt = "CEI & Construction Inspection Recruiter, Metro Associates";
 
 export function generateStaticParams() {
   return CEI_CITIES.map((c) => ({ city: c.slug }));
