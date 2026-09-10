@@ -18,7 +18,7 @@ export default function CTA() {
             </h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-navy-900 text-pretty">
               Tell us about the role. We&apos;ll deliver a vetted shortlist —
-              fast, and fully backed by our guarantee.
+              fast, and matched to the discipline and licence the role actually needs.
             </p>
 
             <ul className="mt-8 flex flex-col gap-3">

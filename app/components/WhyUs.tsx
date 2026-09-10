@@ -1,21 +1,32 @@
 import Image from "next/image";
-import { IconShield, IconRefresh, IconGauge } from "./Icons";
+import { IconLayers, IconClipboard, IconGauge } from "./Icons";
 
-const GUARANTEES = [
+/* This block used to be three guarantee cards — a free replacement
+   guarantee, a money-back guarantee, and performance monitoring, under the
+   line "to make your decision risk-free, every placement is backed by our:".
+   Removed from the homepage at the client's request.
+
+   Replaced rather than deleted, because the section is half the page and a
+   hole would show. What went in is what the site can actually demonstrate:
+   six discipline practices you can click into, licensure handling the FAQs
+   now explain in detail, and staying in contact after a start date — which
+   is a service, not a promise about an outcome. Nothing here claims a
+   result. */
+const DIFFERENTIATORS = [
   {
-    icon: IconShield,
-    title: "Free Replacement Guarantee",
-    body: "If it's not the right fit, we replace the candidate at no additional cost — no questions asked.",
+    icon: IconLayers,
+    title: "Six disciplines, not one general desk",
+    body: "Civil, MEP, bridge and structural, water and wastewater, CEI and municipal each have their own practice — so the person calling you knows the difference between a load rating and a load calculation.",
   },
   {
-    icon: IconRefresh,
-    title: "Money-Back Guarantee",
-    body: "A full refund option if we can't deliver the right talent. Your decision stays risk-free.",
+    icon: IconClipboard,
+    title: "Licensure handled before offer stage",
+    body: "A PE licence does not transfer automatically between states. We work comity and NCEES Records into the search from the start, rather than discovering a six-week gap once someone has accepted.",
   },
   {
     icon: IconGauge,
-    title: "Performance Monitoring",
-    body: "We stay engaged after placement, tracking performance to ensure long-term success.",
+    title: "We stay in contact after the start date",
+    body: "The placement is not the end of the relationship. We check in with both sides through the first months, because the problems worth knowing about rarely surface in week one.",
   },
 ];
 
@@ -28,8 +39,8 @@ export default function WhyUs() {
           <div>
             <span className="mono-label text-amber-500">{"//"} 04 — Why Metro</span>
             <h2 className="display mt-5 text-4xl text-white sm:text-5xl">
-              Faster hiring, backed by a{" "}
-              <span className="text-amber-500">placement</span> guarantee
+              Faster hiring, because{" "}
+              <span className="text-amber-500">engineering</span> is all we do
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-ink-300 text-pretty">
               We&apos;ve reduced sourcing and hiring time by up to{" "}
@@ -56,14 +67,14 @@ export default function WhyUs() {
             </div>
           </div>
 
-          {/* Right: guarantees */}
+          {/* Right: what we can actually show */}
           <div className="flex flex-col gap-4">
             <p className="text-sm leading-7 text-ink-400">
-              Every engineer we place comes with a proven track record and strong
-              endorsements from peers and supervisors. And to make your decision
-              risk-free, every placement is backed by our:
+              Every engineer we place comes with a proven track record and
+              references from peers and supervisors we have actually spoken to.
+              What that rests on:
             </p>
-            {GUARANTEES.map(({ icon: Icon, title, body }, i) => (
+            {DIFFERENTIATORS.map(({ icon: Icon, title, body }, i) => (
               <div
                 key={title}
                 className="group flex gap-5 border border-white/10 bg-navy-900 p-6 transition-colors hover:border-amber-500/40 hover:bg-navy-850"
@@ -84,8 +95,8 @@ export default function WhyUs() {
             ))}
             <div className="mt-2 flex items-center gap-4 border-l-2 border-amber-500 bg-amber-500/5 px-5 py-4">
               <p className="text-sm font-semibold text-amber-300">
-                That&apos;s the Metro difference: faster hiring, vetted talent,
-                and zero risk.
+                That&apos;s the Metro difference: a specialist desk for your
+                discipline, and engineers who have actually been vetted.
               </p>
             </div>
           </div>

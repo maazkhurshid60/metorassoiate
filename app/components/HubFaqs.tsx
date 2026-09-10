@@ -1,4 +1,5 @@
 import { HUB_FAQS, type HubSegment } from "../lib/hubFaqs";
+import type { FaqItem } from "../lib/seo";
 import { JsonLd } from "./JsonLd";
 import { faqSchema } from "../lib/seo";
 
@@ -21,13 +22,16 @@ import { faqSchema } from "../lib/seo";
  */
 export default function HubFaqs({
   hub,
+  items,
   heading,
 }: {
-  hub: HubSegment;
+  /** A discipline hub, or omit and pass `items` for any other page. */
+  hub?: HubSegment;
+  items?: FaqItem[];
   /** e.g. "Civil engineering recruiting — common questions". */
   heading: string;
 }) {
-  const faqs = HUB_FAQS[hub];
+  const faqs = items ?? (hub ? HUB_FAQS[hub] : undefined);
   if (!faqs?.length) return null;
 
   return (

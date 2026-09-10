@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import HubFaqs from "../components/HubFaqs";
+import { SALARY_FAQS } from "../lib/hubFaqs";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -278,7 +280,9 @@ export default function SalaryGuidePage() {
             </div>
           </div>
         </section>
-      </main>
+        <HubFaqs items={SALARY_FAQS} heading="Engineering pay — common questions" />
+
+    </main>
 
       {/* Each band as an Occupation with estimatedSalary. This is the page's
           whole substance, so leaving it unstructured would waste the one thing

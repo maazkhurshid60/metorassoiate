@@ -59,8 +59,13 @@ export const ORG = {
      penalise self-serving rating markup — a business rating itself. The BBB
      grade is surfaced in the footer as a linked claim a visitor can check
      instead, which is what it's actually worth. */
+  /* No guarantee claim here. It used to end "backed by a placement
+     guarantee", which put the claim into the Organization schema on every
+     page carrying it — including the homepage, where the client asked for it
+     to be removed entirely. Structured data counts: it is what an assistant
+     reads to describe the firm. */
   description:
-    "National staffing and executive search firm for civil, transportation (DOT), and MEP engineering — placing licensed PEs, inspectors, and construction leaders, backed by a placement guarantee.",
+    "National staffing and executive search firm for civil, transportation (DOT), MEP, water, structural and municipal engineering — placing licensed PEs, inspectors and construction leaders across fifty US metros.",
 };
 
 export function organizationSchema() {

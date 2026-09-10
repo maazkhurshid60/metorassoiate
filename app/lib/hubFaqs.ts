@@ -209,3 +209,52 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
   ],
 };
+
+/* Salary-guide FAQs.
+ *
+ * These live on /index_themall_awards because that is the page holding the
+ * data that answers them — 48 published bands across six disciplines. Asking
+ * "what does a PE add to your salary" on a recruiting hub would be an
+ * assertion; asking it here lets the answer be arithmetic on the table
+ * directly above it, which is the difference between a citable page and a
+ * promotional one.
+ *
+ * Every figure below is read off those same arrays, so the FAQ cannot drift
+ * away from the table. If a band changes, these change with it — check them
+ * when editing SALARIES, BRIDGE_SALARIES, MEP_SALARIES, WATER_SALARIES,
+ * MUNICIPAL_SALARIES or CEI_SALARIES.
+ */
+export const SALARY_FAQS: FaqItem[] = [
+  {
+    q: "How much does a PE licence add to an engineer's salary?",
+    a: "Comparing our own published bands discipline by discipline, the licensed mid-level band begins roughly $32,000 to $38,000 above where the EIT band begins, and roughly $52,000 to $60,000 higher at the top. Civil runs $70,000–$95,000 at EIT against $105,000–$150,000 licensed; bridge $72,000–$98,000 against $110,000–$158,000. The licence is the single largest step in an engineering pay curve.",
+  },
+  {
+    q: "Which engineering discipline pays the most?",
+    a: "At director level the six we publish sit closer together than people expect. MEP tops out at $180,000–$260,000 and bridge and structural at $185,000–$260,000; civil reaches $175,000–$250,000 and water/wastewater $175,000–$245,000. CEI is the lowest ceiling at $150,000–$210,000. The spread between disciplines is smaller than the spread between an unlicensed and a licensed engineer inside any one of them.",
+  },
+  {
+    q: "What should a civil engineer with ten years' experience earn?",
+    a: "Ten years usually means a PE and some project ownership, which puts it in the $105,000–$150,000 mid-level band, moving toward $140,000–$190,000+ once a candidate is carrying senior project manager responsibility rather than only technical work. What separates the two is client and budget ownership, not the year count.",
+  },
+  {
+    q: "Can I get an engineering job with an FE or EIT but no PE?",
+    a: "Yes — every discipline here publishes an EIT band, which exists precisely because firms hire at that level and expect to carry someone to licensure. Civil and MEP start at $70,000–$95,000, bridge at $72,000–$98,000, water at $68,000–$92,000, municipal at $65,000–$88,000. The question to ask an employer is who will supervise your experience toward the PE, not whether the role exists.",
+  },
+  {
+    q: "Do public-sector engineering salaries match consulting?",
+    a: "Close in the middle, further apart at the top. A licensed municipal engineer or city engineer sits at $98,000–$140,000 against $105,000–$150,000 for a mid-level civil PE in consulting — a gap of under $10,000. But a public works director runs $135,000–$175,000+ where a consulting regional director reaches $175,000–$250,000+. Pension, defined hours and stability sit on the other side of that difference.",
+  },
+  {
+    q: "What do construction inspectors earn compared with designers?",
+    a: "CEI starts lower and closes the gap with certification rather than licensure. An entry CEI inspector is $55,000–$75,000 against $55,000–$78,000 for a civil designer, but a bridge inspector qualified as an NBIS team leader reaches $80,000–$115,000, and a CEI project manager $115,000–$155,000+. The certifications that move it are ACI, NICET and the state DOT's own qualifications.",
+  },
+  {
+    q: "Are these salary ranges national or local?",
+    a: "National. They are directional bands for the United States as a whole, and metro cost of living moves them more than any other single factor — the same title can differ by tens of thousands between a coastal metro and an inland one. Treat them as the shape of a pay curve rather than an offer for a specific city.",
+  },
+  {
+    q: "What raises an engineering salary fastest?",
+    a: "On our own numbers, three things, in order: the PE licence, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism — load rating, seismic analysis, treatment process, mission-critical electrical — each of which carries its own band above the general one in its discipline.",
+  },
+];
