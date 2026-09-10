@@ -1,11 +1,11 @@
-/* The visual mark for an award organisation.
+/* The visual mark for an award organization.
  *
  * Two states, and which one shows is a licensing question rather than a
  * design one:
  *
- *   logo set   — the organisation's own file, served from /public/awards.
+ *   logo set   — the organization's own file, served from /public/awards.
  *   no logo    — a typographic tile: the acronym set in the site's own
- *                display face. Our artwork, so no licence and no possible
+ *                display face. Our artwork, so no license and no possible
  *                implication of endorsement.
  *
  * Both states share the same chrome — white ground, hairline border, amber
@@ -14,7 +14,7 @@
  * matching them on height alone would make one nine times wider than
  * another. Every mark is fitted inside the same rectangle with
  * object-contain, so the wall lines up whatever it is holding, and an
- * organisation whose file we don't have yet doesn't leave a hole in it.
+ * organization whose file we don't have yet doesn't leave a hole in it.
  */
 export default function AwardMark({
   abbr,
@@ -35,7 +35,7 @@ export default function AwardMark({
   const type =
     size === "lg" ? "text-2xl" : size === "sm" ? "text-sm" : "text-lg";
 
-  /* Some organisations publish only the reverse cut of their mark, which is
+  /* Some organizations publish only the reverse cut of their mark, which is
      white and vanishes on the white tile — AASHTO's file is 73 paths all
      fill="white"; AISC's averages RGB(246,246,246) across its opaque pixels.
      Both rendered as empty boxes on the awards wall. The fix is the tile,

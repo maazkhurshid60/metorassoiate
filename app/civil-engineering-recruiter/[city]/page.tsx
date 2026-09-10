@@ -261,7 +261,7 @@ export default async function CityPage({ params }: { params: Promise<{ city: str
                 <div className="border border-navy-950/10 bg-white p-8 sm:p-10">
                   <p className="mono-label text-slate-500">Who lets the work</p>
                   <p className="mt-3 text-sm leading-relaxed text-slate-500">
-                    The public owners behind most {c.city} civil programmes. Experience
+                    The public owners behind most {c.city} civil programs. Experience
                     on their projects is the shorthand hiring managers here read first.
                   </p>
                   <ul className="mt-6 flex flex-col divide-y divide-navy-950/10">

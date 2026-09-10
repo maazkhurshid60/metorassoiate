@@ -98,7 +98,7 @@ export function siblingDisciplines(currentHub: HubSegment, slug: string) {
 }
 
 
-/* Every hub already carries five verified, city-specific programme entries
+/* Every hub already carries five verified, city-specific program entries
    per city — 25 per metro across the five files — and each page was showing
    only its own five. The other twenty were sitting unused in the repo while
    the pages padded themselves with hub boilerplate instead.

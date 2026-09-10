@@ -53,16 +53,16 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
       a: "It tracks licensure more than years served. Our published bands run from $70,000–$95,000 for a civil engineer with an EIT, to $105,000–$150,000 once the PE is in hand at mid-level, to $140,000–$190,000+ for a senior project manager and $175,000–$250,000+ at regional director. Metro area moves these figures more than any other single factor.",
     },
     {
-      q: "Do you need a PE licence to be a civil project manager?",
+      q: "Do you need a PE license to be a civil project manager?",
       a: "Usually, because the role signs and seals drawings and takes professional responsibility for them. The common route is the FE exam, roughly four years of progressive experience under a licensed PE, then the PE exam. Project engineer and designer roles below that line are open to EITs, and most firms treat them as the run-up to licensure rather than a separate track.",
     },
     {
-      q: "How does a PE licence transfer between states?",
-      a: "It does not transfer automatically. There is no national licence. Every state board licenses independently and grants what is called comity licensure to engineers already licensed elsewhere, on its own terms. An NCEES Record holds your exams, education and references in one place and is what most boards want to see. Budget weeks, not days, and check the destination board before accepting a role that needs a seal.",
+      q: "How does a PE license transfer between states?",
+      a: "It does not transfer automatically. There is no national license. Every state board licenses independently and grants what is called comity licensure to engineers already licensed elsewhere, on its own terms. An NCEES Record holds your exams, education and references in one place and is what most boards want to see. Budget weeks, not days, and check the destination board before accepting a role that needs a seal.",
     },
     {
       q: "What is the difference between consulting-side and DOT-side civil work?",
-      a: "Consulting firms design and deliver; the state DOT owns the asset, sets the standards and reviews the work. Engineers move between the two, but the day-to-day differs sharply, consulting runs on billable utilisation and multiple concurrent clients, agency work on programme delivery and public accountability. A candidate who has only done one often needs a run-up to the other.",
+      a: "Consulting firms design and deliver; the state DOT owns the asset, sets the standards and reviews the work. Engineers move between the two, but the day-to-day differs sharply, consulting runs on billable utilisation and multiple concurrent clients, agency work on program delivery and public accountability. A candidate who has only done one often needs a run-up to the other.",
     },
     {
       q: "Which civil engineering roles are hardest to fill?",
@@ -70,17 +70,17 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What project awards do civil engineering firms compete for?",
-      a: "The main routes are ACEC's Engineering Excellence Awards, which national entries must reach through one of 51 state and metropolitan organisations, ENR's regional Best Projects, ASCE's Outstanding Civil Engineering Achievement, and AASHTO's America's Transportation Awards for state DOT projects. We list the entry route for each on our engineering awards pages.",
+      a: "The main routes are ACEC's Engineering Excellence Awards, which national entries must reach through one of 51 state and metropolitan organizations, ENR's regional Best Projects, ASCE's Outstanding Civil Engineering Achievement, and AASHTO's America's Transportation Awards for state DOT projects. We list the entry route for each on our engineering awards pages.",
     },
   ],
 
   "mep-engineering-recruiter": [
     {
       q: "What does an MEP engineer earn in the United States?",
-      a: "Our published bands run from $70,000–$95,000 for a mechanical or electrical engineer with an EIT, to $105,000–$155,000 for a licensed MEP PE at mid-level, $125,000–$175,000 for a data centre electrical PE, and $180,000–$260,000 for a director of MEP engineering. Mission-critical and healthcare work pays above commercial for the same seniority.",
+      a: "Our published bands run from $70,000–$95,000 for a mechanical or electrical engineer with an EIT, to $105,000–$155,000 for a licensed MEP PE at mid-level, $125,000–$175,000 for a data center electrical PE, and $180,000–$260,000 for a director of MEP engineering. Mission-critical and healthcare work pays above commercial for the same seniority.",
     },
     {
-      q: "Which licences and certifications matter most for MEP engineers?",
+      q: "Which licenses and certifications matter most for MEP engineers?",
       a: "The PE is the one that gates sign-and-seal authority. Beyond it, the credentials employers actually ask for are LEED AP, ASHRAE's BEMP and CEM for energy work, and NICET certification on the fire protection side. Which of those matters depends far more on the project type than on the job title.",
     },
     {
@@ -93,18 +93,18 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What is commissioning, and why is it recruited separately?",
-      a: "Commissioning verifies that installed systems actually perform as designed, after construction and often into occupancy. It is a distinct discipline from design. The skill is testing, measurement and fault-finding rather than modelling, so it is recruited as its own role, usually as a commissioning engineer or CxA.",
+      a: "Commissioning verifies that installed systems actually perform as designed, after construction and often into occupancy. It is a distinct discipline from design. The skill is testing, measurement and fault-finding rather than modeling, so it is recruited as its own role, usually as a commissioning engineer or CxA.",
     },
     {
-      q: "What awards recognise MEP engineering work?",
+      q: "What awards recognize MEP engineering work?",
       a: "ASHRAE's Technology Awards are the notable one, because entry requires measured performance from a building in successful operation for at least a year rather than a design-stage energy model. Alongside them: the IES Illumination Awards for lighting design, NECA's Project Excellence Awards on the electrical construction side, and Consulting-Specifying Engineer's MEP Giants ranking and 40 Under 40.",
     },
   ],
 
   "bridge-structural-recruiter": [
     {
-      q: "Do structural engineers need a PE or an SE licence?",
-      a: "A PE covers most structural practice. A separate SE licence exists, and a handful of states require it for particular structures, significant buildings, or bridges above a threshold, so the answer genuinely depends on where the work is and what is being designed. Junior roles are commonly open to EITs; senior positions that seal drawings are not.",
+      q: "Do structural engineers need a PE or an SE license?",
+      a: "A PE covers most structural practice. A separate SE license exists, and a handful of states require it for particular structures, significant buildings, or bridges above a threshold, so the answer genuinely depends on where the work is and what is being designed. Junior roles are commonly open to EITs; senior positions that seal drawings are not.",
     },
     {
       q: "What is the difference between bridge design and bridge inspection?",
@@ -131,7 +131,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "water-wastewater-recruiter": [
     {
       q: "What does a water or wastewater engineer earn?",
-      a: "Process engineers and treatment designers track the civil PE bands closely, roughly $70,000–$95,000 at EIT, $105,000–$150,000 for a mid-level licensed PE, and $140,000–$190,000+ for senior project managers running plant programmes. Plant process experience carries a premium over collection and distribution work at the same seniority, because it is harder to acquire.",
+      a: "Process engineers and treatment designers track the civil PE bands closely, roughly $70,000–$95,000 at EIT, $105,000–$150,000 for a mid-level licensed PE, and $140,000–$190,000+ for senior project managers running plant programs. Plant process experience carries a premium over collection and distribution work at the same seniority, because it is harder to acquire.",
     },
     {
       q: "What is the difference between a water engineer and a plant operator?",
@@ -147,7 +147,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What is the difference between collection systems and treatment work?",
-      a: "Collection and distribution is pipe network engineering, hydraulic modelling, pump stations, rehabilitation of buried assets. Treatment is process engineering inside a plant. Firms recruit them separately, and a strong candidate in one is not automatically a candidate in the other.",
+      a: "Collection and distribution is pipe network engineering, hydraulic modeling, pump stations, rehabilitation of buried assets. Treatment is process engineering inside a plant. Firms recruit them separately, and a strong candidate in one is not automatically a candidate in the other.",
     },
     {
       q: "What recognition exists for water and wastewater projects?",
@@ -162,7 +162,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "What certifications do construction inspectors need?",
-      a: "NICET certification is the common baseline, graded by level, and most state DOTs run their own qualification programmes for specific inspection types, concrete, asphalt, earthwork, structures. Those are agency-specific, which is why a spec asks for a particular state's certification rather than inspection experience in general.",
+      a: "NICET certification is the common baseline, graded by level, and most state DOTs run their own qualification programs for specific inspection types, concrete, asphalt, earthwork, structures. Those are agency-specific, which is why a spec asks for a particular state's certification rather than inspection experience in general.",
     },
     {
       q: "What is the difference between an inspector and a resident engineer?",
@@ -174,7 +174,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "Is CEI work permanent or project-based?",
-      a: "Both, and the distinction shapes the market. Consulting firms hold CEI contracts that run for the length of a construction programme, so hiring follows contract awards. That makes CEI hiring more responsive to letting schedules than design hiring, and it is why timing matters more in this discipline than most.",
+      a: "Both, and the distinction shapes the market. Consulting firms hold CEI contracts that run for the length of a construction program, so hiring follows contract awards. That makes CEI hiring more responsive to letting schedules than design hiring, and it is why timing matters more in this discipline than most.",
     },
     {
       q: "Can inspectors move into construction management?",
@@ -185,7 +185,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
   "municipal-engineering-recruiter": [
     {
       q: "What does a municipal engineer do?",
-      a: "Municipal engineering is the public agency's own engineering function, streets, utilities, stormwater, water and sewer, plan review and the capital improvement programme. The work spans several disciplines shallowly rather than one deeply, and much of it is managing consultants rather than producing drawings.",
+      a: "Municipal engineering is the public agency's own engineering function, streets, utilities, stormwater, water and sewer, plan review and the capital improvement program. The work spans several disciplines shallowly rather than one deeply, and much of it is managing consultants rather than producing drawings.",
     },
     {
       q: "What does a city engineer earn compared with consulting?",
@@ -193,7 +193,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
     },
     {
       q: "Do municipal engineering roles require a PE?",
-      a: "City engineer and senior municipal positions generally do, because the role signs off on public infrastructure. Below that, plan review, inspection and capital programme roles are frequently open to EITs, and a public agency is often a better place to accumulate the varied experience licensure requires than a specialist consultancy.",
+      a: "City engineer and senior municipal positions generally do, because the role signs off on public infrastructure. Below that, plan review, inspection and capital program roles are frequently open to EITs, and a public agency is often a better place to accumulate the varied experience licensure requires than a specialist consultancy.",
     },
     {
       q: "Who owns municipal engineering work in a given city?",
@@ -204,7 +204,7 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
       a: "That the engineer can work inside a public agency's constraints (procurement rules, council timelines, public meetings and funding cycles) rather than around them. Consulting firms bidding municipal work value it precisely because it is hard to teach and it determines whether a project stays on schedule.",
     },
     {
-      q: "What awards recognise municipal and public works projects?",
+      q: "What awards recognize municipal and public works projects?",
       a: "APWA's Public Works Project of the Year is the notable one, and unusually it recognises the owning agency, the consulting engineer and the contractor together. Entry runs through an APWA chapter before national judging, and a project must be substantially complete and in use within the two calendar years before nomination.",
     },
   ],
@@ -226,8 +226,8 @@ export const HUB_FAQS: Record<HubSegment, FaqItem[]> = {
  */
 export const SALARY_FAQS: FaqItem[] = [
   {
-    q: "How much does a PE licence add to an engineer's salary?",
-    a: "Comparing our own published bands discipline by discipline, the licensed mid-level band begins roughly $32,000 to $38,000 above where the EIT band begins, and roughly $52,000 to $60,000 higher at the top. Civil runs $70,000–$95,000 at EIT against $105,000–$150,000 licensed; bridge $72,000–$98,000 against $110,000–$158,000. The licence is the single largest step in an engineering pay curve.",
+    q: "How much does a PE license add to an engineer's salary?",
+    a: "Comparing our own published bands discipline by discipline, the licensed mid-level band begins roughly $32,000 to $38,000 above where the EIT band begins, and roughly $52,000 to $60,000 higher at the top. Civil runs $70,000–$95,000 at EIT against $105,000–$150,000 licensed; bridge $72,000–$98,000 against $110,000–$158,000. The license is the single largest step in an engineering pay curve.",
   },
   {
     q: "Which engineering discipline pays the most?",
@@ -255,7 +255,7 @@ export const SALARY_FAQS: FaqItem[] = [
   },
   {
     q: "What raises an engineering salary fastest?",
-    a: "On our own numbers, three things, in order: the PE licence, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism (load rating, seismic analysis, treatment process, mission-critical electrical), each of which carries its own band above the general one in its discipline.",
+    a: "On our own numbers, three things, in order: the PE license, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism (load rating, seismic analysis, treatment process, mission-critical electrical), each of which carries its own band above the general one in its discipline.",
   },
 ];
 
@@ -281,7 +281,7 @@ export const GENERAL_FAQS: FaqItem[] = [
   },
   {
     q: "Do you recruit for permanent roles, contract, or both?",
-    a: "Predominantly permanent, direct-hire engineering roles. CEI is the partial exception: that work is contracted for the length of a construction programme, so hiring in it follows letting schedules more closely than design hiring does, and timing matters more.",
+    a: "Predominantly permanent, direct-hire engineering roles. CEI is the partial exception: that work is contracted for the length of a construction program, so hiring in it follows letting schedules more closely than design hiring does, and timing matters more.",
   },
   {
     q: "Do candidates pay Metro Associates anything?",
@@ -391,7 +391,7 @@ export const FAQ_GROUPS: FaqGroup[] = [
   {
     id: "engineering-pay",
     title: "Engineering pay",
-    blurb: "What a PE licence is worth, which discipline pays most, and how the published bands actually move.",
+    blurb: "What a PE license is worth, which discipline pays most, and how the published bands actually move.",
     href: "/index_themall_awards",
     faqs: SALARY_FAQS,
   },

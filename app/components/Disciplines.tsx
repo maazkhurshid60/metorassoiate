@@ -52,7 +52,7 @@ const DISCIPLINES: { label: string; href: string; body: string }[] = [
   {
     label: "Municipal Engineering",
     href: "/municipal-engineering-recruiter",
-    body: "City and county engineers, public works leadership and capital programme managers.",
+    body: "City and county engineers, public works leadership and capital program managers.",
   },
 ];
 

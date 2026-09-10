@@ -324,7 +324,7 @@ export default async function AwardDetailPage({
               name: a.name,
               sameAs: a.url,
             },
-            /* The organisation that RUNS the award, so the graph does not
+            /* The organization that RUNS the award, so the graph does not
                read as though Metro awards or won it. */
             mentions: { "@type": "Organization", name: a.org, url: a.url },
             publisher: { "@type": "Organization", name: "Metro Associates" },

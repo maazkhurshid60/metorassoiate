@@ -17,7 +17,7 @@ import { ORG } from "../lib/seo";
  * firm in my state enter?" is a page worth ranking.
  *
  * Same rules as lib/awards.ts: no claimed wins, no borrowed badges, every
- * link points at the organisation that runs the program.
+ * link points at the organization that runs the program.
  */
 
 export const metadata: Metadata = {
@@ -98,7 +98,7 @@ export default function EngineeringAwardsPage() {
         </section>
 
         {/* The wall. Marks are our own typographic tiles until we hold
-            permission for each organisation's own file — see public/awards. */}
+            permission for each organization's own file — see public/awards. */}
         <section className="relative border-t border-navy-950/10 blueprint-light py-14">
           <div className="container-x">
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
@@ -136,7 +136,7 @@ export default function EngineeringAwardsPage() {
                 The programs
               </h2>
               <p className="mt-4 text-lg leading-8 text-slate text-pretty">
-                Fourteen programs, each linked to the organisation that runs it.
+                Fourteen programs, each linked to the organization that runs it.
                 Several start at chapter or state level and advance nationally,
                 which is what makes them winnable for a regional firm rather than
                 only for the giants.

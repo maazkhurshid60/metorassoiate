@@ -31,7 +31,7 @@ const TICKER = [
 export const metadata: Metadata = {
   title: "Municipal Engineering Recruiters | Metro Associates",
   description:
-    "National municipal engineering recruiters. City and county engineers, public works leadership and capital programme managers for local agencies.",
+    "National municipal engineering recruiters. City and county engineers, public works leadership and capital program managers for local agencies.",
   keywords: [
     "municipal engineering recruiter",
     "municipal engineer staffing agency",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Municipal Engineering Recruiters | Metro Associates",
     description:
-      "National municipal engineering recruiters. City and county engineers, public works leadership and capital programme managers for local agencies.",
+      "National municipal engineering recruiters. City and county engineers, public works leadership and capital program managers for local agencies.",
     url: `${SITE_URL}/municipal-engineering-recruiter`,
     siteName: "Metro Associates",
     type: "website",

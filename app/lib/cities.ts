@@ -25,7 +25,7 @@ export interface City {
 
      All optional. A city without them renders exactly as before, so the set
      can be filled in market by market instead of all fifty at once. Written
-     to stay true: named public owners and durable programme characteristics,
+     to stay true: named public owners and durable program characteristics,
      no dates, no dollar figures, no claims about who is hiring this quarter. */
 
   /** Public owners that actually let the work in this metro. */
@@ -65,16 +65,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "New York is a rehabilitation market before it is a greenfield one. Engineers here spend their careers on assets that already exist, East River crossings, elevated highway structures, a water and sewer network a century old in places, and a subway that has to keep carrying passengers while it is rebuilt around them. That shapes who gets hired: staging, maintenance of traffic and constructability judgement are worth as much as design throughput, because almost nothing is built on an empty site.",
-      "The second driver is water. Combined-sewer overflow obligations, shoreline protection along the coast, and the upstate supply system keep hydraulic and resiliency engineers in demand on a cycle of their own, independent of whatever the highway programme is doing in a given year.",
+      "The second driver is water. Combined-sewer overflow obligations, shoreline protection along the coast, and the upstate supply system keep hydraulic and resiliency engineers in demand on a cycle of their own, independent of whatever the highway program is doing in a given year.",
     ],
     hiringFocus: [
       { role: "Bridge rehabilitation & inspection engineers", why: "The metro's river crossings and elevated structures run a continuous inspection and repair cycle, so NBIS-qualified team leaders rarely reach the open market." },
       { role: "Construction-phase and resident engineers", why: "Work is built under live traffic and around running transit, which puts a premium on engineers who can sequence staging rather than only design the end state." },
-      { role: "Drainage & coastal resiliency engineers", why: "Combined-sewer programmes and shoreline protection have made hydraulics a standing line item here rather than a project-by-project need." },
+      { role: "Drainage & coastal resiliency engineers", why: "Combined-sewer programs and shoreline protection have made hydraulics a standing line item here rather than a project-by-project need." },
       { role: "Transit and rail structural engineers", why: "Station reconstruction and tunnel work need people comfortable assessing existing conditions and designing phased interventions into them." },
     ],
     licensure:
-      "New York licenses engineers through the State Education Department's Office of the Professions, and most out-of-state PEs transfer by comity on an NCEES record rather than by re-examination. The gate that bites harder in practice is agency prequalification: NYSDOT, the MTA and the city agencies each run their own approved-consultant arrangements, so which agencies a candidate has actually worked under often matters more to a hiring manager than the licence itself.",
+      "New York licenses engineers through the State Education Department's Office of the Professions, and most out-of-state PEs transfer by comity on an NCEES record rather than by re-examination. The gate that bites harder in practice is agency prequalification: NYSDOT, the MTA and the city agencies each run their own approved-consultant arrangements, so which agencies a candidate has actually worked under often matters more to a hiring manager than the license itself.",
   },
   {
     slug: "los-angeles-ca",
@@ -103,12 +103,12 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Seismic design is the constant in Southern California. Retrofit and performance-based assessment run underneath almost everything structural here, and an engineer who has only designed for gravity and wind elsewhere has real ground to make up. It is also why the retrofit backlog on bridges and older buildings keeps structural demand steady even when new build slows.",
-      "Water is the other half of the market. Recycled water, groundwater replenishment and supply resiliency are long-horizon programmes driven by allocation limits rather than by growth, so water-resources engineers here work on treatment and conveyance schemes that outlast several transport funding cycles.",
+      "Water is the other half of the market. Recycled water, groundwater replenishment and supply resiliency are long-horizon programs driven by allocation limits rather than by growth, so water-resources engineers here work on treatment and conveyance schemes that outlast several transport funding cycles.",
     ],
     hiringFocus: [
       { role: "Seismic retrofit & bridge structural engineers", why: "The regional retrofit backlog is measured in decades, and performance-based seismic assessment is scarcer than general structural design." },
-      { role: "Water resources & recycled-water engineers", why: "Replenishment and reuse programmes are driven by supply limits, so this demand does not track the construction cycle." },
-      { role: "Traffic & ITS engineers", why: "Freeway and arterial operations work continues between capital programmes, and corridor management is a permanent function here." },
+      { role: "Water resources & recycled-water engineers", why: "Replenishment and reuse programs are driven by supply limits, so this demand does not track the construction cycle." },
+      { role: "Traffic & ITS engineers", why: "Freeway and arterial operations work continues between capital programs, and corridor management is a permanent function here." },
       { role: "Construction managers for work under traffic", why: "Freeway rehabilitation across the basin is staged around closures, which is a scheduling discipline as much as an engineering one." },
     ],
     licensure:
@@ -140,16 +140,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Chicago's civil work is dominated by an ageing expressway and bridge inventory that has to be rebuilt in place, and by the density of freight rail crossing the region. The largest rail hub in the country. Grade separation, structure clearance and railroad coordination come up here in a way they simply do not in most metros, and engineers who have negotiated with the railroads carry a premium.",
-      "Underneath that sits the deep-tunnel stormwater system and a combined-sewer network serving a flat, heavily paved basin. Hydraulic engineers work at a scale of conveyance few regions match, and urban flooding keeps the work on the books regardless of what the transport programme is doing.",
+      "Underneath that sits the deep-tunnel stormwater system and a combined-sewer network serving a flat, heavily paved basin. Hydraulic engineers work at a scale of conveyance few regions match, and urban flooding keeps the work on the books regardless of what the transport program is doing.",
     ],
     hiringFocus: [
-      { role: "Structural engineers holding an Illinois SE", why: "Illinois issues a Structural Engineer licence separate from the PE, so structural leads on many projects need the SE specifically, a licensing detail that catches out-of-state hires." },
+      { role: "Structural engineers holding an Illinois SE", why: "Illinois issues a Structural Engineer license separate from the PE, so structural leads on many projects need the SE specifically, a licensing detail that catches out-of-state hires." },
       { role: "Rail & grade-separation engineers", why: "Freight density makes railroad coordination a routine part of roadway projects here, and the experience does not transfer from most other markets." },
       { role: "Hydraulic & stormwater engineers", why: "A flat basin, combined sewers and the deep-tunnel system keep conveyance design continuously in demand." },
       { role: "Construction inspection staff fluent in IDOT documentation", why: "State-funded work carries documentation standards inspectors are expected to know before they arrive on site." },
     ],
     licensure:
-      "Illinois is the licensing outlier engineers most often trip over: the state issues a Structural Engineer (SE) licence distinct from the PE, and structural work of consequence calls for the SE rather than a PE alone. Recruiting a structural lead from a state where the PE covers structural practice means budgeting for that gap. Consultant selection on state work runs through IDOT prequalification by work type.",
+      "Illinois is the licensing outlier engineers most often trip over: the state issues a Structural Engineer (SE) license distinct from the PE, and structural work of consequence calls for the SE rather than a PE alone. Recruiting a structural lead from a state where the PE covers structural practice means budgeting for that gap. Consultant selection on state work runs through IDOT prequalification by work type.",
   },
   {
     slug: "houston-tx",
@@ -175,17 +175,17 @@ export const CITIES: City[] = [
       "Port Houston",
     ],
     marketDetail: [
-      "Drainage is the Houston market. The metro sits flat, drains slowly and floods on a schedule the region plans around, so detention design, channel conveyance and hydrologic and hydraulic modelling are core competencies rather than a specialism bolted onto roadway work. Engineers who can build and defend an H&H model in a review meeting are the ones firms compete for.",
-      "The second engine is industrial. The ship-channel petrochemical corridor and port infrastructure generate civil and structural work with a different rhythm from public transport programmes, owner-driven, schedule-led, and largely indifferent to the state highway funding cycle.",
+      "Drainage is the Houston market. The metro sits flat, drains slowly and floods on a schedule the region plans around, so detention design, channel conveyance and hydrologic and hydraulic modeling are core competencies rather than a specialism bolted onto roadway work. Engineers who can build and defend an H&H model in a review meeting are the ones firms compete for.",
+      "The second engine is industrial. The ship-channel petrochemical corridor and port infrastructure generate civil and structural work with a different rhythm from public transport programs, owner-driven, schedule-led, and largely indifferent to the state highway funding cycle.",
     ],
     hiringFocus: [
-      { role: "Hydrologic & hydraulic modelling engineers", why: "Flood-control work is model-led, and defending a hydraulic model is the scarcest skill in the metro." },
-      { role: "Drainage & detention designers", why: "Regional detention and channel improvement programmes run continuously rather than in bursts." },
+      { role: "Hydrologic & hydraulic modeling engineers", why: "Flood-control work is model-led, and defending a hydraulic model is the scarcest skill in the metro." },
+      { role: "Drainage & detention designers", why: "Regional detention and channel improvement programs run continuously rather than in bursts." },
       { role: "Roadway designers fluent in TxDOT standards", why: "District work is standards-heavy, and engineers who already know them start producing months sooner." },
       { role: "Construction inspection staff", why: "Sustained highway and drainage construction keeps field inspection demand ahead of supply across the district." },
     ],
     licensure:
-      "Texas licenses engineers through TBPELS, and firms offering engineering services need their own registration, not only the individuals. On state work, TxDOT precertification by work category decides who can be on a team at all, so a candidate's precertification history is a practical hiring signal alongside the licence.",
+      "Texas licenses engineers through TBPELS, and firms offering engineering services need their own registration, not only the individuals. On state work, TxDOT precertification by work category decides who can be on a team at all, so a candidate's precertification history is a practical hiring signal alongside the license.",
   },
   {
     slug: "phoenix-az",
@@ -218,7 +218,7 @@ export const CITIES: City[] = [
     hiringFocus: [
       { role: "Land development & site civil engineers", why: "Sustained greenfield growth keeps grading, paving and utility design in demand at a volume most metros no longer see." },
       { role: "Water resources engineers", why: "Assured water supply requirements put a supply assessment at the front of the development process rather than the end." },
-      { role: "Roadway & freeway designers", why: "The loop and arterial programmes are long-running and standards-driven." },
+      { role: "Roadway & freeway designers", why: "The loop and arterial programs are long-running and standards-driven." },
       { role: "Utility coordination specialists", why: "Rapid greenfield build-out makes wet and dry utility coordination a schedule bottleneck rather than a detail." },
     ],
     licensure:
@@ -250,11 +250,11 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Philadelphia is a bridge market. The regional inventory is old, dense and heavily used, and corridor reconstruction along I-95 has kept structural design, staging and inspection teams occupied for years at a stretch. Engineers here are used to rebuilding structures over live traffic and active rail, which is a different discipline from designing a new crossing on open ground.",
-      "The distinctive civil work is stormwater. The city's green stormwater infrastructure programme is among the most developed in the country, and it has created a local specialism (fitting bioretention, permeable surfaces and inlet modifications into constrained streets) that transfers well and is hard to hire in from elsewhere.",
+      "The distinctive civil work is stormwater. The city's green stormwater infrastructure program is among the most developed in the country, and it has created a local specialism (fitting bioretention, permeable surfaces and inlet modifications into constrained streets) that transfers well and is hard to hire in from elsewhere.",
     ],
     hiringFocus: [
-      { role: "Bridge design & inspection engineers", why: "An old, dense structure inventory means rehabilitation and inspection continue regardless of the new-build programme." },
-      { role: "Green stormwater infrastructure designers", why: "The city's programme has made retrofit stormwater design a genuine local specialism with few experienced practitioners." },
+      { role: "Bridge design & inspection engineers", why: "An old, dense structure inventory means rehabilitation and inspection continue regardless of the new-build program." },
+      { role: "Green stormwater infrastructure designers", why: "The city's program has made retrofit stormwater design a genuine local specialism with few experienced practitioners." },
       { role: "Construction inspection staff fluent in PennDOT documentation", why: "State-funded work carries documentation requirements inspectors are expected to know on day one." },
       { role: "Rail & transit structural engineers", why: "Transit rebuilding needs structural assessment of assets that have to stay in service throughout." },
     ],
@@ -287,16 +287,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "North Texas is a managed-lane and tollway market, and it delivers much of its work through design-build and comprehensive development agreements. That changes what firms need: engineers who can produce at pursuit pace, price risk and work alongside a contractor from the start, rather than hand a finished set over the wall. Pursuit experience is a real differentiator on a CV here.",
-      "Underneath the corridor programmes, suburban growth keeps land development and municipal engineering busy across the collar counties, giving the metro two distinct hiring markets that rarely compete for the same people.",
+      "Underneath the corridor programs, suburban growth keeps land development and municipal engineering busy across the collar counties, giving the metro two distinct hiring markets that rarely compete for the same people.",
     ],
     hiringFocus: [
-      { role: "Roadway & managed-lane designers", why: "Corridor and tollway programmes are the region's defining work and run on multi-year schedules." },
+      { role: "Roadway & managed-lane designers", why: "Corridor and tollway programs are the region's defining work and run on multi-year schedules." },
       { role: "Design-build pursuit engineers", why: "Alternative delivery is standard here, and engineers who have worked inside a pursuit team are scarce relative to demand." },
-      { role: "Land development engineers", why: "Collar-county growth sustains a second market largely independent of the highway programme." },
+      { role: "Land development engineers", why: "Collar-county growth sustains a second market largely independent of the highway program." },
       { role: "Construction inspection and materials staff", why: "Sustained construction volume keeps field roles open across several districts at once." },
     ],
     licensure:
-      "Texas licenses through TBPELS and requires firm registration alongside individual licensure. TxDOT precertification decides team eligibility on state work, and because so much North Texas work is alternatively delivered, contractors weigh design-build experience nearly as heavily as the licence itself.",
+      "Texas licenses through TBPELS and requires firm registration alongside individual licensure. TxDOT precertification decides team eligibility on state work, and because so much North Texas work is alternatively delivered, contractors weigh design-build experience nearly as heavily as the license itself.",
   },
   {
     slug: "atlanta-ga",
@@ -324,12 +324,12 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Atlanta's highway work is concentrated in managed lanes and interchange reconstruction on the interstates converging on the city, which means large, long-duration corridor projects and the staging discipline that goes with rebuilding roads that cannot be closed.",
-      "The quieter but steadier market is sewer. Consent-decree-driven capacity and rehabilitation programmes across the metro counties have kept collection-system engineers working for years, and that work is obligation-led rather than growth-led. It continues through downturns.",
+      "The quieter but steadier market is sewer. Consent-decree-driven capacity and rehabilitation programs across the metro counties have kept collection-system engineers working for years, and that work is obligation-led rather than growth-led. It continues through downturns.",
     ],
     hiringFocus: [
-      { role: "Managed lane & interchange designers", why: "The region's mobility programme is built around complex interchanges rebuilt under traffic." },
+      { role: "Managed lane & interchange designers", why: "The region's mobility program is built around complex interchanges rebuilt under traffic." },
       { role: "Sewer rehabilitation & capacity engineers", why: "Consent-decree obligations fund this work on a schedule that does not follow the economy." },
-      { role: "Water resources & watershed engineers", why: "Watershed improvement programmes across the metro counties run alongside the sewer work." },
+      { role: "Water resources & watershed engineers", why: "Watershed improvement programs across the metro counties run alongside the sewer work." },
       { role: "Construction inspection staff", why: "Long corridor projects need inspection teams sustained across multi-year schedules." },
     ],
     licensure:
@@ -366,8 +366,8 @@ export const CITIES: City[] = [
     hiringFocus: [
       { role: "Stormwater & resiliency engineers", why: "Tidal influence and a high water table make drainage design a specialist problem rather than a routine calculation." },
       { role: "Coastal & marine structural engineers", why: "Bridges and port structures in saltwater need durability detailing that few inland engineers have practised." },
-      { role: "CEI inspectors with FDOT qualifications", why: "State construction work requires programme-specific qualification, so qualified inspectors are hired straight off other projects." },
-      { role: "Water & wastewater capacity engineers", why: "Treatment and conveyance upgrades run on regulatory timelines independent of the transport programme." },
+      { role: "CEI inspectors with FDOT qualifications", why: "State construction work requires program-specific qualification, so qualified inspectors are hired straight off other projects." },
+      { role: "Water & wastewater capacity engineers", why: "Treatment and conveyance upgrades run on regulatory timelines independent of the transport program." },
     ],
     licensure:
       "Florida licenses engineers through FBPE, with comity available on an NCEES record. Two Florida-specific credentials matter more day to day: FDOT's construction training qualifications gate who can hold materials and inspection roles on state work, and threshold-building projects require a licensed special inspector. Both are worth checking on a CV before an interview rather than after an offer.",
@@ -398,16 +398,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Geotechnics drives the Puget Sound market. Soft soils, liquefaction risk, steep slopes and deep foundations sit under nearly every structural decision, and seismic demand is high enough that retrofit and resilient design are routine rather than exceptional. Engineers who can read a geotechnical report and design to it are worth more here than their years suggest.",
-      "The distinctive civil programme is fish passage. Replacing culverts that block salmon migration has created sustained hydraulic and structural work across the state, with a design vocabulary (stream simulation, channel-spanning structures) that barely exists in other markets and is therefore hard to hire in.",
+      "The distinctive civil program is fish passage. Replacing culverts that block salmon migration has created sustained hydraulic and structural work across the state, with a design vocabulary (stream simulation, channel-spanning structures) that barely exists in other markets and is therefore hard to hire in.",
     ],
     hiringFocus: [
       { role: "Geotechnical & seismic engineers", why: "Soft soils and high seismic demand make geotechnical judgement a constraint on nearly every project." },
-      { role: "Fish-passage & hydraulic designers", why: "The culvert replacement programme is long-running and uses design methods rarely practised elsewhere." },
-      { role: "Structural engineers holding a Washington SE", why: "Washington issues a Structural Engineer licence separate from the PE for significant structures." },
+      { role: "Fish-passage & hydraulic designers", why: "The culvert replacement program is long-running and uses design methods rarely practised elsewhere." },
+      { role: "Structural engineers holding a Washington SE", why: "Washington issues a Structural Engineer license separate from the PE for significant structures." },
       { role: "Marine & waterfront engineers", why: "Ferry terminals, port structures and shoreline work are a permanent feature of this market." },
     ],
     licensure:
-      "Washington is one of the few states with a separate Structural Engineer (SE) licence alongside the PE, which matters when hiring structural leads from states where the PE covers that work. Comity is available on an NCEES record for the PE itself, and consultant access to state highway work runs through WSDOT's agreements and rosters.",
+      "Washington is one of the few states with a separate Structural Engineer (SE) license alongside the PE, which matters when hiring structural leads from states where the PE covers that work. Comity is available on an NCEES record for the PE itself, and consultant access to state highway work runs through WSDOT's agreements and rosters.",
   },
   {
     slug: "denver-co",
@@ -439,7 +439,7 @@ export const CITIES: City[] = [
     ],
     hiringFocus: [
       { role: "Highway designers with mountain corridor experience", why: "Geohazards and short construction seasons make mountain work a distinct discipline from urban roadway design." },
-      { role: "Water resources & supply engineers", why: "Storage and drought resiliency are permanent programmes in a headwaters state." },
+      { role: "Water resources & supply engineers", why: "Storage and drought resiliency are permanent programs in a headwaters state." },
       { role: "Drainage engineers fluent in the regional flood criteria", why: "Urban drainage here is designed to a well-defined regional framework that takes time to learn." },
       { role: "Construction inspection staff", why: "Compressed construction seasons concentrate demand for field staff into a short window each year." },
     ],
@@ -472,16 +472,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Boston builds in a dense, historic city on ground that was largely made by filling tidal flats. Deep excavation next to buildings founded on timber piles, groundwater levels that have to be maintained rather than simply drawn down, and constrained sites make geotechnical and support-of-excavation expertise unusually valuable here.",
-      "The bridge programme has pushed accelerated construction hard: prefabricated elements, weekend closures, slide-in replacements. Engineers who have designed for that kind of delivery, where the schedule constrains the detailing, are a distinct group from those who have only done conventional staged construction.",
+      "The bridge program has pushed accelerated construction hard: prefabricated elements, weekend closures, slide-in replacements. Engineers who have designed for that kind of delivery, where the schedule constrains the detailing, are a distinct group from those who have only done conventional staged construction.",
     ],
     hiringFocus: [
       { role: "Bridge engineers with accelerated construction experience", why: "Weekend and prefabricated replacements are standard here, and they constrain design in ways conventional staging does not." },
       { role: "Geotechnical & support-of-excavation engineers", why: "Building on filled ground beside pile-founded historic structures makes this the region's binding technical constraint." },
       { role: "Transit structural engineers", why: "Transit rebuilding requires structural work on assets that must stay in service." },
-      { role: "Coastal resiliency engineers", why: "Harbour-edge adaptation is now a standing programme rather than a study." },
+      { role: "Coastal resiliency engineers", why: "Harbour-edge adaptation is now a standing program rather than a study." },
     ],
     licensure:
-      "Massachusetts registers engineers through its state board with comity on an NCEES record. Consultant access to state work runs through MassDOT prequalification, and for bridge roles specifically, hiring managers look for experience with accelerated construction and night or weekend staging as much as for the licence.",
+      "Massachusetts registers engineers through its state board with comity on an NCEES record. Consultant access to state work runs through MassDOT prequalification, and for bridge roles specifically, hiring managers look for experience with accelerated construction and night or weekend staging as much as for the license.",
   },
   {
     slug: "minneapolis-mn",
@@ -512,9 +512,9 @@ export const CITIES: City[] = [
     ],
     hiringFocus: [
       { role: "Bridge inspection & load rating engineers", why: "Inspection and rating are funded continuously here, and qualified team leaders are held onto." },
-      { role: "Hydraulic & watershed engineers", why: "Watershed districts run their own programmes, which keeps clean-water design in demand year-round." },
-      { role: "Transit corridor designers", why: "Light rail and bus rapid transit corridors are long-duration programmes across the metro." },
-      { role: "Municipal roadway engineers", why: "City and county reconstruction work continues on a steady annual cycle regardless of state programmes." },
+      { role: "Hydraulic & watershed engineers", why: "Watershed districts run their own programs, which keeps clean-water design in demand year-round." },
+      { role: "Transit corridor designers", why: "Light rail and bus rapid transit corridors are long-duration programs across the metro." },
+      { role: "Municipal roadway engineers", why: "City and county reconstruction work continues on a steady annual cycle regardless of state programs." },
     ],
     licensure:
       "Minnesota licenses engineers through its state board with comity on an NCEES record. MnDOT prequalifies consultants by work type, and in this market NBIS bridge inspection credentials and load rating experience are among the most portable things a candidate can hold.",
@@ -544,7 +544,7 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Southeast Michigan is a reconstruction market. The freeway network is being rebuilt corridor by corridor rather than extended, which puts the emphasis on staging, utility relocation and maintaining access to neighbourhoods and industry through multi-year projects.",
-      "Water is regional and ageing. The Great Lakes Water Authority system serves a large share of the state's population through infrastructure that needs rehabilitation rather than expansion, and combined sewers in the older cores make capacity and separation work a continuing programme.",
+      "Water is regional and ageing. The Great Lakes Water Authority system serves a large share of the state's population through infrastructure that needs rehabilitation rather than expansion, and combined sewers in the older cores make capacity and separation work a continuing program.",
     ],
     hiringFocus: [
       { role: "Roadway & freeway reconstruction engineers", why: "Corridor rebuilds under traffic are the defining project type in the region." },
@@ -581,16 +581,16 @@ export const CITIES: City[] = [
     ],
     marketDetail: [
       "Charlotte is a growth market, and growth engineering is its own discipline: subdivision and site civil work, arterial widening ahead of demand, and utility extension into land that had none. The volume is steady enough that land development experience is the most reliably transferable thing on a CV here.",
-      "The counterweight is stormwater. The county's storm water services programme gives drainage and stream restoration work a formal structure and a continuing budget, so the discipline does not rise and fall with the development cycle the way it does in less organised markets.",
+      "The counterweight is stormwater. The county's storm water services program gives drainage and stream restoration work a formal structure and a continuing budget, so the discipline does not rise and fall with the development cycle the way it does in less organised markets.",
     ],
     hiringFocus: [
       { role: "Land development & site civil engineers", why: "Sustained regional growth keeps subdivision and site design the largest single source of civil work." },
       { role: "Roadway & managed lane designers", why: "Corridor widening and managed lane projects run on long state schedules." },
-      { role: "Stormwater & stream restoration engineers", why: "The county programme funds this work continuously rather than project by project." },
+      { role: "Stormwater & stream restoration engineers", why: "The county program funds this work continuously rather than project by project." },
       { role: "Utility relocation coordinators", why: "Rapid growth makes relocation a critical-path activity on most corridor projects." },
     ],
     licensure:
-      "North Carolina licenses engineers through its state board with comity on an NCEES record, and firms providing engineering services also need a licence to practise. NCDOT prequalification governs state work, and in this market land development and site civil experience is often weighed as heavily as public-sector project history.",
+      "North Carolina licenses engineers through its state board with comity on an NCEES record, and firms providing engineering services also need a license to practice. NCDOT prequalification governs state work, and in this market land development and site civil experience is often weighed as heavily as public-sector project history.",
   },
   {
     slug: "nashville-tn",

@@ -21,7 +21,7 @@ const DIFFERENTIATORS = [
   {
     icon: IconClipboard,
     title: "Licensure handled before offer stage",
-    body: "A PE licence does not transfer automatically between states. We work comity and NCEES Records into the search from the start, rather than discovering a six-week gap once someone has accepted.",
+    body: "A PE license does not transfer automatically between states. We work comity and NCEES Records into the search from the start, rather than discovering a six-week gap once someone has accepted.",
   },
   {
     icon: IconGauge,

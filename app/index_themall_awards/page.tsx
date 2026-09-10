@@ -40,7 +40,7 @@ const GROUPS = [
     slug: "civil-engineering-recruiter",
     discipline: "Civil Engineering",
     icon: IconCompass,
-    blurb: "Design, roadway and site civil roles across public infrastructure programmes.",
+    blurb: "Design, roadway and site civil roles across public infrastructure programs.",
     salaries: SALARIES,
   },
   {
@@ -62,7 +62,7 @@ const GROUPS = [
     slug: "mep-engineering-recruiter",
     discipline: "MEP Engineering",
     icon: IconBolt,
-    blurb: "Mechanical, electrical and plumbing design for buildings and data centres.",
+    blurb: "Mechanical, electrical and plumbing design for buildings and data centers.",
     salaries: MEP_SALARIES,
   },
   {

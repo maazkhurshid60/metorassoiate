@@ -12,23 +12,23 @@
  *   1. No claim that Metro or any named client won anything. If the client
  *      gives us verified wins, those belong here as facts with a year — a
  *      real win beats a list of programs every time.
- *   2. `logo` holds the ORGANISATION's own mark, taken from that
- *      organisation's own site, shown beside a link to the program it runs
+ *   2. `logo` holds the ORGANIZATION's own mark, taken from that
+ *      organization's own site, shown beside a link to the program it runs
  *      and under a notice naming the owner and disclaiming affiliation —
  *      nominative use, which is what keeps it defensible. A WINNER badge is
  *      a different thing entirely and must never appear here: ENR and ACEC
  *      license those to actual winners, and Metro cannot win an engineering
  *      award. Programs with no file fall back to a typographic tile built
- *      from `abbr`, which is our own artwork and carries no licence at all.
- *   3. Every URL is the organisation's own award page, checked before it
+ *      from `abbr`, which is our own artwork and carries no license at all.
+ *   3. Every URL is the organization's own award page, checked before it
  *      was added. Several of these hosts return 403 to scripted requests
  *      (Cloudflare) — that is bot filtering, not a dead link.
  *   4. `categories` is ILLUSTRATIVE, never exhaustive. These programs
  *      restructure their category lists between years, and a stale list
  *      presented as complete is worse than a short one presented as a
  *      sample — so the detail page renders it under "Categories include"
- *      and sends the reader to the organisation for the current rules.
- *   5. `hiringSignal` is Metro's own opinion, not the organisation's, and
+ *      and sends the reader to the organization for the current rules.
+ *   5. `hiringSignal` is Metro's own opinion, not the organization's, and
  *      the page labels it as ours. Everything else on this page is either
  *      a fact about the program or a link to the body that runs it.
  */
@@ -48,7 +48,7 @@ export type AwardProgram = {
   slug: string;
   /** Short mark for the logo tile — the acronym the industry actually says. */
   abbr: string;
-  /** Path under /public/awards to the organisation's own logo file, once we
+  /** Path under /public/awards to the organization's own logo file, once we
       hold permission to display it. Absent = the typographic tile is used
       instead, which is never a licensing problem. See public/awards/README. */
   logo?: string;
@@ -494,7 +494,7 @@ export const AWARD_PROGRAMS: AwardProgram[] = [
     abbr: "USGBC",
     logo: "/awards/usgbc.svg",
     url: "https://www.usgbc.org/local-engagements/awards",
-    what: "LEED and high-performance building work, recognised at project and individual level.",
+    what: "LEED and high-performance building work, recognized at project and individual level.",
     reach: "State & regional",
     disciplines: [
       "mep-engineering-recruiter",
@@ -557,7 +557,7 @@ export const ENR_REGIONS: string[] = [
   "New York/New Jersey", "New England",
 ];
 
-/* One entry per organisation, in the order they first appear — the logo wall
+/* One entry per organization, in the order they first appear — the logo wall
    on /engineering-awards. Derived rather than hand-listed so a new program
    can't leave the wall out of date. */
 type AwardOrg = { org: string; abbr: string; logo?: string; onDark?: true; url: string };

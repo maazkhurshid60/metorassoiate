@@ -4,7 +4,7 @@ import { otherHubPrograms, type HubSegment } from "../lib/markets";
 /**
  * What the other four disciplines are seeing in this city.
  *
- * Every hub's data file already held five checked, city-specific programme
+ * Every hub's data file already held five checked, city-specific program
  * entries per city — 25 per metro across the five files — and each page
  * rendered only its own five, while padding itself out with hub boilerplate
  * that read the same on all fifty city pages. This puts the other twenty to

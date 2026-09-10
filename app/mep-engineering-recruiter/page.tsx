@@ -29,7 +29,7 @@ const TICKER = [
 export const metadata: Metadata = {
   title: "MEP Engineering Recruiters, Nationwide | Metro Associates",
   description:
-    "National MEP recruiters placing mechanical, electrical and plumbing PEs and commissioning specialists on data centre, healthcare and life-science work.",
+    "National MEP recruiters placing mechanical, electrical and plumbing PEs and commissioning specialists on data center, healthcare and life-science work.",
   keywords: [
     "MEP engineering recruiter",
     "MEP staffing agency",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "MEP Engineering Recruiters, Nationwide | Metro Associates",
     description:
-      "National MEP recruiters placing mechanical, electrical and plumbing PEs and commissioning specialists on data centre, healthcare and life-science work.",
+      "National MEP recruiters placing mechanical, electrical and plumbing PEs and commissioning specialists on data center, healthcare and life-science work.",
     url: `${SITE_URL}/mep-engineering-recruiter`,
     siteName: "Metro Associates",
     type: "website",
