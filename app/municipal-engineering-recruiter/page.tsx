@@ -384,7 +384,7 @@ export default function MunicipalEngineeringRecruiterPage() {
       <ClientAwards discipline="municipal-engineering-recruiter" />
 
       <OtherSpecialties exclude="municipal-engineering-recruiter" />
-      <HubFaqs hub="municipal-engineering-recruiter" heading="Municipal engineering recruiting — common questions" />
+      <HubFaqs group="municipal-engineering" heading="Municipal engineering recruiting — common questions" />
 
     </main>
   );

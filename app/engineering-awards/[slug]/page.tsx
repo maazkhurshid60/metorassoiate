@@ -140,7 +140,7 @@ export default async function AwardDetailPage({
             style={{ backgroundImage: "url(/blueprints.jpeg)" }}
             aria-hidden
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-navy-950/70 via-navy-950/85 to-navy-950" aria-hidden />
+          <div className="absolute inset-0 bg-linear-to-b from-navy-950/70 via-navy-950/85 to-navy-950" aria-hidden />
 
           <div className="container-x relative">
             <nav aria-label="Breadcrumb" className="mono-label text-[10px] text-white/45">

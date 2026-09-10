@@ -6,6 +6,7 @@ import { WATER_CITIES } from "./lib/waterWastewater";
 import { CEI_CITIES } from "./lib/ceiInspection";
 import { MUNICIPAL_CITIES } from "./lib/municipalEngineering";
 import { AWARD_PROGRAMS } from "./lib/awards";
+import { FAQ_GROUPS } from "./lib/hubFaqs";
 
 /**
  * Static list of indexable routes. Update this when adding public pages.
@@ -27,6 +28,15 @@ const routes: Array<{
   // citation target on the site for an assistant asked about engineering
   // recruiting, which is what this content is for.
   { path: "/faq", changeFrequency: "monthly", priority: 0.8 },
+  // One per group of questions. Per-question pages were built and measured
+  // first: 278-297 words each, 67.5% duplicate against a sibling and 80.2%
+  // against their own hub — the band the unindexed city pages sit in. Grouped,
+  // each page carries its answers and stands on its own.
+  ...FAQ_GROUPS.map((g) => ({
+    path: `/faq/${g.id}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  })),
   { path: "/engineering-awards", changeFrequency: "monthly", priority: 0.8 },
   // One page per program. Higher than a city page because nothing else on
   // the site — or on most of the industry's sites — sets out the entry route

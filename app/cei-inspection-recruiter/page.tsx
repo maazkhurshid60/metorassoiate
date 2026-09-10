@@ -387,7 +387,7 @@ export default function CeiInspectionRecruiterPage() {
       <ClientAwards discipline="cei-inspection-recruiter" />
 
       <OtherSpecialties exclude="cei-inspection-recruiter" />
-      <HubFaqs hub="cei-inspection-recruiter" heading="CEI & inspection recruiting — common questions" />
+      <HubFaqs group="cei-inspection" heading="CEI & inspection recruiting — common questions" />
 
     </main>
   );

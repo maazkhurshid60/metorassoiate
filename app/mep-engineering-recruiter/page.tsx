@@ -314,7 +314,7 @@ export default function MepNationalRecruiterPage() {
       <ClientAwards discipline="mep-engineering-recruiter" />
 
       <OtherSpecialties exclude="mep-engineering-recruiter" />
-      <HubFaqs hub="mep-engineering-recruiter" heading="MEP engineering recruiting — common questions" />
+      <HubFaqs group="mep-engineering" heading="MEP engineering recruiting — common questions" />
 
     </main>
   );

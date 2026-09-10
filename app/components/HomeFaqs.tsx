@@ -1,7 +1,5 @@
 import Link from "next/link";
-import { GENERAL_FAQS, HUB_FAQS, SALARY_FAQS } from "../lib/hubFaqs";
-import { JsonLd } from "./JsonLd";
-import { faqSchema } from "../lib/seo";
+import { GENERAL_FAQS, FAQ_GROUPS, FAQ_TOTAL } from "../lib/hubFaqs";
 
 /**
  * The homepage FAQ block.
@@ -20,22 +18,11 @@ import { faqSchema } from "../lib/seo";
 /* The groups on /faq, with the count each one answers. Read from the same
    data the FAQ page renders, so a question added anywhere shows up here
    without this list being touched. */
-const GROUPS = [
-  { id: "civil", label: "Civil engineering", n: HUB_FAQS["civil-engineering-recruiter"].length },
-  { id: "mep", label: "MEP engineering", n: HUB_FAQS["mep-engineering-recruiter"].length },
-  { id: "bridge", label: "Bridge & structural", n: HUB_FAQS["bridge-structural-recruiter"].length },
-  { id: "water", label: "Water & wastewater", n: HUB_FAQS["water-wastewater-recruiter"].length },
-  { id: "cei", label: "CEI & inspection", n: HUB_FAQS["cei-inspection-recruiter"].length },
-  { id: "municipal", label: "Municipal engineering", n: HUB_FAQS["municipal-engineering-recruiter"].length },
-  { id: "pay", label: "Engineering pay", n: SALARY_FAQS.length },
-];
-
-const TOTAL = GENERAL_FAQS.length + GROUPS.reduce((n, g) => n + g.n, 0);
+const GROUPS = FAQ_GROUPS.filter((g) => g.id !== "working-with-metro-associates");
 
 export default function HomeFaqs() {
   return (
     <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
-      <JsonLd data={faqSchema(GENERAL_FAQS)} />
       <div className="container-x">
         <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
@@ -52,7 +39,7 @@ export default function HomeFaqs() {
               href="/faq"
               className="mono-label mt-8 inline-flex items-center gap-2 border border-navy-950/20 px-5 py-3 text-[11px] text-navy-950 transition-colors hover:border-amber-500 hover:bg-amber-500"
             >
-              {`All ${TOTAL} questions →`}
+              {`All ${FAQ_TOTAL} questions →`}
             </Link>
 
             {/* A route straight to the answers for each discipline, rather
@@ -63,12 +50,12 @@ export default function HomeFaqs() {
                 {GROUPS.map((g) => (
                   <li key={g.id}>
                     <Link
-                      href={`/faq#${g.id}`}
+                      href={`/faq/${g.id}`}
                       className="group/link flex items-baseline justify-between gap-3 py-1 text-[15px] text-navy-950 transition-colors hover:text-amber-600"
                     >
-                      <span className="font-semibold">{g.label}</span>
+                      <span className="font-semibold">{g.title}</span>
                       <span className="mono-label text-[9px] text-slate-500 transition-colors group-hover/link:text-amber-600">
-                        {`${g.n} questions →`}
+                        {`${g.faqs.length} questions →`}
                       </span>
                     </Link>
                   </li>
@@ -77,22 +64,26 @@ export default function HomeFaqs() {
             </div>
           </div>
 
-          <div className="divide-y divide-navy-950/10 border-t border-navy-950/10">
+          <ul className="divide-y divide-navy-950/10 border-t border-navy-950/10">
             {GENERAL_FAQS.map((f) => (
-              <details key={f.q} className="group py-5">
-                <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                  <h3 className="text-[17px] font-bold leading-snug text-navy-950">{f.q}</h3>
+              <li key={f.q}>
+                <Link
+                  href="/faq/working-with-metro-associates"
+                  className="group flex items-baseline justify-between gap-6 py-5"
+                >
+                  <span className="text-[17px] font-bold leading-snug text-navy-950 group-hover:text-amber-600">
+                    {f.q}
+                  </span>
                   <span
                     aria-hidden
-                    className="mt-1 shrink-0 text-amber-500 transition-transform group-open:rotate-45"
+                    className="mono-label shrink-0 text-[9px] text-slate-500 transition-colors group-hover:text-amber-600"
                   >
-                    +
+                    &rarr;
                   </span>
-                </summary>
-                <p className="mt-3 text-[15px] leading-7 text-slate-500 text-pretty">{f.a}</p>
-              </details>
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

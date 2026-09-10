@@ -1,66 +1,70 @@
-import { HUB_FAQS, type HubSegment } from "../lib/hubFaqs";
-import type { FaqItem } from "../lib/seo";
-import { JsonLd } from "./JsonLd";
-import { faqSchema } from "../lib/seo";
+import Link from "next/link";
+import { faqGroup, type FaqGroupId } from "../lib/hubFaqs";
 
 /**
- * The FAQ block for a discipline hub.
+ * The questions a page's group answers, as links — not the answers.
  *
- * The six hub pages carried no FAQs at all, while the 250 city pages beneath
- * them carried roughly 1,150 question entities between them — the depth was
- * on the leaves and none of it on the branch a searcher actually lands on.
+ * This used to render the answers inline, with FAQPage schema, on each of the
+ * six hubs. Once every group got its own page under /faq/, keeping the
+ * answers here as well would have made a ~700-word group page roughly 85%
+ * duplicate against the hub carrying the same six.
  *
- * The schema is emitted knowing Google stopped showing FAQ rich results on
- * 7 May 2026. It stays because Bingbot, PerplexityBot and the retrieval
- * crawlers behind AI answers still read it, and that is what this content is
- * for — see the note at the top of lib/hubFaqs.ts. Google's own guidance is
- * that unused structured data causes no harm in Search.
+ * So the rule is: an answer lives on exactly one page, its group page. This
+ * shows what is answered and sends the reader there. No FAQPage schema here
+ * either — marking up questions whose answers are on another URL describes a
+ * page that does not exist.
  *
- * Rendered as <details> rather than a JS accordion so every answer is in the
- * DOM and in the markup whether or not it has been clicked, which is what a
- * crawler reads.
+ * What is lost is a reader getting the answer without a click. What is gained
+ * is the answer being somewhere that can actually rank for it, rather than
+ * repeated across pages that then suppress each other.
  */
 export default function HubFaqs({
-  hub,
-  items,
+  group,
   heading,
 }: {
-  /** A discipline hub, or omit and pass `items` for any other page. */
-  hub?: HubSegment;
-  items?: FaqItem[];
+  group: FaqGroupId;
   /** e.g. "Civil engineering recruiting — common questions". */
   heading: string;
 }) {
-  const faqs = items ?? (hub ? HUB_FAQS[hub] : undefined);
-  if (!faqs?.length) return null;
+  const g = faqGroup(group);
+  if (!g?.faqs.length) return null;
 
   return (
     <section className="relative border-t border-navy-950/10 bg-paper py-20 sm:py-24">
-      <JsonLd data={faqSchema(faqs)} />
       <div className="container-x">
         <div className="max-w-2xl">
           <span className="mono-label text-amber-500">{"//"} FAQ</span>
           <h2 className="display mt-5 text-3xl text-navy-950 sm:text-4xl">{heading}</h2>
+          <p className="mt-4 text-[17px] leading-8 text-slate text-pretty">{g.blurb}</p>
         </div>
 
-        <div className="mt-10 divide-y divide-navy-950/10 border-t border-navy-950/10">
-          {faqs.map((f) => (
-            <details key={f.q} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-start justify-between gap-6">
-                <h3 className="text-[17px] font-bold leading-snug text-navy-950">{f.q}</h3>
+        <ul className="mt-9 divide-y divide-navy-950/10 border-t border-navy-950/10">
+          {g.faqs.map((f) => (
+            <li key={f.q}>
+              <Link
+                href={`/faq/${g.id}`}
+                className="group flex items-baseline justify-between gap-6 py-4"
+              >
+                <span className="text-[17px] font-semibold leading-snug text-navy-950 group-hover:text-amber-600">
+                  {f.q}
+                </span>
                 <span
                   aria-hidden
-                  className="mt-1 shrink-0 text-amber-500 transition-transform group-open:rotate-45"
+                  className="mono-label shrink-0 text-[9px] text-slate-500 transition-colors group-hover:text-amber-600"
                 >
-                  +
+                  &rarr;
                 </span>
-              </summary>
-              <p className="mt-3 max-w-3xl text-[15px] leading-7 text-slate-500 text-pretty">
-                {f.a}
-              </p>
-            </details>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
+
+        <Link
+          href={`/faq/${g.id}`}
+          className="mono-label mt-8 inline-flex border border-navy-950/20 px-5 py-3 text-[10px] text-navy-950 transition-colors hover:border-amber-500 hover:bg-amber-500"
+        >
+          {`Read the answers →`}
+        </Link>
       </div>
     </section>
   );

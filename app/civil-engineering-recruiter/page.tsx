@@ -312,7 +312,7 @@ export default function NationalRecruiterPage() {
       <ClientAwards discipline="civil-engineering-recruiter" />
 
       <OtherSpecialties exclude="civil-engineering-recruiter" />
-      <HubFaqs hub="civil-engineering-recruiter" heading="Civil engineering recruiting — common questions" />
+      <HubFaqs group="civil-engineering" heading="Civil engineering recruiting — common questions" />
 
     </main>
   );

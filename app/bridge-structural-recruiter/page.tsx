@@ -350,7 +350,7 @@ export default function BridgeStructuralRecruiterPage() {
       <ClientAwards discipline="bridge-structural-recruiter" />
 
       <OtherSpecialties exclude="bridge-structural-recruiter" />
-      <HubFaqs hub="bridge-structural-recruiter" heading="Bridge & structural recruiting — common questions" />
+      <HubFaqs group="bridge-structural" heading="Bridge & structural recruiting — common questions" />
 
     </main>
   );

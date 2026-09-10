@@ -296,3 +296,109 @@ export const GENERAL_FAQS: FaqItem[] = [
     a: "Yes. Nothing is submitted anywhere without your explicit agreement on each specific employer, and we do not circulate CVs speculatively. That matters most in engineering, where regional markets are small enough that a client and a current employer often know each other.",
   },
 ];
+
+/* ------------------------------------------------------------------
+   One page per group.
+   ------------------------------------------------------------------
+
+   Per-question pages were built first and measured before shipping: at
+   278-297 words each — of which only ~70 was the answer, the rest header,
+   footer and sibling links — two questions in the same group overlapped 67.5%
+   and a question overlapped its own hub 80.2%. The shallow city pages Google
+   currently refuses to index measure 76-80%. Fifty more pages in that band
+   was the wrong trade, so the granularity moved up a level.
+
+   THE RULE THAT MAKES THIS WORK: an answer lives on exactly one page.
+
+   These group pages are that page. The discipline hubs, the homepage and the
+   salary guide each show their questions as titles and link here, rather than
+   reprinting the answers. Without that rule a ~700-word group page whose
+   content is mostly its own six answers would sit around 85% duplicate
+   against whatever else carried them — which is the same mistake one level
+   up. */
+
+export type FaqGroupId =
+  | "working-with-metro-associates"
+  | "civil-engineering"
+  | "mep-engineering"
+  | "bridge-structural"
+  | "water-wastewater"
+  | "cei-inspection"
+  | "municipal-engineering"
+  | "engineering-pay";
+
+export type FaqGroup = {
+  id: FaqGroupId;
+  /** Heading, and the <h1> of its page. */
+  title: string;
+  /** One line for the group's page and for the index. */
+  blurb: string;
+  /** The discipline hub this group belongs to; null for the general set. */
+  href: string | null;
+  faqs: FaqItem[];
+};
+
+export const FAQ_GROUPS: FaqGroup[] = [
+  {
+    id: "working-with-metro-associates",
+    title: "Working with Metro Associates",
+    blurb: "What we cover, where we work, who pays, and how a search actually starts.",
+    href: null,
+    faqs: GENERAL_FAQS,
+  },
+  {
+    id: "civil-engineering",
+    title: "Civil engineering",
+    blurb: "Licensure and comity, pay by seniority, consulting against agency work, and what is hardest to fill.",
+    href: "/civil-engineering-recruiter",
+    faqs: HUB_FAQS["civil-engineering-recruiter"],
+  },
+  {
+    id: "mep-engineering",
+    title: "MEP engineering",
+    blurb: "Designer against engineer, the certifications that matter, why specs name a code authority, and commissioning.",
+    href: "/mep-engineering-recruiter",
+    faqs: HUB_FAQS["mep-engineering-recruiter"],
+  },
+  {
+    id: "bridge-structural",
+    title: "Bridge & structural",
+    blurb: "PE against SE licensure, design against inspection, and why steel bridge experience is recruited by project.",
+    href: "/bridge-structural-recruiter",
+    faqs: HUB_FAQS["bridge-structural-recruiter"],
+  },
+  {
+    id: "water-wastewater",
+    title: "Water & wastewater",
+    blurb: "Engineers against operators, which utility owns the work, PFAS, and collection against treatment.",
+    href: "/water-wastewater-recruiter",
+    faqs: HUB_FAQS["water-wastewater-recruiter"],
+  },
+  {
+    id: "cei-inspection",
+    title: "CEI & inspection",
+    blurb: "What CEI is, the certifications it runs on, resident engineers, and why roles name a DOT district.",
+    href: "/cei-inspection-recruiter",
+    faqs: HUB_FAQS["cei-inspection-recruiter"],
+  },
+  {
+    id: "municipal-engineering",
+    title: "Municipal engineering",
+    blurb: "Public against consulting pay, what a city engineer does, and what public works experience signals.",
+    href: "/municipal-engineering-recruiter",
+    faqs: HUB_FAQS["municipal-engineering-recruiter"],
+  },
+  {
+    id: "engineering-pay",
+    title: "Engineering pay",
+    blurb: "What a PE licence is worth, which discipline pays most, and how the published bands actually move.",
+    href: "/index_themall_awards",
+    faqs: SALARY_FAQS,
+  },
+];
+
+export function faqGroup(id: string): FaqGroup | undefined {
+  return FAQ_GROUPS.find((g) => g.id === id);
+}
+
+export const FAQ_TOTAL = FAQ_GROUPS.reduce((n, g) => n + g.faqs.length, 0);
