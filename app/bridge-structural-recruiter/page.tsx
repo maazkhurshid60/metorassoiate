@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubFaqs from "../components/HubFaqs";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -349,6 +350,8 @@ export default function BridgeStructuralRecruiterPage() {
       <ClientAwards discipline="bridge-structural-recruiter" />
 
       <OtherSpecialties exclude="bridge-structural-recruiter" />
+      <HubFaqs hub="bridge-structural-recruiter" heading="Bridge & structural recruiting — common questions" />
+
     </main>
   );
 }

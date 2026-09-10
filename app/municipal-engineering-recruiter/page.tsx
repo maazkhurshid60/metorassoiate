@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubFaqs from "../components/HubFaqs";
 import Link from "next/link";
 import {
   IconArrow, IconCheck, IconGlobe, IconShield, IconTarget, IconLayers,
@@ -383,6 +384,8 @@ export default function MunicipalEngineeringRecruiterPage() {
       <ClientAwards discipline="municipal-engineering-recruiter" />
 
       <OtherSpecialties exclude="municipal-engineering-recruiter" />
+      <HubFaqs hub="municipal-engineering-recruiter" heading="Municipal engineering recruiting — common questions" />
+
     </main>
   );
 }

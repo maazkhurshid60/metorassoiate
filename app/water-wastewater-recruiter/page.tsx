@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubFaqs from "../components/HubFaqs";
 import Link from "next/link";
 import {
   IconArrow, IconCheck, IconGlobe, IconShield, IconTarget, IconLayers,
@@ -386,6 +387,8 @@ export default function WaterWastewaterRecruiterPage() {
       <ClientAwards discipline="water-wastewater-recruiter" />
 
       <OtherSpecialties exclude="water-wastewater-recruiter" />
+      <HubFaqs hub="water-wastewater-recruiter" heading="Water & wastewater recruiting — common questions" />
+
     </main>
   );
 }

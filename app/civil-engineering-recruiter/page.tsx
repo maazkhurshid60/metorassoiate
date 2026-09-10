@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import HubFaqs from "../components/HubFaqs";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -311,6 +312,8 @@ export default function NationalRecruiterPage() {
       <ClientAwards discipline="civil-engineering-recruiter" />
 
       <OtherSpecialties exclude="civil-engineering-recruiter" />
+      <HubFaqs hub="civil-engineering-recruiter" heading="Civil engineering recruiting — common questions" />
+
     </main>
   );
 }
