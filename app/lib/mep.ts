@@ -54,6 +54,36 @@ export const MEP_CITIES: MepCity[] = [
       "Data center and mission-critical power & cooling",
       "Airport terminal MEP (JFK & LaGuardia redevelopment)",
     ],
+    agencies: [
+      "NYC Department of Buildings",
+      "NYC Health + Hospitals",
+      "Dormitory Authority of the State of New York",
+      "MTA Construction & Development",
+      "Port Authority of NY & NJ",
+    ],
+    marketDetail: [
+      "New York's carbon cap on large buildings is the single largest driver of MEP work in the city. Existing buildings have to meet declining emissions limits or pay, which has turned decarbonisation retrofit into a standing commercial market rather than a sustainability exercise: heating plant replacement, electrification, submetering and the energy modelling needed to prove compliance.",
+      "The building stock makes that harder than it sounds. Much of the city is served by steam, floor-to-floor heights leave little room for new distribution, and work has to be staged around occupied tenancies. Engineers who can fit a modern system into a pre-war building without a shutdown are doing the thing this market actually needs.",
+    ],
+    hiringFocus: [
+      {
+        role: "Decarbonisation & electrification engineers",
+        why: "Emissions limits apply to existing buildings, so retrofit design is a compliance requirement with a deadline rather than an option.",
+      },
+      {
+        role: "Energy modellers",
+        why: "Compliance is demonstrated through modelling, which makes the modeller part of the legal case rather than a design support role.",
+      },
+      {
+        role: "High-rise mechanical engineers",
+        why: "Tall-building distribution, riser design and pressure zoning are specialised and the local stock demands them constantly.",
+      },
+      {
+        role: "Healthcare & life science MEP engineers",
+        why: "Hospital and laboratory systems carry redundancy and air change requirements that ordinary commercial work never involves.",
+      },
+    ],
+    licensure: "New York licenses through the State Education Department's Office of the Professions, with transfer for most out-of-state PEs on an NCEES record. What governs day to day is the Department of Buildings: filing requires a licensed professional to take responsibility for the design, and familiarity with the filing process and the department's expectations is treated by employers as a qualification in its own right, separate from the licence.",
   },
   {
     slug: "los-angeles-ca",
@@ -71,6 +101,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise residential and mixed-use MEP systems",
       "LAX modernization mechanical & electrical scopes",
     ],
+    agencies: [
+      "LA Department of Building & Safety",
+      "California Department of Health Care Access & Information",
+      "Los Angeles Unified School District",
+      "Los Angeles World Airports",
+      "Los Angeles County Public Works",
+    ],
+    marketDetail: [
+      "California's energy code sets the terms for MEP design here, and it has been pushing electrification and stringent efficiency requirements for years, so an engineer working in this state is designing to a standard well ahead of the national model codes. That experience is portable outward but the reverse is not: engineers arriving from lighter-code states usually have ground to make up.",
+      "The other defining feature is who reviews healthcare work. Hospital construction in California is reviewed by a dedicated state authority rather than the local building department, on its own timescale and to its own standards, which makes healthcare MEP a specialism with a distinct career path in this market.",
+    ],
+    hiringFocus: [
+      {
+        role: "Healthcare MEP engineers",
+        why: "State-level hospital plan review is a separate regime, and engineers who have carried projects through it are valued accordingly.",
+      },
+      {
+        role: "Title 24 compliance & energy engineers",
+        why: "The state energy code is demanding enough that compliance is a design discipline rather than a checkbox.",
+      },
+      {
+        role: "Studio & entertainment facility engineers",
+        why: "Soundstages and production facilities have acoustic, power and cooling requirements that do not appear in ordinary commercial work.",
+      },
+      {
+        role: "Mission-critical power & cooling engineers",
+        why: "Data centre and broadcast infrastructure need redundancy design that general building engineers rarely practise.",
+      },
+    ],
+    licensure: "California does not grant PE licensure by simple comity: the state board requires its own application process. Mechanical and electrical engineers are licensed as such by title, and fire protection engineering is a separate licensed discipline here, which matters when a project needs sealed life-safety design. Healthcare work is additionally gated by the state's hospital plan review authority rather than by the city.",
   },
   {
     slug: "chicago-il",
@@ -88,6 +148,36 @@ export const MEP_CITIES: MepCity[] = [
       "Building Energy Rating Ordinance compliance",
       "O'Hare terminal MEP and airfield electrical",
     ],
+    agencies: [
+      "Chicago Department of Buildings",
+      "Chicago Public Schools",
+      "Cook County Department of Capital Planning",
+      "University of Chicago & Northwestern facilities",
+      "Illinois Capital Development Board",
+    ],
+    marketDetail: [
+      "Chicago's high-rise stock is old enough that most mechanical work here is replacement inside an occupied building, and the city's energy code has tightened to the point where a like-for-like replacement often no longer complies. That combination puts a premium on engineers who can design a compliant system into a building that was not built for one.",
+      "Outside the core, the suburban corridor has become one of the country's larger concentrations of data centre capacity, which gives the region a second and quite separate MEP market built on redundancy, cooling and electrical distribution at scale rather than on tenant comfort.",
+    ],
+    hiringFocus: [
+      {
+        role: "High-rise retrofit mechanical engineers",
+        why: "Replacing plant in an occupied tower to a tightened energy code is the region's most common and most constrained problem.",
+      },
+      {
+        role: "Mission-critical electrical engineers",
+        why: "The suburban data centre cluster needs distribution and redundancy design that ordinary commercial work does not develop.",
+      },
+      {
+        role: "Energy code compliance engineers",
+        why: "A stricter local code than the state model means compliance decisions are made locally and have to be argued locally.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Large academic medical centres run continuous capital programmes with their own systems standards.",
+      },
+    ],
+    licensure: "Illinois licenses professional engineers through the Department of Financial and Professional Regulation and separately licenses structural engineers, which occasionally matters for equipment support design. Chicago operates its own building and energy code rather than adopting the state model unchanged, so design experience elsewhere in Illinois is not the same as experience inside the city, and employers here distinguish between the two.",
   },
   {
     slug: "houston-tx",
@@ -105,6 +195,36 @@ export const MEP_CITIES: MepCity[] = [
       "Data center design-build",
       "Port of Houston industrial infrastructure",
     ],
+    agencies: [
+      "Houston Permitting Center",
+      "Texas Medical Center institutions",
+      "Harris County Engineering Department",
+      "Houston Independent School District",
+      "Port Houston",
+    ],
+    marketDetail: [
+      "Healthcare is the anchor of MEP work in Houston. The medical district here is one of the largest concentrations of hospitals and research institutions anywhere, and it runs a continuous capital programme, so hospital mechanical and electrical design is a mainstream career in this city rather than a niche.",
+      "Climate sets the technical problem. High humidity for much of the year makes latent load and dehumidification, not sensible cooling, the thing that decides whether a system works, and getting that wrong produces mould and pressurisation problems rather than merely discomfort. Engineers who have designed in dry-climate markets frequently have to relearn this.",
+    ],
+    hiringFocus: [
+      {
+        role: "Healthcare MEP engineers",
+        why: "A very large medical district generates sustained demand for hospital systems design with its own codes and redundancy requirements.",
+      },
+      {
+        role: "Humidity control & dehumidification specialists",
+        why: "Latent load governs system selection in this climate, and mistakes show up as building damage rather than as complaints.",
+      },
+      {
+        role: "Mission-critical & industrial MEP engineers",
+        why: "Data centres and process-adjacent facilities need power and cooling design at industrial scale.",
+      },
+      {
+        role: "Commissioning engineers",
+        why: "Systems this complex are only proven at handover, and measured performance is what owners here increasingly ask for.",
+      },
+    ],
+    licensure: "Texas licenses through the Board of Professional Engineers and Land Surveyors, with comity for NCEES record holders, and requires the engineering firm to be registered as well as the individual. Texas does not adopt a statewide energy code as aggressive as California's or New York's, so the binding constraints here are more often the owner's own standards, particularly in healthcare, than the municipal code.",
   },
   {
     slug: "phoenix-az",
@@ -122,6 +242,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise and master-planned commercial MEP",
       "Sky Harbor airport terminal systems",
     ],
+    agencies: [
+      "Phoenix Development Services",
+      "Maricopa County Planning & Development",
+      "Arizona State University facilities",
+      "Banner Health & regional health systems",
+      "City of Chandler & Mesa development services",
+    ],
+    marketDetail: [
+      "Semiconductor manufacturing has changed this market. Large fabrication facilities and their supply chains need process utilities, ultra-pure water, specialty exhaust, cleanroom air handling and electrical capacity on an industrial scale, and that work needs engineers whose experience is closer to process plant design than to commercial buildings.",
+      "For everything else, heat is the design driver. Peak cooling loads, equipment derating, condenser performance and the consequences of a cooling failure are all more severe here than in temperate markets, which makes redundancy and equipment selection judgement locally specific.",
+    ],
+    hiringFocus: [
+      {
+        role: "Semiconductor & cleanroom MEP engineers",
+        why: "Fabrication facilities need process utility design that very few building engineers have done.",
+      },
+      {
+        role: "Mission-critical cooling engineers",
+        why: "Extreme ambient conditions make data centre and critical facility cooling design harder here than almost anywhere else.",
+      },
+      {
+        role: "Central plant engineers",
+        why: "Campus and institutional cooling at this scale is a plant design problem rather than a building one.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run continuous expansion with their own systems standards.",
+      },
+    ],
+    licensure: "Arizona registers engineers through the Board of Technical Registration, which accepts comity applications from PEs licensed elsewhere. The credential that most affects employability here is not the licence but the building type: fabrication and mission-critical experience commands a different market from commercial work, and firms recruit for the two separately.",
   },
   {
     slug: "philadelphia-pa",
@@ -139,6 +289,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "Building energy-benchmarking compliance retrofits",
     ],
+    agencies: [
+      "Philadelphia Department of Licenses & Inspections",
+      "University of Pennsylvania & Drexel facilities",
+      "Children's Hospital of Philadelphia & regional health systems",
+      "Pennsylvania Department of General Services",
+      "SEPTA",
+    ],
+    marketDetail: [
+      "Laboratory and life science work is the distinctive strand here. The city's cell and gene therapy cluster has driven conversion of older commercial and industrial buildings into research and manufacturing space, which is a demanding MEP problem: high air change rates, containment, redundancy and vibration control fitted into structures never designed for any of it.",
+      "The institutional base is the other half of the market. Large universities and health systems run their own continuous capital programmes with in-house standards, so a significant share of local MEP careers is spent working repeatedly for the same handful of owners.",
+    ],
+    hiringFocus: [
+      {
+        role: "Laboratory & life science MEP engineers",
+        why: "Containment, air change and redundancy requirements make lab design a distinct discipline from commercial work.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run rolling capital programmes with their own systems standards.",
+      },
+      {
+        role: "Adaptive reuse mechanical engineers",
+        why: "Converting older buildings to research use means fitting demanding systems into structures with no allowance for them.",
+      },
+      {
+        role: "Commissioning engineers",
+        why: "Laboratory and healthcare systems have to be proven to perform, not merely installed.",
+      },
+    ],
+    licensure: "Pennsylvania licenses through the State Registration Board for Professional Engineers, Land Surveyors and Geologists, with comity for NCEES record holders. Philadelphia administers its own licensing and inspections process, and for laboratory and healthcare work the more demanding review is often the owner's own standards rather than the municipal one, so institutional experience is what employers screen for.",
   },
   {
     slug: "dallas-tx",
@@ -156,6 +336,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "DFW Airport terminal mechanical & electrical",
     ],
+    agencies: [
+      "Dallas Development Services",
+      "Texas Department of Licensing & Regulation",
+      "Dallas Independent School District",
+      "Regional health systems across North Texas",
+      "DFW International Airport",
+    ],
+    marketDetail: [
+      "North Texas is one of the largest data centre markets in the country, and that shapes the local MEP profession more than any other single factor. Mission-critical work here is not an occasional project type but a career: electrical distribution, redundancy topology, cooling at density and the commissioning regime that goes with proving all of it.",
+      "Alongside that, sustained corporate relocation has kept large office, campus and mixed-use development in continuous delivery, which supports a broad conventional building services market underneath the critical facilities work.",
+    ],
+    hiringFocus: [
+      {
+        role: "Mission-critical electrical engineers",
+        why: "Data centre distribution and redundancy design is the region's signature MEP speciality and demand for it is deep.",
+      },
+      {
+        role: "Critical facility cooling engineers",
+        why: "High-density cooling is a distinct design problem from comfort cooling and needs separate experience.",
+      },
+      {
+        role: "Commissioning & Cx authorities",
+        why: "Critical facilities are only accepted once proven under load, which makes commissioning a first-class role here.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems expand continuously and design to their own standards.",
+      },
+    ],
+    licensure: "Texas licenses through the Board of Professional Engineers and Land Surveyors, with comity for NCEES record holders and registration required for the firm as well. Accessibility review for most public buildings runs through the state licensing department rather than the city, which is a step engineers arriving from other states routinely overlook.",
   },
   {
     slug: "atlanta-ga",
@@ -173,6 +383,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "Hartsfield-Jackson airport terminal MEP",
     ],
+    agencies: [
+      "Atlanta Office of Buildings",
+      "Georgia Department of Community Affairs",
+      "Emory Healthcare & regional health systems",
+      "Georgia Institute of Technology facilities",
+      "Hartsfield-Jackson Atlanta International Airport",
+    ],
+    marketDetail: [
+      "Two building types define this market and neither is conventional office work. The region has become a significant data centre location, bringing mission-critical electrical and cooling design with it, and the state's film industry has produced purpose-built studio campuses whose power, acoustic and ventilation requirements are unlike anything in commercial practice.",
+      "Underneath both, the climate makes humidity control the recurring technical issue. Long, humid shoulder seasons mean dehumidification and building pressurisation decide whether a building performs, particularly in the institutional and healthcare work that forms the market's steady base.",
+    ],
+    hiringFocus: [
+      {
+        role: "Mission-critical MEP engineers",
+        why: "Data centre growth in the region has created sustained demand for redundancy and cooling design at density.",
+      },
+      {
+        role: "Studio & production facility engineers",
+        why: "Purpose-built film facilities have acoustic, power and ventilation requirements that ordinary commercial work does not develop.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run continuous capital programmes to their own systems standards.",
+      },
+      {
+        role: "Humidity control specialists",
+        why: "Latent load and pressurisation govern building performance in this climate more than sensible cooling does.",
+      },
+    ],
+    licensure: "Georgia licenses through the Board of Professional Engineers and Land Surveyors, with comity for engineers licensed elsewhere, and the state adopts its energy and mechanical codes with Georgia-specific amendments that local officials apply closely. For institutional and healthcare work the owner's standards are usually the more demanding review.",
   },
   {
     slug: "miami-fl",
@@ -190,6 +430,36 @@ export const MEP_CITIES: MepCity[] = [
       "Data-center design-build",
       "PortMiami and marine-terminal electrical",
     ],
+    agencies: [
+      "Miami-Dade Regulatory & Economic Resources",
+      "City of Miami Building Department",
+      "Jackson Health System & regional hospitals",
+      "Miami-Dade County Public Schools",
+      "Miami-Dade Aviation Department",
+    ],
+    marketDetail: [
+      "South Florida runs the most demanding wind provisions in the country. The high velocity hurricane zone covering this county and its neighbour imposes design and product approval requirements that apply nowhere else, and they reach into MEP directly: rooftop equipment restraint, louvre and intake protection, generator and fuel system resilience, and the approval status of the products specified.",
+      "Humidity is the second constant. Continuous latent load makes dehumidification and pressurisation the design questions that decide whether a building stays free of mould, and in high-rise residential, which dominates development here, those decisions are made at a scale that makes errors expensive.",
+    ],
+    hiringFocus: [
+      {
+        role: "High-rise residential MEP engineers",
+        why: "Residential towers dominate development here and their distribution, ventilation and pressurisation problems are specific to that form.",
+      },
+      {
+        role: "Hurricane-resilience MEP engineers",
+        why: "Equipment restraint, protection and product approval under the high velocity zone are requirements unique to this region.",
+      },
+      {
+        role: "Dehumidification specialists",
+        why: "Latent load is continuous here, and controlling it is what keeps buildings serviceable.",
+      },
+      {
+        role: "Emergency power engineers",
+        why: "Residential and healthcare buildings carry standby power obligations that a storm season tests in practice.",
+      },
+    ],
+    licensure: "Florida licenses through the Board of Professional Engineers, with licensure by endorsement for engineers already licensed elsewhere. The distinctive local requirement is product approval: components used in the high velocity hurricane zone need county or state approval, so specification here is constrained in a way it is nowhere else, and engineers unfamiliar with that regime find their designs rejected rather than merely questioned.",
   },
   {
     slug: "seattle-wa",
@@ -207,6 +477,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "Sea-Tac airport terminal MEP",
     ],
+    agencies: [
+      "Seattle Department of Construction & Inspections",
+      "University of Washington & Fred Hutch facilities",
+      "Seattle Children's & regional health systems",
+      "Port of Seattle",
+      "Sound Transit",
+    ],
+    marketDetail: [
+      "Seattle's energy code is among the most demanding in the country and has moved decisively against fossil fuel heating in new buildings, which makes heat pump design, thermal storage and electrical capacity planning the ordinary content of MEP work here rather than an advanced option.",
+      "The building types that dominate are laboratory and healthcare. A large research and biotech cluster needs containment, air change and redundancy design, and doing that inside an aggressive energy code is genuinely harder than doing either alone, which is why lab-plus-code experience is the profile firms here compete for.",
+    ],
+    hiringFocus: [
+      {
+        role: "Electrification & heat pump engineers",
+        why: "Local code has effectively made electrified heating the default, so this is mainstream design work rather than a speciality.",
+      },
+      {
+        role: "Laboratory MEP engineers",
+        why: "The research cluster needs containment and air change design that ordinary commercial work does not develop.",
+      },
+      {
+        role: "Energy modellers",
+        why: "Compliance with a stringent code is demonstrated by modelling, which makes the modeller central to approval.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run continuous capital programmes with their own standards.",
+      },
+    ],
+    licensure: "Washington registers engineers through the Board of Registration for Professional Engineers and Land Surveyors, with comity for equivalent licences. Seattle enforces its own energy code, stricter than the state's, so experience elsewhere in Washington is not equivalent to experience inside the city and employers here make that distinction explicitly.",
   },
   {
     slug: "denver-co",
@@ -224,6 +524,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "Denver International Airport terminal MEP",
     ],
+    agencies: [
+      "Denver Community Planning & Development",
+      "UCHealth & regional health systems",
+      "University of Colorado facilities",
+      "Denver International Airport",
+      "Colorado State Buildings Program",
+    ],
+    marketDetail: [
+      "Denver has adopted a building performance standard that requires existing commercial buildings to reach energy targets over time, which has turned retrofit and electrification into a compliance-driven market here in the same way carbon caps have in New York, and it is the main source of MEP work in the existing stock.",
+      "Altitude is the technical detail engineers arriving from sea level most often get wrong. Reduced air density changes fan and compressor performance, combustion, ventilation rates and equipment capacity, so catalogue selections have to be corrected rather than taken at face value, and reviewers here expect to see that the correction was made.",
+    ],
+    hiringFocus: [
+      {
+        role: "Building performance & retrofit engineers",
+        why: "Energy targets on existing buildings make retrofit design a scheduled obligation for owners rather than a discretionary project.",
+      },
+      {
+        role: "Altitude-experienced mechanical engineers",
+        why: "Equipment derating at this elevation changes selection and sizing, and it is a routine source of error for engineers new to the market.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run continuous expansion to their own systems standards.",
+      },
+      {
+        role: "Mission-critical engineers",
+        why: "Data centre and critical facility work in the region needs redundancy design that general practice does not develop.",
+      },
+    ],
+    licensure: "Colorado licenses through the State Board of Licensure for Architects, Professional Engineers and Professional Land Surveyors, with comity for equivalent licences. Denver enforces its own energy and performance requirements beyond the state code, so an engineer's experience is assessed by which jurisdiction they have filed in, not merely by which state licensed them.",
   },
   {
     slug: "boston-ma",
@@ -241,6 +571,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use MEP",
       "Building emissions reduction (BERDO-style) retrofits",
     ],
+    agencies: [
+      "Boston Inspectional Services Department",
+      "Mass General Brigham & regional health systems",
+      "Harvard & MIT facilities",
+      "Massachusetts Division of Capital Asset Management",
+      "Massport",
+    ],
+    marketDetail: [
+      "This region holds the largest concentration of laboratory space in the country, and laboratory MEP is its defining technical discipline. High air change rates, fume hood containment, redundancy, vibration criteria and the energy consequences of moving that much air make lab design a specialism that engineers build entire careers inside.",
+      "The state's stretch and specialised energy codes push new buildings toward very low emissions, which collides directly with laboratory ventilation demands. Reconciling those two is the hardest routine problem in this market and the reason experienced lab engineers here are difficult to replace.",
+    ],
+    hiringFocus: [
+      {
+        role: "Laboratory MEP engineers",
+        why: "The region's research cluster is the largest in the country and lab systems are a discipline of their own.",
+      },
+      {
+        role: "Energy code & decarbonisation engineers",
+        why: "Stretch code requirements apply on top of the base code, and reconciling them with lab loads is the local design challenge.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Major academic medical centres run continuous capital programmes with demanding systems standards.",
+      },
+      {
+        role: "Commissioning engineers",
+        why: "Laboratory and healthcare systems are accepted on measured performance rather than on installation alone.",
+      },
+    ],
+    licensure: "Massachusetts licenses through the Board of Registration of Professional Engineers and Land Surveyors, with comity for equivalent licences. Municipalities may adopt the state's stretch or specialised energy code, so which code applies depends on the town as well as the state, and an engineer's familiarity with the adopting jurisdiction matters as much as the licence.",
   },
   {
     slug: "minneapolis-mn",
@@ -258,6 +618,36 @@ export const MEP_CITIES: MepCity[] = [
       "Higher-education campus MEP",
       "MSP airport terminal mechanical & electrical",
     ],
+    agencies: [
+      "Minneapolis Community Planning & Economic Development",
+      "Minnesota Department of Labor & Industry",
+      "Regional health systems across the Twin Cities",
+      "University of Minnesota facilities",
+      "Metropolitan Airports Commission",
+    ],
+    marketDetail: [
+      "Heating design carries more weight here than cooling, which inverts the priorities of most American MEP markets. Design temperatures well below zero make heating capacity, freeze protection, glycol systems, ventilation preheat and building envelope interaction the questions that decide whether a system works, and getting them wrong causes damage rather than discomfort.",
+      "Healthcare is the market's institutional anchor, with large systems running continuous capital programmes, while the connected skyway network downtown creates pressurisation and infiltration conditions between buildings that engineers elsewhere never encounter.",
+    ],
+    hiringFocus: [
+      {
+        role: "Cold climate mechanical engineers",
+        why: "Heating capacity, freeze protection and preheat design govern system performance here in a way cooling-led markets never require.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Large regional health systems run rolling capital programmes to their own standards.",
+      },
+      {
+        role: "Central plant & district energy engineers",
+        why: "Campus and downtown heating is delivered at plant scale rather than building by building.",
+      },
+      {
+        role: "Commissioning engineers",
+        why: "Systems that must work through a severe winter are proven in commissioning rather than assumed.",
+      },
+    ],
+    licensure: "Minnesota licenses through the Board of Architecture, Engineering, Land Surveying, Landscape Architecture, Geoscience and Interior Design, with comity for equivalent licences. The state administers its building and energy code centrally through the Department of Labor and Industry rather than leaving it to each municipality, which makes code experience more portable within Minnesota than it is in states where every city amends.",
   },
   {
     slug: "detroit-mi",
@@ -275,6 +665,36 @@ export const MEP_CITIES: MepCity[] = [
       "Data-center design-build",
       "Detroit Metro airport terminal systems",
     ],
+    agencies: [
+      "Detroit Buildings, Safety Engineering & Environmental Department",
+      "Michigan Department of Licensing & Regulatory Affairs",
+      "Henry Ford Health & regional health systems",
+      "Automotive and battery manufacturers across south east Michigan",
+      "Wayne State University facilities",
+    ],
+    marketDetail: [
+      "Industrial work anchors MEP practice in south east Michigan. Automotive plants and, increasingly, battery and electrified powertrain facilities need process utilities, compressed air, exhaust, high-capacity electrical distribution and ventilation designed for manufacturing rather than occupancy, which is a different profession from commercial building services.",
+      "The second strand is adaptive reuse. A large stock of substantial older buildings being brought back into service means fitting modern systems into structures with no provision for them, under a cold-climate heating requirement that leaves little margin for a compromised design.",
+    ],
+    hiringFocus: [
+      {
+        role: "Industrial & manufacturing MEP engineers",
+        why: "Plant utilities and process ventilation are a distinct discipline that the region's manufacturing base demands continuously.",
+      },
+      {
+        role: "High-capacity electrical engineers",
+        why: "Battery and electrified manufacturing facilities need distribution design at a scale commercial work never reaches.",
+      },
+      {
+        role: "Adaptive reuse mechanical engineers",
+        why: "Older buildings returning to service need systems fitted where none were designed for, in a demanding climate.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Regional health systems run continuous capital programmes with their own systems standards.",
+      },
+    ],
+    licensure: "Michigan licenses through the Department of Licensing and Regulatory Affairs, with comity for equivalent out-of-state licences. Industrial work is often governed by the owner's engineering standards and by process safety requirements rather than by the building code alone, so manufacturing experience is assessed separately from commercial credentials by employers here.",
   },
   {
     slug: "charlotte-nc",
@@ -292,6 +712,36 @@ export const MEP_CITIES: MepCity[] = [
       "High-rise commercial and mixed-use systems",
       "Charlotte Douglas airport terminal MEP",
     ],
+    agencies: [
+      "Charlotte-Mecklenburg Code Enforcement",
+      "North Carolina Department of Insurance, Engineering Division",
+      "Atrium Health & Novant Health facilities",
+      "Financial sector corporate campuses",
+      "Charlotte Douglas International Airport",
+    ],
+    marketDetail: [
+      "Charlotte's MEP market rests on two owner types. The banking sector's presence has produced large corporate campuses and, with them, the trading floors, operations centres and standby power arrangements that financial infrastructure requires, while the state's data centre growth has brought mission-critical work into the region alongside it.",
+      "Healthcare is the steady third. Two large hospital systems run continuous capital programmes across the metro, which supports a reliable base of institutional MEP work underneath the more cyclical corporate and critical facility markets.",
+    ],
+    hiringFocus: [
+      {
+        role: "Mission-critical electrical engineers",
+        why: "Financial operations centres and data centres both need redundancy and standby design that general practice does not develop.",
+      },
+      {
+        role: "Healthcare MEP engineers",
+        why: "Two large hospital systems expand continuously to their own systems standards.",
+      },
+      {
+        role: "Corporate campus mechanical engineers",
+        why: "Large single-owner campuses are designed and operated to standards that persist across many projects.",
+      },
+      {
+        role: "Commissioning engineers",
+        why: "Critical and healthcare facilities are accepted on demonstrated performance rather than on installation.",
+      },
+    ],
+    licensure: "North Carolina licenses through the Board of Examiners for Engineers and Surveyors, with comity for equivalent licences, and requires the firm to hold its own certificate of authorisation before offering engineering services. The state reviews building plans centrally through the Department of Insurance for many project types, which is an approval route engineers arriving from other states do not expect.",
   },
   {
     slug: "nashville-tn",

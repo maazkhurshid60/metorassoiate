@@ -55,6 +55,36 @@ export const CEI_CITIES: CeiCity[] = [
       "BQE corridor rehabilitation oversight",
       "NYC DEP water main inspection",
     ],
+    agencies: [
+      "NYSDOT Region 11",
+      "MTA Construction & Development",
+      "Port Authority of NY & NJ",
+      "NYC Department of Transportation",
+      "NYC Department of Design & Construction",
+    ],
+    marketDetail: [
+      "Inspection in New York is almost entirely inspection of work being built into something that has to keep operating. Bridges carry traffic through their own rehabilitation, stations stay open while they are rebuilt, and roadway work happens at night in short windows with the street returned by morning. That puts the emphasis on inspectors who can judge acceptance quickly and document it properly in the time available.",
+      "The owner mix is unusually wide for one metro. A state district, a transit authority, a bi-state port authority and two city agencies all run their own inspection programmes with their own documentation expectations, so an inspector's value here is partly a matter of which owners' systems they already know.",
+    ],
+    hiringFocus: [
+      {
+        role: "NBIS-qualified bridge inspection team leaders",
+        why: "A very large inventory of complex crossings runs on a mandated inspection cycle, and team leader qualification takes years to accumulate.",
+      },
+      {
+        role: "Resident engineers for night and staged work",
+        why: "Work carried out in short closures needs someone who can make acceptance decisions without pausing the operation.",
+      },
+      {
+        role: "Office engineers & documentation specialists",
+        why: "Each owner keeps its own records regime, and claims exposure on projects this size makes documentation a senior function.",
+      },
+      {
+        role: "Transit and rail construction inspectors",
+        why: "Building inside a running system requires familiarity with track access, protection and testing that highway experience does not provide.",
+      },
+    ],
+    licensure: "New York qualifies inspectors through NYSDOT's own approved training and certification arrangements, with NICET levels commonly used alongside them and NBIS qualification required for bridge inspection team leaders. Transit and port authority work adds owner-specific safety and access certification on top. An inspector arriving from another state should expect to re-qualify here rather than transfer, which is the normal position across CEI.",
   },
   {
     slug: "los-angeles-ca",
@@ -72,6 +102,36 @@ export const CEI_CITIES: CeiCity[] = [
       "LAX Automated People Mover oversight",
       "Metro K Line resident engineering",
     ],
+    agencies: [
+      "Caltrans District 7",
+      "LA Metro",
+      "Los Angeles World Airports",
+      "Los Angeles County Public Works",
+      "LA Bureau of Engineering",
+    ],
+    marketDetail: [
+      "Transit and aviation dominate the large-project inspection market here. Rail extensions and a major airport redevelopment programme have run for years, and both need inspection staff comfortable with systems work, phased handover and testing rather than with highway construction alone.",
+      "California adds a compliance dimension that surprises people moving in. Prevailing wage and labour compliance monitoring on public work is enforced seriously and is often carried by the CEI team, so inspection staffing here routinely includes people whose function is contract and labour compliance rather than materials or workmanship.",
+    ],
+    hiringFocus: [
+      {
+        role: "Transit & rail construction inspectors",
+        why: "Sustained rail expansion needs inspectors who understand systems installation and testing, which highway experience does not cover.",
+      },
+      {
+        role: "Structures representatives",
+        why: "Seismic detailing makes structural inspection more exacting here than in low-seismicity states.",
+      },
+      {
+        role: "Labour compliance & contract specialists",
+        why: "State prevailing wage enforcement puts compliance monitoring inside the CEI scope rather than outside it.",
+      },
+      {
+        role: "Airport construction inspectors",
+        why: "Working airside carries security, badging and operational constraints that take time to qualify for.",
+      },
+    ],
+    licensure: "California runs inspector qualification largely through Caltrans requirements and owner-specific programmes, with ACI field testing certification standard for concrete work. Public projects are also subject to Department of Industrial Relations registration and prevailing wage rules, which the inspection team is frequently responsible for monitoring, so an inspector here needs contract literacy alongside technical qualification.",
   },
   {
     slug: "chicago-il",
@@ -89,6 +149,36 @@ export const CEI_CITIES: CeiCity[] = [
       "O'Hare airfield concrete inspection",
       "Circle Interchange bridge inspection",
     ],
+    agencies: [
+      "IDOT District 1",
+      "Illinois Tollway",
+      "Chicago Department of Transportation",
+      "Chicago Transit Authority",
+      "Cook County Department of Transportation & Highways",
+    ],
+    marketDetail: [
+      "The tollway is what makes this market distinct. It runs a long-horizon capital programme of rebuilding and widening its own system, which gives the region a steady supply of large, repeatable highway inspection work alongside whatever the state district and the city are doing.",
+      "The rest is rebuilding in place. Transit line reconstruction, viaduct and bridge work over a dense rail network, and street projects that also carry water main and service line replacement all mean inspectors here are usually verifying several trades in one trench rather than one.",
+    ],
+    hiringFocus: [
+      {
+        role: "Resident engineers & documentation staff",
+        why: "Owner documentation regimes here are detailed and quantity-driven, which makes records a specialist competence rather than a clerical one.",
+      },
+      {
+        role: "Materials inspectors & technicians",
+        why: "Continuous large-scale paving and structural concrete keeps qualified materials testing in constant demand.",
+      },
+      {
+        role: "Bridge & viaduct inspectors",
+        why: "Structures crossing an extensive freight and transit rail network need inspection under access constraints set by the railroads.",
+      },
+      {
+        role: "Utility and roadway coordination inspectors",
+        why: "Street projects combine paving, water main and service replacement, so inspection spans trades that are usually separate.",
+      },
+    ],
+    licensure: "Illinois qualifies inspection and materials staff through IDOT's own certification and documentation programmes, which the tollway and local agencies generally align with, and NBIS qualification governs bridge inspection. Illinois also issues a Structural Engineer licence separate from the PE, which matters when inspection work rises to structural review rather than verification.",
   },
   {
     slug: "houston-tx",
@@ -106,6 +196,36 @@ export const CEI_CITIES: CeiCity[] = [
       "METRO BOOST corridor construction oversight",
       "Harris County bridge inspection",
     ],
+    agencies: [
+      "TxDOT Houston District",
+      "Harris County Toll Road Authority",
+      "Harris County Engineering Department",
+      "METRO Houston",
+      "Port Houston",
+    ],
+    marketDetail: [
+      "Houston generates inspection work at a scale few metros match, because the freeway reconstruction programme here involves rebuilding urban corridors wholesale rather than resurfacing them. Projects of that size run for years and staff inspection teams accordingly, with distinct roles for earthwork, drainage, structures and materials.",
+      "Drainage is inspected as carefully as pavement. Because the region is flat and floods, detention volumes, storm sewer grades and outfall construction carry consequences that a drier metro would treat as routine, and inspectors are expected to understand why a grade matters here rather than simply to check it.",
+    ],
+    hiringFocus: [
+      {
+        role: "Resident engineers for corridor reconstruction",
+        why: "Multi-year urban freeway projects need leadership that can hold a large inspection team together across several construction seasons.",
+      },
+      {
+        role: "Drainage & earthwork inspectors",
+        why: "Flat terrain and flood risk make conveyance and detention construction consequential rather than routine.",
+      },
+      {
+        role: "Materials technicians",
+        why: "Sustained concrete and asphalt volume keeps qualified testing staff in permanent demand.",
+      },
+      {
+        role: "Toll and managed lane inspectors",
+        why: "A separate toll authority programme runs alongside the state's, with its own standards and delivery arrangements.",
+      },
+    ],
+    licensure: "Texas qualifies inspection and materials personnel through TxDOT's own certification programmes, and engineering firms must hold state registration in addition to their engineers holding individual licences. An inspector moving here from another state will need to sit the Texas qualifications regardless of what they held before, which is the ordinary position in CEI and worth planning around.",
   },
   {
     slug: "phoenix-az",
@@ -123,6 +243,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Valley Metro rail construction oversight",
       "Salt River Project utility inspection",
     ],
+    agencies: [
+      "Arizona Department of Transportation",
+      "Maricopa County Department of Transportation",
+      "City of Phoenix Street Transportation",
+      "Valley Metro",
+      "Phoenix Sky Harbor",
+    ],
+    marketDetail: [
+      "The valley's freeway system has been built out steadily rather than in bursts, which gives inspection work here an even rhythm: widening, interchange reconstruction and new segments proceed across a metro that shares standards between its many cities. Light rail extension adds a systems dimension to what is otherwise a highway market.",
+      "Heat governs construction practice. Concrete placement timing, curing, asphalt temperature windows and night work are all decided by a thermal environment most inspectors have not worked in, and getting acceptance decisions right under those conditions is a locally learned judgement.",
+    ],
+    hiringFocus: [
+      {
+        role: "Materials inspectors & technicians",
+        why: "Temperature-sensitive placement and curing make materials judgement more consequential here than in temperate states.",
+      },
+      {
+        role: "Highway & interchange inspectors",
+        why: "Continuous freeway construction across the valley keeps roadway inspection demand steady rather than cyclical.",
+      },
+      {
+        role: "Light rail construction inspectors",
+        why: "Transit extension brings systems, trackwork and testing scope that highway inspectors do not usually cover.",
+      },
+      {
+        role: "Night work resident engineers",
+        why: "Heat pushes much of the year's placement into night shifts, which is a different supervisory job from day work.",
+      },
+    ],
+    licensure: "Arizona uses the Western Alliance for Quality Transportation Construction qualification programme for materials testing, which is shared across a number of western states, so a technician qualified under it in Colorado, Washington or Idaho is in a considerably better position here than one arriving from a state that runs its own scheme. ADOT adds its own project-specific requirements on top, and engineers register through the Board of Technical Registration.",
   },
   {
     slug: "philadelphia-pa",
@@ -140,6 +290,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Delaware River bridge inspection",
       "Philadelphia water main utility inspection",
     ],
+    agencies: [
+      "PennDOT District 6",
+      "Pennsylvania Turnpike Commission",
+      "Delaware River Port Authority",
+      "SEPTA",
+      "Philadelphia Streets Department",
+    ],
+    marketDetail: [
+      "This is a bridge inspection market before it is anything else. The region carries a large inventory of ageing structures, including major river crossings under a separate port authority, and both the state district and the turnpike run continuous replacement and preservation programmes rather than occasional projects.",
+      "Alongside that, long-running interstate reconstruction through the city has kept large staged highway projects in delivery for years. Work is sequenced around traffic that cannot be diverted far, which puts the same premium on staging judgement that inspectors find in New York.",
+    ],
+    hiringFocus: [
+      {
+        role: "NBIS-qualified bridge inspectors",
+        why: "A large and old structure inventory runs on a mandated cycle, and team leader qualification cannot be acquired quickly.",
+      },
+      {
+        role: "Structural construction inspectors",
+        why: "Continuous bridge replacement means inspection of structural work is a steady speciality rather than an occasional need.",
+      },
+      {
+        role: "Resident engineers for staged highway work",
+        why: "Reconstruction under live interstate traffic makes sequencing and acceptance timing a leadership skill.",
+      },
+      {
+        role: "Materials certification technicians",
+        why: "Regional certification requirements for asphalt and concrete testing are specific and take time to obtain.",
+      },
+    ],
+    licensure: "Pennsylvania runs materials technician certification through the state's own pavement technology programme for asphalt and concrete, and consultants must hold PennDOT prequalification in the relevant categories before they can be assigned to state work. Bridge inspection team leaders need NBIS qualification. Both the certification and the prequalification are state-specific, so neither transfers in from elsewhere.",
   },
   {
     slug: "dallas-tx",
@@ -157,6 +337,36 @@ export const CEI_CITIES: CeiCity[] = [
       "DFW Airport terminal expansion inspection",
       "North Texas Tollway utility inspection",
     ],
+    agencies: [
+      "TxDOT Dallas District",
+      "TxDOT Fort Worth District",
+      "North Texas Tollway Authority",
+      "DART",
+      "DFW International Airport",
+    ],
+    marketDetail: [
+      "North Texas delivers a large share of its highway programme through design-build and similar arrangements, and that changes the inspection job fundamentally. When the contractor controls design and schedule, the owner's inspection team is verifying against a quality management system rather than directing the work, which requires a different temperament and a different documentary discipline.",
+      "The regional toll authority and the airport both run their own substantial capital programmes on top of the state's, so the market supports inspection careers that never touch a conventional state highway contract.",
+    ],
+    hiringFocus: [
+      {
+        role: "Design-build owner verification inspectors",
+        why: "Alternative delivery makes the inspector an auditor of the contractor's quality system rather than a director of the work.",
+      },
+      {
+        role: "Managed lane & interchange inspectors",
+        why: "Complex interchanges rebuilt under traffic are the region's signature project type.",
+      },
+      {
+        role: "Materials technicians",
+        why: "Sustained construction volume across state, toll and airport programmes keeps testing staff in demand.",
+      },
+      {
+        role: "Airport construction inspectors",
+        why: "Airside work carries badging and operational restrictions that limit who can be deployed.",
+      },
+    ],
+    licensure: "Texas qualifies inspection and materials staff through TxDOT's certification programmes and registers engineering firms as well as individual engineers. On design-build projects the owner's verification role often requires familiarity with quality management auditing in addition to the technical qualifications, which is a distinct skill that firms here ask about directly.",
   },
   {
     slug: "atlanta-ga",
@@ -174,6 +384,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Hartsfield-Jackson apron inspection",
       "MARTA rail extension resident engineering",
     ],
+    agencies: [
+      "Georgia Department of Transportation",
+      "State Road & Tollway Authority",
+      "MARTA",
+      "Atlanta Department of Transportation",
+      "Hartsfield-Jackson Atlanta International Airport",
+    ],
+    marketDetail: [
+      "Interchange reconstruction is the defining local project type. The metro's freeway junctions are being rebuilt in place under traffic, which produces long projects with heavy structural content and inspection teams that stay together for years.",
+      "The airport programme runs parallel to all of it. One of the world's busiest airports carries a continuous capital programme, and airside inspection there is a separate career track with its own access requirements rather than an extension of highway work.",
+    ],
+    hiringFocus: [
+      {
+        role: "Structural & bridge construction inspectors",
+        why: "Interchange reconstruction is structure-heavy, so structural inspection experience is what these projects consume.",
+      },
+      {
+        role: "Resident engineers for long-duration projects",
+        why: "Multi-year interchange work needs leadership continuity that shorter contracts never require.",
+      },
+      {
+        role: "Airport construction inspectors",
+        why: "Continuous airside work at a major hub is its own qualification path and staffing pool.",
+      },
+      {
+        role: "Materials technicians",
+        why: "State certification is required before a technician can accept materials, and it takes time to obtain.",
+      },
+    ],
+    licensure: "Georgia qualifies inspection and materials personnel through GDOT's own certification programme, with ACI certification standard for concrete field testing and NBIS qualification for bridge inspection. Consultants work under state prequalification categories, so which categories a firm holds often determines what a candidate can be assigned to regardless of their own qualifications.",
   },
   {
     slug: "miami-fl",
@@ -191,6 +431,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Miami-Dade seawall inspection",
       "Brightline corridor construction oversight",
     ],
+    agencies: [
+      "FDOT District 6",
+      "Miami-Dade Department of Transportation & Public Works",
+      "Miami-Dade Expressway Authority",
+      "Miami-Dade Aviation Department",
+      "Florida's Turnpike Enterprise",
+    ],
+    marketDetail: [
+      "South Florida builds over and near water, and that shapes inspection here more than anything else. Causeways, bridges and marine structures put inspectors on and around water routinely, and the corrosive coastal environment makes concrete cover, reinforcement protection and coating acceptance decisions that carry long service-life consequences.",
+      "The other feature is the qualification regime. Florida runs an unusually structured technician qualification programme, and FDOT work is closed to inspectors who do not hold the right qualifications under it, which makes this a market with a clear, documented entry requirement rather than an informal one.",
+    ],
+    hiringFocus: [
+      {
+        role: "Bridge & marine structure inspectors",
+        why: "Causeway and over-water construction is routine here and requires access and safety competence that inland work does not.",
+      },
+      {
+        role: "CTQP-qualified materials technicians",
+        why: "State work is gated on holding the correct qualifications, so qualified technicians are the binding constraint on staffing a project.",
+      },
+      {
+        role: "Resident engineers for coastal projects",
+        why: "Durability decisions in a corrosive environment carry consequences long after the project closes.",
+      },
+      {
+        role: "Airport construction inspectors",
+        why: "A major international airport runs a continuous programme with its own airside access requirements.",
+      },
+    ],
+    licensure: "Florida qualifies construction inspection and materials personnel through the Construction Training Qualification Program, and FDOT projects require the specific CTQP qualifications for the task being inspected. Consultants must also hold FDOT prequalification in the relevant work types. This is one of the more formalised regimes in the country, so an inspector arriving from another state should expect qualification to be a scheduled exercise rather than a formality.",
   },
   {
     slug: "seattle-wa",
@@ -208,6 +478,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Sea-Tac airfield resident engineering",
       "Seattle seawall & utility inspection",
     ],
+    agencies: [
+      "Washington State Department of Transportation",
+      "Sound Transit",
+      "Seattle Department of Transportation",
+      "Port of Seattle",
+      "King County Road Services",
+    ],
+    marketDetail: [
+      "Transit expansion is the largest sustained inspection programme in this region, and it is systems work as much as civil work: guideway, stations, trackwork and testing, delivered in sequence over many years. That has built a local inspection workforce whose experience is not primarily in highways.",
+      "The state also carries a court-ordered fish passage programme, replacing culverts that block salmon migration across the highway network. It is an unusual body of work, structurally modest but hydraulically exacting and environmentally sensitive, and it generates inspection demand of a kind no other state produces at this scale.",
+    ],
+    hiringFocus: [
+      {
+        role: "Transit & guideway construction inspectors",
+        why: "Long-running rail expansion needs systems-literate inspection staff rather than highway generalists.",
+      },
+      {
+        role: "Fish passage & culvert replacement inspectors",
+        why: "A court-ordered programme unique to this state creates steady demand for hydraulically and environmentally aware inspection.",
+      },
+      {
+        role: "Structural inspectors for retained cuts and walls",
+        why: "Steep terrain puts earth retention into ordinary projects, which raises the structural content of inspection.",
+      },
+      {
+        role: "Materials technicians",
+        why: "Regional qualification is required before acceptance testing, and holders are in continuous demand.",
+      },
+    ],
+    licensure: "Washington uses the Western Alliance for Quality Transportation Construction qualification programme for materials testing, shared with several other western states, so a technician qualified in Arizona, Colorado or Idaho transfers here far more easily than one arriving from a state with its own scheme. WSDOT adds project-specific requirements, and environmental permitting conditions on in-water work impose timing constraints inspectors are expected to understand.",
   },
   {
     slug: "denver-co",
@@ -225,6 +525,36 @@ export const CEI_CITIES: CeiCity[] = [
       "DIA apron expansion inspection",
       "C-470 express lane oversight",
     ],
+    agencies: [
+      "Colorado Department of Transportation",
+      "E-470 Public Highway Authority",
+      "Regional Transportation District",
+      "Denver Department of Transportation & Infrastructure",
+      "Denver International Airport",
+    ],
+    marketDetail: [
+      "Denver's signature inspection work has been urban interstate reconstruction, including lowering and covering a stretch of highway through established neighbourhoods, which is a project type that combines deep excavation, structures and intense community constraint in one contract.",
+      "Around it sits a broad and steady market: a separate toll authority, a regional transit district, the city's own programme and one of the largest airports in the country by land area, each letting work under its own arrangements. Altitude and a compressed construction season shape scheduling more than most inspectors expect.",
+    ],
+    hiringFocus: [
+      {
+        role: "Resident engineers for urban reconstruction",
+        why: "Deep, long-duration highway projects in occupied neighbourhoods demand leadership that can manage constraint as well as construction.",
+      },
+      {
+        role: "Structural construction inspectors",
+        why: "Covered highway sections and interchange work carry heavy structural content.",
+      },
+      {
+        role: "Materials technicians",
+        why: "A short season concentrates placement into part of the year, which concentrates testing demand with it.",
+      },
+      {
+        role: "Airport construction inspectors",
+        why: "A very large airport runs a continuous capital programme with airside access requirements of its own.",
+      },
+    ],
+    licensure: "Colorado uses the Western Alliance for Quality Transportation Construction programme for materials qualification alongside CDOT's own requirements, which means technicians moving between Colorado, Washington, Arizona and Idaho carry a usable credential with them. Engineers license through the state board with comity for equivalent licences.",
   },
   {
     slug: "boston-ma",
@@ -242,6 +572,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Logan Airport taxiway materials testing",
       "Boston utility & drainage inspection",
     ],
+    agencies: [
+      "MassDOT Highway Division",
+      "Massachusetts Bay Transportation Authority",
+      "Massport",
+      "Boston Public Works Department",
+      "Massachusetts Department of Conservation & Recreation",
+    ],
+    marketDetail: [
+      "New England's inspection market runs on bridge preservation and accelerated construction. The state built a reputation for replacing structures in very short closures, which puts unusual weight on inspection readiness: when a bridge is being replaced over a weekend, acceptance decisions cannot wait until Monday.",
+      "The transit authority's track and infrastructure programme runs alongside it, and both operate on a network old enough that existing condition is frequently different from the record. Inspectors here spend a real share of their time documenting what was actually found.",
+    ],
+    hiringFocus: [
+      {
+        role: "NBIS-qualified bridge inspectors",
+        why: "An old and dense structure inventory runs a continuous mandated inspection cycle.",
+      },
+      {
+        role: "Accelerated bridge construction inspectors",
+        why: "Replacement inside a weekend closure compresses every acceptance decision, which is a different discipline from conventional staging.",
+      },
+      {
+        role: "Transit infrastructure inspectors",
+        why: "Track and structure renewal on an old network requires working inside an operating railway.",
+      },
+      {
+        role: "NETTCP-certified materials technicians",
+        why: "The regional certification programme is required for acceptance testing and does not transfer in from outside New England.",
+      },
+    ],
+    licensure: "Massachusetts and its neighbours use the New England Transportation Technician Certification Program for materials qualification, which is regional rather than national: a technician certified under it can work across several New England states, but one arriving from outside the region will need to obtain it. MassDOT prequalification applies to consultants, and bridge inspection team leaders require NBIS qualification.",
   },
   {
     slug: "minneapolis-mn",
@@ -259,6 +619,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Mississippi River bridge inspection",
       "St. Paul utility & sewer inspection",
     ],
+    agencies: [
+      "MnDOT Metro District",
+      "Hennepin County Transportation",
+      "Metro Transit",
+      "Metropolitan Airports Commission",
+      "Minneapolis Public Works",
+    ],
+    marketDetail: [
+      "Bridge inspection carries particular institutional weight in Minnesota, and the state's inspection and load rating practice reflects that history directly. The programme is well resourced and closely documented, which makes this a good market in which to build structural inspection credentials.",
+      "The construction season is the other governing fact. A short window concentrates placement, testing and inspection into part of the year, so staffing here is seasonal in a way southern markets are not, and firms plan around inspectors who can be fully deployed in summer and redeployed to office and rating work in winter.",
+    ],
+    hiringFocus: [
+      {
+        role: "NBIS-qualified bridge inspectors",
+        why: "State inspection and load rating practice is demanding and generates continuous structural work.",
+      },
+      {
+        role: "Load rating engineers",
+        why: "Rating is treated as a standing engineering function here rather than an occasional exercise.",
+      },
+      {
+        role: "Materials technicians",
+        why: "A compressed season concentrates acceptance testing into a few months, which sharpens demand for certified staff.",
+      },
+      {
+        role: "Transit construction inspectors",
+        why: "Light rail extension adds systems and trackwork scope beyond conventional highway inspection.",
+      },
+    ],
+    licensure: "Minnesota qualifies inspection and materials personnel through MnDOT's technical certification programme, which is state-run and does not transfer from elsewhere, and bridge inspection team leaders require NBIS qualification. Engineers license through the state board with comity for equivalent licences. Winter work is genuinely different here, and firms ask how a candidate expects to be deployed outside the construction season.",
   },
   {
     slug: "detroit-mi",
@@ -276,6 +666,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Detroit Metro airfield resident engineering",
       "Detroit water main utility inspection",
     ],
+    agencies: [
+      "MDOT Metro Region",
+      "Wayne County Department of Public Services",
+      "Road Commission for Oakland County",
+      "Michigan Department of Transportation Bridge Operations",
+      "Detroit Department of Public Works",
+    ],
+    marketDetail: [
+      "Southeast Michigan is rebuilding its interstate system through the urban core, and a new international crossing to Canada has run alongside it. Between them they have kept large, structure-heavy inspection assignments available in one metro for years, which is not the normal condition of a mature highway market.",
+      "Freeze and thaw is the technical constant. Pavement and structure deterioration here is driven by cycling and de-icing chemistry, so inspection judgement about concrete cover, joint detailing and drainage has consequences that show up within a few winters rather than a few decades.",
+    ],
+    hiringFocus: [
+      {
+        role: "Structural construction inspectors",
+        why: "Interstate modernisation and major crossing work are structure-dominated, which is what these projects consume.",
+      },
+      {
+        role: "NBIS-qualified bridge inspectors",
+        why: "A large, weather-stressed structure inventory runs a continuous mandated inspection cycle.",
+      },
+      {
+        role: "Materials technicians",
+        why: "State certification is required for acceptance testing, and durability in this climate makes it consequential.",
+      },
+      {
+        role: "Resident engineers for corridor projects",
+        why: "Long urban reconstruction contracts need leadership continuity across several seasons.",
+      },
+    ],
+    licensure: "Michigan qualifies inspection and materials personnel through MDOT's certification arrangements, with industry-run concrete and aggregate technician programmes recognised alongside them, and NBIS qualification for bridge inspection team leaders. Engineers license through the Department of Licensing and Regulatory Affairs with comity for equivalent licences.",
   },
   {
     slug: "charlotte-nc",
@@ -293,6 +713,36 @@ export const CEI_CITIES: CeiCity[] = [
       "Charlotte Douglas taxiway inspection",
       "Mecklenburg County bridge inspection",
     ],
+    agencies: [
+      "NCDOT Division 10",
+      "North Carolina Turnpike Authority",
+      "Charlotte Area Transit System",
+      "Charlotte Douglas International Airport",
+      "Charlotte Department of Transportation",
+    ],
+    marketDetail: [
+      "This is a growth market, and the inspection work reflects it: widening, new interchanges, express lanes and the roadway infrastructure that goes with development at the edge of a metro that keeps expanding. Projects tend to be numerous rather than singular, which suits inspectors who can move between assignments.",
+      "Alongside the state programme, the transit system's rail extensions and a large airport capital programme give the region two other owners letting substantial work, each with its own access and documentation expectations.",
+    ],
+    hiringFocus: [
+      {
+        role: "Roadway & widening inspectors",
+        why: "Growth-driven capacity work is the region's steady project type rather than an occasional programme.",
+      },
+      {
+        role: "Materials technicians",
+        why: "State certification is required before acceptance testing and is a gating requirement on staffing.",
+      },
+      {
+        role: "Transit construction inspectors",
+        why: "Rail extension brings systems and trackwork scope that highway experience does not cover.",
+      },
+      {
+        role: "Erosion & sediment control inspectors",
+        why: "Basin water quality rules make sediment control a genuine compliance obligation on every site here.",
+      },
+    ],
+    licensure: "North Carolina qualifies inspection and materials personnel through NCDOT's own certification programmes, which are state-specific, and requires engineering firms to hold a certificate of authorisation in addition to individual PE licensure. Erosion and sediment control certification is a practical requirement on most sites given the state's water quality rules.",
   },
   {
     slug: "nashville-tn",

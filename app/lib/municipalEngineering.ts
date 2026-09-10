@@ -56,6 +56,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Five-borough site plan & development review",
       "Five-borough library & playground renovations",
     ],
+    agencies: [
+      "NYC Department of Design & Construction",
+      "NYC Department of Transportation",
+      "NYC Department of Environmental Protection",
+      "NYC Parks",
+      "NYC Economic Development Corporation",
+    ],
+    marketDetail: [
+      "New York separates who owns the asset from who builds it. A large share of the city's capital work is designed and delivered by the Department of Design and Construction on behalf of the agency that will own it, which means a municipal engineer here is usually working to another agency's standards through a delivery organisation with its own. Knowing how that hand-off works is a practical skill and it is not one that transfers from a city where public works does everything itself.",
+      "The engineering itself is dominated by the right of way. Street reconstruction in this city means sequencing work around water mains, sewers, gas, steam, private utility ducts and a subway beneath some of it, on streets that cannot be closed. Utility coordination is not a supporting task here; it is most of the design problem.",
+    ],
+    hiringFocus: [
+      {
+        role: "Street reconstruction engineers",
+        why: "Rebuilding a street in a dense, fully occupied right of way is a coordination problem before it is a pavement one, and few markets train engineers to that level of congestion.",
+      },
+      {
+        role: "Utility coordination engineers",
+        why: "Multiple private and public utilities occupy the same trench, and resolving that before construction is what keeps a capital programme on schedule.",
+      },
+      {
+        role: "Pedestrian accessibility engineers",
+        why: "Ramp and crossing upgrades run continuously across a very large intersection inventory, and the detailing is standard-driven rather than discretionary.",
+      },
+      {
+        role: "Drainage engineers for combined systems",
+        why: "Street projects are also stormwater projects here, so the roadway engineer has to answer to the sewer obligation as well.",
+      },
+    ],
+    licensure: "New York licenses engineers through the State Education Department's Office of the Professions, with transfer for most out-of-state PEs on an NCEES record. The gate that matters more in practice is agency prequalification: the design and construction, transportation and environmental protection departments each maintain their own consultant arrangements, so which of them a candidate has actually worked under is the first thing a hiring manager here checks.",
   },
   {
     slug: "los-angeles-ca",
@@ -73,6 +103,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Site plan review for infill & TOD development",
       "LA Recreation & Parks capital bond projects",
     ],
+    agencies: [
+      "LA Bureau of Engineering",
+      "LA Bureau of Street Services",
+      "Los Angeles County Public Works",
+      "LA Sanitation & Environment",
+      "LA Department of Transportation",
+    ],
+    marketDetail: [
+      "Los Angeles splits municipal engineering across bureaus rather than concentrating it in one department, so design, street maintenance, sanitation and transportation each hold part of what a single public works department would own elsewhere. For an engineer that means the employer and the standards depend on which bureau's programme the work sits in.",
+      "Two obligations shape the workload. Pedestrian accessibility repair runs as a court-supervised programme across an enormous sidewalk inventory, which makes ADA design a sustained speciality rather than a checklist item. Alongside it, the regional municipal stormwater permit makes every street and public site a potential place to capture runoff, which is why so much roadway work here carries a water quality component.",
+    ],
+    hiringFocus: [
+      {
+        role: "Pedestrian accessibility engineers",
+        why: "A sidewalk repair obligation of this size runs for decades, and the design work is continuous rather than project-driven.",
+      },
+      {
+        role: "Stormwater capture & MS4 compliance engineers",
+        why: "The regional permit turns public land into treatment opportunity, so runoff capture design is attached to work that would otherwise be pure roadway.",
+      },
+      {
+        role: "Street & pavement rehabilitation engineers",
+        why: "An arterial network of this size keeps resurfacing and reconstruction on a permanent cycle.",
+      },
+      {
+        role: "Seismic retrofit engineers for municipal assets",
+        why: "Bridges, buildings and buried infrastructure all carry retrofit obligations that a lower-seismicity market never generates.",
+      },
+    ],
+    licensure: "California does not grant civil PE licensure by simple comity: the state board requires its own application, and civil applicants sit California-specific seismic principles and engineering surveying examinations, so an engineer moving here should plan for that. Public agency work also runs through bureau-specific consultant lists, and for street and sidewalk programmes those lists matter as much as the licence.",
   },
   {
     slug: "chicago-il",
@@ -90,6 +150,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Subdivision & site development plan review",
       "Chicago Park District field house renovations",
     ],
+    agencies: [
+      "Chicago Department of Transportation",
+      "Chicago Department of Water Management",
+      "Cook County Department of Transportation & Highways",
+      "Chicago Department of Assets, Information & Services",
+      "Illinois Department of Transportation, District 1",
+    ],
+    marketDetail: [
+      "Municipal work in Chicago is increasingly one combined job. Because the city is replacing lead service lines on a statutory schedule, and because opening a street is expensive, service replacement is coordinated with resurfacing, water main renewal and sewer work in the same block, which makes the municipal engineer a programme coordinator as much as a designer.",
+      "Above ground, the distinctive work is the street grid itself: protected bikeway build-out, viaduct clearances under an extensive rail network, and an alley system large enough that permeable alley design became a recognised local speciality. The regular grid makes projects repeatable, which shifts the value from bespoke design toward delivering standard details reliably at volume.",
+    ],
+    hiringFocus: [
+      {
+        role: "Coordinated street & utility programme engineers",
+        why: "Lead service replacement, water main renewal and resurfacing are packaged into single street projects, so engineers who can plan across all three are the constraint.",
+      },
+      {
+        role: "Bikeway & complete streets designers",
+        why: "Protected facility build-out is continuous and the geometric detailing is specific to this city's standards.",
+      },
+      {
+        role: "Viaduct & structure clearance engineers",
+        why: "A dense freight and transit rail network crosses the street grid constantly, and clearance and drainage under those structures is recurring work.",
+      },
+      {
+        role: "Permeable pavement & green alley designers",
+        why: "The alley network gave the city a stormwater tool few others have at scale, and the design vocabulary is local.",
+      },
+    ],
+    licensure: "Illinois licenses through the Department of Financial and Professional Regulation and is one of the states that issues a Structural Engineer licence entirely separately from the PE, which matters for viaduct and bridge work. City and county programmes run through their own consultant prequalification, and for federally funded work the state transportation department's prequalification applies on top.",
   },
   {
     slug: "houston-tx",
@@ -107,6 +197,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Plat & site plan review for rapid annexation growth",
       "Houston Parks Board trail & greenspace program",
     ],
+    agencies: [
+      "Houston Public Works",
+      "Harris County Engineering Department",
+      "Harris County Flood Control District",
+      "Texas Department of Transportation, Houston District",
+      "Municipal utility districts across the region",
+    ],
+    marketDetail: [
+      "Drainage is the municipal engineering problem in Houston, and it is attached to every street. The region is flat, drains slowly and floods on a schedule it plans around, so a roadway project here is expected to improve conveyance or provide detention rather than simply replace pavement, and a dedicated drainage and streets funding stream keeps that work continuous.",
+      "The second feature is institutional. Much of the developed area outside the city is served by municipal utility districts, each an independent public body with its own engineer, so the regional market contains a large number of small public clients alongside the city and the county. That produces a different career shape from a metro where one department lets nearly everything.",
+    ],
+    hiringFocus: [
+      {
+        role: "Drainage & detention design engineers",
+        why: "Street projects carry a conveyance obligation here, so hydraulics is core roadway work rather than a separate discipline.",
+      },
+      {
+        role: "Hydrologic & hydraulic modellers",
+        why: "Design decisions are argued and approved through models, and defending one in review is the skill firms actually hire for.",
+      },
+      {
+        role: "Municipal utility district engineers",
+        why: "A large number of independent districts each need engineering support, which is a distinctive and durable source of demand in this region.",
+      },
+      {
+        role: "Subsidence-aware infrastructure engineers",
+        why: "Ground movement changes drainage grades over time, so design has to account for a datum that does not stay still.",
+      },
+    ],
+    licensure: "Texas licenses through the Board of Professional Engineers and Land Surveyors, with comity for NCEES record holders, and it registers firms as well as individuals, so a consultancy needs its own registration before it can offer services. For district work the practical credential is experience as a district engineer, which is a defined role here rather than an informal one.",
   },
   {
     slug: "phoenix-az",
@@ -124,6 +244,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Subdivision plat & site plan review",
       "Desert park & municipal pool capital projects",
     ],
+    agencies: [
+      "Phoenix Street Transportation Department",
+      "Phoenix Water Services",
+      "Maricopa County Department of Transportation",
+      "City of Mesa Engineering",
+      "City of Scottsdale Capital Projects",
+    ],
+    marketDetail: [
+      "The Phoenix metro is built on a regular arterial grid across many adjacent cities, which makes municipal engineering here unusually programmatic: the same intersection, drainage and pavement problems recur across jurisdictions that share standards but let work separately. An engineer's experience transfers easily between cities in this valley in a way it does not in most regions.",
+      "Heat is the distinctive design input. Pavement selection, surface treatments, shade at crossings and material durability are all evaluated against a thermal environment that few other American markets design for, and cool pavement and heat mitigation work have moved from pilot to routine programme here.",
+    ],
+    hiringFocus: [
+      {
+        role: "Pavement & materials engineers",
+        why: "Extreme surface temperatures change how pavements are specified and how long they last, which makes materials judgement locally specific.",
+      },
+      {
+        role: "Arterial & intersection design engineers",
+        why: "A valley-wide grid of major arterials keeps capacity and safety work continuous across many jurisdictions.",
+      },
+      {
+        role: "Stormwater & flood control engineers",
+        why: "Desert drainage is a problem of rare, intense events and washes rather than continuous flow, which is a different design case from a temperate metro.",
+      },
+      {
+        role: "Heat mitigation & shade infrastructure engineers",
+        why: "Cool surfacing and shaded pedestrian infrastructure have become funded programmes here rather than experiments.",
+      },
+    ],
+    licensure: "Arizona registers engineers through the Board of Technical Registration, which accepts comity applications from PEs licensed elsewhere. Because the valley's cities share design standards to a considerable degree, prior work for any one of them is generally recognised by the others, which makes this an easier market to move within than most once a candidate is established.",
   },
   {
     slug: "philadelphia-pa",
@@ -141,6 +291,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Site plan review for TOD & infill corridors",
       "Fairmount Park & rec-center renovation program",
     ],
+    agencies: [
+      "Philadelphia Streets Department",
+      "Philadelphia Water Department",
+      "PennDOT District 6",
+      "Delaware Valley Regional Planning Commission",
+      "SEPTA",
+    ],
+    marketDetail: [
+      "Philadelphia's municipal engineering is shaped by the fact that its combined sewer obligation is being met above ground. Green infrastructure in the public right of way means street and sidewalk projects routinely carry stormwater function, so the roadway engineer has to design a tree trench or a permeable surface that also works as a street and can be maintained as one.",
+      "The city's age is the other constraint. A street network laid out long before the utilities beneath it, a substantial inventory of city-owned bridges, and narrow rights of way in the older districts all mean reconstruction here is a fitting exercise, not a clean-sheet one.",
+    ],
+    hiringFocus: [
+      {
+        role: "Green stormwater infrastructure designers",
+        why: "Runoff control is delivered in the right of way here, so this is roadway work with a water obligation attached rather than a separate speciality.",
+      },
+      {
+        role: "Municipal bridge engineers",
+        why: "The city owns a sizeable bridge inventory of its own, distinct from the state system, and it carries a continuous inspection and repair cycle.",
+      },
+      {
+        role: "Street reconstruction engineers",
+        why: "Narrow historic rights of way and buried utilities of unknown vintage make reconstruction a constrained design problem.",
+      },
+      {
+        role: "Traffic & complete streets engineers",
+        why: "Safety-driven redesign of arterial corridors is a sustained programme across the city.",
+      },
+    ],
+    licensure: "Pennsylvania licenses through the State Registration Board for Professional Engineers, Land Surveyors and Geologists, with comity for NCEES record holders. Work with federal-aid funding runs through PennDOT's prequalification in addition to the city's own, so candidates with both are meaningfully easier to place.",
   },
   {
     slug: "dallas-tx",
@@ -158,6 +338,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Complete streets & sidewalk gap closure",
       "Park & municipal facility bond projects",
     ],
+    agencies: [
+      "Dallas Public Works",
+      "Dallas Water Utilities",
+      "North Central Texas Council of Governments",
+      "Texas Department of Transportation, Dallas District",
+      "Collin and Denton county municipalities",
+    ],
+    marketDetail: [
+      "North Texas runs two municipal markets at once. Inside Dallas the work is renewal: bond-funded street reconstruction, alley rehabilitation and utility replacement in an established grid. In the collar cities to the north it is expansion, where growth means new thoroughfares, land development review and infrastructure sized for population that has not arrived yet.",
+      "Those two demand different engineers, and firms here often staff for both. The renewal side rewards utility coordination and construction phasing judgement; the growth side rewards speed on subdivision review, thoroughfare design and the traffic analysis that goes with approving development.",
+    ],
+    hiringFocus: [
+      {
+        role: "Street reconstruction & rehabilitation engineers",
+        why: "Bond-funded renewal inside the city is a continuous programme with its own standards and phasing constraints.",
+      },
+      {
+        role: "Land development review engineers",
+        why: "Fast-growing collar cities need public-side engineers who can review and approve private development at volume.",
+      },
+      {
+        role: "Thoroughfare & traffic engineers",
+        why: "Growth areas are still building their arterial networks, which is design work that established metros no longer generate.",
+      },
+      {
+        role: "Utility coordination engineers",
+        why: "Street renewal is constrained by what is buried beneath it, and resolving that early is what keeps projects on programme.",
+      },
+    ],
+    licensure: "Texas licenses through the Board of Professional Engineers and Land Surveyors, with comity for NCEES record holders and registration required for the firm as well as the individual. In the growth cities, city engineer and development review roles are frequently the public-sector entry point, and experience on either side of the review counter is valued by the other.",
   },
   {
     slug: "atlanta-ga",
@@ -175,6 +385,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Land disturbance & site development review",
       "Recreation center renovations across the city",
     ],
+    agencies: [
+      "Atlanta Department of Transportation",
+      "Atlanta Department of Watershed Management",
+      "Fulton County Public Works",
+      "DeKalb County Public Works",
+      "Georgia Department of Transportation",
+    ],
+    marketDetail: [
+      "Atlanta's municipal programme is organised around corridors rather than around a grid. Complete street conversions, trail and greenway corridors and the ring of former rail alignment being converted around the city all treat a route as a single project with transport, drainage, structures and public realm inside it, which suits engineers who can work across disciplines rather than deep in one.",
+      "Underneath that, the city's sewer obligations mean roadway projects frequently carry stormwater and sewer scope. Topography matters here too: the terrain is steeper than most southeastern metros, so grading and drainage design carry more weight in what would otherwise be routine street work.",
+    ],
+    hiringFocus: [
+      {
+        role: "Complete streets & corridor designers",
+        why: "Corridor-scale projects combine roadway, drainage and public realm in one design, which is a broader brief than standard street work.",
+      },
+      {
+        role: "Trail & greenway engineers",
+        why: "Converted rail alignments and greenways are a sustained local project type with their own structural and drainage problems.",
+      },
+      {
+        role: "Drainage engineers for hilly terrain",
+        why: "Steeper topography makes grading and conveyance a real constraint rather than a formality.",
+      },
+      {
+        role: "Traffic safety engineers",
+        why: "Arterial safety redesign is a continuing programme across the city and the counties around it.",
+      },
+    ],
+    licensure: "Georgia licenses through the Board of Professional Engineers and Land Surveyors, with comity for engineers licensed elsewhere. Federally funded corridor work runs through the state transportation department's prequalification categories, and because so much municipal work here is delivered that way, those categories often decide which firms can staff a project at all.",
   },
   {
     slug: "miami-fl",
@@ -192,6 +432,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Complete streets & multimodal corridor projects",
       "Waterfront park & municipal facility upgrades",
     ],
+    agencies: [
+      "Miami-Dade Transportation & Public Works",
+      "City of Miami Capital Improvements",
+      "Miami Beach Public Works",
+      "South Florida Water Management District",
+      "Florida Department of Transportation, District 6",
+    ],
+    marketDetail: [
+      "This is the American market where sea level rise is already a construction programme rather than a planning horizon. Roads are being raised, stormwater pump stations installed behind them and drainage systems converted from gravity to pumped operation, most visibly in Miami Beach, because a tidal cycle now pushes water back up through outfalls that used to drain freely.",
+      "That changes the ordinary municipal job. Setting a road grade becomes a question about neighbouring private property, groundwater and future tide levels; a drainage design becomes a pumping and power-supply design. Engineers here are expected to reason about a datum that is moving, which is not something most municipal training covers.",
+    ],
+    hiringFocus: [
+      {
+        role: "Road raising & resiliency engineers",
+        why: "Raising streets against tidal flooding is a project type that barely exists elsewhere in the country and has to be learned locally.",
+      },
+      {
+        role: "Stormwater pump station engineers",
+        why: "Converting gravity drainage to pumped systems makes pump station design a core municipal skill here rather than a specialist one.",
+      },
+      {
+        role: "Coastal drainage & tidal backflow engineers",
+        why: "Outfalls that admit tide as readily as they discharge runoff require control measures that inland design never considers.",
+      },
+      {
+        role: "Utility relocation engineers",
+        why: "Raising a road moves everything buried beneath it, which makes relocation design part of nearly every project.",
+      },
+    ],
+    licensure: "Florida licenses through the Board of Professional Engineers, with licensure by endorsement for engineers already licensed elsewhere on an equivalent basis. Drainage and water use consents run through the regional water management district rather than the municipality, so familiarity with that permitting route is a practical requirement for anyone leading design here.",
   },
   {
     slug: "seattle-wa",
@@ -209,6 +479,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Vision Zero complete streets projects",
       "Community center & branch library upgrades",
     ],
+    agencies: [
+      "Seattle Department of Transportation",
+      "Seattle Public Utilities",
+      "King County Road Services",
+      "Sound Transit",
+      "Washington State Department of Transportation",
+    ],
+    marketDetail: [
+      "Seattle's municipal engineering is a topography problem. Steep grades, unstable slopes and a waterfront edge mean retaining structures, slope stabilisation and drainage design appear in ordinary street projects, and geotechnical judgement carries further here than it does in a flat city.",
+      "The city also owns a substantial bridge and structure inventory whose condition is publicly tracked, which keeps assessment and replacement work continuous. Alongside that, green stormwater infrastructure in the right of way is standard practice rather than an option, because the same street project is usually also part of the drainage obligation.",
+    ],
+    hiringFocus: [
+      {
+        role: "Retaining wall & slope stabilisation engineers",
+        why: "Steep terrain puts structural earth retention into routine street projects, which is unusual in municipal work.",
+      },
+      {
+        role: "Municipal bridge & structure engineers",
+        why: "The city's own bridge inventory carries a continuing inspection, repair and replacement programme distinct from the state system.",
+      },
+      {
+        role: "Green stormwater infrastructure designers",
+        why: "Runoff control in the right of way is the default approach here, so roadway engineers are expected to design it.",
+      },
+      {
+        role: "Multimodal corridor designers",
+        why: "Transit, bicycle and pedestrian priority are designed into arterial projects from the start rather than added later.",
+      },
+    ],
+    licensure: "Washington registers engineers through the Board of Registration for Professional Engineers and Land Surveyors, with comity for equivalent licences. The state's environmental review process applies to municipal projects as well as large ones, so engineers who can carry a scheme through that review are consistently more employable here than those who have only designed to a standard.",
   },
   {
     slug: "denver-co",
@@ -226,6 +526,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Denver Water main coordination projects",
       "Parks & Recreation facility renovation program",
     ],
+    agencies: [
+      "Denver Department of Transportation & Infrastructure",
+      "Denver Water",
+      "Mile High Flood District",
+      "Colorado Department of Transportation",
+      "Adams and Arapahoe county public works",
+    ],
+    marketDetail: [
+      "Denver consolidated transport and infrastructure into a single department, which means street, drainage, bridge and public realm work is programmed together rather than negotiated between separate bureaus. For an engineer that makes the municipal job broader here than in cities where each asset class has its own department.",
+      "The distinctive technical work is drainage. A regional flood district sets criteria across the metro, and major outfall projects have reshaped whole neighbourhoods to move water that the original street grid was never designed to carry. Sidewalk condition has also become a city-funded programme rather than an adjacent-owner obligation, which turned a maintenance backlog into engineered work.",
+    ],
+    hiringFocus: [
+      {
+        role: "Storm drainage & outfall engineers",
+        why: "Regional criteria and major outfall schemes make drainage a leading discipline here rather than a supporting one.",
+      },
+      {
+        role: "Sidewalk & accessibility programme engineers",
+        why: "Moving sidewalk repair onto the city's books converted a backlog into a continuous design and delivery programme.",
+      },
+      {
+        role: "Multimodal & Vision Zero designers",
+        why: "Arterial safety redesign is funded as a standing programme across the city.",
+      },
+      {
+        role: "Municipal bridge engineers",
+        why: "City-owned structures over rail, water and highway need their own inspection and rehabilitation cycle.",
+      },
+    ],
+    licensure: "Colorado licenses through the State Board of Licensure for Architects, Professional Engineers and Professional Land Surveyors, with comity for equivalent licences. Drainage design across the metro follows the regional flood district's criteria manual rather than each city's own, so familiarity with that document is effectively a local qualification.",
   },
   {
     slug: "boston-ma",
@@ -243,6 +573,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Site plan review for dense infill development",
       "Branch library & municipal building upgrades",
     ],
+    agencies: [
+      "Boston Public Works Department",
+      "Boston Transportation Department",
+      "Boston Water & Sewer Commission",
+      "Massachusetts Department of Transportation",
+      "Massachusetts Bay Transportation Authority",
+    ],
+    marketDetail: [
+      "Boston's street network predates almost everything buried under it, and that is the defining condition of municipal engineering here. Rights of way are narrow and irregular, utility records for the oldest districts are incomplete, and a large share of the ground is filled land, so reconstruction involves discovering the existing condition as much as designing the new one.",
+      "Climate adaptation now sits on top of that. A low-lying waterfront with a significant tidal range has made shoreline protection, elevated street sections and drainage backflow prevention part of the city's ordinary capital work rather than a separate resiliency programme.",
+    ],
+    hiringFocus: [
+      {
+        role: "Street reconstruction engineers",
+        why: "Narrow historic rights of way over filled ground make reconstruction a constrained and investigative design problem.",
+      },
+      {
+        role: "Coastal resiliency & shoreline engineers",
+        why: "Waterfront protection has become part of the standing capital programme rather than a set of special projects.",
+      },
+      {
+        role: "Utility coordination engineers",
+        why: "Incomplete records for very old infrastructure make locating and sequencing utilities the main project risk.",
+      },
+      {
+        role: "Geotechnical-aware municipal engineers",
+        why: "Filled land and high groundwater affect foundations, trenching and settlement in ways a rock-founded city never deals with.",
+      },
+    ],
+    licensure: "Massachusetts licenses through the Board of Registration of Professional Engineers and Land Surveyors, with comity for equivalent out-of-state licences. Federally funded municipal work runs through the state transportation department's prequalification, and because so many city projects are delivered with that funding, the two qualifications are usually sought together.",
   },
   {
     slug: "minneapolis-mn",
@@ -260,6 +620,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Complete streets & protected bikeway projects",
       "Neighborhood rec-center renovation program",
     ],
+    agencies: [
+      "Minneapolis Public Works",
+      "Hennepin County Transportation",
+      "Metropolitan Council",
+      "Minnesota Department of Transportation",
+      "Minneapolis Park & Recreation Board",
+    ],
+    marketDetail: [
+      "Minneapolis rebuilds streets as whole-corridor projects, replacing pavement, water main, sewer and sidewalk in one pass on a planned cycle rather than patching each separately. That structure makes the municipal engineer a coordinator across utilities from the start, and it means design work here comes in complete, repeatable packages.",
+      "Climate sets the engineering parameters. Frost depth governs how deep everything is buried, freeze and thaw governs how pavements are built and how long they last, and a short construction season compresses delivery into part of the year, which shapes phasing and contract structure as much as it shapes design.",
+    ],
+    hiringFocus: [
+      {
+        role: "Full-reconstruction corridor engineers",
+        why: "Rebuilding pavement and all buried utilities in one project needs engineers who can hold several disciplines at once.",
+      },
+      {
+        role: "Cold climate pavement & materials engineers",
+        why: "Freeze and thaw cycling drives specification and service life in ways warmer markets never model.",
+      },
+      {
+        role: "Protected bikeway designers",
+        why: "The city builds separated facilities as standard, and the winter maintenance requirement changes the geometry.",
+      },
+      {
+        role: "Stormwater treatment engineers",
+        why: "Lake and river water quality rules mean street projects carry treatment obligations rather than just conveyance.",
+      },
+    ],
+    licensure: "Minnesota licenses through the Board of Architecture, Engineering, Land Surveying, Landscape Architecture, Geoscience and Interior Design, with comity for equivalent licences. Watershed districts have real regulatory authority over stormwater here in addition to the city and the state, so a design has to satisfy a body that is easy to overlook if a candidate has not worked in the state before.",
   },
   {
     slug: "detroit-mi",
@@ -277,6 +667,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Neighborhood street reconstruction program",
       "Recreation center & park revitalization projects",
     ],
+    agencies: [
+      "Detroit Department of Public Works",
+      "Detroit Water & Sewerage Department",
+      "Wayne County Department of Public Services",
+      "Michigan Department of Transportation",
+      "Great Lakes Water Authority",
+    ],
+    marketDetail: [
+      "Detroit is engineering a street and utility network built for a much larger population than it now serves, and that is a genuinely unusual municipal problem. Decisions about which infrastructure to renew, which to reduce and how to serve areas with scattered occupancy are engineering questions here rather than hypotheticals, and they have no equivalent in a growing city.",
+      "The obligations that do not scale down are the ones driving current work. Lead service line replacement runs to a state rule stricter than the federal one and applies regardless of how many houses remain on a block, while combined sewers and basement flooding keep collection capacity a live public issue across the city.",
+    ],
+    hiringFocus: [
+      {
+        role: "Lead service line replacement engineers",
+        why: "State rules impose an annual replacement rate on every system, which makes this permanent programme work rather than a project.",
+      },
+      {
+        role: "Collection system & surcharge engineers",
+        why: "Combined sewers and basement backup make hydraulic capacity a continuing public commitment.",
+      },
+      {
+        role: "Asset renewal & prioritisation engineers",
+        why: "Deciding what to renew across an oversized network is a data and prioritisation discipline in its own right.",
+      },
+      {
+        role: "Street lighting & public realm engineers",
+        why: "Rebuilding city-wide lighting and streetscape has been a distinct, sustained municipal programme here.",
+      },
+    ],
+    licensure: "Michigan licenses through the Department of Licensing and Regulatory Affairs, with comity for equivalent out-of-state licences. The state's lead and copper rule is stricter than the federal standard, so an engineer arriving from elsewhere should expect the compliance framework to require more than the one they trained under, and programme experience under it is asked for by name.",
   },
   {
     slug: "charlotte-nc",
@@ -294,6 +714,36 @@ export const MUNICIPAL_CITIES: MunicipalCity[] = [
       "Complete streets & sidewalk connectivity program",
       "Greenway & municipal facility capital projects",
     ],
+    agencies: [
+      "Charlotte Department of Transportation",
+      "Charlotte Water",
+      "Mecklenburg County Storm Water Services",
+      "North Carolina Department of Transportation",
+      "Town engineering departments across Mecklenburg County",
+    ],
+    marketDetail: [
+      "Charlotte's municipal work is driven by growth, and the review counter is where much of it happens. Development volume means public-side engineers spend a large share of their time assessing private infrastructure that the city will eventually own, which makes review and standards judgement a career track here rather than a junior duty.",
+      "Stormwater is the other defining strand. The county runs a well-established surface water programme with post-construction controls, stream buffers and a substantial restoration workload, so street and site projects carry water quality obligations and stream work is a recognised local speciality.",
+    ],
+    hiringFocus: [
+      {
+        role: "Land development review engineers",
+        why: "Sustained growth means the public side needs engineers who can review private infrastructure to adoption standard at volume.",
+      },
+      {
+        role: "Stormwater & post-construction control engineers",
+        why: "County water quality rules attach treatment obligations to nearly every project.",
+      },
+      {
+        role: "Stream restoration engineers",
+        why: "Buffer and restoration requirements have made natural channel design a routine part of the local programme.",
+      },
+      {
+        role: "Thoroughfare & corridor designers",
+        why: "A metro still building out its arterial network generates design work that mature cities no longer produce.",
+      },
+    ],
+    licensure: "North Carolina licenses through the Board of Examiners for Engineers and Surveyors, with comity for equivalent licences, and it licenses firms as well: a company needs its own certificate of authorisation before offering engineering services in the state. State transportation department prequalification applies to federally funded municipal work on top of the city's own arrangements.",
   },
   {
     slug: "nashville-tn",
