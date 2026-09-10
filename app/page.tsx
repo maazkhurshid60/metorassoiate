@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Services from "./components/Services";
 import Disciplines from "./components/Disciplines";
+import HomeFaqs from "./components/HomeFaqs";
 import Programs from "./components/Programs";
 import WhyUs from "./components/WhyUs";
 import CaseStudies from "./components/CaseStudies";
@@ -24,6 +25,7 @@ export default function Home() {
       <Team />
       <Jobs />
       <Locations />
+      <HomeFaqs />
       <Testimonials />
       <CTA />
     </main>

@@ -9,6 +9,7 @@ const NAV = [
   { label: "Meet Our Team", href: "/meet-our-team", external: false },
   { label: "Salary Guide", href: "/index_themall_awards", external: false },
   { label: "Client Awards", href: "/engineering-awards", external: false },
+  { label: "FAQ", href: "/faq", external: false },
   { label: "Apply Jobs", href: APPLY_URL, external: true },
   { label: "View All Jobs", href: CAREERS_URL, external: true },
 ];

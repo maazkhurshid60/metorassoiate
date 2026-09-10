@@ -258,3 +258,41 @@ export const SALARY_FAQS: FaqItem[] = [
     a: "On our own numbers, three things, in order: the PE licence, which is worth more than any five years of unlicensed experience; moving from technical delivery into owning clients and budgets, which is the step between the mid-level and senior project manager bands; and a scarce specialism — load rating, seismic analysis, treatment process, mission-critical electrical — each of which carries its own band above the general one in its discipline.",
   },
 ];
+
+/* General FAQs — the homepage set, and the opening group on /faq.
+ *
+ * Deliberately NOT a copy of any hub's six. A homepage visitor has a
+ * different question from someone already on the MEP page: they want to know
+ * what this firm covers, how it charges, and whether it operates where they
+ * are. Repeating a discipline's answers here would put the same text in two
+ * places while answering neither audience properly.
+ *
+ * Same rule as everywhere else in this file — each answer contains something
+ * checkable, and none of them carries a phone number.
+ */
+export const GENERAL_FAQS: FaqItem[] = [
+  {
+    q: "What kinds of engineers does Metro Associates recruit?",
+    a: "Six disciplines, each with its own practice: civil, MEP, bridge and structural, water and wastewater, CEI and inspection, and municipal engineering. Within those we place everyone from EIT-level designers to licensed PEs, project managers and directors. If a search sits across two of those — and infrastructure work often does — it is run by both desks rather than handed to whoever picked up the phone.",
+  },
+  {
+    q: "Where in the United States do you recruit?",
+    a: "Nationwide, with dedicated market pages for fifty metros across every Census division, from New York and Los Angeles to Boise, Omaha and Providence. Each of those pages names the public agencies and authorities that actually let the work in that market, because that is what determines whether an engineer's experience transfers.",
+  },
+  {
+    q: "Do you recruit for permanent roles, contract, or both?",
+    a: "Predominantly permanent, direct-hire engineering roles. CEI is the partial exception: that work is contracted for the length of a construction programme, so hiring in it follows letting schedules more closely than design hiring does, and timing matters more.",
+  },
+  {
+    q: "Do candidates pay Metro Associates anything?",
+    a: "No. Recruiting fees are paid by the employer, never by the engineer. A candidate should never be asked for a fee to be represented, to be submitted, or to be placed — by us or by anyone else in this industry.",
+  },
+  {
+    q: "How does a search normally start?",
+    a: "With a conversation about the role rather than a job description. What the drawings actually require, which agency reviews them, whether a seal is needed and in which state, and what the team is short of. Those four answers change the search more than the job title does, and they are the ones a generalist recruiter usually cannot ask.",
+  },
+  {
+    q: "Is my enquiry confidential if I am currently employed?",
+    a: "Yes. Nothing is submitted anywhere without your explicit agreement on each specific employer, and we do not circulate CVs speculatively. That matters most in engineering, where regional markets are small enough that a client and a current employer often know each other.",
+  },
+];

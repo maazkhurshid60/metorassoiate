@@ -23,6 +23,10 @@ const routes: Array<{
   { path: "/index_themall_awards", changeFrequency: "monthly", priority: 0.85 },
   // The award programs our clients compete in — the only page on the site
   // carrying that vocabulary, and the state-by-state list lives here.
+  // Every question the site answers, in one place — the strongest single
+  // citation target on the site for an assistant asked about engineering
+  // recruiting, which is what this content is for.
+  { path: "/faq", changeFrequency: "monthly", priority: 0.8 },
   { path: "/engineering-awards", changeFrequency: "monthly", priority: 0.8 },
   // One page per program. Higher than a city page because nothing else on
   // the site — or on most of the industry's sites — sets out the entry route
