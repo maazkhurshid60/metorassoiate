@@ -226,6 +226,88 @@ export default async function MunicipalCityPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
+      {/* Deep-market sections.
+
+          These render only for metros whose entry carries the research. What
+          sits above is the same on all fifty city pages with the name swapped;
+          this is the part that is actually about the place. */}
+      {c.marketDetail && c.marketDetail.length > 0 && (
+        <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+          <div className="container-x">
+            <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+              <div>
+                <span className="mono-label text-amber-500">{"//"} The work here</span>
+                <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+                  What municipal engineering in {c.city}{" "}
+                  <span className="text-brand-500">actually involves</span>
+                </h2>
+                {c.marketDetail.map((para) => (
+                  <p key={para.slice(0, 40)} className="mt-6 text-lg leading-8 text-slate text-pretty">
+                    {para}
+                  </p>
+                ))}
+              </div>
+
+              {c.agencies && c.agencies.length > 0 && (
+                <div className="border border-navy-950/10 bg-white p-8 sm:p-10">
+                  <p className="mono-label text-slate-500">Who lets the work</p>
+                  <p className="mt-3 text-sm leading-relaxed text-slate-500">
+                    The public owners behind most {c.city} municipal programs. Experience on their projects is the shorthand hiring managers here read first.
+                  </p>
+                  <ul className="mt-6 flex flex-col divide-y divide-navy-950/10">
+                    {c.agencies.map((a) => (
+                      <li key={a} className="flex items-center gap-3 py-3.5 text-[15px] font-medium text-navy-950">
+                        <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
+                        {a}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {c.hiringFocus && c.hiringFocus.length > 0 && (
+        <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
+          <div className="container-x">
+            <div className="max-w-2xl">
+              <span className="mono-label text-amber-500">{"//"} What firms are short of</span>
+              <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
+                Hardest {c.city} roles to fill
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-slate text-pretty">
+                Where demand in this metro runs ahead of supply, and the local reason
+                why, which is usually a feature of the work itself rather than of the
+                job market.
+              </p>
+            </div>
+
+            <div className="mt-12 grid gap-4 sm:grid-cols-2">
+              {c.hiringFocus.map((h, i) => (
+                <div key={h.role} className="border border-navy-950/10 bg-white p-6">
+                  <span className="mono-label text-[10px] text-brand-500/70">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-2 text-[17px] font-bold leading-snug text-navy-950">{h.role}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-500">{h.why}</p>
+                </div>
+              ))}
+            </div>
+
+            {c.licensure && (
+              <div className="corners mt-8 border border-navy-950/10 bg-white p-8 sm:p-10">
+                <p className="mono-label text-slate-500">
+                  Licensure & prequalification in {c.state}
+                </p>
+                <p className="mt-4 text-lg leading-8 text-slate text-pretty">{c.licensure}</p>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       <CityWiderMarket hub="municipal-engineering-recruiter" city={c} />
 
       {/* FAQ — feeds the FAQ rich result and adds long-tail keyword coverage */}

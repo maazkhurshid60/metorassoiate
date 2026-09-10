@@ -15,7 +15,26 @@ export interface MepCity {
   region: string;
   authority: string; // local code / permitting authority referenced in copy
   marketNote: string; // unique subhead / intro sentence for this metro
-  localPrograms: string[]; // city/state-specific MEP-heavy project types
+  localPrograms: string[];
+
+  /* Deep-market fields, the same four civil carries and for the same reason:
+     without them a city page is roughly 700 words of shared framing with the
+     name swapped, which is the profile Google files under "Crawled, currently
+     not indexed". These carry the part that is genuinely about the place.
+
+     All optional, so the set can be filled in market by market rather than all
+     fifty at once. Written to stay true: named public owners and durable
+     characteristics of the work, no dates, no dollar figures, and no claims
+     about who is hiring this quarter. */
+
+  /** Who owns or lets the work in this metro. */
+  agencies?: string[];
+  /** Two paragraphs on what the engineering here consists of. */
+  marketDetail?: string[];
+  /** What firms are short of, and the local reason why. */
+  hiringFocus?: { role: string; why: string }[];
+  /** Licensure and prequalification as they bite in this state. */
+  licensure?: string; // city/state-specific MEP-heavy project types
 }
 
 export const MEP_CITIES: MepCity[] = [
