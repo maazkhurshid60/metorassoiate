@@ -62,7 +62,7 @@ export default function MepNationalRecruiterPage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/interchange-sunset.jpg"
-            alt="Aerial view of U.S. infrastructure at sunset — the buildings and facilities Metro Associates staffs"
+            alt="Aerial view of U.S. infrastructure at sunset: the buildings and facilities Metro Associates staffs"
             fill
             priority
             sizes="100vw"
@@ -179,7 +179,7 @@ export default function MepNationalRecruiterPage() {
               MEP engineering recruiting by city
             </h2>
             <p className="mt-5 text-slate text-pretty">
-              Explore our specialized recruiting in these metros — with more markets
+              Explore our specialized recruiting in these metros, with more markets
               added regularly.
             </p>
           </div>
@@ -207,7 +207,7 @@ export default function MepNationalRecruiterPage() {
       </section>
 
       {/* Roles + salaries */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      <section id="compensation" className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -314,7 +314,7 @@ export default function MepNationalRecruiterPage() {
       <ClientAwards discipline="mep-engineering-recruiter" />
 
       <OtherSpecialties exclude="mep-engineering-recruiter" />
-      <HubFaqs group="mep-engineering" heading="MEP engineering recruiting — common questions" />
+      <HubFaqs group="mep-engineering" heading="MEP engineering recruiting: common questions" />
 
     </main>
   );

@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 import RelatedMarkets from "../../components/RelatedMarkets";
 import CityWiderMarket from "../../components/CityWiderMarket";
 import {
-  IconArrow, IconCheck, IconBolt } from "../../components/Icons";
+  IconArrow, IconBolt } from "../../components/Icons";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../../lib/site";
 import {
-  MEP_CITIES, getMepCity, MEP_EXPERTISE, MEP_ROLES, MEP_SALARIES } from "../../lib/mep";
+  MEP_CITIES, getMepCity } from "../../lib/mep";
 import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
 import { serviceSchema, breadcrumbSchema, faqSchema, mepFaqs, pickVariant, fitTitle, fitDescription } from "../../lib/seo";
@@ -72,15 +72,15 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
   const flagshipProgram = c.localPrograms[0];
 
   const introPara1 = pickVariant(`${c.slug}:mep:intro1`, [
-    `Metro Associates is a leading MEP engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms hire licensed Professional Engineers (PE), project managers, and commissioning specialists across mechanical, electrical, and plumbing disciplines — for projects reviewed under ${c.authority} and beyond.`,
+    `Metro Associates is a leading MEP engineering recruiter providing specialized staffing solutions across ${c.city} and ${c.region}. We help firms hire licensed Professional Engineers (PE), project managers, and commissioning specialists across mechanical, electrical, and plumbing disciplines, for projects reviewed under ${c.authority} and beyond.`,
     `Metro Associates runs a dedicated MEP engineering search practice across ${c.city} and ${c.region}, connecting firms with licensed Professional Engineers (PE), project managers, and commissioning specialists across mechanical, electrical, and plumbing disciplines reviewed under ${c.authority}.`,
-    `We're a specialized MEP engineering recruiter for ${c.city} and ${c.region} — placing licensed Professional Engineers (PE), project managers, and commissioning specialists on mechanical, electrical, and plumbing work reviewed under ${c.authority}.`,
+    `We're a specialized MEP engineering recruiter for ${c.city} and ${c.region}, placing licensed Professional Engineers (PE), project managers, and commissioning specialists on mechanical, electrical, and plumbing work reviewed under ${c.authority}.`,
   ]);
   const introPara2 = pickVariant(`${c.slug}:mep:intro2`, [
     `From high-rise towers to healthcare, data centers, and mission-critical facilities, we match vetted talent to the design, code, and performance demands of complex building programs.`,
-    `Whether it's a high-rise tower, a hospital, or a data center, we match vetted talent to what the building program actually demands — design, code, and performance.`,
+    `Whether it's a high-rise tower, a hospital, or a data center, we match vetted talent to what the building program actually demands, design, code, and performance.`,
     flagshipProgram
-      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()} — we match vetted talent to the design, code, and performance demands of that kind of complex building program.`
+      ? `Locally, that has included work like ${flagshipProgram.toLowerCase()}. We match vetted talent to the design, code, and performance demands of that kind of complex building program.`
       : `From high-rise towers to healthcare, data centers, and mission-critical facilities, we match vetted talent to the design, code, and performance demands of complex building programs.`,
   ]);
   const trendsIntro = pickVariant(`${c.slug}:mep:trendsIntro`, [
@@ -90,7 +90,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
 
   const schemas = [
     serviceSchema({
-      serviceName: `MEP Engineering Recruiter — ${c.city}, ${c.abbr}`,
+      serviceName: `MEP Engineering Recruiter in ${c.city}, ${c.abbr}`,
       description: `Specialized MEP engineering staffing and executive search in ${c.city}, ${c.state}. We place licensed mechanical, electrical, and plumbing PEs, project managers, and commissioning specialists.`,
       path,
       areaCity: c.city,
@@ -117,7 +117,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
           <div className="max-w-3xl animate-fade-up">
             <div className="flex items-center gap-3">
               <span className="h-2 w-2 animate-blink bg-amber-500" />
-              <span className="mono-label text-amber-400">{"//"} MEP Engineering Recruiting — {c.abbr}</span>
+              <span className="mono-label text-amber-400">{"//"} MEP Engineering Recruiting / {c.abbr}</span>
             </div>
             <h1 className="display mt-6 text-[10.5vw] leading-[0.95] text-white sm:text-5xl lg:text-[4.4rem]">
               MEP Engineering Recruiter
@@ -157,10 +157,10 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
         </div>
       </section>
 
-      {/* Intro + Expertise */}
+      {/* Intro */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
-          <div className="grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div className="max-w-3xl">
             <div>
               <span className="mono-label text-amber-500">{"//"} {c.city} MEP Engineering Recruiting</span>
               <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
@@ -173,53 +173,14 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
                 {introPara2}
               </p>
             </div>
-
-            {/* Expertise panel */}
-            <div className="relative overflow-hidden border border-brand-500/25 bg-mist p-8">
-              <div className="blueprint-light absolute inset-0 opacity-70" />
-              <div className="relative">
-                <p className="mono-label text-brand-600">Recruiting expertise</p>
-                <ul className="mt-6 grid gap-x-6 gap-y-4">
-                  {MEP_EXPERTISE.map((e) => (
-                    <li key={e} className="flex items-start gap-3 text-[15px] font-medium text-navy-950">
-                      <span className="mt-0.5 inline-flex h-5 w-5 shrink-0 items-center justify-center bg-amber-500/20 text-amber-500">
-                        <IconCheck className="h-3.5 w-3.5" />
-                      </span>
-                      {e}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Roles */}
-      <section className="relative border-t border-navy-950/10 blueprint-light py-24 sm:py-28">
-        <div className="container-x">
-          <div className="max-w-2xl">
-            <span className="mono-label text-amber-500">{"//"} Roles we place</span>
-            <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              MEP roles we place in {c.city}
-            </h2>
-          </div>
-          <div className="mt-12 grid gap-x-8 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
-            {MEP_ROLES.map((r, i) => (
-              <div key={r} className="flex items-center gap-3 border-b border-navy-950/10 pb-4 text-[15px] font-medium text-navy-950">
-                <span className="mono-label text-[10px] text-brand-500/70">{String(i + 1).padStart(2, "0")}</span>
-                <span className="h-1.5 w-1.5 shrink-0 bg-amber-500" />
-                {r}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 2026 hiring trends + salaries */}
+      {/* 2026 hiring trends */}
       <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
-          <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
+          <div className="max-w-3xl">
             <div>
               <span className="mono-label text-amber-500">{"//"} 2026 hiring trends</span>
               <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
@@ -228,21 +189,16 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
               <p className="mt-6 text-lg leading-8 text-slate text-pretty">
                 {trendsIntro}
               </p>
-            </div>
-            <div className="border border-navy-950/10 bg-white p-8 sm:p-10">
-              <p className="mono-label text-slate-500">Representative 2026 compensation</p>
-              <div className="mt-6 flex flex-col divide-y divide-navy-950/10">
-                {MEP_SALARIES.map((s) => (
-                  <div key={s.role} className="flex items-center justify-between gap-4 py-4">
-                    <span className="text-[15px] font-medium text-navy-950">{s.role}</span>
-                    <span className="display text-lg text-amber-500 sm:text-xl">{s.range}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-xs leading-6 text-slate-500">
-                Ranges vary by firm, licensure, and project mix; figures are directional
-                for the {c.city} metro.
-              </p>
+            <p className="mt-8 text-[15px] leading-8 text-slate-500 text-pretty">
+              Pay for these roles moves with local cost of labor and project mix,
+              so we publish ranges nationally rather than implying a {c.city}-specific
+              figure we have not measured. See the
+              {" "}
+              <Link href="/mep-engineering-recruiter#compensation" className="font-medium text-brand-600 underline underline-offset-4">
+                national MEP engineering compensation ranges
+              </Link>
+              , or ask us what we are seeing in {c.city} right now.
+            </p>
             </div>
           </div>
         </div>
@@ -278,7 +234,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
           <div className="max-w-2xl">
             <span className="mono-label text-amber-500">{"//"} FAQ</span>
             <h2 className="display mt-5 text-4xl text-navy-950 sm:text-5xl">
-              MEP engineering recruiting in {c.city} — FAQ
+              MEP engineering recruiting in {c.city}, FAQ
             </h2>
           </div>
           <div className="mt-12 divide-y divide-navy-950/10 border-t border-navy-950/10">
@@ -304,7 +260,7 @@ export default async function MepCityPage({ params }: { params: Promise<{ city: 
                 Hiring MEP engineers in {c.city}?
               </h3>
               <p className="mt-2 text-ink-300">
-                Tell us about the role — we&apos;ll deliver a vetted shortlist of
+                Tell us about the role. We&apos;ll deliver a vetted shortlist of
                 licensed {c.abbr} mechanical, electrical, and plumbing talent, backed by
                 our placement guarantee.
               </p>

@@ -60,7 +60,7 @@ export default function NationalRecruiterPage() {
         <div className="absolute inset-0 -z-10">
           <Image
             src="/image.png"
-            alt="Aerial view of a multi-level highway interchange — the infrastructure Metro Associates staffs"
+            alt="Aerial view of a multi-level highway interchange: the infrastructure Metro Associates staffs"
             fill
             priority
             sizes="100vw"
@@ -177,7 +177,7 @@ export default function NationalRecruiterPage() {
               Civil engineering recruiting by city
             </h2>
             <p className="mt-5 text-slate text-pretty">
-              Explore our specialized recruiting in these metros — with more markets
+              Explore our specialized recruiting in these metros, with more markets
               added regularly.
             </p>
           </div>
@@ -205,7 +205,7 @@ export default function NationalRecruiterPage() {
       </section>
 
       {/* Roles + salaries */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      <section id="compensation" className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -312,7 +312,7 @@ export default function NationalRecruiterPage() {
       <ClientAwards discipline="civil-engineering-recruiter" />
 
       <OtherSpecialties exclude="civil-engineering-recruiter" />
-      <HubFaqs group="civil-engineering" heading="Civil engineering recruiting — common questions" />
+      <HubFaqs group="civil-engineering" heading="Civil engineering recruiting: common questions" />
 
     </main>
   );

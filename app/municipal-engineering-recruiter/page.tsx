@@ -277,7 +277,7 @@ export default function MunicipalEngineeringRecruiterPage() {
               Municipal engineering recruiting by city
             </h2>
             <p className="mt-5 text-slate text-pretty">
-              Explore our specialized recruiting in these metros — with more markets
+              Explore our specialized recruiting in these metros, with more markets
               added regularly.
             </p>
           </div>
@@ -305,7 +305,7 @@ export default function MunicipalEngineeringRecruiterPage() {
       </section>
 
       {/* Roles + salaries */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      <section id="compensation" className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -384,7 +384,7 @@ export default function MunicipalEngineeringRecruiterPage() {
       <ClientAwards discipline="municipal-engineering-recruiter" />
 
       <OtherSpecialties exclude="municipal-engineering-recruiter" />
-      <HubFaqs group="municipal-engineering" heading="Municipal engineering recruiting — common questions" />
+      <HubFaqs group="municipal-engineering" heading="Municipal engineering recruiting: common questions" />
 
     </main>
   );

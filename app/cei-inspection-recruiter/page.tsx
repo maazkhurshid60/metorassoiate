@@ -280,7 +280,7 @@ export default function CeiInspectionRecruiterPage() {
               CEI &amp; inspection recruiting by city
             </h2>
             <p className="mt-5 text-slate text-pretty">
-              Explore our specialized recruiting in these metros — with more markets
+              Explore our specialized recruiting in these metros, with more markets
               added regularly.
             </p>
           </div>
@@ -308,7 +308,7 @@ export default function CeiInspectionRecruiterPage() {
       </section>
 
       {/* Roles + salaries */}
-      <section className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
+      <section id="compensation" className="relative border-t border-navy-950/10 bg-paper py-24 sm:py-28">
         <div className="container-x">
           <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
             <div>
@@ -387,7 +387,7 @@ export default function CeiInspectionRecruiterPage() {
       <ClientAwards discipline="cei-inspection-recruiter" />
 
       <OtherSpecialties exclude="cei-inspection-recruiter" />
-      <HubFaqs group="cei-inspection" heading="CEI & inspection recruiting — common questions" />
+      <HubFaqs group="cei-inspection" heading="CEI & inspection recruiting: common questions" />
 
     </main>
   );
