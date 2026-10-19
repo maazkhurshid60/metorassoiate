@@ -7,7 +7,7 @@ import HubFaqs from "../components/HubFaqs";
 import ServiceModels from "../components/ServiceModels";
 import OtherSpecialties from "../components/OtherSpecialties";
 import { IconArrow, IconCheck } from "../components/Icons";
-import { breadcrumbSchema, OG_IMAGE } from "../lib/seo";
+import { breadcrumbSchema, deskServiceSchema, OG_IMAGE } from "../lib/seo";
 import { SITE_URL, APPLY_URL } from "../lib/site";
 import { CITIES } from "../lib/cities";
 
@@ -167,6 +167,12 @@ export default function InfrastructureRecruiterPage() {
       <HeaderBackdrop />
       <JsonLd
         data={[
+          deskServiceSchema({
+            serviceName: "Infrastructure Recruiting",
+            description:
+              "Infrastructure recruiters and staffing for US capital programs: planning, design, inspection and program leadership on DOT, water and transit work.",
+            path: "/infrastructure-recruiter",
+          }),
           breadcrumbSchema([
             { name: "Home", path: "/" },
             { name: "Infrastructure Recruiters", path: "/infrastructure-recruiter" },
