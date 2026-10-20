@@ -64,7 +64,7 @@ const WHY_ICONS = [IconGlobe, IconShield, IconTarget, IconLayers, IconClipboard]
 
 /* Carries live roles now, so it cannot be built once and served until the
    next deploy. Fifteen minutes; the feed itself is re-read every five. */
-export const revalidate = 900;
+export const revalidate = 21600;
 
 export default async function MepNationalRecruiterPage() {
   const openRoles = jobsForHub(await listJobs(), "mep-engineering-recruiter");

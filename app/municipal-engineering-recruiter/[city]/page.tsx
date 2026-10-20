@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: { params: Promise<{ city: str
    served until the next deploy. Fifteen minutes: the jobs feed itself is
    re-read every five, and a market page does not need to be fresher than the
    quarter hour. */
-export const revalidate = 900;
+export const revalidate = 21600;
 
 export default async function MunicipalCityPage({ params }: { params: Promise<{ city: string }> }) {
   const { city: slug } = await params;

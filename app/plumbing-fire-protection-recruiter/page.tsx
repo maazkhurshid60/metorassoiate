@@ -8,7 +8,7 @@ const d = getDiscipline("plumbing-fire-protection-recruiter")!;
 
 /* Live roles are on the page, so it refreshes on the same schedule as the
    other market pages rather than freezing at deploy time. */
-export const revalidate = 900;
+export const revalidate = 21600;
 
 export const metadata: Metadata = {
   title: fitTitle(d.metaTitle),

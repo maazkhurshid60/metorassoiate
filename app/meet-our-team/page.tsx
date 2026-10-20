@@ -22,8 +22,15 @@ export const metadata: Metadata = {
    Cache-Control instead (observed as a 5-minute staleness after toggling a
    recruiter off — the page kept serving them long after JobFolder itself had
    already stopped listing them). Keep this equal to the fetch's revalidate
-   and to JobFolder's Cache-Control max-age. */
-export const revalidate = 30;
+   and to JobFolder's Cache-Control max-age.
+
+   An hour, not the 30 seconds this used to be: at 30s a single page burned
+   86,400 ISR writes a month -- 43% of the whole account's quota -- to re-ask
+   whether a roster that changes a few times a year had changed. A recruiter
+   toggled off in JobFolder now takes up to an hour to disappear from here.
+   If that is ever too slow, revalidate the path on demand rather than paying
+   for a poll that is wrong 99.9% of the time. */
+export const revalidate = 3600;
 
 export default async function MeetOurTeamPage() {
   // Recruiters a JobFolder admin has approved for this page, appended after

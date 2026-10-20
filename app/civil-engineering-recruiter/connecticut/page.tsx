@@ -15,7 +15,7 @@ import { SITE_URL } from "../../lib/site";
 
 const s = getState("connecticut")!;
 
-export const revalidate = 900;
+export const revalidate = 21600;
 
 export const metadata: Metadata = {
   title: fitTitle("Civil Engineering Recruiter Connecticut"),

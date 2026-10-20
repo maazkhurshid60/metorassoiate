@@ -24,7 +24,7 @@ export async function getJobFolderTeam(): Promise<Member[]> {
       // Kept in step with TEAM_REVALIDATE_SECONDS (../meet-our-team/page.tsx)
       // and JobFolder's own Cache-Control on /api/team — see the comment
       // there on what happens when these drift out of sync.
-      next: { revalidate: 30 },
+      next: { revalidate: 3600 },
     });
     if (!res.ok) return [];
 

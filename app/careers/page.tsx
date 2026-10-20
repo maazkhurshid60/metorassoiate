@@ -4,7 +4,7 @@ import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { JsonLd } from "../components/JsonLd";
 import { breadcrumbSchema, fitTitle, fitDescription } from "../lib/seo";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
-import { listJobs } from "../lib/jobs";
+import { listJobs, JOBS_LIVE } from "../lib/jobs";
 import { JobSearch } from "./JobSearch";
 
 /* The jobs index.
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 };
 
 export default async function JobsPage() {
-  const jobs = await listJobs();
+  const jobs = await listJobs(JOBS_LIVE);
 
   /* Grouping, searching and sorting all live in JobSearch. The jobs are still
      fetched and rendered here on the server, so the list is in the HTML for a

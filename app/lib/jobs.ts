@@ -66,12 +66,31 @@ import { CAREERS_URL, JOB_FEED_URL } from "./site";
  * third party changed a class name.
  */
 
-/* Five minutes. The board turns over faster than it looks: a third of the
-   roles on it were posted inside the last week, and a candidate who sees a
-   role advertised elsewhere and comes here to apply should not be told it
-   does not exist. The feed is one 160KB request, so re-reading it twelve
-   times an hour costs nothing worth counting. */
-const REVALIDATE = 300;
+/* How long job data may be reused, by what the page is for.
+ *
+ * The feed request itself is one 160KB call and costs nothing. What costs is
+ * the regeneration it forces: Next takes a route's revalidate to be the
+ * SMALLEST of its segment setting and every fetch inside it, so a five-minute
+ * window here pulled all 261 city and hub pages down to five minutes too --
+ * each one re-rendering 8,640 times a month to re-print a jobs list that had
+ * not changed. That is what exhausted the ISR write quota and took every site
+ * on the account offline, so freshness is now bought only where it is worth
+ * something.
+ *
+ * Any new caller gets MARKETING by default: the expensive tier should be the
+ * one you have to ask for. */
+
+/** Careers index and the jobs sitemap. A candidate who sees a role advertised
+ *  elsewhere and comes here to apply must not be told it does not exist. */
+export const JOBS_LIVE = 300;
+
+/** A single job page. The content is fixed once posted; only disappearing
+ *  when filled matters, and half an hour is soon enough for that. */
+export const JOBS_DETAIL = 1800;
+
+/** Hub and city pages. These are marketing copy with a roles list attached --
+ *  the copy is the reason they rank, and it does not change at all. */
+export const JOBS_MARKETING = 21600;
 
 export type JobSummary = {
   id: string;
@@ -222,11 +241,11 @@ function jobTypeFrom(xml: string): string {
 /* Remote type lives only in the portal's markup. Best effort: one request,
    cached like everything else, and an empty map if anything about it changed.
    Nothing downstream treats a missing value as an error. */
-async function remoteTypes(): Promise<Map<string, string>> {
+async function remoteTypes(maxAge: number): Promise<Map<string, string>> {
   const out = new Map<string, string>();
   try {
     const res = await fetch(CAREERS_URL, {
-      next: { revalidate: REVALIDATE },
+      next: { revalidate: maxAge },
       headers: { "User-Agent": "metroassoc.com job sync" },
     });
     if (!res.ok) return out;
@@ -246,11 +265,11 @@ async function remoteTypes(): Promise<Map<string, string>> {
 }
 
 /** All jobs currently on the portal. Empty if the feed cannot be read. */
-export async function listJobs(): Promise<JobSummary[]> {
+export async function listJobs(maxAge: number = JOBS_MARKETING): Promise<JobSummary[]> {
   let xml: string;
   try {
     const res = await fetch(JOB_FEED_URL, {
-      next: { revalidate: REVALIDATE },
+      next: { revalidate: maxAge },
       headers: { "User-Agent": "metroassoc.com job sync" },
     });
     if (!res.ok) return [];
@@ -259,7 +278,7 @@ export async function listJobs(): Promise<JobSummary[]> {
     return [];
   }
 
-  const remote = await remoteTypes();
+  const remote = await remoteTypes(maxAge);
   const jobs: JobSummary[] = [];
 
   for (const [, block] of xml.matchAll(/<job>([\s\S]*?)<\/job>/g)) {
@@ -287,11 +306,11 @@ export async function listJobs(): Promise<JobSummary[]> {
 }
 
 /** One job from the same feed. Null if it is gone from the portal. */
-export async function getJob(slug: string): Promise<JobDetail | null> {
+export async function getJob(slug: string, maxAge: number = JOBS_MARKETING): Promise<JobDetail | null> {
   let xml: string;
   try {
     const res = await fetch(JOB_FEED_URL, {
-      next: { revalidate: REVALIDATE },
+      next: { revalidate: maxAge },
       headers: { "User-Agent": "metroassoc.com job sync" },
     });
     if (!res.ok) return null;
@@ -300,7 +319,7 @@ export async function getJob(slug: string): Promise<JobDetail | null> {
     return null;
   }
 
-  const summary = (await listJobs()).find((j) => j.slug === slug);
+  const summary = (await listJobs(maxAge)).find((j) => j.slug === slug);
   if (!summary) return null;
 
   const block =
@@ -317,7 +336,7 @@ export async function getJob(slug: string): Promise<JobDetail | null> {
   let reference: string | null = null;
   try {
     const res = await fetch(url, {
-      next: { revalidate: REVALIDATE },
+      next: { revalidate: maxAge },
       headers: { "User-Agent": "metroassoc.com job sync" },
     });
     if (res.ok) {

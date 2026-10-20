@@ -1,5 +1,5 @@
 import { SITE_URL } from "../lib/site";
-import { listJobs } from "../lib/jobs";
+import { listJobs, JOBS_LIVE } from "../lib/jobs";
 
 /* Live roles as their own sitemap.
  *
@@ -23,7 +23,7 @@ import { listJobs } from "../lib/jobs";
 export const revalidate = 300;
 
 export async function GET() {
-  const jobs = await listJobs();
+  const jobs = await listJobs(JOBS_LIVE);
 
   const urls = jobs
     .map(

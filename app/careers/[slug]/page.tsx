@@ -5,7 +5,7 @@ import { HeaderBackdrop } from "../../components/HeaderBackdrop";
 import { JsonLd } from "../../components/JsonLd";
 import { breadcrumbSchema, fitDescription, pickTitle } from "../../lib/seo";
 import { SITE_URL } from "../../lib/site";
-import { listJobs, getJob, jobExcerpt, employmentType } from "../../lib/jobs";
+import { listJobs, getJob, jobExcerpt, employmentType, JOBS_DETAIL } from "../../lib/jobs";
 import { deskForJob, marketForJob } from "../../lib/jobRouting";
 
 /* One page per live role.
@@ -24,11 +24,11 @@ import { deskForJob, marketForJob } from "../../lib/jobRouting";
  * immediately instead of waiting for one.
  */
 
-export const revalidate = 300;
+export const revalidate = 1800;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const jobs = await listJobs();
+  const jobs = await listJobs(JOBS_DETAIL);
   return jobs.map((j) => ({ slug: j.slug }));
 }
 
@@ -38,7 +38,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const job = await getJob(slug);
+  const job = await getJob(slug, JOBS_DETAIL);
   if (!job) return { title: "Job not found | Metro Associates" };
 
   const where = job.location ? ` in ${job.location}` : "";
@@ -83,10 +83,10 @@ export default async function JobPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const job = await getJob(slug);
+  const job = await getJob(slug, JOBS_DETAIL);
   if (!job) notFound();
 
-  const related = (await listJobs())
+  const related = (await listJobs(JOBS_DETAIL))
     .filter((j) => j.slug !== job.slug && j.state === job.state)
     .slice(0, 4);
 
