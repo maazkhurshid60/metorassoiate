@@ -69,21 +69,24 @@ export const metadata: Metadata = {
   },
 };
 
+/* Anchored with an @id so ORG.employee can reference this person rather than
+   describing a second, unconnected Patrick Novick. The description was the
+   firm's, not his -- a Person whose description is written in "we" reads as
+   the company, which is the node immediately above it. */
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": `${SITE_URL}/#patrick-novick`,
   name: "Patrick Novick",
-  jobTitle: "Professional Recruiter",
+  jobTitle: "Managing Partner",
   description:
-    "Specialist engineering recruiters for state DOTs and public infrastructure. We place licensed PEs, inspectors and construction leaders nationwide.",
+    "Patrick leads Metro Associates' engineering recruiting and executive search practice, pairing state DOTs, municipalities and infrastructure firms with vetted talent for publicly funded programs.",
+  image: `${SITE_URL}/team/patrick.webp`,
   url: "https://patricknovick.com",
   telephone: "(312) 500-1878",
   email: "patrick@patricknovick.com",
-  worksFor: {
-    "@type": "Organization",
-    name: "Metro Associates",
-    url: SITE_URL,
-  },
+  sameAs: ["https://www.linkedin.com/in/patricknovick/"],
+  worksFor: { "@id": `${SITE_URL}/#organization` },
   knowsAbout: [
     "Executive Recruiting",
     "Talent Acquisition",

@@ -26,12 +26,27 @@ const GLASSDOOR = "https://www.glassdoor.com/Overview/Working-at-Metro-Associate
 
 // Organization identity reused as the `provider` on every Service schema.
 export const ORG = {
-  "@type": "EmploymentAgency",
+  /* Both types, because the firm is read two ways: an EmploymentAgency to a
+     candidate and a ProfessionalService to a buyer, and the queries that
+     bring each one here are different. */
+  "@type": ["EmploymentAgency", "ProfessionalService"],
   "@id": `${SITE_URL}/#organization`,
   name: "Metro Associates",
+  legalName: "Metro Associates Engineering of FL LLC",
+  alternateName: "Metro Associates LLC",
   url: SITE_URL,
-  logo: `${SITE_URL}/logo.webp`,
-  image: `${SITE_URL}/og.jpg`,
+  /* An ImageObject with its own @id rather than a bare URL, so the logo can
+     be referenced from `image` instead of naming two different files as the
+     same thing. */
+  logo: {
+    "@type": "ImageObject",
+    "@id": `${SITE_URL}/#logo`,
+    url: `${SITE_URL}/logo.webp`,
+    caption: "Metro Associates: Your Prominent Placement Company",
+  },
+  image: { "@id": `${SITE_URL}/#logo` },
+  slogan: "Greatness relies on your collaborators",
+  foundingDate: "1980",
   telephone: PHONE,
   email: EMAIL,
   /* Deliberately no `address`.
@@ -54,6 +69,45 @@ export const ORG = {
       name: `${o.city}, ${o.state}`,
     })),
   ],
+  /* Two entry points, because the site has two audiences and they are not
+     interchangeable: a hiring manager asking for talent and a candidate
+     asking about a role want different people and different answers. */
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      name: "Request Talent",
+      contactType: "sales",
+      telephone: PHONE,
+      email: EMAIL,
+      areaServed: "US",
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      name: "Job Seeker Enquiries",
+      contactType: "customer support",
+      telephone: PHONE,
+      areaServed: "US",
+      availableLanguage: "English",
+    },
+  ],
+  /* The vocabulary the firm can actually be asked about. This is what an
+     assistant matches against when someone asks who recruits for NETTCP
+     certification or bridge load rating -- terms the page copy uses but
+     nothing previously declared as expertise. */
+  knowsAbout: [
+    "Engineering recruitment",
+    "Professional Engineer (PE) licensure and NCEES Records",
+    "State Department of Transportation staffing",
+    "Construction Engineering Inspection (CEI)",
+    "FHWA standards",
+    "AASHTO guidelines",
+    "NETTCP certification",
+    "Bridge inspection and load rating",
+    "Municipal public works staffing",
+  ],
+  employee: [{ "@id": `${SITE_URL}/#patrick-novick` }],
+  hasOfferCatalog: { "@id": `${SITE_URL}/#services` },
   sameAs: [LINKEDIN, FACEBOOK, BBB, GLASSDOOR],
   /* No `aggregateRating` here, deliberately. Google discounts and can
      penalise self-serving rating markup — a business rating itself. The BBB
@@ -104,6 +158,113 @@ export function organizationSchema() {
   return { "@context": "https://schema.org", ...ORG };
 }
 
+/* The homepage graph.
+ *
+ * These nodes live on "/" alone and nowhere else. The organization and the
+ * website are emitted by the root layout on every page, so repeating them
+ * here would define the same @id twice with two sets of properties; these
+ * reference those ids instead of restating them.
+ *
+ * What this buys: the three things the firm sells become a machine-readable
+ * catalogue rather than three headings, and the desk hubs become a declared
+ * list rather than nine links a crawler has to infer a relationship from.
+ * Both are what an assistant reads when asked who staffs a discipline. */
+
+/** What the firm sells, as an offer catalogue hung off the organization. */
+export function offerCatalogSchema() {
+  const offer = (name: string, description: string, serviceType: string) => ({
+    "@type": "Offer",
+    itemOffered: {
+      "@type": "Service",
+      name,
+      description,
+      serviceType,
+      provider: { "@id": `${SITE_URL}/#organization` },
+      areaServed: { "@type": "Country", name: "United States" },
+    },
+  });
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": `${SITE_URL}/#services`,
+    name: "Engineering staffing and executive search services",
+    itemListElement: [
+      offer(
+        "Direct Hire & Permanent Placement",
+        "Permanent engineering hires onto your own payroll, from EIT designers to licensed PEs and project managers.",
+        "Permanent placement",
+      ),
+      offer(
+        "Executive Search & Headhunting",
+        "Confidential approaches to practice leaders, chief engineers and public works directors who are not actively applying.",
+        "Executive search",
+      ),
+      offer(
+        "Contract & Project Staffing",
+        "Inspection and construction-phase teams staffed for the length of a program, qualified against the agency's approved list before submission.",
+        "Contract staffing",
+      ),
+    ],
+  };
+}
+
+/* Every desk that has a hub page of its own. Kept in this order because it
+   is the order the homepage renders them in, and a list that disagrees with
+   the page it sits on is worse than no list. */
+const DESKS: [string, string][] = [
+  ["Infrastructure Recruiting", "/infrastructure-recruiter"],
+  ["Civil Engineering Recruiting", "/civil-engineering-recruiter"],
+  ["Transportation & DOT Recruiting", "/transportation-recruiter"],
+  ["MEP Engineering Recruiting", "/mep-engineering-recruiter"],
+  ["Bridge & Structural Recruiting", "/bridge-structural-recruiter"],
+  ["Water & Wastewater Recruiting", "/water-wastewater-recruiter"],
+  ["CEI & Inspection Recruiting", "/cei-inspection-recruiter"],
+  ["Municipal Engineering Recruiting", "/municipal-engineering-recruiter"],
+  ["Project Management Recruiting", "/project-management-recruiter"],
+];
+
+/** The desk hubs as a declared list, so the relationship between the
+ *  homepage and the nine hubs is stated rather than inferred from links. */
+export function disciplinesListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${SITE_URL}/#disciplines`,
+    name: "Engineering disciplines staffed nationwide",
+    itemListOrder: "https://schema.org/ItemListUnordered",
+    numberOfItems: DESKS.length,
+    itemListElement: DESKS.map(([name, path], i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name,
+      url: `${SITE_URL}${path}`,
+    })),
+  };
+}
+
+/** The homepage itself, so the document has an entity distinct from the
+ *  organization it is about. */
+export function homePageSchema(opts: { name: string; description: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${SITE_URL}/#webpage`,
+    url: SITE_URL,
+    name: opts.name,
+    description: opts.description,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    about: { "@id": `${SITE_URL}/#organization` },
+    primaryImageOfPage: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/hero-interchange-1920.jpg`,
+      caption:
+        "Aerial view of a U.S. highway interchange at sunset: the infrastructure Metro Associates staffs",
+    },
+    breadcrumb: { "@id": `${SITE_URL}/#breadcrumb` },
+    inLanguage: "en-US",
+  };
+}
+
 export function websiteSchema() {
   return {
     "@context": "https://schema.org",
@@ -111,7 +272,10 @@ export function websiteSchema() {
     "@id": `${SITE_URL}/#website`,
     url: SITE_URL,
     name: "Metro Associates",
+    description:
+      "Engineering staffing agency and recruiters placing licensed PEs, inspectors and project managers across the United States.",
     publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "en-US",
   };
 }
 
@@ -175,10 +339,19 @@ export function deskServiceSchema(opts: {
   };
 }
 
-export function breadcrumbSchema(items: { name: string; path: string }[]) {
+/* `id` is optional and omitted everywhere but the homepage. The homepage's
+   WebPage node points at its breadcrumb by @id, and a reference to an id
+   nothing defines is a dangling edge: consumers that resolve the graph drop
+   the breadcrumb rather than guessing which list was meant. Pages that do
+   not reference their breadcrumb do not need one, so nothing else changes. */
+export function breadcrumbSchema(
+  items: { name: string; path: string }[],
+  id?: string,
+) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    ...(id ? { "@id": id } : {}),
     itemListElement: items.map((it, i) => ({
       "@type": "ListItem",
       position: i + 1,

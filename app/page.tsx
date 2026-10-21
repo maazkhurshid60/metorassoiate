@@ -12,6 +12,13 @@ import Jobs from "./components/Jobs";
 import Locations from "./components/Locations";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
+import { JsonLd } from "./components/JsonLd";
+import {
+  offerCatalogSchema,
+  disciplinesListSchema,
+  homePageSchema,
+  breadcrumbSchema,
+} from "./lib/seo";
 import { SITE_URL } from "./lib/site";
 
 /* The homepage had no metadata of its own and inherited the layout's, which
@@ -49,6 +56,21 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main>
+      {/* Homepage-only nodes. The organization, website and person entities
+          come from the root layout on every page; these reference those ids
+          rather than restating them, so nothing is defined twice. */}
+      <JsonLd
+        data={[
+          homePageSchema({
+            name: "Engineering Staffing Agency & Recruiters | Metro Associates",
+            description:
+              "US engineering staffing agency and recruiters. We place licensed PEs, inspectors and project managers for civil, MEP, water, bridge and municipal teams.",
+          }),
+          offerCatalogSchema(),
+          disciplinesListSchema(),
+          breadcrumbSchema([{ name: "Home", path: "/" }], `${SITE_URL}/#breadcrumb`),
+        ]}
+      />
       <Hero />
       <About />
       <Services />
