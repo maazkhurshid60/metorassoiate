@@ -107,7 +107,12 @@ export const ORG = {
     "Municipal public works staffing",
   ],
   employee: [{ "@id": `${SITE_URL}/#patrick-novick` }],
-  hasOfferCatalog: { "@id": `${SITE_URL}/#services` },
+  /* Deliberately no `hasOfferCatalog`. This object is emitted on every
+     page by the root layout, but the catalogue it would point at exists
+     only on the homepage -- so every other page carried a reference to
+     an @id nothing on that page defined. The link runs the other way
+     instead: each Service in the catalogue names this organization as
+     its provider, which resolves on the one page both nodes are on. */
   sameAs: [LINKEDIN, FACEBOOK, BBB, GLASSDOOR],
   /* No `aggregateRating` here, deliberately. Google discounts and can
      penalise self-serving rating markup — a business rating itself. The BBB
@@ -263,6 +268,52 @@ export function homePageSchema(opts: { name: string; description: string }) {
     breadcrumb: { "@id": `${SITE_URL}/#breadcrumb` },
     inLanguage: "en-US",
   };
+}
+
+/** The jobs index as a collection, with the roles on it declared rather than
+ *  left to be inferred from a list of links.
+ *
+ *  The individual JobPosting markup stays on the detail pages, which is where
+ *  Google wants it; this names the roles and points at them, so the index is
+ *  understood as a job list rather than as another marketing page that
+ *  happens to contain job titles. Entries carry the url only -- repeating
+ *  each posting's fields here would be a second, drifting copy of markup
+ *  that is already correct one click away. */
+export function jobsCollectionSchema(
+  jobs: { slug: string; title: string; city?: string; state?: string }[],
+  opts: { name: string; description: string },
+) {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": `${SITE_URL}/careers#webpage`,
+      url: `${SITE_URL}/careers`,
+      name: opts.name,
+      description: opts.description,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#organization` },
+      breadcrumb: { "@id": `${SITE_URL}/careers#breadcrumb` },
+      mainEntity: { "@id": `${SITE_URL}/careers#joblist` },
+      inLanguage: "en-US",
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/careers#joblist`,
+      name: "Open engineering roles",
+      numberOfItems: jobs.length,
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      itemListElement: jobs.map((j, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: [j.title, [j.city, j.state].filter(Boolean).join(", ")]
+          .filter(Boolean)
+          .join(" - "),
+        url: `${SITE_URL}/careers/${j.slug}`,
+      })),
+    },
+  ];
 }
 
 export function websiteSchema() {

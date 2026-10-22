@@ -2,7 +2,12 @@ import { CandidateTrust } from "../components/CandidateTrust";
 import type { Metadata } from "next";
 import { HeaderBackdrop } from "../components/HeaderBackdrop";
 import { JsonLd } from "../components/JsonLd";
-import { breadcrumbSchema, fitTitle, fitDescription } from "../lib/seo";
+import {
+  breadcrumbSchema,
+  jobsCollectionSchema,
+  fitTitle,
+  fitDescription,
+} from "../lib/seo";
 import { CAREERS_URL, APPLY_URL, SITE_URL } from "../lib/site";
 import { listJobs, JOBS_LIVE } from "../lib/jobs";
 import { JobSearch } from "./JobSearch";
@@ -40,10 +45,18 @@ export default async function JobsPage() {
       <HeaderBackdrop />
       <JsonLd
         data={[
-          breadcrumbSchema([
-            { name: "Home", path: "/" },
-            { name: "Careers", path: "/careers" },
-          ]),
+          ...jobsCollectionSchema(jobs, {
+            name: "Engineering Jobs Hiring Now",
+            description:
+              "Open engineering roles across the United States: civil, MEP, structural, water, municipal and construction inspection. Candidates never pay a fee.",
+          }),
+          breadcrumbSchema(
+            [
+              { name: "Home", path: "/" },
+              { name: "Careers", path: "/careers" },
+            ],
+            `${SITE_URL}/careers#breadcrumb`,
+          ),
         ]}
       />
 
